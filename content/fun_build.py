@@ -98,10 +98,10 @@ def build(sid, title, desc, question, beats, tags):
             q_from = t
     mid = scenes[len(scenes) // 2]["start"] + 0.6
     s = {"id": sid, "style": "fun", "music": "creative", "duration": round(t, 2), "seed": sum(map(ord, sid)) % 997,
-         "thumb_time": 1.5, "watermark": "@nolosabias_datos", "chunk_n": 3, "burn_captions": True,
+         "thumb_time": 1.5, "watermark": "@ojoaldato.ya", "chunk_n": 3, "burn_captions": True,
          "scenes": scenes, "captions": caps, "chapters": [], "sfx": [[round(a, 2), k] for a, k in sorted(sfx)],
          "question": {"text": question, "from": round(q_from or scenes[1]["end"], 2), "reveal": round(reveal_abs or t, 2)},
-         "notifs": [{"t": round(mid, 2), "title": "nolosabias_datos", "body": "Suscríbete para más datos que no sabías"}],
+         "notifs": [{"t": round(mid, 2), "title": "@ojoaldato.ya", "body": "Suscríbete para más datos que no sabías"}],
          "metadata": {"title": title, "description": desc, "tags": tags},
          "rights": [{"asset": "animación, iconos y mascota", "license": "propio"},
                     {"asset": "música y efectos (sintetizados con código)", "license": "propio"},

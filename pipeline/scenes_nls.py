@@ -1,4 +1,4 @@
-"""Escenas de la cuenta No lo sabías. Todo dibujado con código (sin material de terceros)."""
+"""Escenas de la cuenta Ojo al dato. Todo dibujado con código (sin material de terceros)."""
 import math
 import random
 import render as R
@@ -403,7 +403,7 @@ def sc_outro_nls(d, t, p, img):
     R.eye_icon(d, 540, 760, s, mix(C("bg"), C("fg"), k), mix(C("bg"), (255, 210, 63), k), (14, 15, 18))
     if t > 0.6:
         q = ease(prog(t, 0.6, 1.2))
-        tcenter(d, 1010, p.get("handle", "@nolosabias_datos"), 52, mix(C("bg"), C("fg"), q), "Black")
+        tcenter(d, 1010, p.get("handle", "@ojoaldato.ya"), 52, mix(C("bg"), C("fg"), q), "Black")
 
 
 def sc_hook_plane(d, t, p, img):

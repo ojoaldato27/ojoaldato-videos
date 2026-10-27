@@ -35,10 +35,10 @@ def build(sid, segs, title, desc, style, chapters_on=True):
             else:
                 chs.append({"start": round(st, 2), "end": round(t, 2), "text": chap})
     mid = min((sc["start"] for sc in scenes), key=lambda x: abs(x - t * 0.45)) + 0.5
-    notifs = [{"t": round(mid, 2), "title": "nolosabias_datos", "body": "Suscríbete para más datos que no sabías"},
-              {"t": round(t - 4.2, 2), "title": "nolosabias_datos", "body": "Sígueme: mañana, otro dato que no sabías"}]
+    notifs = [{"t": round(mid, 2), "title": "@ojoaldato.ya", "body": "Suscríbete para más datos que no sabías"},
+              {"t": round(t - 4.2, 2), "title": "@ojoaldato.ya", "body": "Sígueme: mañana, otro dato que no sabías"}]
     s = {"id": sid, "notifs": notifs, "style": style, "caption_mode": "words", "chunk_n": 2, "bpm": 124, "duration": round(t, 2), "seed": 11, "thumb_time": 2.0,
-         "watermark": "@nolosabias_datos", "burn_captions": True, "scenes": scenes, "captions": caps,
+         "watermark": "@ojoaldato.ya", "burn_captions": True, "scenes": scenes, "captions": caps,
          "chapters": chs if chapters_on else [],
          "metadata": {"title": title, "description": desc,
                       "tags": ["curiosidades", "datos curiosos", "aviones", "sabías que", "ciencia", "mapas"]},

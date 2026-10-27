@@ -1,4 +1,4 @@
-"""Mascota de «No lo sabías»: un stickman con el ojo del logo como cabeza. 8 versiones (poses y estilos)."""
+"""Mascota de «Ojo al dato»: un stickman con el ojo del logo como cabeza. 8 versiones (poses y estilos)."""
 import sys, os, math
 sys.path.insert(0, "/home/claude/shorts-ingenieria/pipeline")
 from PIL import Image, ImageDraw, ImageFilter, ImageFont

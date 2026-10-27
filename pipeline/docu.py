@@ -276,7 +276,7 @@ def draw_head(img, t, entries, fade_out_at=None):
         img.paste(im, (0, 322 + int(10 * (1 - a2))), im)
 
 
-def channel_label(img, txt="No lo sabías", k=1.0):
+def channel_label(img, txt="Ojo al dato", k=1.0):
     d = ImageDraw.Draw(img, "RGBA")
     d.text((W / 2, 112), txt, font=font(F_UI, 30), fill=(150, 156, 176, int(255 * k)), anchor="mm")
 
@@ -387,7 +387,7 @@ def draw_caption(img, t, chunks, y=1500):
 
 
 # ------------------------------------------------------------------ tarjeta «Seguir» a mitad del vídeo
-def follow_card(img, u, name="No lo sabías", tag="Curiosidades que no te esperas", cy=1180, D=3.1):
+def follow_card(img, u, name="Ojo al dato", tag="Curiosidades que no te esperas", cy=1180, D=3.1):
     if u < 0 or u > D:
         return
     k_in = ease(clamp(u / 0.4))

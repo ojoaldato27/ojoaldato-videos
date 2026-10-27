@@ -3,12 +3,12 @@
  "notifs": [
   {
    "t": 38.64,
-   "title": "nolosabias_datos",
+   "title": "@ojoaldato.ya",
    "body": "Suscríbete para más datos que no sabías"
   },
   {
    "t": 77.52,
-   "title": "nolosabias_datos",
+   "title": "@ojoaldato.ya",
    "body": "Sígueme: mañana, otro dato que no sabías"
   }
  ],
@@ -19,7 +19,7 @@
  "duration": 81.72,
  "seed": 11,
  "thumb_time": 2.0,
- "watermark": "@nolosabias_datos",
+ "watermark": "@ojoaldato.ya",
  "burn_captions": true,
  "scenes": [
   {

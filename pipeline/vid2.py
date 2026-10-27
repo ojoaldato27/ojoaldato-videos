@@ -68,7 +68,7 @@ def frame(V, shots, chunks, total, i):
     if getattr(V, "NARR", None) and t < o0:                  # Ojo de narrador todo el vídeo (21/10)
         V.NARR(img, V, t, shots, si)
     if getattr(V, "NOTIF", None) and t < o0:
-        img = cine.V2.notif_banner(img, t - (cine.at(V.NOTIF[0], by) + V.NOTIF[1]), getattr(V, "HANDLE", "nolosabias_datos"),
+        img = cine.V2.notif_banner(img, t - (cine.at(V.NOTIF[0], by) + V.NOTIF[1]), getattr(V, "HANDLE", "@ojoaldato.ya"),
                                    V.NOTIF_TEXT, icon=getattr(V, "NOTIF_ICON", None))
     if t < o0 + 0.15:
         y = getattr(V, "CAP_Y", {}).get(shots[si]["name"], 1490)

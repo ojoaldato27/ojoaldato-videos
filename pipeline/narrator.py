@@ -404,7 +404,7 @@ def outro(V, e, hold):
           "SIGUIENDO" if ok else "SEGUIR", YEL + (255,) if ok else (16, 16, 20, 255), plus_icon)
     # firma
     k3 = cine.ease(cine.clamp((e - 1.0) / 0.5))
-    cine.spaced(d, cine.W / 2, 1560, "@nolosabias_datos", cine.f(cine.F_SERR, 40), (220, 220, 230, int(255 * k3)), 3)
+    cine.spaced(d, cine.W / 2, 1560, "@ojoaldato.ya", cine.f(cine.F_SERR, 40), (220, 220, 230, int(255 * k3)), 3)
     k4 = cine.ease(cine.clamp((e - 2.9) / 0.5))
     cine.spaced(d, cine.W / 2, 1640, "MÁNDASELO A QUIEN NO LO SEPA", cine.f(cine.F_SER, 34), YEL + (int(255 * k4),), 5)
     top.alpha_composite(lay)

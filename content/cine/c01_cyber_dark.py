@@ -369,7 +369,7 @@ def OUTRO_FN(img, u, D):
         d.rounded_rectangle([560, 1120, 830, 1190], radius=35, fill=(245, 245, 245, int(255 * k3)) if follow else None,
                             outline=(245, 245, 245, int(255 * k3)), width=2)
         d.text((695, 1155), "✓ SIGUIENDO" if follow else "+  SEGUIR", font=fo, fill=((10, 10, 12) if follow else (245, 245, 245)) + (int(255 * k3),), anchor="mm")
-        d.text((540, 1250), "@nolosabias_datos", font=font(INTER, 26), fill=(140, 146, 158, int(255 * k3)), anchor="mm")
+        d.text((540, 1250), "@ojoaldato.ya", font=font(INTER, 26), fill=(140, 146, 158, int(255 * k3)), anchor="mm")
         out.paste(lay, (0, 0), lay)
     if u < 0.35:
         out = Image.blend(img, out, ease(u / 0.35))

@@ -301,7 +301,7 @@ def OUTRO_FN(img, u, D):
         follow = u > 2.0
         poly(d, [(580, 1380), (880, 1380), (880, 1480), (580, 1480)], RED if follow else (255, 255, 255), rng, 6, 2)
         text(d, (730, 1430), "SIGUIENDO" if follow else "+ SEGUIR", 40, (255, 255, 255) if follow else K)
-        text(d, (540, 1560), "@nolosabias_datos", 36, DGRAY)
+        text(d, (540, 1560), "@ojoaldato.ya", 36, DGRAY)
     if u < 0.3:
         out = Image.blend(img, out, ease(u / 0.3))
     return out

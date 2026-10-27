@@ -652,7 +652,7 @@ def sh_auction(img, t, T, L):
         d2.rectangle([0, 0, W, H], fill=(0, 0, 0, int(200 * k)))
         R.eye_icon(d2, 540, 820, 300 * (0.9 + 0.1 * k), (255, 255, 255), YEL, (14, 15, 18))
         spaced(d2, W / 2, 1010, "SI AÚN NO LO SABÍAS…", f(F_SER, 52), (255, 255, 255, int(255 * k)), 6)
-        spaced(d2, W / 2, 1090, "@nolosabias_datos", f(F_SERR, 40), (220, 220, 230, int(255 * k)), 3)
+        spaced(d2, W / 2, 1090, "@ojoaldato.ya", f(F_SERR, 40), (220, 220, 230, int(255 * k)), 3)
     vignette(img, 200)
 
 
@@ -874,8 +874,8 @@ def render(out_mp4, only_times=None):
         d = ImageDraw.Draw(out)
         if s["name"] != "auction" or t - s["start"] < s["end"] - s["start"] - 2.6:
             R.eye_icon(d, 92, 112, 58, (255, 255, 255), YEL, (14, 15, 18))
-            d.text((132, 95), "@nolosabias_datos", font=f(F_CAP, 28), fill=(235, 235, 240))
-        out = V2.notif_banner(out, t - notif_t, "nolosabias_datos", "Suscríbete para más historias que no sabías")
+            d.text((132, 95), "@ojoaldato.ya", font=f(F_CAP, 28), fill=(235, 235, 240))
+        out = V2.notif_banner(out, t - notif_t, "@ojoaldato.ya", "Suscríbete para más historias que no sabías")
         if pipe is None:
             shots_out.append(out)
             continue

@@ -293,7 +293,7 @@ THEMES = {
 
 
 def eye_icon(d, cx, cy, s, ink, accent, bg):
-    """Logo del ojo de No lo sabías, dibujado (s = ancho)."""
+    """Logo del ojo de Ojo al dato, dibujado (s = ancho)."""
     pts_top, pts_bot = [], []
     for i in range(41):
         u = i / 40

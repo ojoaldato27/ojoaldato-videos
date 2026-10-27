@@ -423,7 +423,7 @@ def OUTRO_FN(img, u, D):
             d.text((x, y), txt, font=fo2 if "♥" not in txt else F(FL.DJ, 40), fill=tc, anchor="mm")
     hx = ease(clamp((u - 0.9) / 0.4))
     if hx > 0:
-        FL.text(out, (540, 1200), "@nolosabias_datos", F(*TH["sub"]) if n != "minimal" else F(FL.INTER, 40), TH["soft"], alpha=int(255 * hx), stroke=0)
+        FL.text(out, (540, 1200), "@ojoaldato.ya", F(*TH["sub"]) if n != "minimal" else F(FL.INTER, 40), TH["soft"], alpha=int(255 * hx), stroke=0)
     vx = clamp(u / max(1.0, D))
     FL.ground(out, 1380)
     car(out, lerp(-300, 1400, vx), 1380, 40, 0, 1, spin=-u * 20)

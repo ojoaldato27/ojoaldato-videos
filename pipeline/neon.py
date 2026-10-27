@@ -279,6 +279,6 @@ def end_card_neon(t_end_in):
     d2.rectangle([0, 0, W, H], fill=(2, 4, 10, int(215 * k)))
     R.eye_icon(d2, 540, 790, 300 * (0.9 + 0.1 * k), (255, 255, 255), YE, (14, 15, 18))
     paste(TOP[0], gtext("SI AÚN NO LO SABÍAS…", 56, WH), W / 2, 1010, 1.0, k)
-    d2.text((W / 2, 1100), "@nolosabias_datos", font=f(F_MONO, 38), fill=(200, 210, 230, int(255 * k)), anchor="mm")
+    d2.text((W / 2, 1100), "@ojoaldato.ya", font=f(F_MONO, 38), fill=(200, 210, 230, int(255 * k)), anchor="mm")
     k2 = ease(clamp((t_end_in - 0.6) / 0.6))
     paste(TOP[0], gtext("MÁNDASELO A QUIEN NO LO SEPA", 40, CY), W / 2, 1200, 1.0, k2)

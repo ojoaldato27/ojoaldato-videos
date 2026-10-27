@@ -1,4 +1,4 @@
-"""Motor cinematográfico común de «No lo sabías» (estilo «Titanic pro»).
+"""Motor cinematográfico común de «Ojo al dato» (estilo «Titanic pro»).
 
 Cada vídeo es un módulo con:
   LINES  frases del guion (las *palabras* entre asteriscos salen en amarillo)
@@ -1369,7 +1369,7 @@ def end_card(t_end_in):
     d2.rectangle([0, 0, W, H], fill=(0, 0, 0, int(205 * k)))
     R.eye_icon(d2, 540, 800, 300 * (0.9 + 0.1 * k), (255, 255, 255), YEL, (14, 15, 18))
     spaced(d2, W / 2, 990, "SI AÚN NO LO SABÍAS…", f(F_SER, 52), (255, 255, 255, int(255 * k)), 6)
-    spaced(d2, W / 2, 1070, "@nolosabias_datos", f(F_SERR, 40), (220, 220, 230, int(255 * k)), 3)
+    spaced(d2, W / 2, 1070, "@ojoaldato.ya", f(F_SERR, 40), (220, 220, 230, int(255 * k)), 3)
     k2 = ease(clamp((t_end_in - 0.6) / 0.6))
     spaced(d2, W / 2, 1180, "MÁNDASELO A QUIEN NO LO SEPA", f(F_SER, 34), YEL + (int(255 * k2),), 5)
 
@@ -2095,7 +2095,7 @@ def frame_docu(V, shots, chunks, total, i):
         DC.follow_card(img, t - (at(fo, by)))
     elif getattr(V, "NOTIF", None) and end_in < 0:
         # notificación tipo iPhone que baja desde arriba (la de siempre), con su sonido
-        img = V2.notif_banner(img, t - (at(V.NOTIF[0], by) + V.NOTIF[1]), "nolosabias_datos",
+        img = V2.notif_banner(img, t - (at(V.NOTIF[0], by) + V.NOTIF[1]), "@ojoaldato.ya",
                               getattr(V, "NOTIF_TEXT", "Suscríbete para más historias que no sabías"))
     if end_in < 0.2:
         # CAP_Y = {plano: y} baja el subtítulo en los planos cuyo dibujo ocupa la franja de 1500
@@ -2158,10 +2158,10 @@ def frame(V, shots, chunks, total, i):
     d = ImageDraw.Draw(out)
     if end_in < 0:
         R.eye_icon(d, 92, 112, 58, (255, 255, 255), YEL, (14, 15, 18))
-        d.text((132, 95), "@nolosabias_datos", font=f(F_CAP, 28), fill=(235, 235, 240))
+        d.text((132, 95), "@ojoaldato.ya", font=f(F_CAP, 28), fill=(235, 235, 240))
     by = {x["name"]: x for x in shots}
     notif_t = at(V.NOTIF[0], by) + V.NOTIF[1]
-    out = V2.notif_banner(out, t - notif_t, "nolosabias_datos", getattr(V, "NOTIF_TEXT", "Suscríbete para más historias que no sabías"))
+    out = V2.notif_banner(out, t - notif_t, "@ojoaldato.ya", getattr(V, "NOTIF_TEXT", "Suscríbete para más historias que no sabías"))
     return out
 
 
