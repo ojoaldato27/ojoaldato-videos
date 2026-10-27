@@ -4,7 +4,7 @@ Shorts de curiosidades del canal «Ojo al dato» (Iker). Todo se renderiza aquí
 
 - **Ruta obligatoria:** clona el repo en `/home/claude/shorts-ingenieria` (el código usa rutas absolutas desde ahí).
 - **Preparar la sesión:** `bash setup.sh`.
-- **Qué hacer cada noche:** lee entero `INSTRUCCIONES_NOCHE.md` y síguelo. Plan y fichas: doc «Plan de subidas» (https://claude.ai/code/artifact/2658b121-4f8e-4d56-b828-ac5c1a13c747).
+- **Qué hacer cada noche:** lee entero `INSTRUCCIONES_NOCHE.md` y síguelo. Plan y fichas: doc «Plan de subidas» (https://claude.ai/artifact/SieCw4wUBgcTDj2ETj9LPy).
 - **Vista previa sin voz:** `cd content/cine && python3 ../../tools/prevall.py <modulo> /tmp/prev.jpg 0.65`.
 - **Render completo:** `cd content/cine && python3 fast.py <modulo>` → `output/cine/<TITLE>.mp4`; control: `python3 qc.py <mp4>`.
 - **Portada:** `python3 ../../tools/cover.py <modulo> q 2.0 <salida.jpg>`.
