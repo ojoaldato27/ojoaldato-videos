@@ -1,0 +1,640 @@
+{
+ "id": "F09_cristal_coche",
+ "style": "fun",
+ "music": "creative",
+ "duration": 92.03,
+ "seed": 636,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 8.87,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "car",
+      "x": 540,
+      "y": 600,
+      "s": 620,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "pane",
+      "x": 300,
+      "y": 1050,
+      "s": 300,
+      "tw": {
+       "k": [
+        1.6,
+        2.4,
+        0.0,
+        1.0
+       ]
+      },
+      "opt": {
+       "mode": "shatter"
+      },
+      "at": 1.6
+     },
+     {
+      "icon": "pane",
+      "x": 780,
+      "y": 1050,
+      "s": 300,
+      "tw": {
+       "k": [
+        5.13,
+        5.93,
+        0.0,
+        1.0
+       ]
+      },
+      "opt": {
+       "mode": "web"
+      },
+      "at": 5.13
+     }
+    ],
+    "dur": 8.87
+   }
+  },
+  {
+   "type": "beat",
+   "start": 8.87,
+   "end": 18.5,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "Es cristal barato",
+       "Está hecho a propósito",
+       "Es por el frío"
+      ],
+      "correct": 1,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 7.37
+     }
+    ],
+    "dur": 9.63
+   }
+  },
+  {
+   "type": "beat",
+   "start": 18.5,
+   "end": 28.55,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "icon": "pane",
+      "x": 540,
+      "y": 560,
+      "s": 320,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "count": [
+       0,
+       620
+      ],
+      "x": 540,
+      "y": 900,
+      "size": 170,
+      "sub": "grados",
+      "fmt": "{:,.0f}",
+      "at": 2.43
+     },
+     {
+      "icon": "fan",
+      "x": 540,
+      "y": 1150,
+      "s": 220,
+      "opt": {},
+      "at": 5.28
+     }
+    ],
+    "dur": 10.05
+   }
+  },
+  {
+   "type": "beat",
+   "start": 28.55,
+   "end": 42.35,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "pane",
+      "x": 540,
+      "y": 700,
+      "s": 420,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "arrow",
+      "x": 230,
+      "y": 700,
+      "s": 180,
+      "opt": {
+       "ang": 0
+      },
+      "at": 3.68
+     },
+     {
+      "icon": "arrow",
+      "x": 850,
+      "y": 700,
+      "s": 180,
+      "opt": {
+       "ang": 180
+      },
+      "at": 3.68
+     },
+     {
+      "text": "x4 más fuerte",
+      "x": 540,
+      "y": 1130,
+      "size": 80,
+      "at": 7.78
+     }
+    ],
+    "dur": 13.8
+   }
+  },
+  {
+   "type": "beat",
+   "start": 42.35,
+   "end": 54.9,
+   "params": {
+    "bg": "lilac",
+    "items": [
+     {
+      "icon": "pane",
+      "x": 540,
+      "y": 760,
+      "s": 520,
+      "tw": {
+       "k": [
+        1.2,
+        2.0,
+        0.0,
+        1.0
+       ]
+      },
+      "opt": {
+       "mode": "shatter"
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "check",
+      "x": 540,
+      "y": 1180,
+      "s": 180,
+      "float": false,
+      "opt": {},
+      "at": 9.65
+     }
+    ],
+    "dur": 12.55
+   }
+  },
+  {
+   "type": "beat",
+   "start": 54.9,
+   "end": 65.02,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 3.68,
+      "at": 0.0
+     },
+     {
+      "icon": "layers",
+      "x": 440,
+      "y": 820,
+      "s": 480,
+      "tw": {
+       "spread": [
+        4.68,
+        6.08,
+        0.0,
+        1.0
+       ]
+      },
+      "opt": {},
+      "at": 3.88
+     }
+    ],
+    "dur": 10.12
+   }
+  },
+  {
+   "type": "beat",
+   "start": 65.02,
+   "end": 75.55,
+   "params": {
+    "bg": "mint",
+    "items": [
+     {
+      "icon": "pane",
+      "x": 540,
+      "y": 760,
+      "s": 520,
+      "tw": {
+       "k": [
+        0.5,
+        1.5,
+        0.0,
+        1.0
+       ]
+      },
+      "opt": {
+       "mode": "web"
+      },
+      "at": 0.0
+     }
+    ],
+    "dur": 10.53
+   }
+  },
+  {
+   "type": "beat",
+   "start": 75.55,
+   "end": 83.17,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "Es cristal barato",
+       "Está hecho a propósito",
+       "Es por el frío"
+      ],
+      "correct": 1,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "icon": "car",
+      "x": 540,
+      "y": 1120,
+      "s": 400,
+      "opt": {},
+      "at": 3.68
+     }
+    ],
+    "dur": 7.62,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 83.17,
+   "end": 92.03,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "car",
+      "x": 540,
+      "y": 700,
+      "s": 600,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "mascot": "wink",
+      "x": 540,
+      "y": 1150,
+      "s": 220,
+      "at": 5.65
+     }
+    ],
+    "dur": 8.87
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.93,
+   "text": "¿Por qué la ventanilla del coche se rompe en *mil trocitos*…"
+  },
+  {
+   "start": 4.93,
+   "end": 8.62,
+   "text": "…y el parabrisas, en cambio, *no se cae*?"
+  },
+  {
+   "start": 8.87,
+   "end": 10.47,
+   "text": "¿Tú qué crees?"
+  },
+  {
+   "start": 10.47,
+   "end": 16.23,
+   "text": "¿Es cristal barato, está hecho así a propósito… o es por el frío?"
+  },
+  {
+   "start": 16.23,
+   "end": 18.25,
+   "text": "La respuesta, al final"
+  },
+  {
+   "start": 18.5,
+   "end": 20.93,
+   "text": "La ventanilla es *cristal templado*"
+  },
+  {
+   "start": 20.93,
+   "end": 23.78,
+   "text": "Se calienta a unos *620 grados*…"
+  },
+  {
+   "start": 23.78,
+   "end": 28.3,
+   "text": "…y luego se enfría de golpe con chorros de aire"
+  },
+  {
+   "start": 28.55,
+   "end": 32.23,
+   "text": "Por fuera se enfría antes que por dentro"
+  },
+  {
+   "start": 32.23,
+   "end": 36.33,
+   "text": "Así queda *apretado* por fuera y *tenso* por dentro"
+  },
+  {
+   "start": 36.33,
+   "end": 42.1,
+   "text": "Y eso lo hace unas *4 veces más fuerte* que el cristal normal"
+  },
+  {
+   "start": 42.35,
+   "end": 48.12,
+   "text": "Pero cuando por fin se rompe, toda esa tensión se libera *de golpe*"
+  },
+  {
+   "start": 48.12,
+   "end": 51.8,
+   "text": "Y estalla en trocitos pequeños y *sin filo*"
+  },
+  {
+   "start": 51.8,
+   "end": 54.65,
+   "text": "Así es mucho más difícil cortarse"
+  },
+  {
+   "start": 54.9,
+   "end": 58.58,
+   "text": "Pero espera, que el parabrisas es otra historia"
+  },
+  {
+   "start": 58.58,
+   "end": 64.77,
+   "text": "Es *cristal laminado*: dos capas de cristal con una lámina de *plástico* en medio"
+  },
+  {
+   "start": 65.02,
+   "end": 69.53,
+   "text": "Si se rompe, los trozos se quedan *pegados al plástico*"
+  },
+  {
+   "start": 69.53,
+   "end": 75.3,
+   "text": "Por eso se agrieta como una tela de araña… *pero no se cae*"
+  },
+  {
+   "start": 75.55,
+   "end": 79.23,
+   "text": "¿La respuesta? La B: *está hecho a propósito*"
+  },
+  {
+   "start": 79.23,
+   "end": 82.92,
+   "text": "Romperse en trocitos es su forma de *protegerte*"
+  },
+  {
+   "start": 83.17,
+   "end": 88.52,
+   "text": "Así que si ves cristalitos en el suelo junto a un coche…"
+  },
+  {
+   "start": 88.52,
+   "end": 91.78,
+   "text": "…eran de una *ventanilla*, no del parabrisas"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   1.6,
+   "pop"
+  ],
+  [
+   5.13,
+   "pop_low"
+  ],
+  [
+   8.87,
+   "pop"
+  ],
+  [
+   8.87,
+   "whoosh_down"
+  ],
+  [
+   9.05,
+   "pop"
+  ],
+  [
+   9.23,
+   "pop"
+  ],
+  [
+   16.24,
+   "pop_low"
+  ],
+  [
+   18.5,
+   "pop_low"
+  ],
+  [
+   18.5,
+   "whoosh_down"
+  ],
+  [
+   20.93,
+   "pop"
+  ],
+  [
+   22.33,
+   "ding"
+  ],
+  [
+   23.78,
+   "pop"
+  ],
+  [
+   28.55,
+   "pop"
+  ],
+  [
+   28.55,
+   "whoosh_down"
+  ],
+  [
+   32.23,
+   "pop"
+  ],
+  [
+   32.23,
+   "pop_low"
+  ],
+  [
+   36.33,
+   "pop_low"
+  ],
+  [
+   42.35,
+   "pop_low"
+  ],
+  [
+   42.35,
+   "whoosh_down"
+  ],
+  [
+   52.0,
+   "pop"
+  ],
+  [
+   54.9,
+   "pop_low"
+  ],
+  [
+   54.9,
+   "whoosh_down"
+  ],
+  [
+   58.78,
+   "pop_low"
+  ],
+  [
+   65.02,
+   "pop_low"
+  ],
+  [
+   65.02,
+   "whoosh_down"
+  ],
+  [
+   75.55,
+   "pop"
+  ],
+  [
+   75.55,
+   "whoosh_down"
+  ],
+  [
+   75.73,
+   "pop"
+  ],
+  [
+   75.85,
+   "ding"
+  ],
+  [
+   75.91,
+   "pop"
+  ],
+  [
+   75.95,
+   "whoosh"
+  ],
+  [
+   79.23,
+   "pop_low"
+  ],
+  [
+   83.17,
+   "pop"
+  ],
+  [
+   83.17,
+   "whoosh_down"
+  ],
+  [
+   88.82,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿Por qué se rompe en trocitos?",
+  "from": 18.5,
+  "reveal": 75.85
+ },
+ "notifs": [
+  {
+   "t": 42.95,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué la ventanilla del coche se rompe en trocitos? 🚗",
+  "description": "La ventanilla es cristal templado: se rompe en trocitos sin filo. El parabrisas es laminado: lleva plástico dentro.",
+  "tags": [
+   "curiosidades",
+   "coches",
+   "ingeniería",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

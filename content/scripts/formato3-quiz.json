@@ -1,0 +1,423 @@
+{
+ "id": "formato3-quiz",
+ "notifs": [
+  {
+   "t": 37.38,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  },
+  {
+   "t": 73.03,
+   "title": "nolosabias_datos",
+   "body": "Sígueme: mañana, otro dato que no sabías"
+  }
+ ],
+ "style": "show",
+ "caption_mode": "words",
+ "chunk_n": 2,
+ "bpm": 124,
+ "duration": 77.23,
+ "seed": 11,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "title",
+   "start": 0.0,
+   "end": 2.54,
+   "params": {
+    "lines": [
+     "¿Aciertas",
+     "las 5?",
+     "V o F"
+    ],
+    "hl": 1,
+    "dur": 2.54
+   }
+  },
+  {
+   "type": "quiz",
+   "start": 2.54,
+   "end": 9.07,
+   "params": {
+    "i": 1,
+    "n": 5,
+    "answer": false,
+    "count_at": 2.235483870967742,
+    "text": "Los aviones vuelan en *línea recta*",
+    "dur": 6.54
+   }
+  },
+  {
+   "type": "flight",
+   "start": 9.07,
+   "end": 12.92,
+   "params": {
+    "cam0": [
+     -55,
+     47,
+     6.4
+    ],
+    "cam1": [
+     -60,
+     47,
+     6.4
+    ],
+    "f0": 0.0,
+    "f1": 1.0,
+    "hud": false,
+    "straight": 0.8,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 3.85
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 12.92,
+   "end": 18.37,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 5.45
+   }
+  },
+  {
+   "type": "quiz",
+   "start": 18.37,
+   "end": 25.23,
+   "params": {
+    "i": 2,
+    "n": 5,
+    "answer": false,
+    "count_at": 2.558064516129032,
+    "text": "Groenlandia es casi tan grande como *África*",
+    "dur": 6.86
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 25.23,
+   "end": 29.7,
+   "params": {
+    "morph": 1.6,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 4.47
+   }
+  },
+  {
+   "type": "quiz",
+   "start": 29.7,
+   "end": 36.88,
+   "params": {
+    "i": 3,
+    "n": 5,
+    "answer": true,
+    "count_at": 2.8806451612903223,
+    "text": "A 11.000 metros, fuera hace *−56 °C*",
+    "dur": 7.18
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 36.88,
+   "end": 41.05,
+   "params": {
+    "dur": 4.17
+   }
+  },
+  {
+   "type": "density",
+   "start": 41.05,
+   "end": 44.9,
+   "params": {
+    "dur": 3.85
+   }
+  },
+  {
+   "type": "quiz",
+   "start": 44.9,
+   "end": 52.4,
+   "params": {
+    "i": 4,
+    "n": 5,
+    "answer": false,
+    "count_at": 3.203225806451613,
+    "text": "La cabina va presurizada *como a nivel del mar*",
+    "dur": 7.5
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 52.4,
+   "end": 56.25,
+   "params": {
+    "dur": 3.85
+   }
+  },
+  {
+   "type": "chips",
+   "start": 56.25,
+   "end": 59.13,
+   "params": {
+    "dur": 2.88
+   }
+  },
+  {
+   "type": "quiz",
+   "start": 59.13,
+   "end": 66.95,
+   "params": {
+    "i": 5,
+    "n": 5,
+    "answer": false,
+    "count_at": 3.525806451612903,
+    "text": "Ir de América a Europa tarda *lo mismo* que volver",
+    "dur": 7.83
+   }
+  },
+  {
+   "type": "record",
+   "start": 66.95,
+   "end": 74.33,
+   "params": {
+    "dur": 7.37
+   }
+  },
+  {
+   "type": "quiz_end",
+   "start": 74.33,
+   "end": 77.23,
+   "params": {
+    "dur": 2.9
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 2.24,
+   "text": "Verdadero o falso: ¿aciertas *las 5*?"
+  },
+  {
+   "start": 2.54,
+   "end": 4.77,
+   "text": "Los aviones vuelan en *línea recta*"
+  },
+  {
+   "start": 4.77,
+   "end": 7.77,
+   "text": "3… 2… 1…"
+  },
+  {
+   "start": 7.77,
+   "end": 9.07,
+   "text": "¡Falso!"
+  },
+  {
+   "start": 9.07,
+   "end": 12.92,
+   "text": "En el mapa hacen una curva hacia el norte, sobre *Canadá*"
+  },
+  {
+   "start": 12.92,
+   "end": 16.77,
+   "text": "Pero en un globo esa curva es el camino *más corto*"
+  },
+  {
+   "start": 16.77,
+   "end": 18.37,
+   "text": "Unos *790 km* menos"
+  },
+  {
+   "start": 18.37,
+   "end": 20.93,
+   "text": "Groenlandia es casi tan grande como *África*"
+  },
+  {
+   "start": 20.93,
+   "end": 23.93,
+   "text": "3… 2… 1…"
+  },
+  {
+   "start": 23.93,
+   "end": 25.23,
+   "text": "¡Falso!"
+  },
+  {
+   "start": 25.23,
+   "end": 27.46,
+   "text": "Los mapas planos deforman los polos"
+  },
+  {
+   "start": 27.46,
+   "end": 29.7,
+   "text": "África es *14 veces* más grande"
+  },
+  {
+   "start": 29.7,
+   "end": 32.58,
+   "text": "A 11.000 metros, fuera hace *−56 °C*"
+  },
+  {
+   "start": 32.58,
+   "end": 35.58,
+   "text": "3… 2… 1…"
+  },
+  {
+   "start": 35.58,
+   "end": 36.88,
+   "text": "¡Verdadero!"
+  },
+  {
+   "start": 36.88,
+   "end": 41.05,
+   "text": "Cada kilómetro que subes, el aire se enfría unos *6,5 °C*"
+  },
+  {
+   "start": 41.05,
+   "end": 44.9,
+   "text": "Y el aire es tan fino que el avión *gasta menos*"
+  },
+  {
+   "start": 44.9,
+   "end": 48.1,
+   "text": "La cabina va presurizada *como a nivel del mar*"
+  },
+  {
+   "start": 48.1,
+   "end": 51.1,
+   "text": "3… 2… 1…"
+  },
+  {
+   "start": 51.1,
+   "end": 52.4,
+   "text": "¡Falso!"
+  },
+  {
+   "start": 52.4,
+   "end": 56.25,
+   "text": "Va como si estuvieras a unos *2.400 metros*, como mucho"
+  },
+  {
+   "start": 56.25,
+   "end": 59.13,
+   "text": "Por eso se *hinchan* las bolsas de patatas"
+  },
+  {
+   "start": 59.13,
+   "end": 62.65,
+   "text": "Ir de América a Europa tarda *lo mismo* que volver"
+  },
+  {
+   "start": 62.65,
+   "end": 65.65,
+   "text": "3… 2… 1…"
+  },
+  {
+   "start": 65.65,
+   "end": 66.95,
+   "text": "¡Falso!"
+  },
+  {
+   "start": 66.95,
+   "end": 69.84,
+   "text": "La corriente en chorro empuja hacia el este"
+  },
+  {
+   "start": 69.84,
+   "end": 74.33,
+   "text": "En 2020, un 747 hizo Nueva York → Londres en *4 h 56 min*"
+  },
+  {
+   "start": 74.33,
+   "end": 77.23,
+   "text": "¿Cuántas acertaste? Dímelo en *comentarios*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 2.54,
+   "end": 18.37,
+   "text": "Pregunta 1/5"
+  },
+  {
+   "start": 18.37,
+   "end": 29.7,
+   "text": "Pregunta 2/5"
+  },
+  {
+   "start": 29.7,
+   "end": 44.9,
+   "text": "Pregunta 3/5"
+  },
+  {
+   "start": 44.9,
+   "end": 59.13,
+   "text": "Pregunta 4/5"
+  },
+  {
+   "start": 59.13,
+   "end": 74.33,
+   "text": "Pregunta 5/5"
+  }
+ ],
+ "metadata": {
+  "title": "¿Verdadero o falso? 5 preguntas sobre aviones ✈️",
+  "description": "Quiz de 5 preguntas: ¿vuelan en línea recta?, ¿Groenlandia es tan grande como África?, ¿hace −56 °C fuera?, ¿la cabina va como a nivel del mar?, ¿se tarda lo mismo en ir que en volver de América?\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

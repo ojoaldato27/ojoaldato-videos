@@ -1,0 +1,622 @@
+{
+ "id": "F08_bacterias",
+ "style": "fun",
+ "music": "creative",
+ "duration": 71.98,
+ "seed": 214,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 7.2,
+   "params": {
+    "bg": "mint",
+    "items": [
+     {
+      "icon": "bacteria",
+      "x": 300,
+      "y": 640,
+      "s": 280,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "bacteria",
+      "x": 760,
+      "y": 560,
+      "s": 240,
+      "opt": {
+       "col": [
+        255,
+        170,
+        90
+       ]
+      },
+      "at": 0.4
+     },
+     {
+      "icon": "bacteria",
+      "x": 640,
+      "y": 920,
+      "s": 300,
+      "opt": {
+       "col": [
+        150,
+        170,
+        255
+       ]
+      },
+      "at": 0.8
+     },
+     {
+      "stamp": "MITO",
+      "x": 540,
+      "y": 1180,
+      "size": 100,
+      "col": [
+       230,
+       50,
+       60
+      ],
+      "float": false,
+      "at": 5.65
+     }
+    ],
+    "dur": 7.2
+   }
+  },
+  {
+   "type": "beat",
+   "start": 7.2,
+   "end": 16.0,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "10 bacterias",
+       "100 bacterias",
+       "Más o menos 1"
+      ],
+      "correct": 2,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 6.53
+     }
+    ],
+    "dur": 8.8
+   }
+  },
+  {
+   "type": "beat",
+   "start": 16.0,
+   "end": 22.78,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "count": [
+       0,
+       30
+      ],
+      "x": 540,
+      "y": 600,
+      "size": 220,
+      "sub": "billones de células",
+      "fmt": "{:,.0f}",
+      "at": 0.0
+     },
+     {
+      "icon": "cell",
+      "x": 540,
+      "y": 1060,
+      "s": 340,
+      "opt": {},
+      "at": 3.68
+     }
+    ],
+    "dur": 6.78
+   }
+  },
+  {
+   "type": "beat",
+   "start": 22.78,
+   "end": 29.15,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "count": [
+       0,
+       38
+      ],
+      "x": 540,
+      "y": 600,
+      "size": 220,
+      "sub": "billones de bacterias",
+      "fmt": "{:,.0f}",
+      "at": 0.0
+     },
+     {
+      "icon": "bacteria",
+      "x": 330,
+      "y": 1060,
+      "s": 260,
+      "opt": {},
+      "at": 2.85
+     },
+     {
+      "icon": "bacteria",
+      "x": 760,
+      "y": 1060,
+      "s": 260,
+      "opt": {
+       "col": [
+        255,
+        170,
+        90
+       ]
+      },
+      "at": 3.25
+     }
+    ],
+    "dur": 6.37
+   }
+  },
+  {
+   "type": "beat",
+   "start": 29.15,
+   "end": 45.03,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 620,
+      "s": 300,
+      "out": 4.1,
+      "at": 0.0
+     },
+     {
+      "text": "1972",
+      "x": 540,
+      "y": 560,
+      "size": 100,
+      "at": 4.1
+     },
+     {
+      "icon": "book",
+      "x": 540,
+      "y": 920,
+      "s": 380,
+      "opt": {},
+      "at": 5.1
+     },
+     {
+      "icon": "magnifier",
+      "x": 820,
+      "y": 1150,
+      "s": 220,
+      "opt": {
+       "crack": false
+      },
+      "at": 11.42
+     }
+    ],
+    "dur": 15.88
+   }
+  },
+  {
+   "type": "beat",
+   "start": 45.03,
+   "end": 57.17,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 3.27,
+      "at": 0.0
+     },
+     {
+      "icon": "toilet",
+      "x": 300,
+      "y": 820,
+      "s": 320,
+      "opt": {},
+      "at": 3.47
+     },
+     {
+      "icon": "scale",
+      "x": 760,
+      "y": 820,
+      "s": 420,
+      "tw": {
+       "tilt": [
+        7.57,
+        8.97,
+        18,
+        -12
+       ]
+      },
+      "opt": {},
+      "at": 7.37
+     }
+    ],
+    "dur": 12.13
+   }
+  },
+  {
+   "type": "beat",
+   "start": 57.17,
+   "end": 66.45,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "10 bacterias",
+       "100 bacterias",
+       "Más o menos 1"
+      ],
+      "correct": 2,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "icon": "cell",
+      "x": 330,
+      "y": 1110,
+      "s": 240,
+      "opt": {},
+      "at": 5.35
+     },
+     {
+      "icon": "bacteria",
+      "x": 760,
+      "y": 1110,
+      "s": 260,
+      "opt": {},
+      "at": 5.65
+     }
+    ],
+    "dur": 9.28,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 66.45,
+   "end": 71.98,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "bacteria",
+      "x": 380,
+      "y": 760,
+      "s": 380,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "mascot": "wink",
+      "x": 800,
+      "y": 880,
+      "s": 240,
+      "at": 3.47
+     }
+    ],
+    "dur": 5.53
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 5.35,
+   "text": "Seguro que has oído que tienes *10 veces más bacterias* que células"
+  },
+  {
+   "start": 5.35,
+   "end": 6.95,
+   "text": "Pues es *mentira*"
+  },
+  {
+   "start": 7.2,
+   "end": 10.47,
+   "text": "Entonces, ¿cuántas bacterias tienes por cada célula?"
+  },
+  {
+   "start": 10.47,
+   "end": 13.73,
+   "text": "¿10, 100… o más o menos 1?"
+  },
+  {
+   "start": 13.73,
+   "end": 15.75,
+   "text": "Al final lo vemos"
+  },
+  {
+   "start": 16.0,
+   "end": 19.68,
+   "text": "Tu cuerpo tiene unos *30 billones* de células"
+  },
+  {
+   "start": 19.68,
+   "end": 22.53,
+   "text": "Y la mayoría son *glóbulos rojos*"
+  },
+  {
+   "start": 22.78,
+   "end": 25.63,
+   "text": "Y bacterias tienes unos *38 billones*"
+  },
+  {
+   "start": 25.63,
+   "end": 28.9,
+   "text": "La mayoría viviendo en tu *intestino grueso*"
+  },
+  {
+   "start": 29.15,
+   "end": 33.25,
+   "text": "¿Y de dónde salió lo de 10 a 1?"
+  },
+  {
+   "start": 33.25,
+   "end": 40.27,
+   "text": "De un cálculo de *1972*, que suponía el intestino lleno de bacterias de punta a punta"
+  },
+  {
+   "start": 40.27,
+   "end": 44.78,
+   "text": "Pero casi todas viven solo en una parte: *el colon*"
+  },
+  {
+   "start": 45.03,
+   "end": 48.3,
+   "text": "Pero espera, que lo mejor viene ahora"
+  },
+  {
+   "start": 48.3,
+   "end": 52.4,
+   "text": "Cada vez que vas al baño, expulsas tantas bacterias…"
+  },
+  {
+   "start": 52.4,
+   "end": 56.92,
+   "text": "…que la balanza puede ponerse *a favor de tus células*"
+  },
+  {
+   "start": 57.17,
+   "end": 62.52,
+   "text": "¿La respuesta? La C: más o menos *1 bacteria por cada célula*"
+  },
+  {
+   "start": 62.52,
+   "end": 66.2,
+   "text": "O sea, estás hecho *casi mitad y mitad*"
+  },
+  {
+   "start": 66.45,
+   "end": 69.72,
+   "text": "Así que no eres 10 veces bacteria…"
+  },
+  {
+   "start": 69.72,
+   "end": 71.73,
+   "text": "…pero tampoco *estás solo*"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   0.4,
+   "pop"
+  ],
+  [
+   0.8,
+   "pop_low"
+  ],
+  [
+   5.65,
+   "impact"
+  ],
+  [
+   7.2,
+   "pop"
+  ],
+  [
+   7.2,
+   "whoosh_down"
+  ],
+  [
+   7.38,
+   "pop"
+  ],
+  [
+   7.56,
+   "pop"
+  ],
+  [
+   13.73,
+   "pop_low"
+  ],
+  [
+   16.0,
+   "pop"
+  ],
+  [
+   16.0,
+   "whoosh_down"
+  ],
+  [
+   17.4,
+   "ding"
+  ],
+  [
+   19.68,
+   "pop"
+  ],
+  [
+   22.78,
+   "pop"
+  ],
+  [
+   22.78,
+   "whoosh_down"
+  ],
+  [
+   24.18,
+   "ding"
+  ],
+  [
+   25.63,
+   "pop"
+  ],
+  [
+   26.03,
+   "pop_low"
+  ],
+  [
+   29.15,
+   "pop_low"
+  ],
+  [
+   29.15,
+   "whoosh_down"
+  ],
+  [
+   33.25,
+   "pop"
+  ],
+  [
+   34.25,
+   "pop_low"
+  ],
+  [
+   40.57,
+   "pop"
+  ],
+  [
+   45.03,
+   "pop_low"
+  ],
+  [
+   45.03,
+   "whoosh_down"
+  ],
+  [
+   48.5,
+   "pop_low"
+  ],
+  [
+   52.4,
+   "pop"
+  ],
+  [
+   57.17,
+   "pop"
+  ],
+  [
+   57.17,
+   "whoosh_down"
+  ],
+  [
+   57.35,
+   "pop"
+  ],
+  [
+   57.47,
+   "ding"
+  ],
+  [
+   57.53,
+   "pop"
+  ],
+  [
+   57.57,
+   "whoosh"
+  ],
+  [
+   62.52,
+   "pop"
+  ],
+  [
+   62.82,
+   "pop_low"
+  ],
+  [
+   66.45,
+   "pop"
+  ],
+  [
+   66.45,
+   "whoosh_down"
+  ],
+  [
+   69.92,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿Cuántas bacterias tienes por célula?",
+  "from": 16.0,
+  "reveal": 57.47
+ },
+ "notifs": [
+  {
+   "t": 29.75,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "No tienes 10 veces más bacterias que células 🦠",
+  "description": "Un estudio de 2016 calculó unos 30 billones de células y unos 38 billones de bacterias: casi 1 a 1.",
+  "tags": [
+   "curiosidades",
+   "cuerpo humano",
+   "ciencia",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

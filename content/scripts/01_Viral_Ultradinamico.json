@@ -1,0 +1,390 @@
+{
+ "id": "01_Viral_Ultradinamico",
+ "notifs": [
+  {
+   "t": 31.8,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "viral",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 70.68,
+ "seed": 153,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "title",
+   "start": 0.0,
+   "end": 9.06,
+   "params": {
+    "lines": [
+     "7 cosas que",
+     "le pasan a",
+     "TU AVIÓN"
+    ],
+    "hl": 2,
+    "dur": 9.06
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 9.06,
+   "end": 12.4,
+   "params": {
+    "n": 7,
+    "title": "Fuera, −56 °C",
+    "dur": 3.34
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 12.4,
+   "end": 16.62,
+   "params": {
+    "dur": 4.21
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 16.62,
+   "end": 20.4,
+   "params": {
+    "n": 6,
+    "title": "Aire al 30 %",
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "density",
+   "start": 20.4,
+   "end": 23.3,
+   "params": {
+    "dur": 2.91
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 23.3,
+   "end": 27.52,
+   "params": {
+    "n": 5,
+    "title": "Cabina a 2.400 m",
+    "dur": 4.21
+   }
+  },
+  {
+   "type": "chips",
+   "start": 27.52,
+   "end": 31.3,
+   "params": {
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 31.3,
+   "end": 34.64,
+   "params": {
+    "n": 4,
+    "title": "Ventanas sin esquinas",
+    "dur": 3.34
+   }
+  },
+  {
+   "type": "window",
+   "start": 34.64,
+   "end": 39.29,
+   "params": {
+    "phase": "square",
+    "dur": 4.65
+   }
+  },
+  {
+   "type": "window",
+   "start": 39.29,
+   "end": 43.07,
+   "params": {
+    "phase": "round",
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 43.07,
+   "end": 46.41,
+   "params": {
+    "n": 3,
+    "title": "No va recto",
+    "dur": 3.34
+   }
+  },
+  {
+   "type": "flight",
+   "start": 46.41,
+   "end": 50.19,
+   "params": {
+    "cam0": [
+     -55,
+     47,
+     6.4
+    ],
+    "cam1": [
+     -60,
+     47,
+     6.4
+    ],
+    "f0": 0.0,
+    "f1": 1.0,
+    "hud": false,
+    "straight": 0.8,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 50.19,
+   "end": 53.53,
+   "params": {
+    "n": 2,
+    "title": "Es más corto",
+    "dur": 3.34
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 53.53,
+   "end": 57.74,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 4.21
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 57.74,
+   "end": 61.09,
+   "params": {
+    "n": 1,
+    "title": "El mapa miente",
+    "dur": 3.34
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 61.09,
+   "end": 66.9,
+   "params": {
+    "morph": 4.6,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 5.82
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 66.9,
+   "end": 70.68,
+   "params": {
+    "dur": 3.78
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 5.08,
+   "text": "7 cosas que le pasan a *tu avión*… y no sabes"
+  },
+  {
+   "start": 5.08,
+   "end": 8.86,
+   "text": "La última te va a romper la cabeza"
+  },
+  {
+   "start": 9.06,
+   "end": 12.4,
+   "text": "Número 7: ahí fuera hace *−56 °C*"
+  },
+  {
+   "start": 12.4,
+   "end": 16.62,
+   "text": "Cada kilómetro que subes, pierdes unos *6,5 °C*"
+  },
+  {
+   "start": 16.62,
+   "end": 20.4,
+   "text": "Número 6: solo queda un *30 %* del aire"
+  },
+  {
+   "start": 20.4,
+   "end": 23.3,
+   "text": "Menos aire, menos resistencia: *menos combustible*"
+  },
+  {
+   "start": 23.3,
+   "end": 27.52,
+   "text": "Número 5: dentro respiras como a *2.400 metros*"
+  },
+  {
+   "start": 27.52,
+   "end": 31.3,
+   "text": "Por eso tu bolsa de patatas *se hincha*"
+  },
+  {
+   "start": 31.3,
+   "end": 34.64,
+   "text": "Número 4: las ventanillas *no tienen esquinas*"
+  },
+  {
+   "start": 34.64,
+   "end": 39.29,
+   "text": "En 1954, dos aviones Comet *se partieron* en el aire"
+  },
+  {
+   "start": 39.29,
+   "end": 43.07,
+   "text": "Desde entonces: redondas, 3 capas y un *agujerito*"
+  },
+  {
+   "start": 43.07,
+   "end": 46.41,
+   "text": "Número 3: tu avión *no va recto*"
+  },
+  {
+   "start": 46.41,
+   "end": 50.19,
+   "text": "De Madrid a Los Ángeles sube hasta *Canadá*"
+  },
+  {
+   "start": 50.19,
+   "end": 53.53,
+   "text": "Número 2: ese rodeo es *más corto*"
+  },
+  {
+   "start": 53.53,
+   "end": 57.74,
+   "text": "En una esfera, esa curva te ahorra *790 km*"
+  },
+  {
+   "start": 57.74,
+   "end": 61.09,
+   "text": "Y número 1: el mapa te *miente*"
+  },
+  {
+   "start": 61.09,
+   "end": 64.0,
+   "text": "Groenlandia parece tan grande como *África*…"
+  },
+  {
+   "start": 64.0,
+   "end": 66.9,
+   "text": "…y es *14 veces* más pequeña"
+  },
+  {
+   "start": 66.9,
+   "end": 70.68,
+   "text": "¿Cuál no sabías? Mándaselo a quien *vuele pronto*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 9.06,
+   "end": 16.62,
+   "text": "#7 · El frío"
+  },
+  {
+   "start": 16.62,
+   "end": 23.3,
+   "text": "#6 · El aire"
+  },
+  {
+   "start": 23.3,
+   "end": 31.3,
+   "text": "#5 · La cabina"
+  },
+  {
+   "start": 31.3,
+   "end": 43.07,
+   "text": "#4 · Ventanillas"
+  },
+  {
+   "start": 43.07,
+   "end": 50.19,
+   "text": "#3 · La ruta"
+  },
+  {
+   "start": 50.19,
+   "end": 57.74,
+   "text": "#2 · La esfera"
+  },
+  {
+   "start": 57.74,
+   "end": 66.9,
+   "text": "#1 · El mapa"
+  }
+ ],
+ "metadata": {
+  "title": "7 cosas que le pasan a tu avión (y no sabes) ✈️",
+  "description": "7 cosas que le pasan a tu avión: −56 °C fuera, aire al 30 %, cabina a 2.400 m, ventanillas sin esquinas, la ruta por Canadá y el mapa que miente.\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

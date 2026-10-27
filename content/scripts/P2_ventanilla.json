@@ -1,0 +1,173 @@
+{
+ "id": "P2_ventanilla",
+ "notifs": [
+  {
+   "t": 18.96,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "premium",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 41.7,
+ "seed": 295,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "window",
+   "start": 0.0,
+   "end": 5.82,
+   "params": {
+    "phase": "round",
+    "dur": 5.82
+   }
+  },
+  {
+   "type": "window",
+   "start": 5.82,
+   "end": 18.46,
+   "params": {
+    "phase": "square",
+    "dur": 12.64
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 18.46,
+   "end": 29.06,
+   "params": {
+    "dur": 10.6
+   }
+  },
+  {
+   "type": "window",
+   "start": 29.06,
+   "end": 37.92,
+   "params": {
+    "phase": "round",
+    "dur": 8.86
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 37.92,
+   "end": 41.7,
+   "params": {
+    "dur": 3.78
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 2.91,
+   "text": "Mira bien la ventanilla del avión"
+  },
+  {
+   "start": 2.91,
+   "end": 5.82,
+   "text": "No tiene ni una sola *esquina*"
+  },
+  {
+   "start": 5.82,
+   "end": 10.9,
+   "text": "En los años 50 era distinto: los Comet tenían ventanas *cuadradas*"
+  },
+  {
+   "start": 10.9,
+   "end": 14.68,
+   "text": "En 1954, dos se *partieron* en pleno vuelo"
+  },
+  {
+   "start": 14.68,
+   "end": 18.46,
+   "text": "La fatiga del metal empezó en las *esquinas*"
+  },
+  {
+   "start": 18.46,
+   "end": 23.97,
+   "text": "El problema es la presión: la cabina se infla como un globo"
+  },
+  {
+   "start": 23.97,
+   "end": 29.06,
+   "text": "Por dentro, como a *2.400 metros*; fuera, a 11.000"
+  },
+  {
+   "start": 29.06,
+   "end": 32.83,
+   "text": "Por eso hoy son redondas: reparten la fuerza"
+  },
+  {
+   "start": 32.83,
+   "end": 37.92,
+   "text": "Y tienen *3 capas*… y un agujerito que iguala la presión"
+  },
+  {
+   "start": 37.92,
+   "end": 41.7,
+   "text": "La próxima vez que vueles, busca el *agujerito*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 5.82,
+   "text": "La ventanilla"
+  },
+  {
+   "start": 5.82,
+   "end": 18.46,
+   "text": "El accidente"
+  },
+  {
+   "start": 18.46,
+   "end": 29.06,
+   "text": "La presión"
+  },
+  {
+   "start": 29.06,
+   "end": 37.92,
+   "text": "La solución"
+  }
+ ],
+ "metadata": {
+  "title": "El secreto de la ventanilla del avión 🪟",
+  "description": "El secreto de la ventanilla del avión 🪟\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

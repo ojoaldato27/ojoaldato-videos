@@ -1,0 +1,642 @@
+{
+ "id": "F06_aviones_blancos",
+ "style": "fun",
+ "music": "creative",
+ "duration": 85.85,
+ "seed": 860,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 5.53,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "plane",
+      "x": 540,
+      "y": 720,
+      "s": 700,
+      "tw": {
+       "x": [
+        0.0,
+        1.2,
+        -300,
+        540
+       ]
+      },
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 860,
+      "y": 1160,
+      "s": 210,
+      "at": 3.15
+     }
+    ],
+    "dur": 5.53
+   }
+  },
+  {
+   "type": "beat",
+   "start": 5.53,
+   "end": 16.0,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "Es más barato",
+       "Por seguridad",
+       "Por las dos cosas"
+      ],
+      "correct": 2,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 7.78
+     }
+    ],
+    "dur": 10.47
+   }
+  },
+  {
+   "type": "beat",
+   "start": 16.0,
+   "end": 25.28,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "sun",
+      "x": 280,
+      "y": 520,
+      "s": 320,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "plane",
+      "x": 600,
+      "y": 900,
+      "s": 560,
+      "opt": {},
+      "at": 0.5
+     },
+     {
+      "icon": "thermometer",
+      "x": 880,
+      "y": 560,
+      "s": 300,
+      "opt": {
+       "level": 0.3,
+       "hot": false
+      },
+      "at": 3.98
+     }
+    ],
+    "dur": 9.28
+   }
+  },
+  {
+   "type": "beat",
+   "start": 25.28,
+   "end": 34.57,
+   "params": {
+    "bg": "mint",
+    "items": [
+     {
+      "icon": "plane",
+      "x": 540,
+      "y": 620,
+      "s": 560,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "magnifier",
+      "x": 600,
+      "y": 960,
+      "s": 420,
+      "opt": {},
+      "at": 1.0
+     }
+    ],
+    "dur": 9.28
+   }
+  },
+  {
+   "type": "beat",
+   "start": 34.57,
+   "end": 45.87,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "icon": "paint",
+      "x": 300,
+      "y": 620,
+      "s": 320,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "weight",
+      "x": 780,
+      "y": 640,
+      "s": 320,
+      "opt": {
+       "label": "kg"
+      },
+      "at": 2.02
+     },
+     {
+      "count": [
+       0,
+       8
+      ],
+      "x": 540,
+      "y": 1060,
+      "size": 200,
+      "sub": "pasajeros extra",
+      "fmt": "{:,.0f}",
+      "at": 7.37
+     }
+    ],
+    "dur": 11.3
+   }
+  },
+  {
+   "type": "beat",
+   "start": 45.87,
+   "end": 59.67,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 2.43,
+      "at": 0.0
+     },
+     {
+      "icon": "paint",
+      "x": 540,
+      "y": 680,
+      "s": 320,
+      "opt": {
+       "col": [
+        60,
+        60,
+        90
+       ]
+      },
+      "at": 2.63
+     },
+     {
+      "count": [
+       0,
+       25
+      ],
+      "x": 540,
+      "y": 1080,
+      "size": 180,
+      "sub": "años volando",
+      "fmt": "{:,.0f}",
+      "at": 7.37
+     }
+    ],
+    "dur": 13.8
+   }
+  },
+  {
+   "type": "beat",
+   "start": 59.67,
+   "end": 70.2,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "plane",
+      "x": 300,
+      "y": 640,
+      "s": 420,
+      "opt": {
+       "stripe": [
+        230,
+        80,
+        90
+       ]
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "plane",
+      "x": 780,
+      "y": 820,
+      "s": 420,
+      "opt": {
+       "stripe": [
+        90,
+        200,
+        120
+       ]
+      },
+      "at": 0.6
+     },
+     {
+      "icon": "bird",
+      "x": 540,
+      "y": 1130,
+      "s": 260,
+      "opt": {},
+      "at": 5.97
+     }
+    ],
+    "dur": 10.53
+   }
+  },
+  {
+   "type": "beat",
+   "start": 70.2,
+   "end": 76.57,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "Es más barato",
+       "Por seguridad",
+       "Por las dos cosas"
+      ],
+      "correct": 2,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "mascot": "happy",
+      "x": 540,
+      "y": 1130,
+      "s": 240,
+      "at": 3.27
+     }
+    ],
+    "dur": 6.37,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 76.57,
+   "end": 85.85,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "plane",
+      "x": 540,
+      "y": 720,
+      "s": 640,
+      "opt": {
+       "col": [
+        255,
+        140,
+        170
+       ],
+       "stripe": [
+        120,
+        80,
+        220
+       ]
+      },
+      "at": 0.0
+     },
+     {
+      "mascot": "wink",
+      "x": 540,
+      "y": 1150,
+      "s": 220,
+      "at": 5.23
+     }
+    ],
+    "dur": 9.28
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 2.85,
+   "text": "Casi todos los aviones son *blancos*"
+  },
+  {
+   "start": 2.85,
+   "end": 5.28,
+   "text": "Y no es por estética"
+  },
+  {
+   "start": 5.53,
+   "end": 8.38,
+   "text": "¿Tú por qué crees que es?"
+  },
+  {
+   "start": 8.38,
+   "end": 13.32,
+   "text": "¿Porque es más barato, por seguridad… o por las dos cosas?"
+  },
+  {
+   "start": 13.32,
+   "end": 15.75,
+   "text": "Te lo digo al final"
+  },
+  {
+   "start": 16.0,
+   "end": 19.68,
+   "text": "Primero: el blanco *refleja* la luz del Sol"
+  },
+  {
+   "start": 19.68,
+   "end": 25.03,
+   "text": "Así el avión se calienta menos y la pintura se estropea menos"
+  },
+  {
+   "start": 25.28,
+   "end": 31.88,
+   "text": "Segundo: en el blanco se ven mucho mejor las *grietas* y las fugas de aceite"
+  },
+  {
+   "start": 31.88,
+   "end": 34.32,
+   "text": "Los mecánicos las detectan antes"
+  },
+  {
+   "start": 34.57,
+   "end": 36.58,
+   "text": "Tercero: la pintura *pesa*"
+  },
+  {
+   "start": 36.58,
+   "end": 41.93,
+   "text": "Pintar entero un avión grande puede añadir entre 270 y 540 kilos"
+  },
+  {
+   "start": 41.93,
+   "end": 45.62,
+   "text": "Como llevar *8 pasajeros* extra en cada vuelo"
+  },
+  {
+   "start": 45.87,
+   "end": 48.3,
+   "text": "Pero espera, que hay más"
+  },
+  {
+   "start": 48.3,
+   "end": 53.23,
+   "text": "Los colores oscuros *se destiñen* antes y hay que repintarlos más"
+  },
+  {
+   "start": 53.23,
+   "end": 59.42,
+   "text": "Y un avión puede volar *más de 25 años*, pasando de aerolínea en aerolínea"
+  },
+  {
+   "start": 59.67,
+   "end": 65.43,
+   "text": "Si es blanco, repintarlo para la siguiente aerolínea es *más fácil y barato*"
+  },
+  {
+   "start": 65.43,
+   "end": 69.95,
+   "text": "Y hay indicios de que los pájaros lo ven mejor"
+  },
+  {
+   "start": 70.2,
+   "end": 73.47,
+   "text": "¿La respuesta? La C: *las dos cosas*"
+  },
+  {
+   "start": 73.47,
+   "end": 76.32,
+   "text": "Es más barato… y más seguro"
+  },
+  {
+   "start": 76.57,
+   "end": 81.5,
+   "text": "Así que la próxima vez que veas un avión de colores…"
+  },
+  {
+   "start": 81.5,
+   "end": 85.6,
+   "text": "…piensa que a alguien le ha costado *bastante más*"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   3.15,
+   "pop_low"
+  ],
+  [
+   5.53,
+   "pop"
+  ],
+  [
+   5.53,
+   "whoosh_down"
+  ],
+  [
+   5.71,
+   "pop"
+  ],
+  [
+   5.89,
+   "pop"
+  ],
+  [
+   13.31,
+   "pop_low"
+  ],
+  [
+   16.0,
+   "pop"
+  ],
+  [
+   16.0,
+   "whoosh_down"
+  ],
+  [
+   16.5,
+   "pop_low"
+  ],
+  [
+   19.98,
+   "pop"
+  ],
+  [
+   25.28,
+   "pop"
+  ],
+  [
+   25.28,
+   "whoosh_down"
+  ],
+  [
+   26.28,
+   "pop_low"
+  ],
+  [
+   34.57,
+   "pop_low"
+  ],
+  [
+   34.57,
+   "whoosh_down"
+  ],
+  [
+   36.59,
+   "pop"
+  ],
+  [
+   41.94,
+   "pop"
+  ],
+  [
+   43.34,
+   "ding"
+  ],
+  [
+   45.87,
+   "pop_low"
+  ],
+  [
+   45.87,
+   "whoosh_down"
+  ],
+  [
+   48.5,
+   "pop_low"
+  ],
+  [
+   53.24,
+   "pop"
+  ],
+  [
+   54.64,
+   "ding"
+  ],
+  [
+   59.67,
+   "pop_low"
+  ],
+  [
+   59.67,
+   "whoosh_down"
+  ],
+  [
+   60.27,
+   "pop"
+  ],
+  [
+   65.64,
+   "pop_low"
+  ],
+  [
+   70.2,
+   "pop"
+  ],
+  [
+   70.2,
+   "whoosh_down"
+  ],
+  [
+   70.38,
+   "pop"
+  ],
+  [
+   70.5,
+   "ding"
+  ],
+  [
+   70.56,
+   "pop"
+  ],
+  [
+   70.6,
+   "whoosh"
+  ],
+  [
+   73.47,
+   "pop_low"
+  ],
+  [
+   76.57,
+   "pop"
+  ],
+  [
+   76.57,
+   "whoosh_down"
+  ],
+  [
+   81.8,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿Por qué son blancos?",
+  "from": 16.0,
+  "reveal": 70.5
+ },
+ "notifs": [
+  {
+   "t": 35.17,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué casi todos los aviones son blancos? ✈️",
+  "description": "El blanco refleja el sol, deja ver grietas y fugas, ahorra pintura y facilita revender el avión.",
+  "tags": [
+   "curiosidades",
+   "aviones",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

@@ -1,0 +1,579 @@
+{
+ "id": "F04_silbo",
+ "style": "fun",
+ "music": "creative",
+ "duration": 77.4,
+ "seed": 802,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 8.87,
+   "params": {
+    "bg": "mint",
+    "items": [
+     {
+      "icon": "island",
+      "x": 540,
+      "y": 720,
+      "s": 640,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "person",
+      "x": 830,
+      "y": 1150,
+      "s": 300,
+      "opt": {
+       "whistle": true
+      },
+      "at": 1.2
+     },
+     {
+      "mascot": "wow",
+      "x": 230,
+      "y": 1170,
+      "s": 210,
+      "at": 4.4
+     }
+    ],
+    "dur": 8.87
+   }
+  },
+  {
+   "type": "beat",
+   "start": 8.87,
+   "end": 18.92,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "50 metros",
+       "500 metros",
+       "5 kilómetros"
+      ],
+      "correct": 2,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 7.37
+     }
+    ],
+    "dur": 10.05
+   }
+  },
+  {
+   "type": "beat",
+   "start": 18.92,
+   "end": 29.03,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "island",
+      "x": 540,
+      "y": 640,
+      "s": 560,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "text": "La Gomera",
+      "x": 540,
+      "y": 1000,
+      "size": 66,
+      "at": 1.2
+     },
+     {
+      "icon": "person",
+      "x": 540,
+      "y": 1200,
+      "s": 240,
+      "opt": {},
+      "at": 5.65
+     }
+    ],
+    "dur": 10.12
+   }
+  },
+  {
+   "type": "beat",
+   "start": 29.03,
+   "end": 40.75,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "icon": "island",
+      "x": 540,
+      "y": 700,
+      "s": 700,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "person",
+      "x": 260,
+      "y": 1150,
+      "s": 280,
+      "opt": {
+       "whistle": true
+      },
+      "at": 7.78
+     },
+     {
+      "icon": "person",
+      "x": 820,
+      "y": 1150,
+      "s": 280,
+      "opt": {
+       "col": [
+        90,
+        140,
+        230
+       ]
+      },
+      "at": 8.38
+     }
+    ],
+    "dur": 11.72
+   }
+  },
+  {
+   "type": "beat",
+   "start": 40.75,
+   "end": 48.78,
+   "params": {
+    "bg": "lilac",
+    "items": [
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 600,
+      "s": 280,
+      "out": 2.43,
+      "at": 0.0
+     },
+     {
+      "count": [
+       0,
+       6
+      ],
+      "x": 540,
+      "y": 640,
+      "size": 260,
+      "sub": "sonidos",
+      "fmt": "{:,.0f}",
+      "at": 2.43
+     },
+     {
+      "text": "2 vocales",
+      "x": 300,
+      "y": 1080,
+      "size": 58,
+      "at": 3.83
+     },
+     {
+      "text": "4 consonantes",
+      "x": 760,
+      "y": 1080,
+      "size": 58,
+      "at": 4.43
+     }
+    ],
+    "dur": 8.03
+   }
+  },
+  {
+   "type": "beat",
+   "start": 48.78,
+   "end": 60.92,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 2.43,
+      "at": 0.0
+     },
+     {
+      "icon": "book",
+      "x": 300,
+      "y": 700,
+      "s": 340,
+      "opt": {},
+      "at": 2.63
+     },
+     {
+      "icon": "medal",
+      "x": 780,
+      "y": 940,
+      "s": 340,
+      "opt": {},
+      "at": 7.15
+     }
+    ],
+    "dur": 12.13
+   }
+  },
+  {
+   "type": "beat",
+   "start": 60.92,
+   "end": 68.53,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "50 metros",
+       "500 metros",
+       "5 kilómetros"
+      ],
+      "correct": 2,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "icon": "waves",
+      "x": 540,
+      "y": 1120,
+      "s": 320,
+      "opt": {},
+      "at": 4.52
+     }
+    ],
+    "dur": 7.62,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 68.53,
+   "end": 77.4,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "person",
+      "x": 380,
+      "y": 820,
+      "s": 420,
+      "opt": {
+       "whistle": true
+      },
+      "at": 0.0
+     },
+     {
+      "mascot": "wink",
+      "x": 820,
+      "y": 900,
+      "s": 240,
+      "at": 6.07
+     }
+    ],
+    "dur": 8.87
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.1,
+   "text": "En una isla de España, la gente habla *silbando*"
+  },
+  {
+   "start": 4.1,
+   "end": 8.62,
+   "text": "Y no es un juego: es un idioma de verdad"
+  },
+  {
+   "start": 8.87,
+   "end": 12.97,
+   "text": "¿Hasta dónde crees que se oye un silbido así?"
+  },
+  {
+   "start": 12.97,
+   "end": 16.23,
+   "text": "¿50 metros, 500 metros… o 5 kilómetros?"
+  },
+  {
+   "start": 16.23,
+   "end": 18.67,
+   "text": "Te lo cuento al final"
+  },
+  {
+   "start": 18.92,
+   "end": 24.27,
+   "text": "Es el *silbo gomero*, de la isla de La Gomera, en Canarias"
+  },
+  {
+   "start": 24.27,
+   "end": 28.78,
+   "text": "Lo crearon los primeros habitantes de las islas: *los guanches*"
+  },
+  {
+   "start": 29.03,
+   "end": 32.72,
+   "text": "La isla está llena de barrancos y montañas"
+  },
+  {
+   "start": 32.72,
+   "end": 36.82,
+   "text": "Ir de un lado a otro podía llevar horas"
+  },
+  {
+   "start": 36.82,
+   "end": 40.5,
+   "text": "Así que los pastores aprendieron a *hablar silbando*"
+  },
+  {
+   "start": 40.75,
+   "end": 43.18,
+   "text": "Pero ¿cómo se habla silbando?"
+  },
+  {
+   "start": 43.18,
+   "end": 48.53,
+   "text": "Convierte el español en solo *6 sonidos*: 2 vocales y 4 consonantes"
+  },
+  {
+   "start": 48.78,
+   "end": 51.22,
+   "text": "Pero espera, que hay más"
+  },
+  {
+   "start": 51.22,
+   "end": 55.73,
+   "text": "Desde 1999 se enseña en los *colegios* de la isla"
+  },
+  {
+   "start": 55.73,
+   "end": 60.67,
+   "text": "Y en 2009 la UNESCO lo declaró *Patrimonio de la Humanidad*"
+  },
+  {
+   "start": 60.92,
+   "end": 65.43,
+   "text": "¿La respuesta? Un silbido puede oírse hasta a *5 kilómetros*"
+  },
+  {
+   "start": 65.43,
+   "end": 68.28,
+   "text": "Mucho más lejos que cualquier grito"
+  },
+  {
+   "start": 68.53,
+   "end": 74.3,
+   "text": "Así que si algún día vas a La Gomera y oyes un silbido…"
+  },
+  {
+   "start": 74.3,
+   "end": 77.15,
+   "text": "…puede que alguien *te esté hablando*"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   1.2,
+   "pop"
+  ],
+  [
+   4.4,
+   "pop_low"
+  ],
+  [
+   8.87,
+   "pop"
+  ],
+  [
+   8.87,
+   "whoosh_down"
+  ],
+  [
+   9.05,
+   "pop"
+  ],
+  [
+   9.23,
+   "pop"
+  ],
+  [
+   16.24,
+   "pop_low"
+  ],
+  [
+   18.92,
+   "pop_low"
+  ],
+  [
+   18.92,
+   "whoosh_down"
+  ],
+  [
+   20.12,
+   "pop"
+  ],
+  [
+   24.57,
+   "pop_low"
+  ],
+  [
+   29.03,
+   "pop_low"
+  ],
+  [
+   29.03,
+   "whoosh_down"
+  ],
+  [
+   36.81,
+   "pop"
+  ],
+  [
+   37.41,
+   "pop_low"
+  ],
+  [
+   40.75,
+   "pop_low"
+  ],
+  [
+   40.75,
+   "whoosh_down"
+  ],
+  [
+   43.18,
+   "pop"
+  ],
+  [
+   44.58,
+   "ding"
+  ],
+  [
+   44.58,
+   "pop"
+  ],
+  [
+   45.18,
+   "pop_low"
+  ],
+  [
+   48.78,
+   "pop_low"
+  ],
+  [
+   48.78,
+   "whoosh_down"
+  ],
+  [
+   51.41,
+   "pop"
+  ],
+  [
+   55.93,
+   "pop_low"
+  ],
+  [
+   60.92,
+   "pop"
+  ],
+  [
+   60.92,
+   "whoosh_down"
+  ],
+  [
+   61.1,
+   "pop"
+  ],
+  [
+   61.22,
+   "ding"
+  ],
+  [
+   61.28,
+   "pop"
+  ],
+  [
+   61.32,
+   "whoosh"
+  ],
+  [
+   65.44,
+   "pop_low"
+  ],
+  [
+   68.53,
+   "pop"
+  ],
+  [
+   68.53,
+   "whoosh_down"
+  ],
+  [
+   74.6,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿Hasta dónde se oye un silbido?",
+  "from": 18.92,
+  "reveal": 61.22
+ },
+ "notifs": [
+  {
+   "t": 41.35,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "En esta isla de España se habla silbando 🎶",
+  "description": "El silbo gomero de La Gomera convierte el español en 6 sonidos silbados y se oye hasta a 5 km.",
+  "tags": [
+   "curiosidades",
+   "españa",
+   "la gomera",
+   "silbo gomero",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

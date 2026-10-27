@@ -1,0 +1,645 @@
+{
+ "id": "F05_mar",
+ "style": "fun",
+ "music": "creative",
+ "duration": 88.35,
+ "seed": 586,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 8.03,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "ocean",
+      "x": 540,
+      "y": 620,
+      "s": 600,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "river",
+      "x": 540,
+      "y": 1020,
+      "s": 520,
+      "opt": {},
+      "at": 2.85
+     },
+     {
+      "mascot": "think",
+      "x": 860,
+      "y": 400,
+      "s": 200,
+      "at": 3.25
+     }
+    ],
+    "dur": 8.03
+   }
+  },
+  {
+   "type": "beat",
+   "start": 8.03,
+   "end": 17.25,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "De los peces",
+       "De las rocas",
+       "De la Luna"
+      ],
+      "correct": 1,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 6.95
+     }
+    ],
+    "dur": 9.22
+   }
+  },
+  {
+   "type": "beat",
+   "start": 17.25,
+   "end": 26.12,
+   "params": {
+    "bg": "navy",
+    "items": [
+     {
+      "icon": "cloud",
+      "x": 540,
+      "y": 600,
+      "s": 520,
+      "opt": {
+       "rain": true
+      },
+      "at": 0.0
+     },
+     {
+      "text": "CO2",
+      "x": 820,
+      "y": 1000,
+      "size": 70,
+      "at": 3.03
+     }
+    ],
+    "dur": 8.87
+   }
+  },
+  {
+   "type": "beat",
+   "start": 26.12,
+   "end": 32.48,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "icon": "cloud",
+      "x": 540,
+      "y": 430,
+      "s": 320,
+      "opt": {
+       "rain": true
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "rock",
+      "x": 540,
+      "y": 780,
+      "s": 460,
+      "opt": {},
+      "at": 0.3
+     },
+     {
+      "icon": "crystals",
+      "x": 540,
+      "y": 1100,
+      "s": 280,
+      "opt": {},
+      "at": 3.15
+     }
+    ],
+    "dur": 6.37
+   }
+  },
+  {
+   "type": "beat",
+   "start": 32.48,
+   "end": 41.35,
+   "params": {
+    "bg": "mint",
+    "items": [
+     {
+      "icon": "river",
+      "x": 540,
+      "y": 700,
+      "s": 600,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "crystals",
+      "x": 200,
+      "y": 700,
+      "s": 160,
+      "tw": {
+       "x": [
+        0.4,
+        3.4,
+        200,
+        880
+       ]
+      },
+      "opt": {},
+      "at": 0.4
+     },
+     {
+      "icon": "glass",
+      "x": 840,
+      "y": 1130,
+      "s": 240,
+      "opt": {},
+      "at": 3.98
+     }
+    ],
+    "dur": 8.87
+   }
+  },
+  {
+   "type": "beat",
+   "start": 41.35,
+   "end": 53.48,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "sun",
+      "x": 820,
+      "y": 420,
+      "s": 240,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "ocean",
+      "x": 540,
+      "y": 800,
+      "s": 620,
+      "opt": {},
+      "at": 0.2
+     },
+     {
+      "icon": "arrow",
+      "x": 330,
+      "y": 560,
+      "s": 160,
+      "opt": {
+       "ang": -90
+      },
+      "at": 0.8
+     },
+     {
+      "icon": "salt",
+      "x": 300,
+      "y": 1150,
+      "s": 240,
+      "opt": {},
+      "at": 3.88
+     },
+     {
+      "icon": "clock",
+      "x": 800,
+      "y": 1150,
+      "s": 200,
+      "opt": {
+       "speed": 8
+      },
+      "at": 7.67
+     }
+    ],
+    "dur": 12.13
+   }
+  },
+  {
+   "type": "beat",
+   "start": 53.48,
+   "end": 67.28,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 2.43,
+      "at": 0.0
+     },
+     {
+      "icon": "salt",
+      "x": 540,
+      "y": 680,
+      "s": 360,
+      "opt": {},
+      "at": 2.63
+     },
+     {
+      "count": [
+       0,
+       166
+      ],
+      "x": 540,
+      "y": 1080,
+      "size": 160,
+      "sub": "metros de sal",
+      "fmt": "{:,.0f}",
+      "at": 7.37
+     }
+    ],
+    "dur": 13.8
+   }
+  },
+  {
+   "type": "beat",
+   "start": 67.28,
+   "end": 78.65,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "De los peces",
+       "De las rocas",
+       "De la Luna"
+      ],
+      "correct": 1,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "icon": "salt",
+      "x": 540,
+      "y": 1110,
+      "s": 260,
+      "opt": {},
+      "at": 4.72
+     }
+    ],
+    "dur": 11.37,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 78.65,
+   "end": 88.35,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "ocean",
+      "x": 540,
+      "y": 720,
+      "s": 560,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "mascot": "happy",
+      "x": 540,
+      "y": 1150,
+      "s": 220,
+      "at": 5.33
+     }
+    ],
+    "dur": 9.7
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 2.85,
+   "text": "¿Por qué el mar es *salado*…"
+  },
+  {
+   "start": 2.85,
+   "end": 7.78,
+   "text": "…si los ríos que llegan a él son de agua dulce?"
+  },
+  {
+   "start": 8.03,
+   "end": 10.47,
+   "text": "¿De dónde sale tanta sal?"
+  },
+  {
+   "start": 10.47,
+   "end": 14.98,
+   "text": "¿De los peces, de las rocas… o de la Luna?"
+  },
+  {
+   "start": 14.98,
+   "end": 17.0,
+   "text": "La respuesta, al final"
+  },
+  {
+   "start": 17.25,
+   "end": 19.68,
+   "text": "Todo empieza con la *lluvia*"
+  },
+  {
+   "start": 19.68,
+   "end": 25.87,
+   "text": "El agua de lluvia es un poquito *ácida*: lleva algo de dióxido de carbono"
+  },
+  {
+   "start": 26.12,
+   "end": 28.97,
+   "text": "Al caer, va desgastando las *rocas*"
+  },
+  {
+   "start": 28.97,
+   "end": 32.23,
+   "text": "Y les arranca pequeñas partículas de minerales"
+  },
+  {
+   "start": 32.48,
+   "end": 36.17,
+   "text": "Los ríos arrastran esos minerales hasta el mar"
+  },
+  {
+   "start": 36.17,
+   "end": 41.1,
+   "text": "Pero en un río hay tan pocos que *no los notas*"
+  },
+  {
+   "start": 41.35,
+   "end": 45.03,
+   "text": "En el mar, el Sol *evapora* el agua…"
+  },
+  {
+   "start": 45.03,
+   "end": 48.72,
+   "text": "…pero la sal *no se evapora*: se queda"
+  },
+  {
+   "start": 48.72,
+   "end": 53.23,
+   "text": "Y así, durante millones de años, se ha ido acumulando"
+  },
+  {
+   "start": 53.48,
+   "end": 55.92,
+   "text": "Pero espera, que hay más"
+  },
+  {
+   "start": 55.92,
+   "end": 60.85,
+   "text": "Si secaras los océanos y repartieras su sal por los continentes…"
+  },
+  {
+   "start": 60.85,
+   "end": 67.03,
+   "text": "…formaría una capa de *más de 160 metros*: como un edificio de 40 plantas"
+  },
+  {
+   "start": 67.28,
+   "end": 71.8,
+   "text": "¿La respuesta? La B: la sal sale de *las rocas*"
+  },
+  {
+   "start": 71.8,
+   "end": 78.4,
+   "text": "Y casi toda es lo mismo que la sal de tu cocina: *sodio y cloro*"
+  },
+  {
+   "start": 78.65,
+   "end": 83.58,
+   "text": "Así que la próxima vez que tragues agua en la playa…"
+  },
+  {
+   "start": 83.58,
+   "end": 88.1,
+   "text": "…recuerda que estás probando *rocas de hace millones de años*"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   2.85,
+   "pop"
+  ],
+  [
+   3.25,
+   "pop_low"
+  ],
+  [
+   8.03,
+   "pop"
+  ],
+  [
+   8.03,
+   "whoosh_down"
+  ],
+  [
+   8.21,
+   "pop"
+  ],
+  [
+   8.39,
+   "pop"
+  ],
+  [
+   14.98,
+   "pop_low"
+  ],
+  [
+   17.25,
+   "pop_low"
+  ],
+  [
+   17.25,
+   "whoosh_down"
+  ],
+  [
+   20.28,
+   "pop"
+  ],
+  [
+   26.12,
+   "pop"
+  ],
+  [
+   26.12,
+   "whoosh_down"
+  ],
+  [
+   26.42,
+   "pop_low"
+  ],
+  [
+   29.27,
+   "pop"
+  ],
+  [
+   32.48,
+   "pop"
+  ],
+  [
+   32.48,
+   "whoosh_down"
+  ],
+  [
+   32.88,
+   "pop_low"
+  ],
+  [
+   36.46,
+   "pop"
+  ],
+  [
+   41.35,
+   "pop"
+  ],
+  [
+   41.35,
+   "whoosh_down"
+  ],
+  [
+   41.55,
+   "pop_low"
+  ],
+  [
+   42.15,
+   "pop"
+  ],
+  [
+   45.23,
+   "pop_low"
+  ],
+  [
+   49.02,
+   "pop"
+  ],
+  [
+   53.48,
+   "pop_low"
+  ],
+  [
+   53.48,
+   "whoosh_down"
+  ],
+  [
+   56.11,
+   "pop_low"
+  ],
+  [
+   60.85,
+   "pop"
+  ],
+  [
+   62.25,
+   "ding"
+  ],
+  [
+   67.28,
+   "pop"
+  ],
+  [
+   67.28,
+   "whoosh_down"
+  ],
+  [
+   67.46,
+   "pop"
+  ],
+  [
+   67.58,
+   "ding"
+  ],
+  [
+   67.64,
+   "pop"
+  ],
+  [
+   67.68,
+   "whoosh"
+  ],
+  [
+   72.0,
+   "pop_low"
+  ],
+  [
+   78.65,
+   "pop"
+  ],
+  [
+   78.65,
+   "whoosh_down"
+  ],
+  [
+   83.98,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿De dónde sale la sal del mar?",
+  "from": 17.25,
+  "reveal": 67.58
+ },
+ "notifs": [
+  {
+   "t": 33.08,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué el mar es salado y los ríos no? 🌊",
+  "description": "La lluvia desgasta las rocas, los ríos llevan los minerales al mar y el Sol evapora el agua… pero no la sal.",
+  "tags": [
+   "curiosidades",
+   "ciencia",
+   "mar",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

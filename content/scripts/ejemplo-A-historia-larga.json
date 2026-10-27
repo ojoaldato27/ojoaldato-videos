@@ -1,0 +1,399 @@
+{
+ "id": "ejemplo-A-historia-larga",
+ "notifs": [
+  {
+   "t": 33.77,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "live",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 110,
+ "duration": 79.78,
+ "seed": 11,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "flight",
+   "start": 0.0,
+   "end": 8.86,
+   "params": {
+    "cam0": [
+     -3.7,
+     40.4,
+     16
+    ],
+    "cam1": [
+     -11,
+     45,
+     16
+    ],
+    "f0": 0,
+    "f1": 0.05,
+    "alt0": 0,
+    "alt1": 11000,
+    "spd0": 250,
+    "spd1": 900,
+    "temp0": 15,
+    "temp1": -56,
+    "dur": 8.86
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 8.86,
+   "end": 16.85,
+   "params": {
+    "dur": 7.99
+   }
+  },
+  {
+   "type": "density",
+   "start": 16.85,
+   "end": 24.84,
+   "params": {
+    "dur": 7.99
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 24.84,
+   "end": 29.49,
+   "params": {
+    "dur": 4.65
+   }
+  },
+  {
+   "type": "chips",
+   "start": 29.49,
+   "end": 33.27,
+   "params": {
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "window",
+   "start": 33.27,
+   "end": 40.39,
+   "params": {
+    "phase": "round",
+    "dur": 7.12
+   }
+  },
+  {
+   "type": "window",
+   "start": 40.39,
+   "end": 45.04,
+   "params": {
+    "phase": "square",
+    "dur": 4.65
+   }
+  },
+  {
+   "type": "flight",
+   "start": 45.04,
+   "end": 53.47,
+   "params": {
+    "cam0": [
+     -30,
+     50,
+     7.5
+    ],
+    "cam1": [
+     -66,
+     52,
+     7.5
+    ],
+    "f0": 0.16,
+    "f1": 0.5,
+    "straight": 0.6,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 8.43
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 53.47,
+   "end": 60.59,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 7.12
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 60.59,
+   "end": 70.62,
+   "params": {
+    "morph": 5.2,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 10.03
+   }
+  },
+  {
+   "type": "flight",
+   "start": 70.62,
+   "end": 74.4,
+   "params": {
+    "cam0": [
+     -92,
+     46,
+     9
+    ],
+    "cam1": [
+     -118,
+     34.5,
+     9
+    ],
+    "f0": 0.62,
+    "f1": 1.0,
+    "alt0": 11000,
+    "alt1": 0,
+    "spd0": 900,
+    "spd1": 250,
+    "temp0": -56,
+    "temp1": 20,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 74.4,
+   "end": 79.78,
+   "params": {
+    "dur": 5.38
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.65,
+   "text": "¿Por qué tu avión a *Los Ángeles* pasa por *Canadá*?"
+  },
+  {
+   "start": 4.65,
+   "end": 8.86,
+   "text": "Despegas en Madrid y subes a *11.000 metros*"
+  },
+  {
+   "start": 8.86,
+   "end": 11.33,
+   "text": "Ahí fuera hace *−56 °C*"
+  },
+  {
+   "start": 11.33,
+   "end": 16.85,
+   "text": "Cada kilómetro que subes, el aire se enfría unos *6,5 °C*"
+  },
+  {
+   "start": 16.85,
+   "end": 21.93,
+   "text": "Y el aire es tan fino que solo queda un *30 %*"
+  },
+  {
+   "start": 21.93,
+   "end": 24.84,
+   "text": "Menos resistencia: el avión *gasta menos*"
+  },
+  {
+   "start": 24.84,
+   "end": 29.49,
+   "text": "Dentro, la cabina va presurizada como a *2.400 metros*"
+  },
+  {
+   "start": 29.49,
+   "end": 33.27,
+   "text": "Por eso tu bolsa de patatas *se hincha*"
+  },
+  {
+   "start": 33.27,
+   "end": 36.18,
+   "text": "La ventanilla es *redonda* por algo:"
+  },
+  {
+   "start": 36.18,
+   "end": 40.39,
+   "text": "3 capas y un *agujerito* que iguala la presión"
+  },
+  {
+   "start": 40.39,
+   "end": 45.04,
+   "text": "En 1953 los Comet tenían ventanas *cuadradas*… y se agrietaron"
+  },
+  {
+   "start": 45.04,
+   "end": 50.12,
+   "text": "Ahora mira la ruta: no va recta, sube *hacia el norte*"
+  },
+  {
+   "start": 50.12,
+   "end": 53.47,
+   "text": "Pasa sobre *Canadá*… y parece un rodeo"
+  },
+  {
+   "start": 53.47,
+   "end": 58.11,
+   "text": "Pero en un globo, esa curva *es* la línea recta"
+  },
+  {
+   "start": 58.11,
+   "end": 60.59,
+   "text": "Te ahorras unos *790 km*"
+  },
+  {
+   "start": 60.59,
+   "end": 63.93,
+   "text": "El mapa plano engaña: deforma los polos"
+  },
+  {
+   "start": 63.93,
+   "end": 66.84,
+   "text": "Groenlandia parece tan grande como *África*…"
+  },
+  {
+   "start": 66.84,
+   "end": 70.62,
+   "text": "…y en realidad es *14 veces* más pequeña"
+  },
+  {
+   "start": 70.62,
+   "end": 74.4,
+   "text": "Tras *9.363 km*, aterrizas en Los Ángeles"
+  },
+  {
+   "start": 74.4,
+   "end": 77.3,
+   "text": "Mándaselo a quien siempre pide *ventanilla*"
+  },
+  {
+   "start": 77.3,
+   "end": 79.78,
+   "text": "Y si alguien te pregunta…"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 8.86,
+   "text": "Despegue"
+  },
+  {
+   "start": 8.86,
+   "end": 24.84,
+   "text": "Crucero"
+  },
+  {
+   "start": 24.84,
+   "end": 33.27,
+   "text": "La cabina"
+  },
+  {
+   "start": 33.27,
+   "end": 45.04,
+   "text": "La ventanilla"
+  },
+  {
+   "start": 45.04,
+   "end": 60.59,
+   "text": "La ruta"
+  },
+  {
+   "start": 60.59,
+   "end": 70.62,
+   "text": "El mapa engaña"
+  },
+  {
+   "start": 70.62,
+   "end": 74.4,
+   "text": "Aterrizaje"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué tu avión a Los Ángeles pasa por Canadá? ✈️",
+  "description": "Un vuelo Madrid → Los Ángeles por dentro: −56 °C fuera, la cabina a 2.400 m, ventanillas redondas por el Comet, y por qué la ruta curva por Canadá es la más corta (y por qué Groenlandia no es tan grande).\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ],
+ "calm": true,
+ "zoom_gap": 4.5
+}

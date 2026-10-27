@@ -1,0 +1,160 @@
+{
+ "id": "003-cielo-neon",
+ "theme": "neon",
+ "duration": 55.8,
+ "seed": 23,
+ "thumb_time": 6.5,
+ "watermark": "@nolosabias_datos",
+ "scenes": [
+  {
+   "type": "hook_sky",
+   "start": 0.0,
+   "end": 3.55
+  },
+  {
+   "type": "sun_scatter",
+   "start": 3.55,
+   "end": 16.2
+  },
+  {
+   "type": "scatter_bars",
+   "start": 16.2,
+   "end": 21.2,
+   "params": {
+    "blue": 5.98
+   }
+  },
+  {
+   "type": "sunset_path",
+   "start": 21.2,
+   "end": 29.5
+  },
+  {
+   "type": "spectrum_eye",
+   "start": 29.5,
+   "end": 38.6
+  },
+  {
+   "type": "cloud_white",
+   "start": 38.6,
+   "end": 45.3
+  },
+  {
+   "type": "mars_sky",
+   "start": 45.3,
+   "end": 52.3
+  },
+  {
+   "type": "outro_nls",
+   "start": 52.3,
+   "end": 55.8
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 3.55,
+   "text": "El cielo *no es azul*, solo lo parece"
+  },
+  {
+   "start": 3.55,
+   "end": 7.9,
+   "text": "La luz del Sol es blanca: lleva *todos los colores*"
+  },
+  {
+   "start": 7.9,
+   "end": 12.65,
+   "text": "Al chocar con el aire, el *azul* rebota hacia todos lados"
+  },
+  {
+   "start": 12.65,
+   "end": 16.2,
+   "text": "Por eso, mires donde mires, te llega *azul*"
+  },
+  {
+   "start": 16.2,
+   "end": 21.2,
+   "text": "El azul se dispersa casi *6 veces más* que el rojo"
+  },
+  {
+   "start": 21.2,
+   "end": 24.75,
+   "text": "Al atardecer, la luz cruza *mucho más aire*"
+  },
+  {
+   "start": 24.75,
+   "end": 29.5,
+   "text": "El azul se pierde por el camino y llega el *naranja*"
+  },
+  {
+   "start": 29.5,
+   "end": 33.85,
+   "text": "¿Y por qué no es *violeta*? Se dispersa aún más…"
+  },
+  {
+   "start": 33.85,
+   "end": 38.6,
+   "text": "…pero el Sol emite menos y tu ojo lo ve *peor*"
+  },
+  {
+   "start": 38.6,
+   "end": 41.75,
+   "text": "Las nubes son *blancas* por otra razón:"
+  },
+  {
+   "start": 41.75,
+   "end": 45.3,
+   "text": "sus gotas dispersan *todos los colores* por igual"
+  },
+  {
+   "start": 45.3,
+   "end": 48.8,
+   "text": "¿Y en Marte? *Justo al revés*"
+  },
+  {
+   "start": 48.8,
+   "end": 52.3,
+   "text": "Cielo rojizo de día y atardeceres *azules*"
+  },
+  {
+   "start": 52.3,
+   "end": 55.8,
+   "text": "Sígueme para más cosas que *no sabías*"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué el cielo es azul (y el atardecer naranja)? 🌅",
+  "description": "La luz del Sol contiene todos los colores. Al atravesar el aire, las moléculas dispersan mucho más la luz de longitud de onda corta (azul) que la larga (roja): es la dispersión de Rayleigh, proporcional a 1/λ⁴. Entre 450 nm (azul) y 700 nm (rojo) eso son casi 6 veces más.\n\nAl atardecer la luz recorre mucha más atmósfera hasta llegar a ti, el azul se dispersa por el camino y lo que llega son los tonos naranjas y rojos.\n\n¿Por qué no violeta? El violeta se dispersa aún más, pero el Sol emite menos luz violeta y nuestros ojos son menos sensibles a ella.\n\nLas nubes son blancas porque sus gotas, mucho más grandes que las moléculas del aire, dispersan todos los colores casi por igual.\n\nEn Marte, el polvo fino hace que el cielo diurno sea rojizo y los atardeceres azulados.\n\nAnimación y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #ciencia #fisica",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "cielo azul",
+   "atardecer",
+   "dispersión de Rayleigh",
+   "física",
+   "ciencia",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Inter",
+   "license": "licencia comercial",
+   "note": "SIL Open Font License"
+  }
+ ],
+ "sources": [
+  "Dispersión de Rayleigh: intensidad proporcional a 1/λ⁴; (700/450)^4 ≈ 5,98",
+  "Sensibilidad del ojo humano con máximo en ~555 nm",
+  "NASA: atardeceres azulados en Marte por el polvo en suspensión"
+ ],
+ "burn_captions": false
+}

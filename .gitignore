@@ -1,0 +1,8 @@
+output/
+**/__pycache__/
+content/cine/logs/
+content/cine/*.txt
+*.mp4
+*_x*.wav
+errores.log
+viga-i-prueba.mp4

@@ -1,0 +1,383 @@
+{
+ "id": "formato2-top5",
+ "notifs": [
+  {
+   "t": 32.63,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  },
+  {
+   "t": 71.85,
+   "title": "nolosabias_datos",
+   "body": "Sígueme: mañana, otro dato que no sabías"
+  }
+ ],
+ "style": "pop",
+ "caption_mode": "words",
+ "chunk_n": 2,
+ "bpm": 124,
+ "duration": 76.05,
+ "seed": 11,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "title",
+   "start": 0.0,
+   "end": 5.84,
+   "params": {
+    "lines": [
+     "5 cosas que",
+     "NO sabías",
+     "de los aviones"
+    ],
+    "hl": 1,
+    "dur": 5.84
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 5.84,
+   "end": 11.6,
+   "params": {
+    "n": 5,
+    "title": "Fuera hace −56 °C",
+    "dur": 5.76
+   }
+  },
+  {
+   "type": "density",
+   "start": 11.6,
+   "end": 16.42,
+   "params": {
+    "dur": 4.82
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 16.42,
+   "end": 19.62,
+   "params": {
+    "n": 4,
+    "title": "Ventanillas redondas",
+    "dur": 3.2
+   }
+  },
+  {
+   "type": "window",
+   "start": 19.62,
+   "end": 23.79,
+   "params": {
+    "phase": "square",
+    "dur": 4.17
+   }
+  },
+  {
+   "type": "window",
+   "start": 23.79,
+   "end": 28.61,
+   "params": {
+    "phase": "round",
+    "dur": 4.82
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 28.61,
+   "end": 32.13,
+   "params": {
+    "n": 3,
+    "title": "Vas a 2.400 m",
+    "dur": 3.53
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 32.13,
+   "end": 37.92,
+   "params": {
+    "dur": 5.78
+   }
+  },
+  {
+   "type": "chips",
+   "start": 37.92,
+   "end": 42.41,
+   "params": {
+    "dur": 4.49
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 42.41,
+   "end": 45.61,
+   "params": {
+    "n": 2,
+    "title": "No vuelan en línea recta",
+    "dur": 3.2
+   }
+  },
+  {
+   "type": "flight",
+   "start": 45.61,
+   "end": 49.14,
+   "params": {
+    "cam0": [
+     -55,
+     47,
+     6.4
+    ],
+    "cam1": [
+     -60,
+     47,
+     6.4
+    ],
+    "f0": 0.0,
+    "f1": 1.0,
+    "hud": false,
+    "straight": 0.8,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 3.53
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 49.14,
+   "end": 55.22,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 6.08
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 55.22,
+   "end": 60.66,
+   "params": {
+    "morph": 2.6,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 5.44
+   }
+  },
+  {
+   "type": "top_card",
+   "start": 60.66,
+   "end": 63.86,
+   "params": {
+    "n": 1,
+    "title": "El viento adelanta tu vuelo",
+    "dur": 3.2
+   }
+  },
+  {
+   "type": "record",
+   "start": 63.86,
+   "end": 73.82,
+   "params": {
+    "dur": 9.95
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 73.82,
+   "end": 76.05,
+   "params": {
+    "dur": 2.24
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 2.88,
+   "text": "5 cosas que *no sabías* de los aviones"
+  },
+  {
+   "start": 2.88,
+   "end": 5.44,
+   "text": "La número 1 te va a sorprender"
+  },
+  {
+   "start": 5.84,
+   "end": 8.07,
+   "text": "Número 5: fuera hace *−56 °C*"
+  },
+  {
+   "start": 8.07,
+   "end": 11.6,
+   "text": "Más frío que en la Antártida casi todo el año"
+  },
+  {
+   "start": 11.6,
+   "end": 16.42,
+   "text": "Y el aire tiene solo un *30 %* de densidad: por eso gastan menos combustible"
+  },
+  {
+   "start": 16.42,
+   "end": 19.62,
+   "text": "Número 4: las ventanillas son *redondas* por un accidente"
+  },
+  {
+   "start": 19.62,
+   "end": 23.79,
+   "text": "Los Comet de los años 50 tenían ventanas cuadradas y se *agrietaron*"
+  },
+  {
+   "start": 23.79,
+   "end": 28.61,
+   "text": "Desde entonces son redondas, con 3 capas y un *agujerito* que iguala la presión"
+  },
+  {
+   "start": 28.61,
+   "end": 32.13,
+   "text": "Número 3: dentro del avión estás *a 2.400 metros*"
+  },
+  {
+   "start": 32.13,
+   "end": 37.92,
+   "text": "La cabina se presuriza, pero no como en el suelo: como mucho, como a *2.400 m*"
+  },
+  {
+   "start": 37.92,
+   "end": 42.41,
+   "text": "Por eso las bolsas de patatas *se hinchan*… y el vino sabe distinto"
+  },
+  {
+   "start": 42.41,
+   "end": 45.61,
+   "text": "Número 2: los aviones *no vuelan en línea recta*"
+  },
+  {
+   "start": 45.61,
+   "end": 49.14,
+   "text": "De Madrid a Los Ángeles, el avión sube hasta *Canadá*"
+  },
+  {
+   "start": 49.14,
+   "end": 52.66,
+   "text": "En un globo, esa curva es el camino *más corto*"
+  },
+  {
+   "start": 52.66,
+   "end": 55.22,
+   "text": "Unos *790 km* menos que ir \"recto\""
+  },
+  {
+   "start": 55.22,
+   "end": 57.78,
+   "text": "El mapa engaña: Groenlandia parece como *África*…"
+  },
+  {
+   "start": 57.78,
+   "end": 60.66,
+   "text": "…y en realidad es *14 veces* más pequeña"
+  },
+  {
+   "start": 60.66,
+   "end": 63.86,
+   "text": "Y número 1: el viento puede *adelantar tu vuelo*"
+  },
+  {
+   "start": 63.86,
+   "end": 69.0,
+   "text": "En 2020, un 747 voló de Nueva York a Londres en *4 h 56 min*"
+  },
+  {
+   "start": 69.0,
+   "end": 73.82,
+   "text": "La corriente en chorro lo empujaba: casi *1.300 km/h* respecto al suelo"
+  },
+  {
+   "start": 73.82,
+   "end": 76.05,
+   "text": "¿Cuál no sabías? Sígueme para *más*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 5.84,
+   "end": 16.42,
+   "text": "#5 · −56 °C"
+  },
+  {
+   "start": 16.42,
+   "end": 28.61,
+   "text": "#4 · Ventanillas"
+  },
+  {
+   "start": 28.61,
+   "end": 42.41,
+   "text": "#3 · La cabina"
+  },
+  {
+   "start": 42.41,
+   "end": 60.66,
+   "text": "#2 · La ruta"
+  },
+  {
+   "start": 60.66,
+   "end": 73.82,
+   "text": "#1 · El viento"
+  }
+ ],
+ "metadata": {
+  "title": "5 cosas que NO sabías de los aviones ✈️",
+  "description": "Top 5: el frío de −56 °C a 11.000 m, por qué las ventanillas son redondas, la cabina a 2.400 m, la ruta curva que es la más corta y el récord de 4 h 56 min de Nueva York a Londres.\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

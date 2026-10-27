@@ -1,0 +1,374 @@
+{
+ "id": "02_Cinematografico_Documental",
+ "notifs": [
+  {
+   "t": 42.63,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "doc",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 81.79,
+ "seed": 871,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "flight",
+   "start": 0.0,
+   "end": 7.56,
+   "params": {
+    "cam0": [
+     -3.7,
+     40.4,
+     16
+    ],
+    "cam1": [
+     -11,
+     45,
+     16
+    ],
+    "f0": 0,
+    "f1": 0.05,
+    "alt0": 0,
+    "alt1": 11000,
+    "spd0": 250,
+    "spd1": 900,
+    "temp0": 15,
+    "temp1": -56,
+    "dur": 7.56
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 7.56,
+   "end": 16.85,
+   "params": {
+    "dur": 9.3
+   }
+  },
+  {
+   "type": "density",
+   "start": 16.85,
+   "end": 23.67,
+   "params": {
+    "dur": 6.82
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 23.67,
+   "end": 31.23,
+   "params": {
+    "dur": 7.56
+   }
+  },
+  {
+   "type": "window",
+   "start": 31.23,
+   "end": 42.13,
+   "params": {
+    "phase": "square",
+    "dur": 10.9
+   }
+  },
+  {
+   "type": "window",
+   "start": 42.13,
+   "end": 47.65,
+   "params": {
+    "phase": "round",
+    "dur": 5.52
+   }
+  },
+  {
+   "type": "flight",
+   "start": 47.65,
+   "end": 52.73,
+   "params": {
+    "cam0": [
+     -30,
+     50,
+     7.5
+    ],
+    "cam1": [
+     -66,
+     52,
+     7.5
+    ],
+    "f0": 0.16,
+    "f1": 0.5,
+    "straight": 0.6,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 5.08
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 52.73,
+   "end": 60.29,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 7.56
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 60.29,
+   "end": 72.93,
+   "params": {
+    "morph": 5.6,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 12.64
+   }
+  },
+  {
+   "type": "flight",
+   "start": 72.93,
+   "end": 77.57,
+   "params": {
+    "cam0": [
+     -92,
+     46,
+     9
+    ],
+    "cam1": [
+     -118,
+     34.5,
+     9
+    ],
+    "f0": 0.62,
+    "f1": 1.0,
+    "alt0": 11000,
+    "alt1": 0,
+    "spd0": 900,
+    "spd1": 250,
+    "temp0": -56,
+    "temp1": 20,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 4.65
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 77.57,
+   "end": 81.79,
+   "params": {
+    "dur": 4.21
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 3.78,
+   "text": "Madrid. Un avión despega rumbo a *Los Ángeles*."
+  },
+  {
+   "start": 3.78,
+   "end": 7.56,
+   "text": "En pocos minutos alcanza los *11.000 metros*."
+  },
+  {
+   "start": 7.56,
+   "end": 11.77,
+   "text": "Allí arriba, la temperatura cae hasta los *−56 °C*."
+  },
+  {
+   "start": 11.77,
+   "end": 16.85,
+   "text": "Cada kilómetro de altura, el aire pierde unos *6,5 grados*."
+  },
+  {
+   "start": 16.85,
+   "end": 23.67,
+   "text": "Y se vuelve tan fino que queda menos de *un tercio* del aire del suelo."
+  },
+  {
+   "start": 23.67,
+   "end": 26.15,
+   "text": "Dentro, la cabina se presuriza."
+  },
+  {
+   "start": 26.15,
+   "end": 31.23,
+   "text": "Pero no como en tierra: como a unos *2.400 metros*."
+  },
+  {
+   "start": 31.23,
+   "end": 33.7,
+   "text": "Las ventanillas guardan una lección."
+  },
+  {
+   "start": 33.7,
+   "end": 38.35,
+   "text": "En 1954, dos aviones Comet se partieron en pleno vuelo."
+  },
+  {
+   "start": 38.35,
+   "end": 42.13,
+   "text": "La fatiga del metal empezó en las *esquinas*."
+  },
+  {
+   "start": 42.13,
+   "end": 47.65,
+   "text": "Desde entonces, no tienen esquinas: tienen *tres capas* y un pequeño orificio."
+  },
+  {
+   "start": 47.65,
+   "end": 52.73,
+   "text": "Sobre el mapa, la ruta parece un capricho: sube hacia *Canadá*."
+  },
+  {
+   "start": 52.73,
+   "end": 58.25,
+   "text": "Pero sobre la esfera de la Tierra es el camino *más corto*."
+  },
+  {
+   "start": 58.25,
+   "end": 60.29,
+   "text": "Unos 790 kilómetros menos."
+  },
+  {
+   "start": 60.29,
+   "end": 66.67,
+   "text": "El engaño está en el mapa: para aplanar el planeta, se estiran los polos."
+  },
+  {
+   "start": 66.67,
+   "end": 69.58,
+   "text": "Groenlandia parece del tamaño de África."
+  },
+  {
+   "start": 69.58,
+   "end": 72.93,
+   "text": "En realidad, África es *catorce veces* mayor."
+  },
+  {
+   "start": 72.93,
+   "end": 77.57,
+   "text": "Tras 9.363 kilómetros, el avión desciende sobre *Los Ángeles*."
+  },
+  {
+   "start": 77.57,
+   "end": 81.79,
+   "text": "Si aún no lo sabías… *ahora ya lo sabes*."
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 23.67,
+   "text": "El ascenso"
+  },
+  {
+   "start": 23.67,
+   "end": 31.23,
+   "text": "La cabina"
+  },
+  {
+   "start": 31.23,
+   "end": 47.65,
+   "text": "La ventanilla"
+  },
+  {
+   "start": 47.65,
+   "end": 60.29,
+   "text": "La ruta"
+  },
+  {
+   "start": 60.29,
+   "end": 72.93,
+   "text": "El mapa"
+  },
+  {
+   "start": 72.93,
+   "end": 77.57,
+   "text": "La llegada"
+  }
+ ],
+ "metadata": {
+  "title": "Madrid → Los Ángeles: lo que no ves de tu vuelo",
+  "description": "Un vuelo Madrid → Los Ángeles contado como un documental: el frío, el aire fino, la cabina, las ventanillas del Comet, la ruta curva y el engaño del mapa.\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

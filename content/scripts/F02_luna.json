@@ -1,0 +1,660 @@
+{
+ "id": "F02_luna",
+ "style": "fun",
+ "music": "creative",
+ "duration": 90.57,
+ "seed": 695,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 8.45,
+   "params": {
+    "bg": "navy",
+    "items": [
+     {
+      "icon": "moon",
+      "x": 540,
+      "y": 680,
+      "s": 560,
+      "opt": {
+       "face": true
+      },
+      "at": 0.0
+     },
+     {
+      "mascot": "wow",
+      "x": 220,
+      "y": 1180,
+      "s": 220,
+      "at": 4.4
+     },
+     {
+      "text": "1959",
+      "x": 830,
+      "y": 1180,
+      "size": 80,
+      "at": 5.5
+     }
+    ],
+    "dur": 8.45
+   }
+  },
+  {
+   "type": "beat",
+   "start": 8.45,
+   "end": 21.07,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "No gira",
+       "Gira al ritmo de su vuelta",
+       "La otra cara está a oscuras"
+      ],
+      "correct": 1,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 9.27
+     }
+    ],
+    "dur": 12.62
+   }
+  },
+  {
+   "type": "beat",
+   "start": 21.07,
+   "end": 31.18,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "orbit",
+      "x": 540,
+      "y": 760,
+      "s": 900,
+      "opt": {
+       "speed": 0.9
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "curve_arrow",
+      "x": 850,
+      "y": 1180,
+      "s": 200,
+      "opt": {},
+      "at": 6.07
+     }
+    ],
+    "dur": 10.12
+   }
+  },
+  {
+   "type": "beat",
+   "start": 31.18,
+   "end": 39.63,
+   "params": {
+    "bg": "mint",
+    "items": [
+     {
+      "icon": "earth",
+      "x": 330,
+      "y": 760,
+      "s": 360,
+      "opt": {
+       "face": true
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "moon",
+      "x": 790,
+      "y": 760,
+      "s": 280,
+      "opt": {
+       "face": true
+      },
+      "at": 0.3
+     },
+     {
+      "mascot": "happy",
+      "x": 540,
+      "y": 1180,
+      "s": 220,
+      "at": 3.98
+     }
+    ],
+    "dur": 8.45
+   }
+  },
+  {
+   "type": "beat",
+   "start": 39.63,
+   "end": 48.08,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "text": "Acoplamiento de marea",
+      "x": 540,
+      "y": 470,
+      "size": 60,
+      "at": 0.0
+     },
+     {
+      "icon": "earth",
+      "x": 320,
+      "y": 820,
+      "s": 340,
+      "opt": {},
+      "at": 3.27
+     },
+     {
+      "icon": "moon",
+      "x": 790,
+      "y": 820,
+      "s": 260,
+      "opt": {},
+      "at": 3.67
+     },
+     {
+      "icon": "curve_arrow",
+      "x": 790,
+      "y": 820,
+      "s": 360,
+      "opt": {},
+      "at": 4.27
+     }
+    ],
+    "dur": 8.45
+   }
+  },
+  {
+   "type": "beat",
+   "start": 48.08,
+   "end": 57.78,
+   "params": {
+    "bg": "navy",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 3.68,
+      "at": 0.0
+     },
+     {
+      "icon": "satellite",
+      "x": 760,
+      "y": 600,
+      "s": 360,
+      "tw": {
+       "x": [
+        3.88,
+        6.88,
+        900,
+        640
+       ]
+      },
+      "opt": {},
+      "at": 3.88
+     },
+     {
+      "icon": "moon",
+      "x": 330,
+      "y": 960,
+      "s": 380,
+      "opt": {
+       "side": "far"
+      },
+      "at": 4.48
+     },
+     {
+      "icon": "camera",
+      "x": 760,
+      "y": 1120,
+      "s": 220,
+      "opt": {
+       "flash": true
+      },
+      "at": 5.88
+     }
+    ],
+    "dur": 9.7
+   }
+  },
+  {
+   "type": "beat",
+   "start": 57.78,
+   "end": 65.4,
+   "params": {
+    "bg": "lilac",
+    "items": [
+     {
+      "icon": "moon",
+      "x": 540,
+      "y": 820,
+      "s": 600,
+      "opt": {
+       "side": "far"
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "flag",
+      "x": 640,
+      "y": 560,
+      "s": 240,
+      "opt": {},
+      "at": 1.2
+     },
+     {
+      "text": "Chang'e 4",
+      "x": 540,
+      "y": 1230,
+      "size": 64,
+      "at": 4.72
+     }
+    ],
+    "dur": 7.62
+   }
+  },
+  {
+   "type": "beat",
+   "start": 65.4,
+   "end": 82.12,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "No gira",
+       "Gira al ritmo de su vuelta",
+       "La otra cara está a oscuras"
+      ],
+      "correct": 1,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "stamp": "MITO",
+      "x": 820,
+      "y": 880,
+      "size": 70,
+      "col": [
+       230,
+       50,
+       60
+      ],
+      "float": false,
+      "at": 5.75
+     },
+     {
+      "icon": "sun",
+      "x": 300,
+      "y": 1150,
+      "s": 240,
+      "opt": {},
+      "at": 6.35
+     },
+     {
+      "mascot": "wink",
+      "x": 760,
+      "y": 1170,
+      "s": 220,
+      "at": 12.67
+     }
+    ],
+    "dur": 16.72,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 82.12,
+   "end": 90.57,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "moon",
+      "x": 540,
+      "y": 700,
+      "s": 560,
+      "opt": {
+       "face": true
+      },
+      "at": 0.0
+     },
+     {
+      "mascot": "wink",
+      "x": 220,
+      "y": 1180,
+      "s": 200,
+      "at": 4.92
+     }
+    ],
+    "dur": 8.45
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.1,
+   "text": "Nunca has visto la otra cara de la *Luna*"
+  },
+  {
+   "start": 4.1,
+   "end": 8.2,
+   "text": "Ni tú, ni tus padres, ni nadie… *hasta 1959*"
+  },
+  {
+   "start": 8.45,
+   "end": 16.72,
+   "text": "¿Por qué? ¿Porque la Luna no gira, porque gira al mismo ritmo que da la vuelta a la Tierra…"
+  },
+  {
+   "start": 16.72,
+   "end": 20.82,
+   "text": "…o porque la otra cara está siempre *a oscuras*?"
+  },
+  {
+   "start": 21.07,
+   "end": 26.83,
+   "text": "La Luna tarda casi *un mes* en dar la vuelta a la Tierra"
+  },
+  {
+   "start": 26.83,
+   "end": 30.93,
+   "text": "Y tarda *lo mismo* en girar sobre sí misma"
+  },
+  {
+   "start": 31.18,
+   "end": 34.87,
+   "text": "Por eso siempre nos enseña *la misma cara*"
+  },
+  {
+   "start": 34.87,
+   "end": 39.38,
+   "text": "Es como bailar sin dejar de mirar a tu pareja"
+  },
+  {
+   "start": 39.63,
+   "end": 42.9,
+   "text": "Los científicos lo llaman *acoplamiento de marea*"
+  },
+  {
+   "start": 42.9,
+   "end": 47.83,
+   "text": "La gravedad de la Tierra fue frenando su giro hasta *sincronizarlo*"
+  },
+  {
+   "start": 48.08,
+   "end": 51.77,
+   "text": "Pero espera, que lo más curioso viene ahora"
+  },
+  {
+   "start": 51.77,
+   "end": 57.53,
+   "text": "En 1959, la sonda soviética *Luna 3* fotografió por fin la otra cara"
+  },
+  {
+   "start": 57.78,
+   "end": 62.3,
+   "text": "Y en 2019, China fue la primera en *aterrizar* allí"
+  },
+  {
+   "start": 62.3,
+   "end": 65.15,
+   "text": "Con la misión *Chang'e 4*"
+  },
+  {
+   "start": 65.4,
+   "end": 70.75,
+   "text": "¿La respuesta? La B: gira al mismo ritmo que da la vuelta"
+  },
+  {
+   "start": 70.75,
+   "end": 77.77,
+   "text": "Y la C es un mito: la otra cara recibe *tanta luz del Sol* como esta"
+  },
+  {
+   "start": 77.77,
+   "end": 81.87,
+   "text": "No es la cara oscura… es la cara *oculta*"
+  },
+  {
+   "start": 82.12,
+   "end": 86.63,
+   "text": "Así que la próxima vez que mires a la Luna…"
+  },
+  {
+   "start": 86.63,
+   "end": 90.32,
+   "text": "…recuerda que *siempre te enseña la misma cara*"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   4.4,
+   "pop_low"
+  ],
+  [
+   5.5,
+   "pop_low"
+  ],
+  [
+   8.45,
+   "pop"
+  ],
+  [
+   8.45,
+   "whoosh_down"
+  ],
+  [
+   8.63,
+   "pop"
+  ],
+  [
+   8.81,
+   "pop"
+  ],
+  [
+   17.72,
+   "pop_low"
+  ],
+  [
+   21.07,
+   "pop_low"
+  ],
+  [
+   21.07,
+   "whoosh_down"
+  ],
+  [
+   27.14,
+   "pop"
+  ],
+  [
+   31.18,
+   "pop"
+  ],
+  [
+   31.18,
+   "whoosh_down"
+  ],
+  [
+   31.48,
+   "pop_low"
+  ],
+  [
+   35.16,
+   "pop_low"
+  ],
+  [
+   39.63,
+   "pop"
+  ],
+  [
+   39.63,
+   "whoosh_down"
+  ],
+  [
+   42.9,
+   "pop_low"
+  ],
+  [
+   43.3,
+   "pop"
+  ],
+  [
+   43.9,
+   "pop_low"
+  ],
+  [
+   48.08,
+   "pop_low"
+  ],
+  [
+   48.08,
+   "whoosh_down"
+  ],
+  [
+   51.96,
+   "pop"
+  ],
+  [
+   52.56,
+   "pop_low"
+  ],
+  [
+   53.96,
+   "pop"
+  ],
+  [
+   57.78,
+   "pop"
+  ],
+  [
+   57.78,
+   "whoosh_down"
+  ],
+  [
+   58.98,
+   "pop_low"
+  ],
+  [
+   62.5,
+   "pop"
+  ],
+  [
+   65.4,
+   "pop"
+  ],
+  [
+   65.4,
+   "whoosh_down"
+  ],
+  [
+   65.58,
+   "pop"
+  ],
+  [
+   65.7,
+   "ding"
+  ],
+  [
+   65.76,
+   "pop"
+  ],
+  [
+   65.8,
+   "whoosh"
+  ],
+  [
+   71.15,
+   "impact"
+  ],
+  [
+   71.75,
+   "pop_low"
+  ],
+  [
+   78.07,
+   "pop_low"
+  ],
+  [
+   82.12,
+   "pop_low"
+  ],
+  [
+   82.12,
+   "whoosh_down"
+  ],
+  [
+   87.04,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿Por qué siempre vemos la misma cara?",
+  "from": 21.07,
+  "reveal": 65.7
+ },
+ "notifs": [
+  {
+   "t": 40.23,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "Nunca has visto la otra cara de la Luna 🌕",
+  "description": "La Luna gira justo al ritmo de su vuelta a la Tierra. Por eso nadie vio su otra cara hasta 1959.",
+  "tags": [
+   "curiosidades",
+   "espacio",
+   "luna",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

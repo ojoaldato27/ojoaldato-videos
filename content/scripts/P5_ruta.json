@@ -1,0 +1,246 @@
+{
+ "id": "P5_ruta",
+ "notifs": [
+  {
+   "t": 14.74,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "premium",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 37.48,
+ "seed": 672,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "flight",
+   "start": 0.0,
+   "end": 7.12,
+   "params": {
+    "cam0": [
+     -30,
+     50,
+     7.5
+    ],
+    "cam1": [
+     -66,
+     52,
+     7.5
+    ],
+    "f0": 0.16,
+    "f1": 0.5,
+    "straight": 0.6,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 7.12
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 7.12,
+   "end": 14.24,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 7.12
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 14.24,
+   "end": 22.67,
+   "params": {
+    "morph": 4.4,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 8.43
+   }
+  },
+  {
+   "type": "flight",
+   "start": 22.67,
+   "end": 31.1,
+   "params": {
+    "cam0": [
+     -92,
+     46,
+     9
+    ],
+    "cam1": [
+     -118,
+     34.5,
+     9
+    ],
+    "f0": 0.62,
+    "f1": 1.0,
+    "alt0": 11000,
+    "alt1": 0,
+    "spd0": 900,
+    "spd1": 250,
+    "temp0": -56,
+    "temp1": 20,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 8.43
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 31.1,
+   "end": 37.48,
+   "params": {
+    "dur": 6.39
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 3.34,
+   "text": "¿Por qué tu avión *no vuela recto*?"
+  },
+  {
+   "start": 3.34,
+   "end": 7.12,
+   "text": "De Madrid a Los Ángeles sube hacia *Canadá*"
+  },
+  {
+   "start": 7.12,
+   "end": 10.03,
+   "text": "Porque la Tierra no es plana"
+  },
+  {
+   "start": 10.03,
+   "end": 14.24,
+   "text": "En una esfera, esa curva *es* la línea recta"
+  },
+  {
+   "start": 14.24,
+   "end": 17.15,
+   "text": "El mapa plano deforma los polos"
+  },
+  {
+   "start": 17.15,
+   "end": 22.67,
+   "text": "Por eso Groenlandia parece *gigante*… y es 14 veces menor que África"
+  },
+  {
+   "start": 22.67,
+   "end": 27.75,
+   "text": "Resultado: *9.363 km* en vez de más de 10.100"
+  },
+  {
+   "start": 27.75,
+   "end": 31.1,
+   "text": "Te ahorras unos *790 km* de vuelo"
+  },
+  {
+   "start": 31.1,
+   "end": 37.48,
+   "text": "Y la próxima vez que mires el mapa del avión… ya sabes *por qué*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 7.12,
+   "text": "La ruta"
+  },
+  {
+   "start": 7.12,
+   "end": 14.24,
+   "text": "La esfera"
+  },
+  {
+   "start": 14.24,
+   "end": 22.67,
+   "text": "El mapa"
+  },
+  {
+   "start": 22.67,
+   "end": 31.1,
+   "text": "La llegada"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué tu avión no vuela en línea recta? ✈️",
+  "description": "¿Por qué tu avión no vuela en línea recta? ✈️\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

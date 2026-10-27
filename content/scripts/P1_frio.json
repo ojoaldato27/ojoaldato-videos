@@ -1,0 +1,201 @@
+{
+ "id": "P1_frio",
+ "notifs": [
+  {
+   "t": 19.39,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "premium",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 43.3,
+ "seed": 656,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "flight",
+   "start": 0.0,
+   "end": 8.86,
+   "params": {
+    "cam0": [
+     -3.7,
+     40.4,
+     16
+    ],
+    "cam1": [
+     -11,
+     45,
+     16
+    ],
+    "f0": 0,
+    "f1": 0.05,
+    "alt0": 0,
+    "alt1": 11000,
+    "spd0": 250,
+    "spd1": 900,
+    "temp0": 15,
+    "temp1": -56,
+    "dur": 8.86
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 8.86,
+   "end": 18.89,
+   "params": {
+    "dur": 10.03
+   }
+  },
+  {
+   "type": "density",
+   "start": 18.89,
+   "end": 27.75,
+   "params": {
+    "dur": 8.86
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 27.75,
+   "end": 35.31,
+   "params": {
+    "dur": 7.56
+   }
+  },
+  {
+   "type": "chips",
+   "start": 35.31,
+   "end": 39.09,
+   "params": {
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 39.09,
+   "end": 43.3,
+   "params": {
+    "dur": 4.21
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.21,
+   "text": "¿Sabías que tu ventanilla te separa de *−56 °C*?"
+  },
+  {
+   "start": 4.21,
+   "end": 8.86,
+   "text": "Despegas, y en pocos minutos estás a *11.000 metros*"
+  },
+  {
+   "start": 8.86,
+   "end": 11.77,
+   "text": "Cuanto más subes, más frío hace"
+  },
+  {
+   "start": 11.77,
+   "end": 15.98,
+   "text": "Cada kilómetro, el aire pierde unos *6,5 °C*"
+  },
+  {
+   "start": 15.98,
+   "end": 18.89,
+   "text": "A 11.000 metros: *−56 °C*"
+  },
+  {
+   "start": 18.89,
+   "end": 23.54,
+   "text": "Y el aire se vuelve finísimo: queda solo un *30 %*"
+  },
+  {
+   "start": 23.54,
+   "end": 27.75,
+   "text": "Por eso los aviones vuelan tan alto: *menos resistencia*"
+  },
+  {
+   "start": 27.75,
+   "end": 31.97,
+   "text": "Pero tú no lo notas: la cabina va *presurizada*"
+  },
+  {
+   "start": 31.97,
+   "end": 35.31,
+   "text": "Como si estuvieras a *2.400 metros*"
+  },
+  {
+   "start": 35.31,
+   "end": 39.09,
+   "text": "La prueba: tu bolsa de patatas *se hincha*"
+  },
+  {
+   "start": 39.09,
+   "end": 43.3,
+   "text": "Mándaselo a quien siempre tiene *frío en el avión*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 8.86,
+   "text": "Despegue"
+  },
+  {
+   "start": 8.86,
+   "end": 18.89,
+   "text": "El frío"
+  },
+  {
+   "start": 18.89,
+   "end": 27.75,
+   "text": "El aire"
+  },
+  {
+   "start": 27.75,
+   "end": 39.09,
+   "text": "La cabina"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué ahí fuera hace −56 °C? ✈️",
+  "description": "¿Por qué ahí fuera hace −56 °C? ✈️\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

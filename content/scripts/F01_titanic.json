@@ -1,0 +1,694 @@
+{
+ "id": "F01_titanic",
+ "style": "fun",
+ "music": "creative",
+ "duration": 84.73,
+ "seed": 13,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 6.37,
+   "params": {
+    "bg": "navy",
+    "items": [
+     {
+      "icon": "ship",
+      "x": 540,
+      "y": 760,
+      "s": 620,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "key",
+      "x": 820,
+      "y": 430,
+      "s": 240,
+      "opt": {},
+      "at": 1.2
+     },
+     {
+      "mascot": "wow",
+      "x": 220,
+      "y": 1180,
+      "s": 230,
+      "at": 3.88
+     }
+    ],
+    "dur": 6.37
+   }
+  },
+  {
+   "type": "beat",
+   "start": 6.37,
+   "end": 16.48,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "La puerta del motor",
+       "Los prismáticos",
+       "La sala de la radio"
+      ],
+      "correct": 1,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 6.6
+     }
+    ],
+    "dur": 10.12
+   }
+  },
+  {
+   "type": "beat",
+   "start": 16.48,
+   "end": 25.77,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "ship",
+      "x": 540,
+      "y": 760,
+      "s": 720,
+      "tw": {
+       "x": [
+        0.0,
+        1.4,
+        -380,
+        540
+       ]
+      },
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "text": "1912",
+      "x": 540,
+      "y": 430,
+      "size": 90,
+      "at": 0.8
+     },
+     {
+      "stamp": "¿INSUMERGIBLE?",
+      "x": 540,
+      "y": 1120,
+      "size": 80,
+      "col": [
+       230,
+       50,
+       60
+      ],
+      "float": false,
+      "at": 6.12
+     }
+    ],
+    "dur": 9.28
+   }
+  },
+  {
+   "type": "beat",
+   "start": 25.77,
+   "end": 32.97,
+   "params": {
+    "bg": "mint",
+    "items": [
+     {
+      "icon": "mast",
+      "x": 360,
+      "y": 760,
+      "s": 620,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "binoculars",
+      "x": 780,
+      "y": 640,
+      "s": 300,
+      "opt": {},
+      "at": 3.98
+     },
+     {
+      "icon": "cross",
+      "x": 780,
+      "y": 640,
+      "s": 280,
+      "float": false,
+      "opt": {},
+      "at": 5.08
+     }
+    ],
+    "dur": 7.2
+   }
+  },
+  {
+   "type": "beat",
+   "start": 32.97,
+   "end": 47.6,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "icon": "binoculars",
+      "x": 540,
+      "y": 520,
+      "s": 280,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "person",
+      "x": 300,
+      "y": 930,
+      "s": 340,
+      "opt": {},
+      "at": 2.85
+     },
+     {
+      "icon": "key",
+      "x": 760,
+      "y": 930,
+      "s": 260,
+      "tw": {
+       "x": [
+        5.85,
+        7.05,
+        760,
+        330
+       ],
+       "s": [
+        5.85,
+        7.05,
+        260,
+        110
+       ]
+      },
+      "opt": {},
+      "at": 3.25
+     },
+     {
+      "text": "David Blair",
+      "x": 300,
+      "y": 1200,
+      "size": 52,
+      "at": 3.65
+     },
+     {
+      "mascot": "no",
+      "x": 830,
+      "y": 1180,
+      "s": 200,
+      "at": 9.15
+     }
+    ],
+    "dur": 14.63
+   }
+  },
+  {
+   "type": "beat",
+   "start": 47.6,
+   "end": 56.47,
+   "params": {
+    "bg": "navy",
+    "items": [
+     {
+      "icon": "iceberg",
+      "x": 760,
+      "y": 760,
+      "s": 440,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "ship",
+      "x": 300,
+      "y": 840,
+      "s": 440,
+      "tw": {
+       "x": [
+        0.0,
+        4.5,
+        160,
+        420
+       ]
+      },
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "clock",
+      "x": 820,
+      "y": 420,
+      "s": 200,
+      "opt": {
+       "speed": 6
+      },
+      "at": 5.77
+     },
+     {
+      "text": "Solo 1 minuto",
+      "x": 540,
+      "y": 1180,
+      "size": 66,
+      "at": 6.17
+     }
+    ],
+    "dur": 8.87
+   }
+  },
+  {
+   "type": "beat",
+   "start": 56.47,
+   "end": 67.42,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 3.68,
+      "at": 0.0
+     },
+     {
+      "icon": "mast",
+      "x": 330,
+      "y": 820,
+      "s": 520,
+      "opt": {},
+      "at": 3.98
+     },
+     {
+      "icon": "binoculars",
+      "x": 780,
+      "y": 760,
+      "s": 300,
+      "opt": {},
+      "at": 4.88
+     },
+     {
+      "icon": "check",
+      "x": 780,
+      "y": 1080,
+      "s": 160,
+      "float": false,
+      "opt": {},
+      "at": 6.08
+     }
+    ],
+    "dur": 10.95
+   }
+  },
+  {
+   "type": "beat",
+   "start": 67.42,
+   "end": 76.7,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "La puerta del motor",
+       "Los prismáticos",
+       "La sala de la radio"
+      ],
+      "correct": 1,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1130,
+      "s": 240,
+      "at": 4.52
+     }
+    ],
+    "dur": 9.28,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 76.7,
+   "end": 84.73,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "key",
+      "x": 540,
+      "y": 560,
+      "s": 380,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "money",
+      "x": 540,
+      "y": 960,
+      "s": 320,
+      "opt": {},
+      "at": 1.0
+     },
+     {
+      "mascot": "happy",
+      "x": 540,
+      "y": 1220,
+      "s": 200,
+      "at": 5.12
+     }
+    ],
+    "dur": 8.03
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 3.68,
+   "text": "Una simple *llave* pudo haber salvado el Titanic"
+  },
+  {
+   "start": 3.68,
+   "end": 6.12,
+   "text": "¿Tú qué crees que abría?"
+  },
+  {
+   "start": 6.37,
+   "end": 12.97,
+   "text": "¿La puerta del motor, la caja de los prismáticos… o la sala de la radio?"
+  },
+  {
+   "start": 12.97,
+   "end": 16.23,
+   "text": "Quédate, que al final te lo cuento"
+  },
+  {
+   "start": 16.48,
+   "end": 21.0,
+   "text": "Abril de 1912: el Titanic zarpa en su primer viaje"
+  },
+  {
+   "start": 21.0,
+   "end": 25.52,
+   "text": "El barco más grande de su época… e *insumergible*, decían"
+  },
+  {
+   "start": 25.77,
+   "end": 29.45,
+   "text": "Arriba, en el mástil, dos vigías buscaban icebergs"
+  },
+  {
+   "start": 29.45,
+   "end": 32.72,
+   "text": "Pero tenían un problema: *no tenían prismáticos*"
+  },
+  {
+   "start": 32.97,
+   "end": 35.82,
+   "text": "Los prismáticos estaban guardados bajo llave"
+  },
+  {
+   "start": 35.82,
+   "end": 39.92,
+   "text": "Y esa llave la tenía el oficial *David Blair*"
+  },
+  {
+   "start": 39.92,
+   "end": 47.35,
+   "text": "Pero lo cambiaron a última hora… y se bajó del barco *con la llave en el bolsillo*"
+  },
+  {
+   "start": 47.6,
+   "end": 53.37,
+   "text": "El 14 de abril, de noche, los vigías vieron el iceberg *demasiado tarde*"
+  },
+  {
+   "start": 53.37,
+   "end": 56.22,
+   "text": "Apenas *un minuto* antes del choque"
+  },
+  {
+   "start": 56.47,
+   "end": 60.15,
+   "text": "Pero espera, que lo más curioso viene ahora"
+  },
+  {
+   "start": 60.15,
+   "end": 67.17,
+   "text": "Tras el hundimiento, uno de los vigías dijo que con prismáticos *lo habrían visto a tiempo*"
+  },
+  {
+   "start": 67.42,
+   "end": 71.93,
+   "text": "¿La respuesta? La llave abría *la caja de los prismáticos*"
+  },
+  {
+   "start": 71.93,
+   "end": 76.45,
+   "text": "Aunque hoy los expertos todavía discuten si habría cambiado algo"
+  },
+  {
+   "start": 76.7,
+   "end": 81.22,
+   "text": "En 2007, esa llave se subastó por *90.000 libras*"
+  },
+  {
+   "start": 81.22,
+   "end": 84.48,
+   "text": "Una llave pequeñita… con una historia *gigante*"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   1.2,
+   "pop"
+  ],
+  [
+   3.88,
+   "pop_low"
+  ],
+  [
+   6.37,
+   "pop"
+  ],
+  [
+   6.37,
+   "whoosh_down"
+  ],
+  [
+   6.55,
+   "pop"
+  ],
+  [
+   6.73,
+   "pop"
+  ],
+  [
+   12.97,
+   "pop_low"
+  ],
+  [
+   16.48,
+   "pop_low"
+  ],
+  [
+   16.48,
+   "whoosh_down"
+  ],
+  [
+   17.28,
+   "pop"
+  ],
+  [
+   22.6,
+   "impact"
+  ],
+  [
+   25.77,
+   "pop_low"
+  ],
+  [
+   25.77,
+   "whoosh_down"
+  ],
+  [
+   29.75,
+   "pop"
+  ],
+  [
+   30.85,
+   "pop_low"
+  ],
+  [
+   32.97,
+   "pop_low"
+  ],
+  [
+   32.97,
+   "whoosh_down"
+  ],
+  [
+   35.82,
+   "pop"
+  ],
+  [
+   36.22,
+   "pop_low"
+  ],
+  [
+   36.62,
+   "pop"
+  ],
+  [
+   42.12,
+   "pop_low"
+  ],
+  [
+   47.6,
+   "pop"
+  ],
+  [
+   47.6,
+   "pop_low"
+  ],
+  [
+   47.6,
+   "whoosh_down"
+  ],
+  [
+   53.37,
+   "pop_low"
+  ],
+  [
+   53.77,
+   "pop"
+  ],
+  [
+   56.47,
+   "pop_low"
+  ],
+  [
+   56.47,
+   "whoosh_down"
+  ],
+  [
+   60.45,
+   "pop_low"
+  ],
+  [
+   61.35,
+   "pop"
+  ],
+  [
+   62.55,
+   "pop_low"
+  ],
+  [
+   67.42,
+   "pop"
+  ],
+  [
+   67.42,
+   "whoosh_down"
+  ],
+  [
+   67.6,
+   "pop"
+  ],
+  [
+   67.72,
+   "ding"
+  ],
+  [
+   67.78,
+   "pop"
+  ],
+  [
+   67.82,
+   "whoosh"
+  ],
+  [
+   71.94,
+   "pop_low"
+  ],
+  [
+   76.7,
+   "pop"
+  ],
+  [
+   76.7,
+   "whoosh_down"
+  ],
+  [
+   77.7,
+   "pop_low"
+  ],
+  [
+   81.82,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿Qué abría la llave?",
+  "from": 16.48,
+  "reveal": 67.72
+ },
+ "notifs": [
+  {
+   "t": 33.57,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "La llave que pudo salvar el Titanic 🔑",
+  "description": "Los vigías del Titanic no tenían prismáticos… y la llave de su caja se había quedado en tierra.",
+  "tags": [
+   "curiosidades",
+   "historia",
+   "titanic",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

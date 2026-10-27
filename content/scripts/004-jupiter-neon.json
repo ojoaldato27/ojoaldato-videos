@@ -1,0 +1,188 @@
+{
+ "id": "004-jupiter-neon",
+ "theme": "neon",
+ "duration": 54.2,
+ "seed": 37,
+ "thumb_time": 1.6,
+ "watermark": "@nolosabias_datos",
+ "scenes": [
+  {
+   "type": "jupiter_fall",
+   "start": 0.0,
+   "end": 7.5,
+   "params": {
+    "cut": false
+   }
+  },
+  {
+   "type": "gravity",
+   "start": 7.5,
+   "end": 14.95
+  },
+  {
+   "type": "jupiter_fall",
+   "start": 14.95,
+   "end": 28.95,
+   "params": {
+    "cut": true,
+    "fall": [
+     0.5,
+     11.0
+    ],
+    "labels": [
+     [
+      "Nubes",
+      1.0
+     ],
+     [
+      "Hidrógeno líquido",
+      0.86
+     ],
+     [
+      "Hidrógeno metálico",
+      0.6
+     ],
+     [
+      "¿Núcleo?",
+      0.2
+     ]
+    ]
+   }
+  },
+  {
+   "type": "jupiter_earths",
+   "start": 28.95,
+   "end": 35.45,
+   "params": {
+    "count": 1321
+   }
+  },
+  {
+   "type": "jupiter_spin",
+   "start": 35.45,
+   "end": 42.4
+  },
+  {
+   "type": "red_spot",
+   "start": 42.4,
+   "end": 50.7
+  },
+  {
+   "type": "outro_nls",
+   "start": 50.7,
+   "end": 54.2
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 3.55,
+   "text": "Si cayeras en Júpiter… *nunca tocarías el suelo*"
+  },
+  {
+   "start": 3.55,
+   "end": 7.5,
+   "text": "No tiene superficie: es casi todo *hidrógeno y helio*"
+  },
+  {
+   "start": 7.5,
+   "end": 12.25,
+   "text": "Al entrar, te atrae *2,5 veces más* que la Tierra"
+  },
+  {
+   "start": 12.25,
+   "end": 14.95,
+   "text": "Caes cada vez más rápido…"
+  },
+  {
+   "start": 14.95,
+   "end": 17.95,
+   "text": "…y la presión sube sin parar"
+  },
+  {
+   "start": 17.95,
+   "end": 21.5,
+   "text": "Te aplastaría *mucho antes* de llegar al centro"
+  },
+  {
+   "start": 21.5,
+   "end": 25.0,
+   "text": "Más abajo, el hidrógeno se vuelve *metálico*"
+  },
+  {
+   "start": 25.0,
+   "end": 28.95,
+   "text": "¿Y en el centro? *Nadie lo sabe* con seguridad"
+  },
+  {
+   "start": 28.95,
+   "end": 31.95,
+   "text": "Y es *enorme*:"
+  },
+  {
+   "start": 31.95,
+   "end": 35.45,
+   "text": "dentro cabrían unas *1.300 Tierras*"
+  },
+  {
+   "start": 35.45,
+   "end": 38.45,
+   "text": "Pero gira tan rápido…"
+  },
+  {
+   "start": 38.45,
+   "end": 42.4,
+   "text": "…que un día allí dura *menos de 10 horas*"
+  },
+  {
+   "start": 42.4,
+   "end": 46.35,
+   "text": "Y tiene una tormenta *más grande que la Tierra*"
+  },
+  {
+   "start": 46.35,
+   "end": 50.7,
+   "text": "La Gran Mancha Roja lleva *más de 150 años* activa"
+  },
+  {
+   "start": 50.7,
+   "end": 54.2,
+   "text": "Sígueme para más cosas que *no sabías*"
+  }
+ ],
+ "metadata": {
+  "title": "¿Qué pasaría si cayeras dentro de Júpiter? 🪐",
+  "description": "Júpiter es un gigante gaseoso, formado casi todo por hidrógeno y helio: no tiene una superficie sólida donde aterrizar. Su gravedad en las nubes es unas 2,5 veces la de la Tierra.\n\nAl caer, la presión y la temperatura aumentan sin parar. Mucho más abajo, la presión es tan enorme que el hidrógeno se comporta como un metal líquido. Lo que hay en el centro todavía se investiga.\n\nEn su volumen cabrían unas 1.300 Tierras, gira sobre sí mismo en 9 h 56 min y su Gran Mancha Roja, una tormenta de unos 16.500 km de ancho, es más ancha que la Tierra y se observa desde hace más de 150 años.\n\nEsquema simplificado, no a escala.\n\nAnimación y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #espacio #jupiter",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "Júpiter",
+   "espacio",
+   "planetas",
+   "astronomía",
+   "ciencia",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación (esquema no a escala)",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Inter",
+   "license": "licencia comercial",
+   "note": "SIL Open Font License"
+  }
+ ],
+ "sources": [
+  "NASA, ficha de Júpiter: gravedad superficial 24,79 m/s² (≈ 2,53 g); composición H y He; hidrógeno metálico en el interior",
+  "NASA: volumen de Júpiter ≈ 1.321 veces el de la Tierra; rotación 9 h 56 min",
+  "NASA/Hubble: Gran Mancha Roja ≈ 16.500 km de ancho (Tierra 12.742 km)"
+ ],
+ "burn_captions": false
+}

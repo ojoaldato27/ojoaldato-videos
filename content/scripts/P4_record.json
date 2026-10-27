@@ -1,0 +1,160 @@
+{
+ "id": "P4_record",
+ "notifs": [
+  {
+   "t": 16.18,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "premium",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 41.83,
+ "seed": 866,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "record",
+   "start": 0.0,
+   "end": 15.68,
+   "params": {
+    "dur": 15.68
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 15.68,
+   "end": 23.24,
+   "params": {
+    "dur": 7.56
+   }
+  },
+  {
+   "type": "density",
+   "start": 23.24,
+   "end": 27.89,
+   "params": {
+    "dur": 4.65
+   }
+  },
+  {
+   "type": "record",
+   "start": 27.89,
+   "end": 38.05,
+   "params": {
+    "dur": 10.17
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 38.05,
+   "end": 41.83,
+   "params": {
+    "dur": 3.78
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 5.52,
+   "text": "En 2020, un avión cruzó el Atlántico en *4 h 56 min*"
+  },
+  {
+   "start": 5.52,
+   "end": 11.03,
+   "text": "De Nueva York a Londres, casi *una hora* antes de lo normal"
+  },
+  {
+   "start": 11.03,
+   "end": 15.68,
+   "text": "Iba a casi *1.300 km/h* respecto al suelo"
+  },
+  {
+   "start": 15.68,
+   "end": 19.03,
+   "text": "El truco está a *11.000 metros*"
+  },
+  {
+   "start": 19.03,
+   "end": 23.24,
+   "text": "Allí arriba, a −56 °C, soplan ríos de viento"
+  },
+  {
+   "start": 23.24,
+   "end": 27.89,
+   "text": "Y el aire es tan fino que casi *no frena*"
+  },
+  {
+   "start": 27.89,
+   "end": 32.1,
+   "text": "Es la *corriente en chorro*: sopla hacia el este"
+  },
+  {
+   "start": 32.1,
+   "end": 38.05,
+   "text": "Por eso ir de América a Europa suele ser *más rápido* que volver"
+  },
+  {
+   "start": 38.05,
+   "end": 41.83,
+   "text": "¿Lo sabías? Mándaselo a quien vuele *a América*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 15.68,
+   "text": "El récord"
+  },
+  {
+   "start": 15.68,
+   "end": 27.89,
+   "text": "El truco"
+  },
+  {
+   "start": 27.89,
+   "end": 38.05,
+   "text": "El viento"
+  }
+ ],
+ "metadata": {
+  "title": "El vuelo más rápido de la historia ⚡",
+  "description": "El vuelo más rápido de la historia ⚡\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

@@ -1,0 +1,308 @@
+{
+ "id": "aviones-B-papel",
+ "theme": "neon",
+ "duration": 54.9,
+ "seed": 11,
+ "thumb_time": 7.0,
+ "watermark": "@nolosabias_datos",
+ "scenes": [
+  {
+   "type": "hook_plane",
+   "start": 0.0,
+   "end": 2.75
+  },
+  {
+   "type": "mercator_route",
+   "start": 2.75,
+   "end": 13.4,
+   "params": {
+    "from": [
+     40.4168,
+     -3.7038
+    ],
+    "to": [
+     34.0522,
+     -118.2437
+    ],
+    "from_name": "Madrid",
+    "to_name": "Los Ángeles",
+    "arc_at": 2.4,
+    "regions": [
+     [
+      "Canadá",
+      60,
+      -105
+     ],
+     [
+      "EE. UU.",
+      41,
+      -98
+     ],
+     [
+      "Groenlandia",
+      69,
+      -42
+     ],
+     [
+      "Océano Atlántico",
+      33,
+      -45
+     ]
+    ]
+   }
+  },
+  {
+   "type": "globe_route",
+   "start": 13.4,
+   "end": 22.1,
+   "params": {
+    "from": [
+     40.4168,
+     -3.7038
+    ],
+    "to": [
+     34.0522,
+     -118.2437
+    ],
+    "from_name": "Madrid",
+    "to_name": "Los Ángeles",
+    "view_lat": 50,
+    "view_lon": -60
+   }
+  },
+  {
+   "type": "distance_bars",
+   "start": 22.1,
+   "end": 28.6,
+   "params": {
+    "rows": [
+     [
+      "Recta del mapa",
+      10154,
+      false
+     ],
+     [
+      "Ruta del avión",
+      9363,
+      true
+     ]
+    ],
+    "note": "≈ 790 km menos"
+   }
+  },
+  {
+   "type": "great_circle_north",
+   "start": 28.6,
+   "end": 35.25,
+   "params": {
+    "from": [
+     40.4168,
+     -3.7038
+    ],
+    "to": [
+     34.0522,
+     -118.2437
+    ],
+    "from_name": "Madrid",
+    "to_name": "Los Ángeles",
+    "arc_at": 2.4,
+    "regions": [
+     [
+      "Canadá",
+      60,
+      -105
+     ],
+     [
+      "EE. UU.",
+      41,
+      -98
+     ],
+     [
+      "Groenlandia",
+      69,
+      -42
+     ],
+     [
+      "Océano Atlántico",
+      33,
+      -45
+     ]
+    ],
+    "north_label": "Sobre Canadá"
+   }
+  },
+  {
+   "type": "area_compare",
+   "start": 35.25,
+   "end": 43.55,
+   "params": {
+    "a": [
+     "Groenlandia",
+     2.166
+    ],
+    "b": [
+     "África",
+     30.37
+    ],
+    "note": "≈ 14 veces más pequeña"
+   }
+  },
+  {
+   "type": "jet_stream",
+   "start": 43.55,
+   "end": 51.4,
+   "params": {
+    "label": "Corriente en chorro"
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 51.4,
+   "end": 54.9
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 2.75,
+   "text": "Este avión *NO* se está desviando"
+  },
+  {
+   "start": 2.75,
+   "end": 7.1,
+   "text": "En el mapa, lo más corto parece la línea recta…"
+  },
+  {
+   "start": 7.1,
+   "end": 9.85,
+   "text": "…pero los aviones hacen esta *curva*"
+  },
+  {
+   "start": 9.85,
+   "end": 13.4,
+   "text": "¿Por qué? Porque la Tierra *no es plana*"
+  },
+  {
+   "start": 13.4,
+   "end": 17.75,
+   "text": "En una esfera, el camino más corto es un *arco*"
+  },
+  {
+   "start": 17.75,
+   "end": 22.1,
+   "text": "Y en el globo, esa curva es la *línea recta*"
+  },
+  {
+   "start": 22.1,
+   "end": 25.1,
+   "text": "Madrid → Los Ángeles"
+  },
+  {
+   "start": 25.1,
+   "end": 28.6,
+   "text": "Ahorra casi *800 km*"
+  },
+  {
+   "start": 28.6,
+   "end": 31.75,
+   "text": "Por eso ese vuelo sube hasta *Canadá*"
+  },
+  {
+   "start": 31.75,
+   "end": 35.25,
+   "text": "Parece un rodeo, pero es el *atajo*"
+  },
+  {
+   "start": 35.25,
+   "end": 38.4,
+   "text": "Y es que los mapas planos *engañan*"
+  },
+  {
+   "start": 38.4,
+   "end": 43.55,
+   "text": "Groenlandia parece tan grande como África… y es *14 veces* más pequeña"
+  },
+  {
+   "start": 43.55,
+   "end": 47.05,
+   "text": "Además, los aviones buscan *vientos a favor*"
+  },
+  {
+   "start": 47.05,
+   "end": 51.4,
+   "text": "A veces lo más rápido *no es* lo más corto"
+  },
+  {
+   "start": 51.4,
+   "end": 54.9,
+   "text": "Sígueme para más cosas que *no sabías*"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué los aviones NO vuelan en línea recta? ✈️",
+  "description": "En un mapa plano la ruta de los aviones parece una curva, pero en realidad es el camino más corto: sobre una esfera, la distancia mínima entre dos puntos es un arco de círculo máximo (ruta ortodrómica).\n\nMadrid → Los Ángeles (distancias calculadas sobre una Tierra esférica de radio 6.371 km):\n• Ruta ortodrómica (la del avión): ≈ 9.363 km\n• Recta en un mapa Mercator (loxodrómica): ≈ 10.154 km\nEn el mapa Mercator la ruta corta parece un rodeo hacia el norte: este vuelo pasa sobre Canadá.\n\nLos mapas planos también agrandan lo que está cerca de los polos: Groenlandia (≈ 2,17 millones de km²) parece tan grande como África (≈ 30,4 millones de km²), que es unas 14 veces mayor.\n\nAdemás, las aerolíneas aprovechan la corriente en chorro: a veces la ruta más rápida no es la más corta.\n\nLas rutas reales varían por vientos, espacio aéreo y meteorología.\n\nAnimación y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "ruta ortodrómica",
+   "mapas",
+   "geografía",
+   "ciencia",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapa esquemático",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Inter",
+   "license": "licencia comercial",
+   "note": "SIL Open Font License"
+  }
+ ],
+ "sources": [
+  "Cálculo propio: distancia de círculo máximo y loxodrómica con R = 6.371 km (Madrid 40,42N 3,70W; Los Ángeles 34,05N 118,24W)",
+  "Superficies: Groenlandia ≈ 2.166.000 km², África ≈ 30.370.000 km²"
+ ],
+ "burn_captions": true,
+ "style": "paper",
+ "chapters": [
+  {
+   "start": 2.75,
+   "end": 13.4,
+   "text": "01 · La ruta"
+  },
+  {
+   "start": 13.4,
+   "end": 22.1,
+   "text": "02 · La esfera"
+  },
+  {
+   "start": 22.1,
+   "end": 28.6,
+   "text": "03 · Los números"
+  },
+  {
+   "start": 28.6,
+   "end": 35.25,
+   "text": "04 · Por qué Canadá"
+  },
+  {
+   "start": 35.25,
+   "end": 43.55,
+   "text": "05 · El mapa engaña"
+  },
+  {
+   "start": 43.55,
+   "end": 51.4,
+   "text": "06 · El viento"
+  }
+ ]
+}

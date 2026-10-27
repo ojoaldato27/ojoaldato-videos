@@ -1,0 +1,645 @@
+{
+ "id": "F10_venus",
+ "style": "fun",
+ "music": "creative",
+ "duration": 87.93,
+ "seed": 823,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 7.62,
+   "params": {
+    "bg": "lilac",
+    "items": [
+     {
+      "icon": "venus",
+      "x": 540,
+      "y": 700,
+      "s": 580,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "mascot": "wow",
+      "x": 230,
+      "y": 1160,
+      "s": 210,
+      "at": 4.4
+     }
+    ],
+    "dur": 7.62
+   }
+  },
+  {
+   "type": "beat",
+   "start": 7.62,
+   "end": 17.25,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "Un día",
+       "Un año",
+       "Los dos igual"
+      ],
+      "correct": 0,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 7.37
+     }
+    ],
+    "dur": 9.63
+   }
+  },
+  {
+   "type": "beat",
+   "start": 17.25,
+   "end": 25.7,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "icon": "orbit",
+      "x": 540,
+      "y": 720,
+      "s": 900,
+      "opt": {
+       "center": "sun",
+       "body": "venus",
+       "speed": 1.2,
+       "locked": false
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "calendar",
+      "x": 830,
+      "y": 1170,
+      "s": 230,
+      "opt": {
+       "txt": "225"
+      },
+      "at": 6.18
+     }
+    ],
+    "dur": 8.45
+   }
+  },
+  {
+   "type": "beat",
+   "start": 25.7,
+   "end": 34.98,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "venus",
+      "x": 540,
+      "y": 700,
+      "s": 460,
+      "opt": {
+       "face": false
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "curve_arrow",
+      "x": 540,
+      "y": 700,
+      "s": 600,
+      "opt": {},
+      "at": 0.4
+     },
+     {
+      "icon": "calendar",
+      "x": 830,
+      "y": 1170,
+      "s": 230,
+      "opt": {
+       "txt": "243"
+      },
+      "at": 5.13
+     }
+    ],
+    "dur": 9.28
+   }
+  },
+  {
+   "type": "beat",
+   "start": 34.98,
+   "end": 43.43,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "icon": "calendar",
+      "x": 300,
+      "y": 700,
+      "s": 340,
+      "opt": {
+       "txt": "243",
+       "sub": "días · giro"
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "calendar",
+      "x": 780,
+      "y": 700,
+      "s": 340,
+      "opt": {
+       "txt": "225",
+       "sub": "días · año"
+      },
+      "at": 0.6
+     },
+     {
+      "icon": "scale",
+      "x": 540,
+      "y": 1120,
+      "s": 300,
+      "opt": {
+       "tilt": -14
+      },
+      "at": 4.72
+     }
+    ],
+    "dur": 8.45
+   }
+  },
+  {
+   "type": "beat",
+   "start": 43.43,
+   "end": 55.98,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 3.27,
+      "at": 0.0
+     },
+     {
+      "icon": "venus",
+      "x": 540,
+      "y": 660,
+      "s": 360,
+      "opt": {
+       "face": false
+      },
+      "at": 3.27
+     },
+     {
+      "text": "OESTE",
+      "x": 230,
+      "y": 1100,
+      "size": 54,
+      "at": 6.53
+     },
+     {
+      "text": "ESTE",
+      "x": 850,
+      "y": 1100,
+      "size": 54,
+      "at": 6.53
+     },
+     {
+      "icon": "sun",
+      "x": 230,
+      "y": 960,
+      "s": 160,
+      "tw": {
+       "x": [
+        6.73,
+        9.73,
+        230,
+        850
+       ],
+       "y": [
+        6.73,
+        9.73,
+        960,
+        960
+       ]
+      },
+      "opt": {},
+      "at": 6.73
+     }
+    ],
+    "dur": 12.55
+   }
+  },
+  {
+   "type": "beat",
+   "start": 55.98,
+   "end": 68.53,
+   "params": {
+    "bg": "orange",
+    "items": [
+     {
+      "icon": "thermometer",
+      "x": 300,
+      "y": 720,
+      "s": 460,
+      "opt": {
+       "level": 1.0
+      },
+      "at": 0.0
+     },
+     {
+      "icon": "drop",
+      "x": 780,
+      "y": 700,
+      "s": 300,
+      "opt": {},
+      "at": 4.52
+     },
+     {
+      "icon": "cloud",
+      "x": 540,
+      "y": 1130,
+      "s": 320,
+      "opt": {},
+      "at": 9.03
+     }
+    ],
+    "dur": 12.55
+   }
+  },
+  {
+   "type": "beat",
+   "start": 68.53,
+   "end": 80.73,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "Un día",
+       "Un año",
+       "Los dos igual"
+      ],
+      "correct": 0,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "icon": "venus",
+      "x": 540,
+      "y": 1120,
+      "s": 300,
+      "opt": {},
+      "at": 5.97
+     }
+    ],
+    "dur": 12.2,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 80.73,
+   "end": 87.93,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "venus",
+      "x": 540,
+      "y": 720,
+      "s": 540,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "mascot": "wink",
+      "x": 220,
+      "y": 1170,
+      "s": 210,
+      "at": 5.55
+     }
+    ],
+    "dur": 7.2
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.1,
+   "text": "En Venus, un día dura *más que un año*"
+  },
+  {
+   "start": 4.1,
+   "end": 7.37,
+   "text": "Y no es una forma de hablar"
+  },
+  {
+   "start": 7.62,
+   "end": 10.88,
+   "text": "¿Qué crees que dura más en Venus?"
+  },
+  {
+   "start": 10.88,
+   "end": 14.98,
+   "text": "¿Un día, un año… o los dos lo mismo?"
+  },
+  {
+   "start": 14.98,
+   "end": 17.0,
+   "text": "Al final lo vemos"
+  },
+  {
+   "start": 17.25,
+   "end": 23.43,
+   "text": "Un *año* es lo que tarda un planeta en dar la vuelta al Sol"
+  },
+  {
+   "start": 23.43,
+   "end": 25.45,
+   "text": "Venus tarda *225 días*"
+  },
+  {
+   "start": 25.7,
+   "end": 30.63,
+   "text": "Un *día* es lo que tarda en girar sobre sí mismo"
+  },
+  {
+   "start": 30.63,
+   "end": 34.73,
+   "text": "Y Venus gira tan despacio que tarda *243 días*"
+  },
+  {
+   "start": 34.98,
+   "end": 39.5,
+   "text": "243 días girando, contra 225 dando la vuelta al Sol"
+  },
+  {
+   "start": 39.5,
+   "end": 43.18,
+   "text": "Su día es *más largo que su año*"
+  },
+  {
+   "start": 43.43,
+   "end": 46.7,
+   "text": "Pero espera, que es todavía más raro"
+  },
+  {
+   "start": 46.7,
+   "end": 49.97,
+   "text": "Venus gira *al revés* que la Tierra"
+  },
+  {
+   "start": 49.97,
+   "end": 55.73,
+   "text": "Allí el Sol sale *por el oeste* y se pone por el este"
+  },
+  {
+   "start": 55.98,
+   "end": 60.5,
+   "text": "Y además es el planeta *más caliente* del sistema solar"
+  },
+  {
+   "start": 60.5,
+   "end": 65.02,
+   "text": "Su atmósfera atrapa tanto calor que el *plomo se derretiría*"
+  },
+  {
+   "start": 65.02,
+   "end": 68.28,
+   "text": "Y sus nubes son de *ácido sulfúrico*"
+  },
+  {
+   "start": 68.53,
+   "end": 74.3,
+   "text": "¿La respuesta? La A: en Venus, *un giro dura más que un año*"
+  },
+  {
+   "start": 74.3,
+   "end": 80.48,
+   "text": "Darías una vuelta entera al Sol antes de que Venus girara una sola vez"
+  },
+  {
+   "start": 80.73,
+   "end": 86.08,
+   "text": "Así que la próxima vez que se te haga largo el día…"
+  },
+  {
+   "start": 86.08,
+   "end": 87.68,
+   "text": "…acuérdate de *Venus*"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   4.4,
+   "pop_low"
+  ],
+  [
+   7.62,
+   "pop"
+  ],
+  [
+   7.62,
+   "whoosh_down"
+  ],
+  [
+   7.8,
+   "pop"
+  ],
+  [
+   7.98,
+   "pop"
+  ],
+  [
+   14.99,
+   "pop_low"
+  ],
+  [
+   17.25,
+   "pop"
+  ],
+  [
+   17.25,
+   "whoosh_down"
+  ],
+  [
+   23.43,
+   "pop_low"
+  ],
+  [
+   25.7,
+   "pop_low"
+  ],
+  [
+   25.7,
+   "whoosh_down"
+  ],
+  [
+   26.1,
+   "pop"
+  ],
+  [
+   30.83,
+   "pop_low"
+  ],
+  [
+   34.98,
+   "pop_low"
+  ],
+  [
+   34.98,
+   "whoosh_down"
+  ],
+  [
+   35.58,
+   "pop"
+  ],
+  [
+   39.7,
+   "pop_low"
+  ],
+  [
+   43.43,
+   "pop_low"
+  ],
+  [
+   43.43,
+   "whoosh_down"
+  ],
+  [
+   46.7,
+   "pop"
+  ],
+  [
+   49.96,
+   "pop"
+  ],
+  [
+   49.96,
+   "pop_low"
+  ],
+  [
+   50.16,
+   "pop_low"
+  ],
+  [
+   55.98,
+   "pop_low"
+  ],
+  [
+   55.98,
+   "whoosh_down"
+  ],
+  [
+   60.5,
+   "pop"
+  ],
+  [
+   65.01,
+   "pop_low"
+  ],
+  [
+   68.53,
+   "pop"
+  ],
+  [
+   68.53,
+   "whoosh_down"
+  ],
+  [
+   68.71,
+   "pop"
+  ],
+  [
+   68.83,
+   "ding"
+  ],
+  [
+   68.89,
+   "pop"
+  ],
+  [
+   68.93,
+   "whoosh"
+  ],
+  [
+   74.5,
+   "pop_low"
+  ],
+  [
+   80.73,
+   "pop"
+  ],
+  [
+   80.73,
+   "whoosh_down"
+  ],
+  [
+   86.28,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿Qué dura más en Venus?",
+  "from": 17.25,
+  "reveal": 68.83
+ },
+ "notifs": [
+  {
+   "t": 35.58,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "En Venus, un día dura más que un año 🪐",
+  "description": "Venus tarda 243 días en girar sobre sí mismo y 225 en dar la vuelta al Sol. Y además gira al revés.",
+  "tags": [
+   "curiosidades",
+   "espacio",
+   "venus",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

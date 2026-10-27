@@ -1,0 +1,415 @@
+{
+ "id": "06_Experimental_Innovador",
+ "notifs": [
+  {
+   "t": 33.67,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "exp",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 69.21,
+ "seed": 498,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "flight",
+   "start": 0.0,
+   "end": 5.82,
+   "params": {
+    "cam0": [
+     -3.7,
+     40.4,
+     16
+    ],
+    "cam1": [
+     -11,
+     45,
+     16
+    ],
+    "f0": 0,
+    "f1": 0.05,
+    "alt0": 0,
+    "alt1": 11000,
+    "spd0": 250,
+    "spd1": 900,
+    "temp0": 15,
+    "temp1": -56,
+    "dur": 5.82
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 5.82,
+   "end": 10.77,
+   "params": {
+    "dur": 4.95
+   }
+  },
+  {
+   "type": "density",
+   "start": 10.77,
+   "end": 14.84,
+   "params": {
+    "dur": 4.08
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 14.84,
+   "end": 20.66,
+   "params": {
+    "dur": 5.82
+   }
+  },
+  {
+   "type": "chips",
+   "start": 20.66,
+   "end": 24.44,
+   "params": {
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "window",
+   "start": 24.44,
+   "end": 27.78,
+   "params": {
+    "phase": "round",
+    "dur": 3.34
+   }
+  },
+  {
+   "type": "window",
+   "start": 27.78,
+   "end": 33.17,
+   "params": {
+    "phase": "square",
+    "dur": 5.38
+   }
+  },
+  {
+   "type": "flight",
+   "start": 33.17,
+   "end": 36.51,
+   "params": {
+    "cam0": [
+     -30,
+     50,
+     7.5
+    ],
+    "cam1": [
+     -66,
+     52,
+     7.5
+    ],
+    "f0": 0.16,
+    "f1": 0.5,
+    "straight": 0.6,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 3.34
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 36.51,
+   "end": 40.72,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 4.21
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 40.72,
+   "end": 49.45,
+   "params": {
+    "morph": 5.0,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 8.73
+   }
+  },
+  {
+   "type": "record",
+   "start": 49.45,
+   "end": 62.96,
+   "params": {
+    "dur": 13.51
+   }
+  },
+  {
+   "type": "flight",
+   "start": 62.96,
+   "end": 65.87,
+   "params": {
+    "cam0": [
+     -92,
+     46,
+     9
+    ],
+    "cam1": [
+     -118,
+     34.5,
+     9
+    ],
+    "f0": 0.62,
+    "f1": 1.0,
+    "alt0": 11000,
+    "alt1": 0,
+    "spd0": 900,
+    "spd1": 250,
+    "temp0": -56,
+    "temp1": 20,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 2.91
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 65.87,
+   "end": 69.21,
+   "params": {
+    "dur": 3.34
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 2.04,
+   "text": "Sistema de vuelo: *activado*."
+  },
+  {
+   "start": 2.04,
+   "end": 5.82,
+   "text": "Ruta: Madrid → Los Ángeles. Altitud: *11.000 m*."
+  },
+  {
+   "start": 5.82,
+   "end": 7.86,
+   "text": "Temperatura exterior: *−56 °C*."
+  },
+  {
+   "start": 7.86,
+   "end": 10.77,
+   "text": "Descenso: 6,5 °C por kilómetro."
+  },
+  {
+   "start": 10.77,
+   "end": 12.8,
+   "text": "Densidad del aire: *30 %*."
+  },
+  {
+   "start": 12.8,
+   "end": 14.84,
+   "text": "Resistencia mínima. Consumo: *optimizado*."
+  },
+  {
+   "start": 14.84,
+   "end": 18.62,
+   "text": "Presión de cabina: equivalente a *2.400 m*."
+  },
+  {
+   "start": 18.62,
+   "end": 20.66,
+   "text": "Pasajeros: sin cambios aparentes."
+  },
+  {
+   "start": 20.66,
+   "end": 24.44,
+   "text": "Aviso: bolsa de patatas *hinchada*. Causa: baja presión."
+  },
+  {
+   "start": 24.44,
+   "end": 27.78,
+   "text": "Ventanilla: 3 capas. Orificio de presión: *activo*."
+  },
+  {
+   "start": 27.78,
+   "end": 31.56,
+   "text": "Historial, 1954: fallos por fatiga en aviones Comet."
+  },
+  {
+   "start": 31.56,
+   "end": 33.17,
+   "text": "Solución: *esquinas redondas*."
+  },
+  {
+   "start": 33.17,
+   "end": 36.51,
+   "text": "Calculando ruta… Resultado: *curva hacia el norte*."
+  },
+  {
+   "start": 36.51,
+   "end": 40.72,
+   "text": "Motivo: la Tierra es una esfera. Ahorro: *790 km*."
+  },
+  {
+   "start": 40.72,
+   "end": 42.76,
+   "text": "Analizando proyección del mapa…"
+  },
+  {
+   "start": 42.76,
+   "end": 45.67,
+   "text": "Error detectado en el mapa plano."
+  },
+  {
+   "start": 45.67,
+   "end": 49.45,
+   "text": "Groenlandia: tamaño real, *14 veces* menor que África."
+  },
+  {
+   "start": 49.45,
+   "end": 56.27,
+   "text": "Registro de 2020: un 747 de Nueva York a Londres en *4 h 56 min*."
+  },
+  {
+   "start": 56.27,
+   "end": 60.48,
+   "text": "Velocidad respecto al suelo: casi *1.300 km/h*."
+  },
+  {
+   "start": 60.48,
+   "end": 62.96,
+   "text": "Causa: la corriente en chorro."
+  },
+  {
+   "start": 62.96,
+   "end": 65.87,
+   "text": "Distancia: 9.363 km. Aterrizaje: *completado*."
+  },
+  {
+   "start": 65.87,
+   "end": 69.21,
+   "text": "Fin de la transmisión. ¿Sigues ahí? *Sígueme*."
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 5.82,
+   "text": "Inicio"
+  },
+  {
+   "start": 5.82,
+   "end": 14.84,
+   "text": "Sensores"
+  },
+  {
+   "start": 14.84,
+   "end": 24.44,
+   "text": "Cabina"
+  },
+  {
+   "start": 24.44,
+   "end": 33.17,
+   "text": "Estructura"
+  },
+  {
+   "start": 33.17,
+   "end": 40.72,
+   "text": "Navegación"
+  },
+  {
+   "start": 40.72,
+   "end": 49.45,
+   "text": "Error"
+  },
+  {
+   "start": 49.45,
+   "end": 62.96,
+   "text": "Registro"
+  },
+  {
+   "start": 62.96,
+   "end": 65.87,
+   "text": "Fin"
+  }
+ ],
+ "metadata": {
+  "title": "Informe del ordenador de a bordo: Madrid → Los Ángeles",
+  "description": "El ordenador de a bordo narra tu vuelo Madrid → Los Ángeles: sensores, cabina, estructura, navegación, un error en el mapa y el récord del viento.\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

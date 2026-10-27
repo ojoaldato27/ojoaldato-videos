@@ -1,0 +1,641 @@
+{
+ "id": "F07_luces_avion",
+ "style": "fun",
+ "music": "creative",
+ "duration": 86.75,
+ "seed": 447,
+ "thumb_time": 1.5,
+ "watermark": "@nolosabias_datos",
+ "chunk_n": 3,
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "beat",
+   "start": 0.0,
+   "end": 7.62,
+   "params": {
+    "bg": "navy",
+    "items": [
+     {
+      "icon": "bulb",
+      "x": 540,
+      "y": 660,
+      "s": 420,
+      "tw": {
+       "on": [
+        1.4,
+        2.4,
+        1.0,
+        0.0
+       ]
+      },
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "window",
+      "x": 830,
+      "y": 1120,
+      "s": 240,
+      "opt": {
+       "night": true
+      },
+      "at": 4.52
+     },
+     {
+      "mascot": "think",
+      "x": 230,
+      "y": 1130,
+      "s": 210,
+      "at": 4.82
+     }
+    ],
+    "dur": 7.62
+   }
+  },
+  {
+   "type": "beat",
+   "start": 7.62,
+   "end": 19.33,
+   "params": {
+    "bg": "cream",
+    "items": [
+     {
+      "options": [
+       "Ahorrar batería",
+       "Ver el paisaje",
+       "Por si hay que evacuar"
+      ],
+      "correct": 2,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "at": 0.0
+     },
+     {
+      "mascot": "think",
+      "x": 540,
+      "y": 1110,
+      "s": 300,
+      "at": 9.03
+     }
+    ],
+    "dur": 11.72
+   }
+  },
+  {
+   "type": "beat",
+   "start": 19.33,
+   "end": 29.87,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "plane",
+      "x": 540,
+      "y": 660,
+      "s": 640,
+      "tw": {
+       "x": [
+        0.0,
+        1.5,
+        -300,
+        540
+       ]
+      },
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "exit_sign",
+      "x": 540,
+      "y": 1060,
+      "s": 420,
+      "opt": {},
+      "at": 5.55
+     }
+    ],
+    "dur": 10.53
+   }
+  },
+  {
+   "type": "beat",
+   "start": 29.87,
+   "end": 39.57,
+   "params": {
+    "bg": "navy",
+    "items": [
+     {
+      "icon": "bulb",
+      "x": 300,
+      "y": 600,
+      "s": 300,
+      "tw": {
+       "on": [
+        0.6,
+        1.0,
+        1.0,
+        0.0
+       ]
+      },
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "mascot": "no",
+      "x": 760,
+      "y": 640,
+      "s": 300,
+      "at": 1.2
+     },
+     {
+      "icon": "clock",
+      "x": 540,
+      "y": 1080,
+      "s": 260,
+      "opt": {
+       "speed": 5
+      },
+      "at": 6.38
+     }
+    ],
+    "dur": 9.7
+   }
+  },
+  {
+   "type": "beat",
+   "start": 39.57,
+   "end": 52.12,
+   "params": {
+    "bg": "lilac",
+    "items": [
+     {
+      "icon": "bulb",
+      "x": 540,
+      "y": 600,
+      "s": 340,
+      "opt": {
+       "on": 0.15
+      },
+      "at": 0.0
+     },
+     {
+      "mascot": "happy",
+      "x": 300,
+      "y": 1060,
+      "s": 260,
+      "at": 3.15
+     },
+     {
+      "icon": "exit_sign",
+      "x": 780,
+      "y": 1080,
+      "s": 320,
+      "opt": {},
+      "at": 8.82
+     }
+    ],
+    "dur": 12.55
+   }
+  },
+  {
+   "type": "beat",
+   "start": 52.12,
+   "end": 58.48,
+   "params": {
+    "bg": "pink",
+    "items": [
+     {
+      "mascot": "wow",
+      "x": 540,
+      "y": 700,
+      "s": 340,
+      "out": 2.43,
+      "at": 0.0
+     },
+     {
+      "icon": "window",
+      "x": 540,
+      "y": 780,
+      "s": 520,
+      "tw": {
+       "shade": [
+        3.23,
+        4.43,
+        0.9,
+        0.0
+       ]
+      },
+      "opt": {},
+      "at": 2.43
+     }
+    ],
+    "dur": 6.37
+   }
+  },
+  {
+   "type": "beat",
+   "start": 58.48,
+   "end": 69.43,
+   "params": {
+    "bg": "sky",
+    "items": [
+     {
+      "icon": "window",
+      "x": 330,
+      "y": 700,
+      "s": 420,
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "icon": "fire",
+      "x": 790,
+      "y": 720,
+      "s": 340,
+      "opt": {},
+      "at": 4.52
+     },
+     {
+      "icon": "arrow",
+      "x": 540,
+      "y": 1120,
+      "s": 320,
+      "opt": {
+       "ang": 180
+      },
+      "at": 5.72
+     }
+    ],
+    "dur": 10.95
+   }
+  },
+  {
+   "type": "beat",
+   "start": 69.43,
+   "end": 77.88,
+   "params": {
+    "bg": "lime",
+    "items": [
+     {
+      "options": [
+       "Ahorrar batería",
+       "Ver el paisaje",
+       "Por si hay que evacuar"
+      ],
+      "correct": 2,
+      "x": 540,
+      "y": 520,
+      "float": false,
+      "reveal": 0.3,
+      "at": 0.0
+     },
+     {
+      "icon": "bulb",
+      "x": 330,
+      "y": 1110,
+      "s": 240,
+      "opt": {
+       "on": 0.2
+      },
+      "at": 4.3
+     },
+     {
+      "icon": "window",
+      "x": 760,
+      "y": 1110,
+      "s": 240,
+      "opt": {},
+      "at": 4.7
+     }
+    ],
+    "dur": 8.45,
+    "confetti": 0.4
+   }
+  },
+  {
+   "type": "beat",
+   "start": 77.88,
+   "end": 86.75,
+   "params": {
+    "bg": "yellow",
+    "items": [
+     {
+      "icon": "bulb",
+      "x": 540,
+      "y": 700,
+      "s": 420,
+      "tw": {
+       "on": [
+        0.0,
+        1.5,
+        1.0,
+        0.2
+       ]
+      },
+      "opt": {},
+      "at": 0.0
+     },
+     {
+      "mascot": "wink",
+      "x": 540,
+      "y": 1150,
+      "s": 230,
+      "at": 5.23
+     }
+    ],
+    "dur": 8.87
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.52,
+   "text": "Antes de aterrizar de noche, *apagan las luces* del avión"
+  },
+  {
+   "start": 4.52,
+   "end": 7.37,
+   "text": "Y no es para que duermas"
+  },
+  {
+   "start": 7.62,
+   "end": 10.47,
+   "text": "¿Tú por qué crees que es?"
+  },
+  {
+   "start": 10.47,
+   "end": 16.65,
+   "text": "¿Para ahorrar batería, para que veas el paisaje… o por si hay que evacuar?"
+  },
+  {
+   "start": 16.65,
+   "end": 19.08,
+   "text": "Te lo cuento al final"
+  },
+  {
+   "start": 19.33,
+   "end": 24.68,
+   "text": "El despegue y el aterrizaje son los momentos *más delicados* del vuelo"
+  },
+  {
+   "start": 24.68,
+   "end": 29.62,
+   "text": "Si algo sale mal, hay que salir del avión *muy rápido*"
+  },
+  {
+   "start": 29.87,
+   "end": 36.05,
+   "text": "Pero si pasas de la luz a la oscuridad de golpe, *no ves nada*"
+  },
+  {
+   "start": 36.05,
+   "end": 39.32,
+   "text": "Tus ojos necesitan un tiempo para acostumbrarse"
+  },
+  {
+   "start": 39.57,
+   "end": 42.42,
+   "text": "Por eso bajan las luces *antes*"
+  },
+  {
+   "start": 42.42,
+   "end": 48.18,
+   "text": "Así, si hay que evacuar, tus ojos *ya están listos* para la oscuridad"
+  },
+  {
+   "start": 48.18,
+   "end": 51.87,
+   "text": "Y encontrarás mejor el camino hasta la *salida*"
+  },
+  {
+   "start": 52.12,
+   "end": 54.55,
+   "text": "Pero espera, que hay más"
+  },
+  {
+   "start": 54.55,
+   "end": 58.23,
+   "text": "¿Y por qué te piden *subir la persiana*?"
+  },
+  {
+   "start": 58.48,
+   "end": 63.0,
+   "text": "Para que tú y la tripulación veáis qué pasa *fuera*"
+  },
+  {
+   "start": 63.0,
+   "end": 69.18,
+   "text": "Si hay *fuego* en un lado, saben que hay que salir por el otro"
+  },
+  {
+   "start": 69.43,
+   "end": 73.53,
+   "text": "¿La respuesta? La C: *por si hay que evacuar*"
+  },
+  {
+   "start": 73.53,
+   "end": 77.63,
+   "text": "Luces bajas y persianas arriba: dos trucos de seguridad"
+  },
+  {
+   "start": 77.88,
+   "end": 82.82,
+   "text": "Así que la próxima vez que apaguen las luces al aterrizar…"
+  },
+  {
+   "start": 82.82,
+   "end": 86.5,
+   "text": "…ya sabes que te están *preparando los ojos*"
+  }
+ ],
+ "chapters": [],
+ "sfx": [
+  [
+   0.0,
+   "pop_low"
+  ],
+  [
+   4.52,
+   "pop"
+  ],
+  [
+   4.82,
+   "pop_low"
+  ],
+  [
+   7.62,
+   "pop"
+  ],
+  [
+   7.62,
+   "whoosh_down"
+  ],
+  [
+   7.8,
+   "pop"
+  ],
+  [
+   7.98,
+   "pop"
+  ],
+  [
+   16.65,
+   "pop_low"
+  ],
+  [
+   19.33,
+   "pop_low"
+  ],
+  [
+   19.33,
+   "whoosh_down"
+  ],
+  [
+   24.88,
+   "pop"
+  ],
+  [
+   29.87,
+   "pop"
+  ],
+  [
+   29.87,
+   "whoosh_down"
+  ],
+  [
+   31.07,
+   "pop_low"
+  ],
+  [
+   36.25,
+   "pop"
+  ],
+  [
+   39.57,
+   "pop"
+  ],
+  [
+   39.57,
+   "whoosh_down"
+  ],
+  [
+   42.72,
+   "pop_low"
+  ],
+  [
+   48.39,
+   "pop"
+  ],
+  [
+   52.12,
+   "pop_low"
+  ],
+  [
+   52.12,
+   "whoosh_down"
+  ],
+  [
+   54.55,
+   "pop_low"
+  ],
+  [
+   58.48,
+   "pop_low"
+  ],
+  [
+   58.48,
+   "whoosh_down"
+  ],
+  [
+   63.0,
+   "pop"
+  ],
+  [
+   64.2,
+   "pop_low"
+  ],
+  [
+   69.43,
+   "pop"
+  ],
+  [
+   69.43,
+   "whoosh_down"
+  ],
+  [
+   69.61,
+   "pop"
+  ],
+  [
+   69.73,
+   "ding"
+  ],
+  [
+   69.79,
+   "pop"
+  ],
+  [
+   69.83,
+   "whoosh"
+  ],
+  [
+   73.73,
+   "pop_low"
+  ],
+  [
+   74.13,
+   "pop"
+  ],
+  [
+   77.88,
+   "pop_low"
+  ],
+  [
+   77.88,
+   "whoosh_down"
+  ],
+  [
+   83.11,
+   "pop_low"
+  ]
+ ],
+ "question": {
+  "text": "¿Por qué apagan las luces?",
+  "from": 19.33,
+  "reveal": 69.73
+ },
+ "notifs": [
+  {
+   "t": 40.17,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "metadata": {
+  "title": "¿Por qué apagan las luces del avión al aterrizar? 💡",
+  "description": "Bajan las luces para que tus ojos se acostumbren a la oscuridad y suben las persianas para ver qué pasa fuera.",
+  "tags": [
+   "curiosidades",
+   "aviones",
+   "seguridad",
+   "sabías que"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación, iconos y mascota",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografía Poppins",
+   "license": "licencia comercial",
+   "note": "OFL"
+  }
+ ]
+}

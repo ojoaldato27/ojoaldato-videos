@@ -1,0 +1,259 @@
+{
+ "id": "S1_sol",
+ "notifs": [
+  {
+   "t": 37.82,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "premium",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 91.92,
+ "seed": 41,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "sunset",
+   "start": 0.0,
+   "end": 11.03,
+   "params": {
+    "freeze": 5.352173913043479,
+    "dur": 11.03
+   }
+  },
+  {
+   "type": "distance",
+   "start": 11.03,
+   "end": 20.33,
+   "params": {
+    "dur": 9.3
+   }
+  },
+  {
+   "type": "laps",
+   "start": 20.33,
+   "end": 26.28,
+   "params": {
+    "dur": 5.95
+   }
+  },
+  {
+   "type": "clock",
+   "start": 26.28,
+   "end": 37.32,
+   "params": {
+    "dur": 11.03
+   }
+  },
+  {
+   "type": "core",
+   "start": 37.32,
+   "end": 55.17,
+   "params": {
+    "dur": 17.86
+   }
+  },
+  {
+   "type": "escape",
+   "start": 55.17,
+   "end": 64.03,
+   "params": {
+    "dur": 8.86
+   }
+  },
+  {
+   "type": "vanish",
+   "start": 64.03,
+   "end": 79.72,
+   "params": {
+    "off": 4.21304347826087,
+    "dur": 15.68
+   }
+  },
+  {
+   "type": "dark",
+   "start": 79.72,
+   "end": 85.97,
+   "params": {
+    "dur": 6.25
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 85.97,
+   "end": 91.92,
+   "params": {
+    "dur": 5.95
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 5.95,
+   "text": "El Sol que estás viendo ahora mismo… *no es el Sol de ahora*"
+  },
+  {
+   "start": 5.95,
+   "end": 11.03,
+   "text": "Y al final te cuento qué pasaría si *desapareciera de golpe*"
+  },
+  {
+   "start": 11.03,
+   "end": 15.25,
+   "text": "El Sol está a unos *150 millones de km*"
+  },
+  {
+   "start": 15.25,
+   "end": 20.33,
+   "text": "Y la luz viaja a unos *300.000 km por segundo*"
+  },
+  {
+   "start": 20.33,
+   "end": 26.28,
+   "text": "En un solo segundo, podría dar *7 vueltas y media* a la Tierra"
+  },
+  {
+   "start": 26.28,
+   "end": 30.93,
+   "text": "Aun así, tarda *8 minutos y 20 segundos* en llegar"
+  },
+  {
+   "start": 30.93,
+   "end": 37.32,
+   "text": "El Sol que ves es el de hace 8 minutos: estás viendo *el pasado*"
+  },
+  {
+   "start": 37.32,
+   "end": 40.66,
+   "text": "Pero esto no es lo más raro"
+  },
+  {
+   "start": 40.66,
+   "end": 47.05,
+   "text": "Esa luz nació en el núcleo del Sol, a unos *15 millones de grados*"
+  },
+  {
+   "start": 47.05,
+   "end": 55.17,
+   "text": "Allí la materia está tan apretada que la luz choca una y otra vez, *como en un laberinto*"
+  },
+  {
+   "start": 55.17,
+   "end": 59.39,
+   "text": "Tarda *miles de años* en salir a la superficie…"
+  },
+  {
+   "start": 59.39,
+   "end": 64.03,
+   "text": "…y luego solo *8 minutos* en llegar a tus ojos"
+  },
+  {
+   "start": 64.03,
+   "end": 68.25,
+   "text": "Entonces, ¿qué pasaría si el Sol *desapareciera* ahora mismo?"
+  },
+  {
+   "start": 68.25,
+   "end": 71.59,
+   "text": "Durante 8 minutos lo seguirías viendo *brillar*"
+  },
+  {
+   "start": 71.59,
+   "end": 79.72,
+   "text": "Y la Tierra seguiría girando *como si nada*: la gravedad también viaja a la velocidad de la luz"
+  },
+  {
+   "start": 79.72,
+   "end": 82.19,
+   "text": "Pasados esos 8 minutos: *oscuridad*"
+  },
+  {
+   "start": 82.19,
+   "end": 85.97,
+   "text": "Y la Tierra saldría disparada *en línea recta*"
+  },
+  {
+   "start": 85.97,
+   "end": 91.92,
+   "text": "La próxima vez que veas un atardecer… recuerda que estás viendo *el pasado*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 11.03,
+   "text": "La pregunta"
+  },
+  {
+   "start": 11.03,
+   "end": 20.33,
+   "text": "La distancia"
+  },
+  {
+   "start": 20.33,
+   "end": 26.28,
+   "text": "La velocidad"
+  },
+  {
+   "start": 26.28,
+   "end": 37.32,
+   "text": "El retraso"
+  },
+  {
+   "start": 37.32,
+   "end": 55.17,
+   "text": "El núcleo"
+  },
+  {
+   "start": 55.17,
+   "end": 64.03,
+   "text": "La salida"
+  },
+  {
+   "start": 64.03,
+   "end": 85.97,
+   "text": "La respuesta"
+  }
+ ],
+ "metadata": {
+  "title": "El Sol que ves no es el de ahora ☀️",
+  "description": "La luz del Sol tarda 8 min 20 s en llegar… y miles de años en salir de su núcleo. ¿Y si desapareciera?",
+  "tags": [
+   "curiosidades",
+   "espacio",
+   "sol",
+   "ciencia",
+   "sabías que",
+   "luz"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

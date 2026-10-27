@@ -1,0 +1,286 @@
+{
+ "id": "03_Misterio_Suspense",
+ "notifs": [
+  {
+   "t": 29.56,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "mystery",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 66.84,
+ "seed": 987,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "flight",
+   "start": 0.0,
+   "end": 13.37,
+   "params": {
+    "cam0": [
+     -55,
+     47,
+     6.4
+    ],
+    "cam1": [
+     -60,
+     47,
+     6.4
+    ],
+    "f0": 0.0,
+    "f1": 1.0,
+    "hud": false,
+    "straight": 0.8,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 13.37
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 13.37,
+   "end": 18.02,
+   "params": {
+    "dur": 4.65
+   }
+  },
+  {
+   "type": "density",
+   "start": 18.02,
+   "end": 23.54,
+   "params": {
+    "dur": 5.52
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 23.54,
+   "end": 29.06,
+   "params": {
+    "dur": 5.52
+   }
+  },
+  {
+   "type": "window",
+   "start": 29.06,
+   "end": 36.18,
+   "params": {
+    "phase": "square",
+    "dur": 7.12
+   }
+  },
+  {
+   "type": "window",
+   "start": 36.18,
+   "end": 38.65,
+   "params": {
+    "phase": "round",
+    "dur": 2.47
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 38.65,
+   "end": 50.86,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 12.2
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 50.86,
+   "end": 61.76,
+   "params": {
+    "morph": 5.4,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 10.9
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 61.76,
+   "end": 66.84,
+   "params": {
+    "dur": 5.08
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.21,
+   "text": "Hay algo *raro* en la ruta de tu avión."
+  },
+  {
+   "start": 4.21,
+   "end": 7.99,
+   "text": "De Madrid a Los Ángeles… no va recto."
+  },
+  {
+   "start": 7.99,
+   "end": 10.9,
+   "text": "Sube hacia el norte. Hacia *Canadá*."
+  },
+  {
+   "start": 10.9,
+   "end": 13.37,
+   "text": "¿Por qué daría un *rodeo*?"
+  },
+  {
+   "start": 13.37,
+   "end": 18.02,
+   "text": "Primera pista: a 11.000 metros, fuera hace *−56 °C*."
+  },
+  {
+   "start": 18.02,
+   "end": 23.54,
+   "text": "Segunda: el aire es tan fino que *casi no frena* al avión."
+  },
+  {
+   "start": 23.54,
+   "end": 29.06,
+   "text": "Tercera: dentro respiras como a *2.400 metros*… y no lo notas."
+  },
+  {
+   "start": 29.06,
+   "end": 31.53,
+   "text": "Hasta las ventanillas esconden algo."
+  },
+  {
+   "start": 31.53,
+   "end": 36.18,
+   "text": "En 1954, dos aviones Comet *se partieron* en el aire."
+  },
+  {
+   "start": 36.18,
+   "end": 38.65,
+   "text": "Desde entonces, ninguna tiene *esquinas*."
+  },
+  {
+   "start": 38.65,
+   "end": 44.17,
+   "text": "Pero la respuesta al rodeo estaba en la forma de la Tierra."
+  },
+  {
+   "start": 44.17,
+   "end": 48.38,
+   "text": "En una esfera, esa curva *es* la línea recta."
+  },
+  {
+   "start": 48.38,
+   "end": 50.86,
+   "text": "Te ahorras unos *790 km*."
+  },
+  {
+   "start": 50.86,
+   "end": 55.94,
+   "text": "El culpable es el mapa que has visto *toda tu vida*."
+  },
+  {
+   "start": 55.94,
+   "end": 58.85,
+   "text": "Groenlandia parece tan grande como *África*…"
+  },
+  {
+   "start": 58.85,
+   "end": 61.76,
+   "text": "…pero es *14 veces* más pequeña."
+  },
+  {
+   "start": 61.76,
+   "end": 66.84,
+   "text": "Ahora mira otra vez el mapa… ¿qué más te ha *ocultado*?"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 0.0,
+   "end": 13.37,
+   "text": "El caso"
+  },
+  {
+   "start": 13.37,
+   "end": 29.06,
+   "text": "Las pistas"
+  },
+  {
+   "start": 29.06,
+   "end": 38.65,
+   "text": "El secreto"
+  },
+  {
+   "start": 38.65,
+   "end": 50.86,
+   "text": "La respuesta"
+  },
+  {
+   "start": 50.86,
+   "end": 61.76,
+   "text": "El culpable"
+  }
+ ],
+ "metadata": {
+  "title": "Hay algo raro en la ruta de tu avión…",
+  "description": "¿Por qué tu avión a Los Ángeles da un rodeo por Canadá? Las pistas, el secreto de las ventanillas y la respuesta.\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}

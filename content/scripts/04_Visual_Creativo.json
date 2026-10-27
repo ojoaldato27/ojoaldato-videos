@@ -1,0 +1,351 @@
+{
+ "id": "04_Visual_Creativo",
+ "notifs": [
+  {
+   "t": 30.63,
+   "title": "nolosabias_datos",
+   "body": "Suscríbete para más datos que no sabías"
+  }
+ ],
+ "style": "creative",
+ "caption_mode": "words",
+ "chunk_n": 3,
+ "bpm": 124,
+ "duration": 71.09,
+ "seed": 747,
+ "thumb_time": 2.0,
+ "watermark": "@nolosabias_datos",
+ "burn_captions": true,
+ "scenes": [
+  {
+   "type": "title",
+   "start": 0.0,
+   "end": 4.85,
+   "params": {
+    "lines": [
+     "Tu vuelo",
+     "en 8",
+     "NÚMEROS"
+    ],
+    "hl": 2,
+    "dur": 4.85
+   }
+  },
+  {
+   "type": "flight",
+   "start": 4.85,
+   "end": 9.06,
+   "params": {
+    "cam0": [
+     -3.7,
+     40.4,
+     16
+    ],
+    "cam1": [
+     -11,
+     45,
+     16
+    ],
+    "f0": 0,
+    "f1": 0.05,
+    "alt0": 0,
+    "alt1": 11000,
+    "spd0": 250,
+    "spd1": 900,
+    "temp0": 15,
+    "temp1": -56,
+    "dur": 4.21
+   }
+  },
+  {
+   "type": "thermo",
+   "start": 9.06,
+   "end": 14.14,
+   "params": {
+    "dur": 5.08
+   }
+  },
+  {
+   "type": "density",
+   "start": 14.14,
+   "end": 20.83,
+   "params": {
+    "dur": 6.69
+   }
+  },
+  {
+   "type": "cabin",
+   "start": 20.83,
+   "end": 26.35,
+   "params": {
+    "dur": 5.52
+   }
+  },
+  {
+   "type": "chips",
+   "start": 26.35,
+   "end": 30.13,
+   "params": {
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "window",
+   "start": 30.13,
+   "end": 33.9,
+   "params": {
+    "phase": "round",
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "window",
+   "start": 33.9,
+   "end": 38.99,
+   "params": {
+    "phase": "square",
+    "dur": 5.08
+   }
+  },
+  {
+   "type": "flight",
+   "start": 38.99,
+   "end": 42.77,
+   "params": {
+    "cam0": [
+     -30,
+     50,
+     7.5
+    ],
+    "cam1": [
+     -66,
+     52,
+     7.5
+    ],
+    "f0": 0.16,
+    "f1": 0.5,
+    "straight": 0.6,
+    "regions": [
+     [
+      "Canadá",
+      -100,
+      58
+     ],
+     [
+      "Groenlandia",
+      -42,
+      73
+     ],
+     [
+      "EE. UU.",
+      -98,
+      40
+     ],
+     [
+      "Océano Atlántico",
+      -40,
+      38
+     ]
+    ],
+    "dur": 3.78
+   }
+  },
+  {
+   "type": "globe_land",
+   "start": 42.77,
+   "end": 47.85,
+   "params": {
+    "view_lat": 50,
+    "view_lon0": -40,
+    "view_lon1": -70,
+    "note": "≈ 790 km menos",
+    "dur": 5.08
+   }
+  },
+  {
+   "type": "greenland",
+   "start": 47.85,
+   "end": 54.53,
+   "params": {
+    "morph": 4.4,
+    "note": "≈ 14 veces más pequeña",
+    "dur": 6.69
+   }
+  },
+  {
+   "type": "record",
+   "start": 54.53,
+   "end": 66.0,
+   "params": {
+    "dur": 11.47
+   }
+  },
+  {
+   "type": "outro_nls",
+   "start": 66.0,
+   "end": 71.09,
+   "params": {
+    "dur": 5.08
+   }
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 4.65,
+   "text": "Tu vuelo de Madrid a Los Ángeles, en *8 números*"
+  },
+  {
+   "start": 4.85,
+   "end": 9.06,
+   "text": "*11.000* metros: la altura a la que vuelas"
+  },
+  {
+   "start": 9.06,
+   "end": 14.14,
+   "text": "*−56 °C*: lo que hay al otro lado de la ventanilla"
+  },
+  {
+   "start": 14.14,
+   "end": 17.92,
+   "text": "*30 %*: el aire que queda a esa altura"
+  },
+  {
+   "start": 17.92,
+   "end": 20.83,
+   "text": "Menos aire, menos resistencia… menos combustible"
+  },
+  {
+   "start": 20.83,
+   "end": 26.35,
+   "text": "*2.400* metros: la altura a la que respiras en la cabina"
+  },
+  {
+   "start": 26.35,
+   "end": 30.13,
+   "text": "Por eso se hincha tu bolsa de patatas"
+  },
+  {
+   "start": 30.13,
+   "end": 33.9,
+   "text": "*3* capas tiene tu ventanilla, y un agujerito"
+  },
+  {
+   "start": 33.9,
+   "end": 38.99,
+   "text": "Redondas desde que los Comet de 1954 fallaron por las esquinas"
+  },
+  {
+   "start": 38.99,
+   "end": 42.77,
+   "text": "*790* kilómetros te ahorra la curva por Canadá"
+  },
+  {
+   "start": 42.77,
+   "end": 47.85,
+   "text": "Porque en una esfera, esa curva es el camino *más corto*"
+  },
+  {
+   "start": 47.85,
+   "end": 51.63,
+   "text": "*14*: las veces que Groenlandia cabe en África"
+  },
+  {
+   "start": 51.63,
+   "end": 54.53,
+   "text": "Aunque en el mapa parezcan iguales"
+  },
+  {
+   "start": 54.53,
+   "end": 61.36,
+   "text": "Y *4 h 56 min*: el récord de un 747 de Nueva York a Londres"
+  },
+  {
+   "start": 61.36,
+   "end": 66.0,
+   "text": "El viento lo empujaba a casi 1.300 km/h"
+  },
+  {
+   "start": 66.0,
+   "end": 71.09,
+   "text": "¿Qué número te ha sorprendido más? Mándaselo a quien *vuele pronto*"
+  }
+ ],
+ "chapters": [
+  {
+   "start": 4.85,
+   "end": 9.06,
+   "text": "Altura"
+  },
+  {
+   "start": 9.06,
+   "end": 14.14,
+   "text": "Frío"
+  },
+  {
+   "start": 14.14,
+   "end": 20.83,
+   "text": "Aire"
+  },
+  {
+   "start": 20.83,
+   "end": 30.13,
+   "text": "Cabina"
+  },
+  {
+   "start": 30.13,
+   "end": 38.99,
+   "text": "Ventanilla"
+  },
+  {
+   "start": 38.99,
+   "end": 47.85,
+   "text": "Ruta"
+  },
+  {
+   "start": 47.85,
+   "end": 54.53,
+   "text": "Mapa"
+  },
+  {
+   "start": 54.53,
+   "end": 66.0,
+   "text": "Récord"
+  }
+ ],
+ "metadata": {
+  "title": "Tu vuelo a Los Ángeles en 8 números ✈️",
+  "description": "Tu vuelo de Madrid a Los Ángeles en 8 números: 11.000, −56, 30 %, 2.400, 3, 790, 14 y 4 h 56 min.\n\nFuentes: atmósfera estándar ISA; normativa FAA 14 CFR 25.841; récord de British Airways (febrero 2020, NPR/Flightradar24); cálculo propio de rutas sobre esfera.\nAnimación, mapas y música originales.\n\n#curiosidades #datoscuriosos #sabiasque #aviones #ciencia",
+  "tags": [
+   "curiosidades",
+   "datos curiosos",
+   "aviones",
+   "sabías que",
+   "ciencia",
+   "mapas"
+  ]
+ },
+ "rights": [
+  {
+   "asset": "animación y mapas esquemáticos",
+   "license": "propio"
+  },
+  {
+   "asset": "música y efectos (sintetizados con código)",
+   "license": "propio"
+  },
+  {
+   "asset": "tipografías Inter y DejaVu",
+   "license": "licencia comercial",
+   "note": "OFL / libre"
+  }
+ ],
+ "sources": [
+  "Ruta ortodrómica Madrid–Los Ángeles ≈ 9.363 km vs. 10.154 km en recta Mercator (cálculo propio, R = 6.371 km)",
+  "Atmósfera estándar ISA: a 11.000 m, −56,5 °C y densidad 0,364 kg/m³ (1,225 a nivel del mar); gradiente 6,5 °C/km",
+  "14 CFR 25.841: altitud de cabina no superior a 8.000 ft (≈ 2.400 m) en operación normal",
+  "de Havilland Comet: accidentes de 1953-1954 por fatiga del metal en esquinas de ventanas; ventanas actuales de 3 capas con orificio de respiración",
+  "British Airways, 8-9/02/2020: Nueva York–Londres en 4 h 56 min, ~800 mph (≈ 1.290 km/h) respecto al suelo (NPR / Flightradar24)",
+  "Superficies: Groenlandia ≈ 2,17 millones de km², África ≈ 30,4 millones de km²"
+ ]
+}
