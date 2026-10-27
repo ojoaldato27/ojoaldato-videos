@@ -1398,6 +1398,10 @@ def music_bed(style, dur_, rng):
         import pop as POP
         m = POP.music(dur_, rng)
         return m[:n] if len(m) >= n else np.pad(m, (0, n - len(m)))
+    import music_extra as MX
+    if style in MX.STYLES:                       # músicas nuevas del 27/10 (trailer, heroic, phonk, synthwave, lofi_hh)
+        m = MX.bed(style, dur_, rng)
+        return m[:n] if len(m) >= n else np.pad(m, (0, n - len(m)))
     if style in ("doc", "mystery", "creative", "premium", "viral", "exp"):
         m, _ = M.track(style, dur_, rng)
         return m[:n] if len(m) >= n else np.pad(m, (0, n - len(m)))
