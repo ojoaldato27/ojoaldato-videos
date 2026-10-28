@@ -114,7 +114,7 @@ def serve():
     return srv
 
 
-def open_page(p, T):
+def open_page(p, T, bg="color", car="real"):
     srv = serve()
     b = p.chromium.launch(args=["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"])
     pg = b.new_page(viewport={"width": 720, "height": 1280})
@@ -122,7 +122,7 @@ def open_page(p, T):
     pg.goto(f"http://127.0.0.1:{srv.server_address[1]}/index.html")
     pg.wait_for_function("window.READY === true", timeout=60000)
     pg.evaluate("document.fonts.ready")
-    pg.evaluate(f"window.TIMING = {json.dumps(T)}")
+    pg.evaluate(f"window.TIMING = {json.dumps(T)}; window.BGMODE = {json.dumps(bg)}; window.CARMODE = {json.dumps(car)}")
     pg.wait_for_timeout(400)
     return b, pg
 
@@ -132,7 +132,9 @@ OJO_POSES = ["think", "point", "point", "surprise", "point", "smirk", "surprise"
 OJO_TRAJE = "c_inventor"          # motor → inventor (Iker, 28/10: «B · Inventor»)
 # Iker (28/10): «mezcla» → en estas escenas Ojo actúa grande dentro de la escena (como en el del agujero);
 # en el resto narra pequeño desde la esquina. escena: (pose, x, y, escala) en 1080x1920
-OJO_ACT = {0: ("think", 640, 900, 0.75), 6: ("flag", 40, 860, 0.8), 8: ("surprise", 600, 1000, 0.7), 10: ("smirk", 620, 930, 0.75)}
+OJO_ACT = {0: ("think", 640, 900, 0.75), 1: ("surprise", 40, 1010, 0.7), 2: ("point", 20, 1060, 0.65), 3: ("surprise", 30, 1000, 0.7),
+           5: ("smirk", 40, 900, 0.75), 6: ("flag", 40, 860, 0.8), 7: ("think", 620, 1000, 0.7), 8: ("surprise", 600, 1000, 0.7),
+           10: ("smirk", 640, 1060, 0.7)}   # Iker (28/10): «más escenas actuando»
 _FIG = {}
 
 

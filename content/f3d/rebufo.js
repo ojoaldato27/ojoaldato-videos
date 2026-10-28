@@ -2,6 +2,8 @@
 // Render determinista: window.renderAt(t) dibuja el fotograma del segundo t y devuelve un JPEG en dataURL.
 // window.TIMING (lo pone render3d.py): {total, lines:[{start,end,tokens:[{w,key,s,e}]}], outro:{...}}
 import * as THREE from 'three';
+import { makeCarPro } from './car_pro.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const W = 720, H = 1280;
 const RED = 0xE62828, INK = 0x111111, GREY = 0x9a9a9a;
@@ -119,9 +121,32 @@ function makeCar(col, stripe) {
   }
   return g;
 }
-const carA = makeCar(RED, 0xffffff);      // el de delante
-const carB = makeCar(0x2b2b2b, RED);      // el que caza el rebufo
+// cada coche lleva dos versiones: «real» (por defecto, Iker 28/10: «el F1 más real») y la antigua de dibujo (window.CARMODE = 'toon')
+function dualCar(col, stripe, band) {
+  const w = new THREE.Group();
+  const toonV = makeCar(col, stripe), realV = makeCarPro(col, stripe === 0xffffff ? 0x15161a : stripe, band);
+  w.add(toonV, realV); w.userData = { toonV, realV, wheels: [...toonV.userData.wheels, ...realV.userData.wheels] };
+  return w;
+}
+const carA = dualCar(RED, 0xffffff, 0xf2c200);   // el de delante
+const carB = dualCar(0x26282e, RED, 0xffffff);   // el que caza el rebufo
 world.add(carA, carB);
+// luz realista: reflejos de estudio y sombra en el suelo
+{
+  const pm = new THREE.PMREMGenerator(gl);
+  scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.6;
+  gl.shadowMap.enabled = true; gl.shadowMap.type = THREE.PCFSoftShadowMap;
+  sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024);
+  Object.assign(sun.shadow.camera, { left: -14, right: 14, top: 14, bottom: -14, near: 1, far: 60 });
+}
+const shadowCatcher = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), new THREE.ShadowMaterial({ opacity: 0.22 }));
+shadowCatcher.rotation.x = -Math.PI / 2; shadowCatcher.position.y = 0.012; shadowCatcher.receiveShadow = true; scene.add(shadowCatcher);
+function carMode() {
+  const real = window.CARMODE !== 'toon';
+  for (const c of [carA, carB]) { c.userData.realV.visible = real; c.userData.toonV.visible = !real; }
+  // la sombra sigue al coche rojo
+  sun.position.set(carA.position.x + 6, 14, carA.position.z + 8); sun.target.position.copy(carA.position); sun.target.updateMatrixWorld();
+}
 function placeCar(car, x, z, yaw = 0, spin = 0) {
   car.position.set(x, 0, z); car.rotation.y = yaw;
   car.userData.wheels.forEach(w => { w.rotation.y = -spin; });
@@ -564,6 +589,12 @@ window.renderAt = function (t) {
   ojo.position.set(-1.0, -1.47, -7.5); ojo.scale.setScalar(0.19); ojo.visible = false; world.visible = true;
   if (!inOutro) {
     si = sceneAt(t);
+    // fondo: blanco (por defecto) o de color por escena, como en el vídeo del agujero (window.BGMODE = 'color')
+    if (window.BGMODE === 'color') {
+      const P = [[0xFFE2B0, 0xF2C98A], [0xCFE6FF, 0xA9CBEA], [0xFFD2B5, 0xF0B48E], [0xFFF0A6, 0xEBD677], [0xD9F0CF, 0xB5DCA6],
+                 [0xFFE2B0, 0xF2C98A], [0xCFE6FF, 0xA9CBEA], [0xFFD2B5, 0xF0B48E], [0xFFF0A6, 0xEBD677], [0xD9F0CF, 0xB5DCA6], [0xFFE2B0, 0xF2C98A]][si];
+      scene.background.setHex(P[0]); ground.material.color.setHex(P[1]);
+    } else { scene.background.setHex(0xffffff); ground.material.color.setHex(0xffffff); }
     const L = T.lines[si], end = si + 1 < T.lines.length ? T.lines[si + 1].start : outroAt;
     u = clamp((t - L.start) / Math.max(0.5, end - L.start));
     ui = SC[si](t, u, L);
@@ -577,6 +608,7 @@ window.renderAt = function (t) {
     setCam(0, 0, 10, 0, 0, 0);
     poseOjo('wave', 'cheer', uo, t);
   }
+  carMode(); shadowCatcher.visible = world.visible;
   gl.clear(); gl.render(scene, cam); gl.clearDepth(); gl.render(ojoScene, ojoCam);
   ctx.globalAlpha = 1; ctx.clearRect(0, 0, W, H); ctx.drawImage(gl.domElement, 0, 0);
   for (const it of ui) {
