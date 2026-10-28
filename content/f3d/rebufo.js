@@ -640,3 +640,12 @@ window.renderAt = function (t) {
   return out.toDataURL('image/jpeg', 0.93);
 };
 Promise.all(['800 40px Inter', '700 28px Inter', '500 24px Inter'].map(f => document.fonts.load(f))).then(() => { window.READY = true; });
+
+// foto de estudio del coche (para revisar el modelo): window.studio(px,py,pz, lx,ly,lz)
+window.studio = function (px, py, pz, lx, ly, lz) {
+  T = window.TIMING; hideAll(); straight.visible = true; carB.visible = false; air.visible = false; ojo.visible = false;
+  if (window.BGMODE === 'color') { scene.background.setHex(0xCFE6FF); ground.material.color.setHex(0xA9CBEA); }
+  placeCar(carA, 0, 0); carMode(); setCam(px, py, pz, lx, ly, lz);
+  gl.clear(); gl.render(scene, cam);
+  return gl.domElement.toDataURL('image/jpeg', 0.93);
+};
