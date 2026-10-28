@@ -4,19 +4,27 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 
 const OJO_POSE = ['think', 'point', 'point', 'think', 'think', 'think', 'point', 'point', 'think', 'think', 'think'];
 cam.far = 1200; cam.updateProjectionMatrix();
-scene.fog = new THREE.Fog(0xcfd5dc, 160, 900);
+scene.fog = new THREE.Fog(0xf3e2c4, 220, 1100);
 
 // texturas
 const UT = {
-  field: canvasTex(256, 256, (x, w, h) => { x.fillStyle = '#b89a62'; x.fillRect(0, 0, w, h);
-    for (let i = 0; i < 16; i++) { x.fillStyle = i % 2 ? '#a88a55' : '#c2a46b'; x.fillRect(0, i * 16, w, 9); }
-    noise(x, w, h, 5000, ['#9c7f4c', '#cbb07a', '#ae905a', '#8f7445'], 2); }, 120, 120),
+  field: canvasTex(512, 512, (x, w, h) => {   // mosaico de parcelas: viñas, rastrojo, tierra roja, verde
+    const P = ['#b9532f', '#c9a14a', '#7fa83a', '#d8b65c', '#a8462a', '#95b84a', '#c98b3c', '#6f9a34'];
+    const r = rng(9); let y = 0;
+    while (y < h) { const hh = 40 + r() * 90; let xx = 0;
+      while (xx < w) { const ww = 60 + r() * 160, c = P[(r() * P.length) | 0]; x.fillStyle = c; x.fillRect(xx, y, ww, hh);
+        x.globalAlpha = 0.25; x.fillStyle = '#000'; for (let k = 0; k < hh; k += 6) x.fillRect(xx, y + k, ww, 2); x.globalAlpha = 1; xx += ww; }
+      y += hh; }
+    noise(x, w, h, 6000, ['rgba(0,0,0,0.12)', 'rgba(255,255,255,0.10)'], 2); }, 18, 18),
+  vines: canvasTex(256, 256, (x, w, h) => { x.fillStyle = '#b4532f'; x.fillRect(0, 0, w, h);
+    for (let i = 0; i < 16; i++) { x.fillStyle = i % 2 ? '#7da33a' : '#c99a3a'; for (let j = 0; j < 32; j++) { x.beginPath(); x.arc(j * 8 + 4, i * 16 + 8, 4.5, 0, 7); x.fill(); } }
+    noise(x, w, h, 3000, ['#9c4527', '#c8643a', '#5f8a2c'], 2); }, 160, 12),
   slab: canvasTex(64, 256, (x, w, h) => { x.fillStyle = '#9ea2a6'; x.fillRect(0, 0, w, h);
     for (let i = 0; i < 8; i++) { x.fillStyle = '#7f8387'; x.fillRect(0, i * 32 + 4, w, 12); } noise(x, w, h, 600, ['#8d9195', '#b0b4b8'], 2); }, 1, 400),
   ballast: canvasTex(128, 128, (x, w, h) => { x.fillStyle = '#7d7a74'; x.fillRect(0, 0, w, h); noise(x, w, h, 4000, ['#6a6761', '#8f8b84', '#5c5a55', '#a39f97'], 3); }, 300, 4),
   hills: canvasTex(512, 128, (x, w, h) => { const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, 'rgba(0,0,0,0)'); x.fillStyle = g; x.fillRect(0, 0, w, h);
-    x.fillStyle = '#8f8a7c'; x.beginPath(); x.moveTo(0, h); for (let i = 0; i <= 32; i++) x.lineTo(i * w / 32, h * 0.45 + Math.sin(i * 0.9) * 14 + Math.sin(i * 2.3) * 7); x.lineTo(w, h); x.fill(); }, 4, 1),
-  sky: canvasTex(4, 256, (x, w, h) => { const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#7f8a97'); g.addColorStop(0.65, '#b9c1ca'); g.addColorStop(1, '#d9dee3'); x.fillStyle = g; x.fillRect(0, 0, w, h); }),
+    x.fillStyle = '#9c8f6a'; x.beginPath(); x.moveTo(0, h); for (let i = 0; i <= 32; i++) x.lineTo(i * w / 32, h * 0.45 + Math.sin(i * 0.9) * 14 + Math.sin(i * 2.3) * 7); x.lineTo(w, h); x.fill(); }, 4, 1),
+  sky: canvasTex(4, 256, (x, w, h) => { const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#3f86d6'); g.addColorStop(0.55, '#9fcff1'); g.addColorStop(0.85, '#ffe3bd'); g.addColorStop(1, '#ffd29a'); x.fillStyle = g; x.fillRect(0, 0, w, h); }),
 };
 UT.hills.wrapT = THREE.ClampToEdgeWrapping; UT.hills.transparent = true;
 UT.sky.wrapS = UT.sky.wrapT = THREE.ClampToEdgeWrapping;
@@ -44,6 +52,18 @@ const rail = new THREE.Group(); scene.add(rail);
     const c = new THREE.Mesh(new THREE.SphereGeometry(1.6 + tr(), 8, 6), crown); c.scale.y = 0.75; c.position.set(x, 2.1, z); rail.add(c);
     const k = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.25, 1.6, 6), trunk); k.position.set(x, 0.6, z); rail.add(k);
   }
+  for (const z of [-44, 50]) { const v = new THREE.Mesh(new THREE.PlaneGeometry(1600, 60), new THREE.MeshLambertMaterial({ map: UT.vines })); v.rotation.x = -Math.PI / 2; v.position.set(0, -0.2, z); rail.add(v); }
+  const wall = new THREE.MeshLambertMaterial({ color: 0xf6f3ec }), roofM = new THREE.MeshLambertMaterial({ color: 0xc0583a });
+  const hr = rng(21);
+  for (let i = 0; i < 26; i++) { const x = (hr() - 0.5) * 1300, z = (hr() < 0.5 ? -1 : 1) * (90 + hr() * 300);
+    const h = new THREE.Mesh(new THREE.BoxGeometry(9, 4, 6), wall); h.position.set(x, 2, z); rail.add(h);
+    const r = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 6, 2.2, 4), roofM); r.rotation.y = Math.PI / 4; r.scale.set(1.1, 1, 0.75); r.position.set(x, 5.1, z); rail.add(r); }
+  for (let i = 0; i < 7; i++) { const m = new THREE.Group(); m.position.set(-260 + i * 38, 22, -560);
+    const tw = new THREE.Mesh(new THREE.CylinderGeometry(3.2, 3.8, 12, 16), wall); tw.position.y = 6; m.add(tw);
+    const cap = new THREE.Mesh(new THREE.ConeGeometry(3.6, 4, 16), new THREE.MeshLambertMaterial({ color: 0x2b2b2b })); cap.position.y = 14; m.add(cap);
+    for (let k = 0; k < 4; k++) { const sail = new THREE.Mesh(new THREE.BoxGeometry(0.5, 9, 0.2), new THREE.MeshLambertMaterial({ color: 0x6b4a33 }));
+      sail.position.set(0, 12 + Math.cos(k * Math.PI / 2 + i) * 4.5, 3.9 + 0); sail.position.x = Math.sin(k * Math.PI / 2 + i) * 4.5; sail.rotation.z = -(k * Math.PI / 2 + i); m.add(sail); }
+    rail.add(m); }
   const hl = new THREE.Mesh(new THREE.PlaneGeometry(3000, 120), new THREE.MeshBasicMaterial({ map: UT.hills, transparent: true, fog: false, color: 0xc8c8c8 })); hl.position.set(0, 30, -700); rail.add(hl);
 }
 
@@ -127,7 +147,7 @@ const candles = new THREE.Group(); scene.add(candles);
   candles.position.set(40, 0.0, -6);
 }
 
-function setBg() { scene.background = UT.sky; }
+function setBg() { scene.background = UT.sky; sun.color.setHex(0xfff0d8); }
 const LOOK = new THREE.Vector3();
 const prevFrame = document.createElement('canvas'); prevFrame.width = W * PR; prevFrame.height = H * PR; let prevA = 0;
 function setCam(px, py, pz, lx, ly, lz, up) { cam.up.set(...(up || [0, 1, 0])); cam.position.set(px, py, pz); LOOK.set(lx, ly, lz); cam.fov = 38; cam.updateProjectionMatrix(); cam.lookAt(lx, ly, lz); cam.updateMatrixWorld(); }
@@ -166,7 +186,7 @@ const SC = [
     const pi = proj(new THREE.Vector3(-30, 6, 0)), pa = proj(new THREE.Vector3(-245, 6, 0));
     return [['pill', pi[0], pi[1] - 40, 'IRYO · PARADO', clamp((u - 0.15) * 4)], ['pill', pa[0], pa[1] - 40, 'AVE · PARADO', clamp((u - 0.45) * 4), CSS_RED]]; },
   // 4 · el centro de control autoriza seguir (según el ministro)
-  (t, u) => { ave.visible = true; ave.position.x = -215; setCam(-420, 48, -24, -90, 0, 3); DIM = 0.55;
+  (t, u) => { ave.visible = true; ave.position.x = -215; setCam(-420, 48, -24, -90, 0, 3); DIM = 0.35;
     return [['panel', u], ['pill', W / 2, 330, 'SEGÚN EL MINISTRO DE TRANSPORTES', clamp(u * 4)]]; },
   // 5 · el AVE arranca por la misma vía y se acerca
   (t, u) => { ave.visible = true; ave.position.x = lerp(-215, -165, ease(u)); setCam(lerp(-400, -340, u), 30, -20, -100, 0, 3);
@@ -181,16 +201,16 @@ const SC = [
     cs[3].position.z = 5.2 * d; cs[3].rotation.set(0.25 * d, 0.16 * d, 0); cs[3].position.y = -0.4 * d; cs[3].position.x = -61.8 + 2.5 * d;
     cs[2].position.z = 2.4 * clamp((u - hit - 0.05) / 0.4); cs[2].rotation.set(0.12 * d, 0.08 * d, 0);
     ave.userData.cars[0].rotation.x = 0.03 * d;
-    setCam(-150, 15, -17, -72, 1, 3); DIM = 0.15 + 0.25 * d;
+    setCam(-150, 15, -17, -72, 1, 3); DIM = 0.1 * d;
     return [['clock', '8:54', 'ALCANCE', clamp((u - hit + 0.05) * 6)]]; },
   // 7 · las víctimas
-  (t, u) => { iryo.visible = false; setCam(-20, 3, 18, 60, 2, 3); DIM = 0.8;
+  (t, u) => { iryo.visible = false; setCam(-20, 3, 18, 60, 2, 3); DIM = 0.62;
     return [['bignum', '68', 'FALLECIDOS', clamp(u * 3)], ['pill', W / 2, 760, '≈540 VIAJEROS · MÁS DE 100 HERIDOS', clamp((u - 0.45) * 4)]]; },
   // 8 · la investigación
   (t, u) => { iryo.visible = false; tape.visible = true; setCam(14, 2.2, 10, 31, 1.2, 3); return [['pill', W / 2, 420, 'INVESTIGA UN JUZGADO DE ORGAZ', clamp((u - 0.2) * 4)]]; },
-  // 9 · luto oficial y línea cortada
-  (t, u) => { iryo.visible = false; flag.visible = true; tape.visible = true; const cl = flag.userData.cloth; cl.rotation.y = Math.sin(t * 1.4) * 0.15;
-    setCam(-6, 4.5, 4, 8, 6, -9); return [['pill', W / 2, 330, '3 DÍAS DE LUTO OFICIAL', clamp(u * 4)], ['pill', W / 2, 400, 'LÍNEA MADRID–ANDALUCÍA CORTADA', clamp((u - 0.4) * 4), CSS_RED]]; },
+  // 9 · luto oficial y línea cortada (sin bandera, Iker 29/10)
+  (t, u) => { iryo.visible = false; tape.visible = true; setCam(12, 2.6, 13, 30, 1.2, 3);
+    return [['ribbon', clamp(u * 3)], ['pill', W / 2, 560, '3 DÍAS DE LUTO OFICIAL', clamp((u - 0.15) * 4)], ['pill', W / 2, 630, 'LÍNEA MADRID–ANDALUCÍA CORTADA', clamp((u - 0.4) * 4), CSS_RED]]; },
   // 10 · recuerdo: velas
   (t, u) => { iryo.visible = false; candles.visible = true; sun.intensity = 0.5; DIM = 0.25;
     candles.children.forEach((c, i) => { if (c.userData.flame) c.userData.flame.scale.set(1 + Math.sin(t * 9 + i) * 0.12, 1.8 + Math.sin(t * 7 + i * 2) * 0.25, 1); });
@@ -234,6 +254,12 @@ function controlPanel(u) {
   rrect(W / 2 - 130, 660, 260, 54, 12); ctx.fillStyle = on ? '#1fa85a' : '#1a3d28'; ctx.fill(); ctx.fillStyle = '#fff'; ctx.font = F(800, 22);
   ctx.fillText('MARCHA AUTORIZADA', W / 2, 695); ctx.restore();
 }
+function ribbon(u) {
+  if (u <= 0) return; ctx.save(); ctx.globalAlpha = clamp(u * 2); ctx.translate(W / 2, 330); const k = 0.55 * eob(u); ctx.scale(k, k);
+  ctx.lineJoin = 'round'; ctx.lineWidth = 9; ctx.strokeStyle = '#fff'; ctx.fillStyle = '#111';
+  ctx.beginPath(); ctx.moveTo(0, -10); ctx.bezierCurveTo(-70, -110, -120, -20, -45, 40); ctx.lineTo(-95, 170); ctx.lineTo(-55, 160); ctx.lineTo(0, 20);
+  ctx.lineTo(55, 160); ctx.lineTo(95, 170); ctx.lineTo(45, 40); ctx.bezierCurveTo(120, -20, 70, -110, 0, -10); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
+}
 function memorialCard(t, u) {
   ctx.save(); ctx.globalAlpha = clamp(u * 1.5); ctx.fillStyle = '#0d0e10'; ctx.fillRect(0, 0, W, H);
   // lazo negro con borde blanco
@@ -252,7 +278,7 @@ function sceneAt(t) { const n = T.lines.length; for (let i = n - 1; i >= 0; i--)
 function drawUi(ui) {
   for (const it of ui) { const [k, ...a] = it;
     if (k === 'pill') pill(...a); else if (k === 'clock') clockCard(...a); else if (k === 'people') peopleGrid(...a);
-    else if (k === 'bignum') bigNum(...a); else if (k === 'panel') controlPanel(...a); }
+    else if (k === 'bignum') bigNum(...a); else if (k === 'panel') controlPanel(...a); else if (k === 'ribbon') ribbon(...a); }
 }
 function render3(si, t, L, end) {
   hideAll(); setBg();
