@@ -1,0 +1,1145 @@
+{
+"words": [
+{
+"text": "¿Por",
+"type": "word",
+"start": 0.0,
+"end": 0.23
+},
+{
+"text": "qué",
+"type": "word",
+"start": 0.25,
+"end": 0.479
+},
+{
+"text": "en",
+"type": "word",
+"start": 0.499,
+"end": 0.674
+},
+{
+"text": "la",
+"type": "word",
+"start": 0.689,
+"end": 0.864
+},
+{
+"text": "F1",
+"type": "word",
+"start": 0.88,
+"end": 1.175
+},
+{
+"text": "los",
+"type": "word",
+"start": 1.2,
+"end": 1.43
+},
+{
+"text": "coches",
+"type": "word",
+"start": 1.45,
+"end": 1.844
+},
+{
+"text": "van",
+"type": "word",
+"start": 1.878,
+"end": 2.108
+},
+{
+"text": "tan",
+"type": "word",
+"start": 2.128,
+"end": 2.357
+},
+{
+"text": "pegados",
+"type": "word",
+"start": 2.377,
+"end": 2.826
+},
+{
+"text": "al",
+"type": "word",
+"start": 2.865,
+"end": 3.04
+},
+{
+"text": "de",
+"type": "word",
+"start": 3.055,
+"end": 3.23
+},
+{
+"text": "delante?",
+"type": "word",
+"start": 3.245,
+"end": 3.693
+},
+{
+"text": "Un",
+"type": "word",
+"start": 3.732,
+"end": 3.907
+},
+{
+"text": "F1",
+"type": "word",
+"start": 3.922,
+"end": 4.218
+},
+{
+"text": "a",
+"type": "word",
+"start": 4.243,
+"end": 4.391
+},
+{
+"text": "más",
+"type": "word",
+"start": 4.404,
+"end": 4.633
+},
+{
+"text": "de",
+"type": "word",
+"start": 4.653,
+"end": 4.828
+},
+{
+"text": "300",
+"type": "word",
+"start": 4.844,
+"end": 5.434
+},
+{
+"text": "km/h",
+"type": "word",
+"start": 5.485,
+"end": 5.77
+},
+{
+"text": "va",
+"type": "word",
+"start": 5.794,
+"end": 5.969
+},
+{
+"text": "empujando",
+"type": "word",
+"start": 5.985,
+"end": 6.542
+},
+{
+"text": "una",
+"type": "word",
+"start": 6.591,
+"end": 6.82
+},
+{
+"text": "pared",
+"type": "word",
+"start": 6.84,
+"end": 7.179
+},
+{
+"text": "de",
+"type": "word",
+"start": 7.209,
+"end": 7.384
+},
+{
+"text": "aire.",
+"type": "word",
+"start": 7.399,
+"end": 7.683
+},
+{
+"text": "Y",
+"type": "word",
+"start": 7.866,
+"end": 7.866
+},
+{
+"text": "ese",
+"type": "word",
+"start": 7.866,
+"end": 7.866
+},
+{
+"text": "aire",
+"type": "word",
+"start": 7.866,
+"end": 7.866
+},
+{
+"text": "frena",
+"type": "word",
+"start": 7.866,
+"end": 7.866
+},
+{
+"text": "muchísimo:",
+"type": "word",
+"start": 7.866,
+"end": 7.866
+},
+{
+"text": "a",
+"type": "word",
+"start": 8.062,
+"end": 8.299
+},
+{
+"text": "esa",
+"type": "word",
+"start": 8.32,
+"end": 8.689
+},
+{
+"text": "velocidad,",
+"type": "word",
+"start": 8.722,
+"end": 9.619
+},
+{
+"text": "casi",
+"type": "word",
+"start": 9.887,
+"end": 10.173
+},
+{
+"text": "toda",
+"type": "word",
+"start": 10.197,
+"end": 10.483
+},
+{
+"text": "la",
+"type": "word",
+"start": 10.508,
+"end": 10.684
+},
+{
+"text": "potencia",
+"type": "word",
+"start": 10.699,
+"end": 11.204
+},
+{
+"text": "se",
+"type": "word",
+"start": 11.248,
+"end": 11.424
+},
+{
+"text": "gasta",
+"type": "word",
+"start": 11.439,
+"end": 11.78
+},
+{
+"text": "en",
+"type": "word",
+"start": 11.809,
+"end": 11.985
+},
+{
+"text": "apartarlo.",
+"type": "word",
+"start": 12.0,
+"end": 12.561
+},
+{
+"text": "Pero",
+"type": "word",
+"start": 12.609,
+"end": 12.895
+},
+{
+"text": "detrás",
+"type": "word",
+"start": 12.92,
+"end": 13.315
+},
+{
+"text": "del",
+"type": "word",
+"start": 13.35,
+"end": 13.58
+},
+{
+"text": "coche",
+"type": "word",
+"start": 13.6,
+"end": 13.941
+},
+{
+"text": "queda",
+"type": "word",
+"start": 13.971,
+"end": 14.311
+},
+{
+"text": "un",
+"type": "word",
+"start": 14.341,
+"end": 14.516
+},
+{
+"text": "hueco",
+"type": "word",
+"start": 14.532,
+"end": 14.872
+},
+{
+"text": "de",
+"type": "word",
+"start": 14.902,
+"end": 15.078
+},
+{
+"text": "aire",
+"type": "word",
+"start": 15.093,
+"end": 15.379
+},
+{
+"text": "revuelto.",
+"type": "word",
+"start": 15.403,
+"end": 15.909
+},
+{
+"text": "Eso",
+"type": "word",
+"start": 16.179,
+"end": 16.399
+},
+{
+"text": "es",
+"type": "word",
+"start": 16.418,
+"end": 16.586
+},
+{
+"text": "el",
+"type": "word",
+"start": 16.601,
+"end": 16.769
+},
+{
+"text": "rebufo.",
+"type": "word",
+"start": 16.783,
+"end": 17.161
+},
+{
+"text": "Si",
+"type": "word",
+"start": 17.503,
+"end": 17.657
+},
+{
+"text": "te",
+"type": "word",
+"start": 17.67,
+"end": 17.824
+},
+{
+"text": "metes",
+"type": "word",
+"start": 17.838,
+"end": 18.136
+},
+{
+"text": "justo",
+"type": "word",
+"start": 18.162,
+"end": 18.461
+},
+{
+"text": "ahí…",
+"type": "word",
+"start": 18.487,
+"end": 18.689
+},
+{
+"text": "el",
+"type": "word",
+"start": 19.061,
+"end": 19.214
+},
+{
+"text": "aire",
+"type": "word",
+"start": 19.227,
+"end": 19.476
+},
+{
+"text": "ya",
+"type": "word",
+"start": 19.498,
+"end": 19.651
+},
+{
+"text": "no",
+"type": "word",
+"start": 19.664,
+"end": 19.818
+},
+{
+"text": "te",
+"type": "word",
+"start": 19.831,
+"end": 19.984
+},
+{
+"text": "frena",
+"type": "word",
+"start": 19.997,
+"end": 20.294
+},
+{
+"text": "tanto.",
+"type": "word",
+"start": 20.32,
+"end": 20.617
+},
+{
+"text": "Es",
+"type": "word",
+"start": 20.901,
+"end": 21.055
+},
+{
+"text": "como",
+"type": "word",
+"start": 21.068,
+"end": 21.319
+},
+{
+"text": "ir",
+"type": "word",
+"start": 21.341,
+"end": 21.495
+},
+{
+"text": "en",
+"type": "word",
+"start": 21.508,
+"end": 21.662
+},
+{
+"text": "bici",
+"type": "word",
+"start": 21.676,
+"end": 21.926
+},
+{
+"text": "justo",
+"type": "word",
+"start": 21.948,
+"end": 22.247
+},
+{
+"text": "detrás",
+"type": "word",
+"start": 22.273,
+"end": 22.62
+},
+{
+"text": "de",
+"type": "word",
+"start": 22.65,
+"end": 22.804
+},
+{
+"text": "otro",
+"type": "word",
+"start": 22.818,
+"end": 23.068
+},
+{
+"text": "ciclista.",
+"type": "word",
+"start": 23.09,
+"end": 23.533
+},
+{
+"text": "Con",
+"type": "word",
+"start": 23.707,
+"end": 23.912
+},
+{
+"text": "menos",
+"type": "word",
+"start": 23.93,
+"end": 24.232
+},
+{
+"text": "resistencia",
+"type": "word",
+"start": 24.259,
+"end": 24.854
+},
+{
+"text": "ganas",
+"type": "word",
+"start": 24.906,
+"end": 25.209
+},
+{
+"text": "velocidad",
+"type": "word",
+"start": 25.235,
+"end": 25.733
+},
+{
+"text": "sin",
+"type": "word",
+"start": 25.777,
+"end": 25.982
+},
+{
+"text": "tocar",
+"type": "word",
+"start": 26.0,
+"end": 26.302
+},
+{
+"text": "nada:",
+"type": "word",
+"start": 26.329,
+"end": 26.583
+},
+{
+"text": "unos",
+"type": "word",
+"start": 26.745,
+"end": 27.023
+},
+{
+"text": "10",
+"type": "word",
+"start": 27.048,
+"end": 27.455
+},
+{
+"text": "km/h",
+"type": "word",
+"start": 27.491,
+"end": 27.77
+},
+{
+"text": "más",
+"type": "word",
+"start": 27.794,
+"end": 28.019
+},
+{
+"text": "al",
+"type": "word",
+"start": 28.039,
+"end": 28.21
+},
+{
+"text": "final",
+"type": "word",
+"start": 28.225,
+"end": 28.558
+},
+{
+"text": "de",
+"type": "word",
+"start": 28.587,
+"end": 28.758
+},
+{
+"text": "la",
+"type": "word",
+"start": 28.773,
+"end": 28.945
+},
+{
+"text": "recta.",
+"type": "word",
+"start": 28.96,
+"end": 29.292
+},
+{
+"text": "Y",
+"type": "word",
+"start": 29.467,
+"end": 29.486
+},
+{
+"text": "en",
+"type": "word",
+"start": 29.487,
+"end": 29.509
+},
+{
+"text": "la",
+"type": "word",
+"start": 29.511,
+"end": 29.532
+},
+{
+"text": "frenada…",
+"type": "word",
+"start": 29.534,
+"end": 29.59
+},
+{
+"text": "sales",
+"type": "word",
+"start": 29.969,
+"end": 30.265
+},
+{
+"text": "del",
+"type": "word",
+"start": 30.291,
+"end": 30.492
+},
+{
+"text": "rebufo",
+"type": "word",
+"start": 30.51,
+"end": 30.854
+},
+{
+"text": "en",
+"type": "word",
+"start": 30.884,
+"end": 31.037
+},
+{
+"text": "el",
+"type": "word",
+"start": 31.05,
+"end": 31.203
+},
+{
+"text": "último",
+"type": "word",
+"start": 31.217,
+"end": 31.561
+},
+{
+"text": "momento,",
+"type": "word",
+"start": 31.591,
+"end": 31.984
+},
+{
+"text": "te",
+"type": "word",
+"start": 32.018,
+"end": 32.171
+},
+{
+"text": "pones",
+"type": "word",
+"start": 32.184,
+"end": 32.481
+},
+{
+"text": "a",
+"type": "word",
+"start": 32.506,
+"end": 32.636
+},
+{
+"text": "su",
+"type": "word",
+"start": 32.647,
+"end": 32.8
+},
+{
+"text": "lado",
+"type": "word",
+"start": 32.813,
+"end": 33.062
+},
+{
+"text": "y",
+"type": "word",
+"start": 33.084,
+"end": 33.213
+},
+{
+"text": "lo",
+"type": "word",
+"start": 33.224,
+"end": 33.377
+},
+{
+"text": "adelantas.",
+"type": "word",
+"start": 33.391,
+"end": 33.879
+},
+{
+"text": "Pero",
+"type": "word",
+"start": 33.921,
+"end": 34.17
+},
+{
+"text": "tiene",
+"type": "word",
+"start": 34.191,
+"end": 34.488
+},
+{
+"text": "trampa:",
+"type": "word",
+"start": 34.514,
+"end": 34.858
+},
+{
+"text": "en",
+"type": "word",
+"start": 34.888,
+"end": 35.041
+},
+{
+"text": "las",
+"type": "word",
+"start": 35.055,
+"end": 35.256
+},
+{
+"text": "curvas,",
+"type": "word",
+"start": 35.273,
+"end": 35.618
+},
+{
+"text": "ese",
+"type": "word",
+"start": 35.854,
+"end": 36.125
+},
+{
+"text": "aire",
+"type": "word",
+"start": 36.149,
+"end": 36.484
+},
+{
+"text": "sucio",
+"type": "word",
+"start": 36.514,
+"end": 36.914
+},
+{
+"text": "te",
+"type": "word",
+"start": 36.949,
+"end": 37.156
+},
+{
+"text": "quita",
+"type": "word",
+"start": 37.174,
+"end": 37.574
+},
+{
+"text": "carga",
+"type": "word",
+"start": 37.609,
+"end": 38.009
+},
+{
+"text": "aerodinámica.",
+"type": "word",
+"start": 38.044,
+"end": 38.897
+},
+{
+"text": "El",
+"type": "word",
+"start": 39.322,
+"end": 39.468
+},
+{
+"text": "coche",
+"type": "word",
+"start": 39.48,
+"end": 39.763
+},
+{
+"text": "se",
+"type": "word",
+"start": 39.788,
+"end": 39.934
+},
+{
+"text": "agarra",
+"type": "word",
+"start": 39.947,
+"end": 40.275
+},
+{
+"text": "peor,",
+"type": "word",
+"start": 40.304,
+"end": 40.541
+},
+{
+"text": "las",
+"type": "word",
+"start": 40.695,
+"end": 40.89
+},
+{
+"text": "ruedas",
+"type": "word",
+"start": 40.907,
+"end": 41.241
+},
+{
+"text": "se",
+"type": "word",
+"start": 41.27,
+"end": 41.419
+},
+{
+"text": "calientan…",
+"type": "word",
+"start": 41.432,
+"end": 41.906
+},
+{
+"text": "y",
+"type": "word",
+"start": 41.947,
+"end": 42.073
+},
+{
+"text": "cuesta",
+"type": "word",
+"start": 42.084,
+"end": 42.418
+},
+{
+"text": "seguirle.",
+"type": "word",
+"start": 42.447,
+"end": 42.875
+},
+{
+"text": "Y",
+"type": "word",
+"start": 43.321,
+"end": 43.439
+},
+{
+"text": "desde",
+"type": "word",
+"start": 43.449,
+"end": 43.72
+},
+{
+"text": "2026,",
+"type": "word",
+"start": 43.743,
+"end": 44.355
+},
+{
+"text": "si",
+"type": "word",
+"start": 44.408,
+"end": 44.548
+},
+{
+"text": "vas",
+"type": "word",
+"start": 44.56,
+"end": 44.744
+},
+{
+"text": "a",
+"type": "word",
+"start": 44.76,
+"end": 44.878
+},
+{
+"text": "menos",
+"type": "word",
+"start": 44.888,
+"end": 45.159
+},
+{
+"text": "de",
+"type": "word",
+"start": 45.183,
+"end": 45.322
+},
+{
+"text": "un",
+"type": "word",
+"start": 45.335,
+"end": 45.474
+},
+{
+"text": "segundo,",
+"type": "word",
+"start": 45.487,
+"end": 45.845
+},
+{
+"text": "tienes",
+"type": "word",
+"start": 45.876,
+"end": 46.191
+},
+{
+"text": "un",
+"type": "word",
+"start": 46.218,
+"end": 46.358
+},
+{
+"text": "extra",
+"type": "word",
+"start": 46.37,
+"end": 46.641
+},
+{
+"text": "de",
+"type": "word",
+"start": 46.664,
+"end": 46.804
+},
+{
+"text": "energía",
+"type": "word",
+"start": 46.816,
+"end": 47.175
+},
+{
+"text": "eléctrica",
+"type": "word",
+"start": 47.206,
+"end": 47.651
+},
+{
+"text": "para",
+"type": "word",
+"start": 47.69,
+"end": 47.917
+},
+{
+"text": "atacar.",
+"type": "word",
+"start": 47.937,
+"end": 48.252
+},
+{
+"text": "Así",
+"type": "word",
+"start": 48.279,
+"end": 48.463
+},
+{
+"text": "que…",
+"type": "word",
+"start": 48.479,
+"end": 48.662
+},
+{
+"text": "¿por",
+"type": "word",
+"start": 48.827,
+"end": 49.084
+},
+{
+"text": "qué",
+"type": "word",
+"start": 49.106,
+"end": 49.363
+},
+{
+"text": "van",
+"type": "word",
+"start": 49.386,
+"end": 49.643
+},
+{
+"text": "tan",
+"type": "word",
+"start": 49.665,
+"end": 49.923
+},
+{
+"text": "pegados?",
+"type": "word",
+"start": 49.945,
+"end": 50.447
+},
+{
+"text": "Porque",
+"type": "word",
+"start": 50.706,
+"end": 51.028
+},
+{
+"text": "detrás",
+"type": "word",
+"start": 51.056,
+"end": 51.377
+},
+{
+"text": "del",
+"type": "word",
+"start": 51.405,
+"end": 51.593
+},
+{
+"text": "otro,",
+"type": "word",
+"start": 51.609,
+"end": 51.841
+},
+{
+"text": "el",
+"type": "word",
+"start": 51.861,
+"end": 52.004
+},
+{
+"text": "aire",
+"type": "word",
+"start": 52.017,
+"end": 52.249
+},
+{
+"text": "te",
+"type": "word",
+"start": 52.269,
+"end": 52.412
+},
+{
+"text": "regala",
+"type": "word",
+"start": 52.424,
+"end": 52.746
+},
+{
+"text": "velocidad.",
+"type": "word",
+"start": 52.774,
+"end": 53.229
+},
+{
+"text": "La",
+"type": "word",
+"start": 53.678,
+"end": 53.835
+},
+{
+"text": "próxima",
+"type": "word",
+"start": 53.849,
+"end": 54.252
+},
+{
+"text": "vez",
+"type": "word",
+"start": 54.287,
+"end": 54.493
+},
+{
+"text": "que",
+"type": "word",
+"start": 54.511,
+"end": 54.717
+},
+{
+"text": "veas",
+"type": "word",
+"start": 54.735,
+"end": 54.99
+},
+{
+"text": "dos",
+"type": "word",
+"start": 55.012,
+"end": 55.218
+},
+{
+"text": "coches",
+"type": "word",
+"start": 55.236,
+"end": 55.59
+},
+{
+"text": "en",
+"type": "word",
+"start": 55.621,
+"end": 55.778
+},
+{
+"text": "fila,",
+"type": "word",
+"start": 55.791,
+"end": 56.047
+},
+{
+"text": "ya",
+"type": "word",
+"start": 56.236,
+"end": 56.398
+},
+{
+"text": "sabes",
+"type": "word",
+"start": 56.412,
+"end": 56.725
+},
+{
+"text": "qué",
+"type": "word",
+"start": 56.752,
+"end": 56.964
+},
+{
+"text": "están",
+"type": "word",
+"start": 56.983,
+"end": 57.296
+},
+{
+"text": "cazando…",
+"type": "word",
+"start": 57.323,
+"end": 57.737
+},
+{
+"text": "¡Ojo",
+"type": "word",
+"start": 57.773,
+"end": 57.985
+},
+{
+"text": "al",
+"type": "word",
+"start": 58.003,
+"end": 58.165
+},
+{
+"text": "dato!",
+"type": "word",
+"start": 58.179,
+"end": 58.441
+}
+],
+"source": "kokoro+align_local"
+}

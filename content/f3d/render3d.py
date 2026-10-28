@@ -16,16 +16,16 @@ LINES = [
     "Un F1 a más de *300 km/h* va empujando una pared de aire.",
     "Y ese aire frena muchísimo: a esa velocidad, casi toda la potencia se gasta en *apartarlo*.",
     "Pero detrás del coche queda un hueco de aire revuelto. Eso es el *rebufo*.",
-    "Si te metes justo ahí… el aire ya *no te frena* tanto.",
+    "Si te metes justo ahí… el aire ya *no te frena* tanto. Es como ir en bici justo detrás de otro ciclista.",
     "Con menos resistencia ganas velocidad sin tocar nada: unos *10 km/h* más al final de la recta.",
-    "Y en la frenada… sales del rebufo, te pones al lado y lo *adelantas*.",
+    "Y en la frenada… sales del rebufo en el último momento, te pones a su lado y lo *adelantas*.",
     "Pero tiene trampa: en las curvas, ese aire sucio te quita *carga aerodinámica*.",
     "El coche se agarra peor, las ruedas se *calientan*… y cuesta seguirle.",
     "Y desde *2026*, si vas a menos de un segundo, tienes un extra de *energía eléctrica* para atacar.",
     "Así que… ¿por qué van tan pegados? Porque detrás del otro, el aire te *regala velocidad*.",
 ]
 OUTRO_LINE = "La próxima vez que veas dos coches en fila, ya sabes qué están cazando… ¡Ojo al dato!"
-OUTRO_HOLD = 2.6
+OUTRO_HOLD = 3.0
 
 
 def script_text():
@@ -157,7 +157,7 @@ def preview(outp):
 
 def audio(T, outwav):
     sys.path[:0] = [ROOT + "/pipeline"]
-    import cine, music as M
+    import cine, music3 as M
     import scipy.io.wavfile as wf
     sr = M.SR
     n = int((T["total"] + 0.5) * sr)

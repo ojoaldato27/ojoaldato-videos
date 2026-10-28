@@ -2,7 +2,7 @@
 
 ## Cómo arranca cada noche (Iker, 27/10: «para gastar el mínimo uso posible»)
 - GUARDAR SIEMPRE (Iker, 28/10, para que todo vaya solo): en cuanto tengas la voz (MP3 + _words.json) y la copia ligera <10 MB de un vídeo, haz commit y push al repo (voz en content/cine/voz/, vídeo en listos/). Nada se queda solo en el chat: el 28/10 se perdieron el 07 y el 3D del rebufo por no subirlos.
-- VOZ (Iker, 28/10): vuelve a ser Fernando `dlGxemPxFMTY7iXagmOj`, no Álvaro. Si ElevenLabs da 429, no crees nodos nuevos: vuelve a lanzar el mismo nodo más tarde.
+- VOZ (Iker, 28/10, manda sobre cualquier otra regla de voz de este archivo): SOLO Kokoro con la voz «em_alex», gratis e ilimitada: `python3 tools/voz_kokoro.py <modulo>` (hace el MP3 y los tiempos por palabra). Nada de ElevenLabs.
 - Cada noche es una SESIÓN NUEVA y limpia: no dependas de ningún chat anterior. Repo `ojoaldato-videos` clonado en /home/claude/shorts-ingenieria, `bash setup.sh`, lee este archivo y el doc «Plan de subidas».
 - Mínimas búsquedas y pasos; mensajes cortos (2-4 líneas). Nada de revisiones de actualidad por la mañana.
 - Entrega a las 21:00 en esta misma sesión: SendUserFile con los vídeos (o las vistas previas) + un SendUserMessage corto + AskUserQuestion con la nota (⭐ 5 · 4 · 3 · 1-2) y lo que haga falta decidir.
