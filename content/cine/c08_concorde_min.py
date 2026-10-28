@@ -331,7 +331,7 @@ FNS = {n: globals()["sh_" + n] for n in NAMES}
 FOCUS_PT = {n: (540, 780) for n in NAMES}
 
 AUDIO = {
-    "music": [("q", "epic")],
+    "music": [("q", "lofi_hh")],
     "gains": {},
     "amb": {"wind": ["q", "speed", "fail"]},
     "sfx": [("q+0.2", "whoosh", 0.08), ("speed+0.3", "whoosh_up", 0.08), ("alt+0.5", "swell", 0.06), ("stretch+0.6", "click", 0.1),
