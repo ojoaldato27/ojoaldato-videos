@@ -457,23 +457,33 @@ const OJO_POSE = ['think', 'point', 'push', 'surprise', 'point', 'cheer', 'surpr
 const GAP_MIN = 6.2;   // morro-cola: 5 m de coche + aire; nunca se solapan en el mismo carril
 
 const LOOK = new THREE.Vector3();
+const prevFrame = document.createElement('canvas'); prevFrame.width = W; prevFrame.height = H; let prevA = 0;
+function setBg(si) {
+  // fondo de color por escena, como en el vídeo del agujero (window.BGMODE = 'color'), o blanco
+  if (window.BGMODE === 'color') {
+    const P = [[0xFFE2B0, 0xF2C98A], [0xCFE6FF, 0xA9CBEA], [0xFFD2B5, 0xF0B48E], [0xFFF0A6, 0xEBD677], [0xD9F0CF, 0xB5DCA6],
+               [0xFFE2B0, 0xF2C98A], [0xCFE6FF, 0xA9CBEA], [0xFFD2B5, 0xF0B48E], [0xFFF0A6, 0xEBD677], [0xD9F0CF, 0xB5DCA6], [0xFFE2B0, 0xF2C98A]][si];
+    scene.background.setHex(P[0]); ground.material.color.setHex(P[1]);
+  } else { scene.background.setHex(0xffffff); ground.material.color.setHex(0xffffff); }
+}
 function setCam(px, py, pz, lx, ly, lz, up) { cam.up.set(...(up || [0, 1, 0])); cam.position.set(px, py, pz); LOOK.set(lx, ly, lz); cam.fov = 38; cam.updateProjectionMatrix(); cam.lookAt(lx, ly, lz); cam.updateMatrixWorld(); }
 // Iker (28/10): «más dinámico y enérgico, sin cortes secos» → la cámara nunca está quieta y los cambios de escena
 // son un zoom continuo: la escena acaba acercándose a un detalle y la siguiente empieza pegada a otro y se abre.
 function camFx(t, t0, t1, si, keyTimes) {
   const dur = Math.max(0.6, t1 - t0), k = clamp((t - t0) / dur);
   const P = cam.position.clone(), D = LOOK.clone().sub(P);
-  let f = 0.14 * ease(k);                                   // empuje lento durante toda la escena
-  const tin = t - t0, tout = t1 - t;
+  let f = 0.08 * ease(k);                                   // empuje lento durante toda la escena
+  const tin = t - t0, tout = Math.max(0, t1 - t);
   let roll = 0, fov = 38;
-  if (si > 0 && tin < 0.55) { const a = 1 - ease(tin / 0.55); f += 0.72 * a; fov -= 12 * a; roll = (si % 2 ? 1 : -1) * 0.18 * a; }
-  if (tout < 0.4) { const a = Math.pow(1 - tout / 0.4, 2); f += 0.62 * a; fov -= 10 * a; roll += (si % 2 ? -1 : 1) * 0.14 * a; }
-  // pequeño balanceo de cámara en mano + golpe en las palabras clave
-  let kick = 0; for (const kt of keyTimes) { const d = t - kt; if (d >= 0 && d < 0.25) kick = Math.max(kick, (1 - d / 0.25)); }
-  const sw = 0.025 * D.length();
+  // Iker (28/10): «demasiados zooms rápidos» → zoom de entrada/salida más corto de recorrido y más largo de tiempo,
+  // con fundido entre las dos escenas (ver renderAt), sin golpes de cámara.
+  if (si > 0 && tin < 0.9) { const a = 1 - ease(tin / 0.9); f += 0.42 * a; fov -= 5 * a; roll = (si % 2 ? 1 : -1) * 0.05 * a; }
+  if (tout < 0.7) { const a = ease(1 - tout / 0.7); f += 0.38 * a; fov -= 4 * a; roll += (si % 2 ? -1 : 1) * 0.04 * a; }
+  const kick = 0;
+  const sw = 0.012 * D.length();
   P.add(D.multiplyScalar(f));
-  P.x += Math.sin(t * 1.3) * sw * 0.5 + Math.sin(t * 31) * sw * 0.25 * kick;
-  P.y += Math.sin(t * 1.7 + 1) * sw * 0.3 + Math.cos(t * 27) * sw * 0.25 * kick;
+  P.x += Math.sin(t * 0.9) * sw * 0.5;
+  P.y += Math.sin(t * 1.1 + 1) * sw * 0.3;
   cam.position.copy(P); cam.fov = fov - 3 * kick; cam.updateProjectionMatrix();
   cam.lookAt(LOOK); cam.rotateZ(roll); cam.updateMatrixWorld();
 }
@@ -611,16 +621,21 @@ window.renderAt = function (t) {
   ojo.position.set(-1.0, -1.47, -7.5); ojo.scale.setScalar(0.19); ojo.visible = false; world.visible = true;
   if (!inOutro) {
     si = sceneAt(t);
-    // fondo: blanco (por defecto) o de color por escena, como en el vídeo del agujero (window.BGMODE = 'color')
-    if (window.BGMODE === 'color') {
-      const P = [[0xFFE2B0, 0xF2C98A], [0xCFE6FF, 0xA9CBEA], [0xFFD2B5, 0xF0B48E], [0xFFF0A6, 0xEBD677], [0xD9F0CF, 0xB5DCA6],
-                 [0xFFE2B0, 0xF2C98A], [0xCFE6FF, 0xA9CBEA], [0xFFD2B5, 0xF0B48E], [0xFFF0A6, 0xEBD677], [0xD9F0CF, 0xB5DCA6], [0xFFE2B0, 0xF2C98A]][si];
-      scene.background.setHex(P[0]); ground.material.color.setHex(P[1]);
-    } else { scene.background.setHex(0xffffff); ground.material.color.setHex(0xffffff); }
     const L = T.lines[si], end = si + 1 < T.lines.length ? T.lines[si + 1].start : outroAt;
+    const FADE = 0.3;
+    if (si > 0 && t - L.start < FADE) {           // la escena anterior, ya acercándose a su detalle
+      const Lp = T.lines[si - 1];
+      hideAll(); setBg(si - 1);
+      SC[si - 1](t, 1, Lp); camFx(t, Lp.start, L.start, si - 1, []);
+      carMode(); shadowCatcher.visible = true;
+      gl.clear(); gl.render(scene, cam);
+      prevFrame.getContext('2d').drawImage(gl.domElement, 0, 0); prevA = 1 - ease((t - L.start) / FADE);
+      hideAll();
+    } else prevA = 0;
+    setBg(si);
     u = clamp((t - L.start) / Math.max(0.5, end - L.start));
     ui = SC[si](t, u, L);
-    camFx(t, L.start, end, si, L.tokens.filter(x => x.key).map(x => x.s));
+    camFx(t, L.start, end, si, []);
     const sinceCut = t - L.start;
     poseOjo(OJO_POSE[si], OJO_POSE[si - 1] || 'idle', clamp(sinceCut / 0.35), t);
   } else {
@@ -634,6 +649,7 @@ window.renderAt = function (t) {
   carMode(); shadowCatcher.visible = world.visible;
   gl.clear(); gl.render(scene, cam); gl.clearDepth(); gl.render(ojoScene, ojoCam);
   ctx.globalAlpha = 1; ctx.clearRect(0, 0, W, H); ctx.drawImage(gl.domElement, 0, 0);
+  if (prevA > 0 && !inOutro) { ctx.globalAlpha = prevA; ctx.drawImage(prevFrame, 0, 0); ctx.globalAlpha = 1; }
   for (const it of ui) {
     const [kind, ...a] = it;
     if (kind === 'pill') pill(...a);
