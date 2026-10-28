@@ -9,11 +9,11 @@ import sys, os, re, subprocess, importlib, json
 ROOT = "/home/claude/shorts-ingenieria"
 TTS = "/home/claude/tts"
 VOZ = {"em_alex": 0.75, "am_fenrir": 0.25}   # «Alex 5 · enérgico», elegida por Iker el 28/10
-SPEED = 1.0
+SPEED = float(os.environ.get("VOZ_SPEED", "1.0"))
 sys.path[:0] = [ROOT + "/content/cine", ROOT + "/pipeline", ROOT + "/tools"]
 
 # lo que Kokoro lee mal escrito en abreviatura
-REPL = [(r"\bkm/h\b", "kilómetros por hora"), (r"\bF1\b", "Fórmula 1"), (r"\b11-S\b", "once ese"),
+REPL = [(r"\bkm/h\b", "kilómetros por hora"), (r"\bF1\b", "Fórmula 1"), (r"\b11-S\b", "once ese"), (r"\bLZB\b", "ele zeta be"), (r"\bAVE\b", "Ave"),
         (r"–", " a "), (r"→", " a "), (r"«|»", ""), (r"\*", "")]
 
 

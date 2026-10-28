@@ -103,7 +103,7 @@ def timing():
     for k in range(1, len(L)):
         L[k]["start"] = max(L[k - 1]["start"] + 0.8, L[k]["tokens"][0]["s"] - 0.12)
     total = voice_end + OUTRO_HOLD
-    return {"lines": L[:-1], "outro": L[-1], "total": round(total, 3), "notif": round(total * 0.5, 2)}
+    return {"lines": L[:-1], "outro": L[-1], "total": round(total, 3), "notif": round(total * 0.5, 2) if BANNER else 99999}
 
 
 def serve():
@@ -119,7 +119,7 @@ def open_page(p, T, bg="color", car="real"):
     b = p.chromium.launch(args=["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"])
     pg = b.new_page(viewport={"width": 720, "height": 1280})
     pg.on("pageerror", lambda e: print("JS:", e))
-    pg.goto(f"http://127.0.0.1:{srv.server_address[1]}/index.html")
+    pg.goto(f"http://127.0.0.1:{srv.server_address[1]}/index.html?v={PAGE}")
     pg.wait_for_function("window.READY === true", timeout=60000)
     pg.evaluate("document.fonts.ready")
     pg.evaluate(f"window.TIMING = {json.dumps(T)}; window.BGMODE = {json.dumps(bg)}; window.CARMODE = {json.dumps(car)}")
@@ -164,7 +164,9 @@ def narr(img, t, T):
     for i, L in enumerate(T["lines"]):
         if t >= L["start"] - 0.08:
             si = i
-    pose = "wave" if outro else OJO_POSES[si]
+    if (outro and OJO_HIDE_OUTRO) or (not outro and si in OJO_HIDE):
+        return img
+    pose = OUTRO_POSE if outro else OJO_POSES[si]
     spk = _speaking(t, T)
     talk = round(0.7 * math.sin(t * 4.6) * (1 if spk else 0.15), 1)
     lid = 0.9 if ((t * 1.0) % 4.3) < 0.11 or ((t + 1.7) % 6.1) < 0.09 else 0.0
@@ -236,19 +238,22 @@ def audio(T, outwav):
     sr = M.SR
     n = int((T["total"] + 0.5) * sr)
     rng = np.random.default_rng(5)
-    mus = cine.music_bed("playful", T["total"] + 1, rng)[:n]
+    mus = cine.music_bed(MUSIC, T["total"] + 1, rng)[:n]
     mus = np.pad(mus, (0, max(0, n - len(mus))))
-    mus = mus / (np.max(np.abs(mus)) + 1e-9) * 0.5 * 1.7
+    mus = mus / (np.max(np.abs(mus)) + 1e-9) * 0.5 * MUSIC_GAIN
     fx = np.zeros(n)
     cuts = [L["start"] for L in T["lines"][1:]] + [T["outro"]["start"]]
     for i, c in enumerate(cuts):
-        M.add(fx, cine.fx("whoosh" if i % 2 == 0 else "whoosh_up", rng), max(0, c - 0.25), 0.07)
+        if WHOOSH:
+            M.add(fx, cine.fx("whoosh" if i % 2 == 0 else "whoosh_up", rng), max(0, c - 0.25), 0.07)
     for L in T["lines"] + [T["outro"]]:
         for tk in L["tokens"]:
-            if tk["key"]:
+            if tk["key"] and POPS:
                 M.add(fx, cine.fx("pop", rng), tk["s"], 0.05)
-    M.add(fx, M.fx_notif(), T["notif"] + 0.05, 0.22)
-    M.add(fx, cine.fx("ding", rng), T["outro"]["start"] + 0.3, 0.07)
+    if BANNER:
+        M.add(fx, M.fx_notif(), T["notif"] + 0.05, 0.22)
+    if POPS:
+        M.add(fx, cine.fx("ding", rng), T["outro"]["start"] + 0.3, 0.07)
     # voz
     tmp = outwav + ".voz.wav"
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", VOZ + ".mp3", "-ac", "1", "-ar", str(sr), tmp], check=True)
@@ -319,6 +324,15 @@ def join(outp, *segs):
                     "-movflags", "+faststart", outp], check=True)
     os.remove(wav); os.remove(lst)
     print("join ok", outp)
+
+
+PAGE, MUSIC, MUSIC_GAIN, OUTRO_POSE, BANNER, WHOOSH, POPS = "rebufo", "playful", 1.7, "wave", True, True, True
+OJO_HIDE, OJO_HIDE_OUTRO = set(), False
+VIDEO = os.environ.get("VIDEO", "rebufo")
+if VIDEO != "rebufo":
+    import importlib
+    sys.path.insert(0, HERE)
+    globals().update({k: v for k, v in vars(importlib.import_module("vid_" + VIDEO)).items() if k.isupper()})
 
 
 if __name__ == "__main__":
