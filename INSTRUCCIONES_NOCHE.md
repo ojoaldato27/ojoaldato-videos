@@ -69,3 +69,10 @@ Si los créditos de ElevenLabs no alcanzan o algo falla, díselo en ese mensaje 
 - Duración: cada vídeo entre 1:00 y 1:30 (Iker, 21/10). Escribe guiones de unas 190-230 palabras (≈ 65-85 s con la voz) y comprueba la duración final; si se queda corto, OUTRO_MIN en el módulo.
 - Mascota: con bata no se ve la raya del torso (ojo._coat_body) y lo de al lado de la cabeza sale poco rato y va cambiando (flat3.side_prop). Nada fijo junto a la cabeza.
 - Más dinámico (Iker, 21/10): que Ojo actúe dentro de las escenas cuando encaje (cavar, caer, sentarse en el coche, subirse a una báscula…), con la cámara siguiéndole, y no todo el rato la imagen centrada con él explicando en la esquina. Usa TRANS_PLAN con transiciones variadas (fall, flash, zoom_out, drop, whip, spin, iris, glitch…). Modelo: content/cine/c06_agujero_min.py.
+
+## Vídeos 3D (formato nuevo, Iker 28/10 · nota 5 al «3D · El rebufo en F1»)
+- Código en `content/f3d` (rebufo.js + car_pro.js + render3d.py). Úsalo de base para cada 3D nuevo.
+- Lo que le gusta: entorno real del tema (circuito con asfalto, césped, barreras, gradas y cielo; nada de fondos planos «sosos»), objetos realistas (F1 con carrocería curva), Ojo de siempre (pipeline/ojo.py) vestido según el tema y actuando grande dentro de casi todas las escenas.
+- Sin títulos fijos arriba. Sin cortes secos: cada escena acaba acercándose suave a un detalle y se funde con la siguiente (camFx + fundido de 0,55 s). Nada de zooms rápidos ni golpes de cámara.
+- Subtítulos blancos con borde negro y palabra clave en rojo. Voz Alex 5 (Kokoro).
+- Antes de renderizar entero: hoja de frames y, para el movimiento, una prueba de unos 18 s (`render3d.py full <mp4> 0 18`). Iker quiere ver opciones con frames de cada una.
