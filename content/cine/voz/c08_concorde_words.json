@@ -1,0 +1,1289 @@
+{
+"words": [
+{
+"text": "¿Por",
+"type": "word",
+"start": 0.0,
+"end": 0.178
+},
+{
+"text": "qué",
+"type": "word",
+"start": 0.194,
+"end": 0.372
+},
+{
+"text": "dejó",
+"type": "word",
+"start": 0.388,
+"end": 0.608
+},
+{
+"text": "de",
+"type": "word",
+"start": 0.627,
+"end": 0.763
+},
+{
+"text": "volar",
+"type": "word",
+"start": 0.775,
+"end": 1.038
+},
+{
+"text": "el",
+"type": "word",
+"start": 1.061,
+"end": 1.197
+},
+{
+"text": "avión",
+"type": "word",
+"start": 1.209,
+"end": 1.472
+},
+{
+"text": "de",
+"type": "word",
+"start": 1.495,
+"end": 1.631
+},
+{
+"text": "pasajeros",
+"type": "word",
+"start": 1.642,
+"end": 2.075
+},
+{
+"text": "más",
+"type": "word",
+"start": 2.113,
+"end": 2.291
+},
+{
+"text": "rápido",
+"type": "word",
+"start": 2.307,
+"end": 2.612
+},
+{
+"text": "de",
+"type": "word",
+"start": 2.639,
+"end": 2.775
+},
+{
+"text": "la",
+"type": "word",
+"start": 2.787,
+"end": 2.922
+},
+{
+"text": "historia?",
+"type": "word",
+"start": 2.934,
+"end": 3.325
+},
+{
+"text": "El",
+"type": "word",
+"start": 3.974,
+"end": 4.202
+},
+{
+"text": "Concorde",
+"type": "word",
+"start": 4.221,
+"end": 4.874
+},
+{
+"text": "volaba",
+"type": "word",
+"start": 4.931,
+"end": 5.442
+},
+{
+"text": "a",
+"type": "word",
+"start": 5.487,
+"end": 5.679
+},
+{
+"text": "2.160",
+"type": "word",
+"start": 5.695,
+"end": 6.76
+},
+{
+"text": "km/h:",
+"type": "word",
+"start": 6.853,
+"end": 7.222
+},
+{
+"text": "dos",
+"type": "word",
+"start": 7.502,
+"end": 7.723
+},
+{
+"text": "veces",
+"type": "word",
+"start": 7.742,
+"end": 8.068
+},
+{
+"text": "la",
+"type": "word",
+"start": 8.096,
+"end": 8.264
+},
+{
+"text": "velocidad",
+"type": "word",
+"start": 8.279,
+"end": 8.814
+},
+{
+"text": "del",
+"type": "word",
+"start": 8.861,
+"end": 9.081
+},
+{
+"text": "sonido.",
+"type": "word",
+"start": 9.1,
+"end": 9.478
+},
+{
+"text": "Iba",
+"type": "word",
+"start": 10.059,
+"end": 10.232
+},
+{
+"text": "a",
+"type": "word",
+"start": 10.247,
+"end": 10.358
+},
+{
+"text": "18.000",
+"type": "word",
+"start": 10.368,
+"end": 11.118
+},
+{
+"text": "metros",
+"type": "word",
+"start": 11.183,
+"end": 11.48
+},
+{
+"text": "de",
+"type": "word",
+"start": 11.506,
+"end": 11.638
+},
+{
+"text": "altura,",
+"type": "word",
+"start": 11.649,
+"end": 11.946
+},
+{
+"text": "casi",
+"type": "word",
+"start": 12.429,
+"end": 12.656
+},
+{
+"text": "el",
+"type": "word",
+"start": 12.675,
+"end": 12.815
+},
+{
+"text": "doble",
+"type": "word",
+"start": 12.827,
+"end": 13.097
+},
+{
+"text": "que",
+"type": "word",
+"start": 13.121,
+"end": 13.304
+},
+{
+"text": "un",
+"type": "word",
+"start": 13.32,
+"end": 13.459
+},
+{
+"text": "avión",
+"type": "word",
+"start": 13.472,
+"end": 13.742
+},
+{
+"text": "normal.",
+"type": "word",
+"start": 13.766,
+"end": 14.079
+},
+{
+"text": "Y",
+"type": "word",
+"start": 14.309,
+"end": 14.441
+},
+{
+"text": "se",
+"type": "word",
+"start": 14.453,
+"end": 14.61
+},
+{
+"text": "calentaba",
+"type": "word",
+"start": 14.624,
+"end": 15.125
+},
+{
+"text": "tanto",
+"type": "word",
+"start": 15.168,
+"end": 15.473
+},
+{
+"text": "por",
+"type": "word",
+"start": 15.499,
+"end": 15.705
+},
+{
+"text": "el",
+"type": "word",
+"start": 15.723,
+"end": 15.881
+},
+{
+"text": "roce",
+"type": "word",
+"start": 15.894,
+"end": 16.15
+},
+{
+"text": "del",
+"type": "word",
+"start": 16.172,
+"end": 16.378
+},
+{
+"text": "aire",
+"type": "word",
+"start": 16.396,
+"end": 16.651
+},
+{
+"text": "que",
+"type": "word",
+"start": 16.674,
+"end": 16.88
+},
+{
+"text": "se",
+"type": "word",
+"start": 16.898,
+"end": 17.055
+},
+{
+"text": "estiraba:",
+"type": "word",
+"start": 17.069,
+"end": 17.52
+},
+{
+"text": "hasta",
+"type": "word",
+"start": 17.56,
+"end": 17.864
+},
+{
+"text": "25",
+"type": "word",
+"start": 17.891,
+"end": 18.264
+},
+{
+"text": "centímetros",
+"type": "word",
+"start": 18.296,
+"end": 18.895
+},
+{
+"text": "en",
+"type": "word",
+"start": 18.947,
+"end": 19.105
+},
+{
+"text": "pleno",
+"type": "word",
+"start": 19.118,
+"end": 19.423
+},
+{
+"text": "vuelo.",
+"type": "word",
+"start": 19.449,
+"end": 19.754
+},
+{
+"text": "Londres–Nueva",
+"type": "word",
+"start": 19.917,
+"end": 20.611
+},
+{
+"text": "York",
+"type": "word",
+"start": 20.671,
+"end": 20.925
+},
+{
+"text": "en",
+"type": "word",
+"start": 20.947,
+"end": 21.104
+},
+{
+"text": "menos",
+"type": "word",
+"start": 21.117,
+"end": 21.42
+},
+{
+"text": "de",
+"type": "word",
+"start": 21.447,
+"end": 21.603
+},
+{
+"text": "tres",
+"type": "word",
+"start": 21.617,
+"end": 21.871
+},
+{
+"text": "horas",
+"type": "word",
+"start": 21.893,
+"end": 22.196
+},
+{
+"text": "y",
+"type": "word",
+"start": 22.222,
+"end": 22.354
+},
+{
+"text": "media…",
+"type": "word",
+"start": 22.366,
+"end": 22.669
+},
+{
+"text": "cuando",
+"type": "word",
+"start": 23.235,
+"end": 23.617
+},
+{
+"text": "un",
+"type": "word",
+"start": 23.65,
+"end": 23.82
+},
+{
+"text": "avión",
+"type": "word",
+"start": 23.835,
+"end": 24.163
+},
+{
+"text": "normal",
+"type": "word",
+"start": 24.192,
+"end": 24.574
+},
+{
+"text": "tarda",
+"type": "word",
+"start": 24.607,
+"end": 24.936
+},
+{
+"text": "unas",
+"type": "word",
+"start": 24.965,
+"end": 25.24
+},
+{
+"text": "ocho.",
+"type": "word",
+"start": 25.264,
+"end": 25.54
+},
+{
+"text": "Su",
+"type": "word",
+"start": 25.564,
+"end": 25.734
+},
+{
+"text": "récord:",
+"type": "word",
+"start": 25.748,
+"end": 26.13
+},
+{
+"text": "Nueva",
+"type": "word",
+"start": 26.435,
+"end": 26.802
+},
+{
+"text": "York–Londres",
+"type": "word",
+"start": 26.834,
+"end": 27.615
+},
+{
+"text": "en",
+"type": "word",
+"start": 27.682,
+"end": 27.872
+},
+{
+"text": "2",
+"type": "word",
+"start": 27.888,
+"end": 28.149
+},
+{
+"text": "horas",
+"type": "word",
+"start": 28.171,
+"end": 28.538
+},
+{
+"text": "y",
+"type": "word",
+"start": 28.57,
+"end": 28.73
+},
+{
+"text": "53",
+"type": "word",
+"start": 28.744,
+"end": 29.193
+},
+{
+"text": "minutos,",
+"type": "word",
+"start": 29.232,
+"end": 29.718
+},
+{
+"text": "en",
+"type": "word",
+"start": 29.925,
+"end": 30.15
+},
+{
+"text": "1996.",
+"type": "word",
+"start": 30.169,
+"end": 31.155
+},
+{
+"text": "Entonces…",
+"type": "word",
+"start": 31.241,
+"end": 31.889
+},
+{
+"text": "¿qué",
+"type": "word",
+"start": 32.359,
+"end": 32.593
+},
+{
+"text": "falló?",
+"type": "word",
+"start": 32.614,
+"end": 32.96
+},
+{
+"text": "Primero,",
+"type": "word",
+"start": 33.453,
+"end": 34.027
+},
+{
+"text": "el",
+"type": "word",
+"start": 34.264,
+"end": 34.608
+},
+{
+"text": "ruido:",
+"type": "word",
+"start": 34.638,
+"end": 35.304
+},
+{
+"text": "al",
+"type": "word",
+"start": 35.577,
+"end": 35.684
+},
+{
+"text": "romper",
+"type": "word",
+"start": 35.694,
+"end": 35.935
+},
+{
+"text": "la",
+"type": "word",
+"start": 35.956,
+"end": 36.064
+},
+{
+"text": "barrera",
+"type": "word",
+"start": 36.073,
+"end": 36.348
+},
+{
+"text": "del",
+"type": "word",
+"start": 36.372,
+"end": 36.513
+},
+{
+"text": "sonido",
+"type": "word",
+"start": 36.525,
+"end": 36.767
+},
+{
+"text": "hacía",
+"type": "word",
+"start": 36.788,
+"end": 36.996
+},
+{
+"text": "un",
+"type": "word",
+"start": 37.014,
+"end": 37.121
+},
+{
+"text": "estampido",
+"type": "word",
+"start": 37.131,
+"end": 37.473
+},
+{
+"text": "tan",
+"type": "word",
+"start": 37.503,
+"end": 37.644
+},
+{
+"text": "fuerte",
+"type": "word",
+"start": 37.656,
+"end": 37.897
+},
+{
+"text": "que",
+"type": "word",
+"start": 37.918,
+"end": 38.059
+},
+{
+"text": "Estados",
+"type": "word",
+"start": 38.072,
+"end": 38.347
+},
+{
+"text": "Unidos",
+"type": "word",
+"start": 38.371,
+"end": 38.612
+},
+{
+"text": "prohibió",
+"type": "word",
+"start": 38.633,
+"end": 38.942
+},
+{
+"text": "volar",
+"type": "word",
+"start": 38.969,
+"end": 39.177
+},
+{
+"text": "supersónico",
+"type": "word",
+"start": 39.195,
+"end": 39.604
+},
+{
+"text": "sobre",
+"type": "word",
+"start": 39.64,
+"end": 39.848
+},
+{
+"text": "tierra.",
+"type": "word",
+"start": 39.866,
+"end": 40.108
+},
+{
+"text": "Así",
+"type": "word",
+"start": 40.129,
+"end": 40.27
+},
+{
+"text": "que",
+"type": "word",
+"start": 40.282,
+"end": 40.423
+},
+{
+"text": "solo",
+"type": "word",
+"start": 40.435,
+"end": 40.609
+},
+{
+"text": "podía",
+"type": "word",
+"start": 40.625,
+"end": 40.833
+},
+{
+"text": "ir",
+"type": "word",
+"start": 40.851,
+"end": 40.958
+},
+{
+"text": "a",
+"type": "word",
+"start": 40.967,
+"end": 41.058
+},
+{
+"text": "tope",
+"type": "word",
+"start": 41.066,
+"end": 41.24
+},
+{
+"text": "sobre",
+"type": "word",
+"start": 41.256,
+"end": 41.464
+},
+{
+"text": "el",
+"type": "word",
+"start": 41.482,
+"end": 41.589
+},
+{
+"text": "mar.",
+"type": "word",
+"start": 41.598,
+"end": 41.739
+},
+{
+"text": "Segundo:",
+"type": "word",
+"start": 42.207,
+"end": 44.372
+},
+{
+"text": "solo",
+"type": "word",
+"start": 45.027,
+"end": 45.133
+},
+{
+"text": "se",
+"type": "word",
+"start": 45.143,
+"end": 45.208
+},
+{
+"text": "fabricaron",
+"type": "word",
+"start": 45.214,
+"end": 45.443
+},
+{
+"text": "20,",
+"type": "word",
+"start": 45.463,
+"end": 45.619
+},
+{
+"text": "y",
+"type": "word",
+"start": 45.759,
+"end": 45.946
+},
+{
+"text": "solo",
+"type": "word",
+"start": 45.962,
+"end": 46.322
+},
+{
+"text": "14",
+"type": "word",
+"start": 46.353,
+"end": 46.879
+},
+{
+"text": "volaron",
+"type": "word",
+"start": 46.925,
+"end": 47.492
+},
+{
+"text": "con",
+"type": "word",
+"start": 47.541,
+"end": 47.831
+},
+{
+"text": "pasajeros.",
+"type": "word",
+"start": 47.857,
+"end": 48.562
+},
+{
+"text": "Tercero:",
+"type": "word",
+"start": 48.623,
+"end": 49.191
+},
+{
+"text": "en",
+"type": "word",
+"start": 49.765,
+"end": 49.818
+},
+{
+"text": "julio",
+"type": "word",
+"start": 49.823,
+"end": 49.926
+},
+{
+"text": "del",
+"type": "word",
+"start": 49.935,
+"end": 50.005
+},
+{
+"text": "2000,",
+"type": "word",
+"start": 50.011,
+"end": 50.245
+},
+{
+"text": "un",
+"type": "word",
+"start": 50.808,
+"end": 50.872
+},
+{
+"text": "Concorde",
+"type": "word",
+"start": 50.878,
+"end": 51.062
+},
+{
+"text": "de",
+"type": "word",
+"start": 51.078,
+"end": 51.142
+},
+{
+"text": "Air",
+"type": "word",
+"start": 51.148,
+"end": 51.232
+},
+{
+"text": "France",
+"type": "word",
+"start": 51.24,
+"end": 51.384
+},
+{
+"text": "se",
+"type": "word",
+"start": 51.397,
+"end": 51.461
+},
+{
+"text": "estrelló",
+"type": "word",
+"start": 51.466,
+"end": 51.651
+},
+{
+"text": "en",
+"type": "word",
+"start": 51.667,
+"end": 51.731
+},
+{
+"text": "París:",
+"type": "word",
+"start": 51.736,
+"end": 51.861
+},
+{
+"text": "murieron",
+"type": "word",
+"start": 52.334,
+"end": 53.068
+},
+{
+"text": "113",
+"type": "word",
+"start": 53.132,
+"end": 53.993
+},
+{
+"text": "personas.",
+"type": "word",
+"start": 54.068,
+"end": 54.802
+},
+{
+"text": "Y",
+"type": "word",
+"start": 55.047,
+"end": 55.295
+},
+{
+"text": "un",
+"type": "word",
+"start": 55.317,
+"end": 55.61
+},
+{
+"text": "año",
+"type": "word",
+"start": 55.636,
+"end": 56.022
+},
+{
+"text": "después,",
+"type": "word",
+"start": 56.055,
+"end": 56.808
+},
+{
+"text": "tras",
+"type": "word",
+"start": 57.067,
+"end": 57.308
+},
+{
+"text": "el",
+"type": "word",
+"start": 57.329,
+"end": 57.478
+},
+{
+"text": "11-S,",
+"type": "word",
+"start": 57.491,
+"end": 57.937
+},
+{
+"text": "se",
+"type": "word",
+"start": 58.112,
+"end": 58.312
+},
+{
+"text": "vendían",
+"type": "word",
+"start": 58.329,
+"end": 58.84
+},
+{
+"text": "muchos",
+"type": "word",
+"start": 58.884,
+"end": 59.333
+},
+{
+"text": "menos",
+"type": "word",
+"start": 59.372,
+"end": 59.758
+},
+{
+"text": "billetes",
+"type": "word",
+"start": 59.792,
+"end": 60.365
+},
+{
+"text": "de",
+"type": "word",
+"start": 60.415,
+"end": 60.614
+},
+{
+"text": "primera",
+"type": "word",
+"start": 60.632,
+"end": 61.142
+},
+{
+"text": "clase.",
+"type": "word",
+"start": 61.187,
+"end": 61.573
+},
+{
+"text": "Cuando",
+"type": "word",
+"start": 61.946,
+"end": 62.301
+},
+{
+"text": "Airbus",
+"type": "word",
+"start": 62.332,
+"end": 62.686
+},
+{
+"text": "dejó",
+"type": "word",
+"start": 62.717,
+"end": 62.973
+},
+{
+"text": "de",
+"type": "word",
+"start": 62.996,
+"end": 63.153
+},
+{
+"text": "fabricar",
+"type": "word",
+"start": 63.167,
+"end": 63.621
+},
+{
+"text": "sus",
+"type": "word",
+"start": 63.66,
+"end": 63.867
+},
+{
+"text": "piezas,",
+"type": "word",
+"start": 63.885,
+"end": 64.24
+},
+{
+"text": "mantenerlo",
+"type": "word",
+"start": 64.271,
+"end": 64.822
+},
+{
+"text": "era",
+"type": "word",
+"start": 64.87,
+"end": 65.077
+},
+{
+"text": "carísimo.",
+"type": "word",
+"start": 65.095,
+"end": 65.549
+},
+{
+"text": "El",
+"type": "word",
+"start": 65.903,
+"end": 66.049
+},
+{
+"text": "24",
+"type": "word",
+"start": 66.061,
+"end": 66.407
+},
+{
+"text": "de",
+"type": "word",
+"start": 66.437,
+"end": 66.583
+},
+{
+"text": "octubre",
+"type": "word",
+"start": 66.595,
+"end": 66.968
+},
+{
+"text": "de",
+"type": "word",
+"start": 67.001,
+"end": 67.146
+},
+{
+"text": "2003",
+"type": "word",
+"start": 67.159,
+"end": 67.796
+},
+{
+"text": "hizo",
+"type": "word",
+"start": 67.851,
+"end": 68.088
+},
+{
+"text": "su",
+"type": "word",
+"start": 68.108,
+"end": 68.254
+},
+{
+"text": "último",
+"type": "word",
+"start": 68.267,
+"end": 68.594
+},
+{
+"text": "vuelo",
+"type": "word",
+"start": 68.623,
+"end": 68.905
+},
+{
+"text": "comercial.",
+"type": "word",
+"start": 68.929,
+"end": 69.393
+},
+{
+"text": "Así",
+"type": "word",
+"start": 69.67,
+"end": 69.933
+},
+{
+"text": "que…",
+"type": "word",
+"start": 69.955,
+"end": 70.218
+},
+{
+"text": "¿por",
+"type": "word",
+"start": 70.699,
+"end": 70.86
+},
+{
+"text": "qué",
+"type": "word",
+"start": 70.874,
+"end": 71.034
+},
+{
+"text": "dejó",
+"type": "word",
+"start": 71.048,
+"end": 71.247
+},
+{
+"text": "de",
+"type": "word",
+"start": 71.264,
+"end": 71.387
+},
+{
+"text": "volar?",
+"type": "word",
+"start": 71.397,
+"end": 71.634
+},
+{
+"text": "No",
+"type": "word",
+"start": 72.514,
+"end": 72.683
+},
+{
+"text": "por",
+"type": "word",
+"start": 72.698,
+"end": 72.919
+},
+{
+"text": "lento:",
+"type": "word",
+"start": 72.938,
+"end": 73.265
+},
+{
+"text": "por",
+"type": "word",
+"start": 73.44,
+"end": 73.611
+},
+{
+"text": "caro,",
+"type": "word",
+"start": 73.626,
+"end": 73.838
+},
+{
+"text": "ruidoso",
+"type": "word",
+"start": 73.856,
+"end": 74.19
+},
+{
+"text": "y",
+"type": "word",
+"start": 74.219,
+"end": 74.329
+},
+{
+"text": "por",
+"type": "word",
+"start": 74.338,
+"end": 74.509
+},
+{
+"text": "un",
+"type": "word",
+"start": 74.524,
+"end": 74.655
+},
+{
+"text": "mundo",
+"type": "word",
+"start": 74.666,
+"end": 74.918
+},
+{
+"text": "que",
+"type": "word",
+"start": 74.94,
+"end": 75.111
+},
+{
+"text": "cambió.",
+"type": "word",
+"start": 75.126,
+"end": 75.419
+},
+{
+"text": "Desde",
+"type": "word",
+"start": 75.445,
+"end": 75.697
+},
+{
+"text": "entonces,",
+"type": "word",
+"start": 75.719,
+"end": 76.094
+},
+{
+"text": "volamos",
+"type": "word",
+"start": 76.299,
+"end": 76.787
+},
+{
+"text": "más",
+"type": "word",
+"start": 76.829,
+"end": 77.079
+},
+{
+"text": "despacio",
+"type": "word",
+"start": 77.101,
+"end": 77.648
+},
+{
+"text": "que",
+"type": "word",
+"start": 77.695,
+"end": 77.945
+},
+{
+"text": "en",
+"type": "word",
+"start": 77.967,
+"end": 78.157
+},
+{
+"text": "2003…",
+"type": "word",
+"start": 78.174,
+"end": 79.006
+},
+{
+"text": "¡Ojo",
+"type": "word",
+"start": 79.243,
+"end": 79.435
+},
+{
+"text": "al",
+"type": "word",
+"start": 79.451,
+"end": 79.597
+},
+{
+"text": "dato!",
+"type": "word",
+"start": 79.61,
+"end": 79.847
+}
+],
+"source": "align_local"
+}
