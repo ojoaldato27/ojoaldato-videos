@@ -266,19 +266,20 @@ def audio(T, outwav):
     os.remove(tmp)
 
 
-def full(outp):
+def full(outp, t0=None, t1=None):
     from playwright.sync_api import sync_playwright
     T = timing()
     wav = outp + ".wav"
     audio(T, wav)
-    nfr = int(T["total"] * FPS)
+    f0 = int(float(t0) * FPS) if t0 else 0
+    nfr = int(float(t1) * FPS) if t1 else int(T["total"] * FPS)
     ff = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", "1080x1920", "-framerate", str(FPS), "-i", "-",
-                           "-i", wav, "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
+                           "-ss", f"{f0 / FPS:.3f}", "-i", wav, "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
                            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", outp],
                           stdin=subprocess.PIPE)
     with sync_playwright() as p:
         b, pg = open_page(p, T)
-        for i in range(nfr):
+        for i in range(f0, nfr):
             ff.stdin.write(compose(frame(pg, i / FPS), i / FPS, T).tobytes())
             if i % 300 == 0:
                 print("frame", i, "/", nfr, flush=True)
@@ -289,4 +290,4 @@ def full(outp):
 
 
 if __name__ == "__main__":
-    {"preview": preview, "full": full}[sys.argv[1]](sys.argv[2])
+    {"preview": preview, "full": full}[sys.argv[1]](*sys.argv[2:])

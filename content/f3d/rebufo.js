@@ -18,7 +18,7 @@ document.body.appendChild(out);
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
-const cam = new THREE.PerspectiveCamera(38, W / H, 0.1, 600);
+const cam = new THREE.PerspectiveCamera(38, W / H, 0.5, 250);
 scene.add(cam);
 scene.add(new THREE.HemisphereLight(0xffffff, 0xd8d8d8, 1.6));
 const sun = new THREE.DirectionalLight(0xffffff, 1.4); sun.position.set(6, 14, 8); scene.add(sun);
@@ -48,24 +48,24 @@ function rng(seed) { let s = seed >>> 0; return () => { s = (s * 1664525 + 10139
 // ---------- pista recta ----------
 const world = new THREE.Group(); scene.add(world);
 const ground = new THREE.Mesh(new THREE.PlaneGeometry(1200, 1200), new THREE.MeshBasicMaterial({ color: 0xffffff }));
-ground.rotation.x = -Math.PI / 2; ground.position.y = -0.01; world.add(ground);
+ground.rotation.x = -Math.PI / 2; ground.position.y = -0.05; world.add(ground);
 const straight = new THREE.Group(); world.add(straight);
 const road = new THREE.Mesh(new THREE.PlaneGeometry(1200, 11), new THREE.MeshBasicMaterial({ color: 0xf1f1f1 }));
 road.rotation.x = -Math.PI / 2; straight.add(road);
 for (const z of [-5.5, 5.5]) {
   const l = new THREE.Mesh(new THREE.PlaneGeometry(1200, 0.12), new THREE.MeshBasicMaterial({ color: INK }));
-  l.rotation.x = -Math.PI / 2; l.position.set(0, 0.005, z); straight.add(l);
+  l.rotation.x = -Math.PI / 2; l.position.set(0, 0.025, z); straight.add(l);
 }
 // pianos rojos y blancos y rayas discontinuas (se desplazan para dar velocidad)
 const dashes = [], kerbs = [];
 for (let i = 0; i < 70; i++) {
   const d = new THREE.Mesh(new THREE.PlaneGeometry(3, 0.14), new THREE.MeshBasicMaterial({ color: 0xc4c4c4 }));
-  d.rotation.x = -Math.PI / 2; d.position.y = 0.006; straight.add(d); dashes.push(d);
+  d.rotation.x = -Math.PI / 2; d.position.y = 0.02; straight.add(d); dashes.push(d);
 }
 for (let i = 0; i < 140; i++) {
   for (const z of [-6.1, 6.1]) {
     const k = new THREE.Mesh(new THREE.PlaneGeometry(2, 1.1), new THREE.MeshBasicMaterial({ color: i % 2 ? 0xffffff : RED }));
-    k.rotation.x = -Math.PI / 2; k.position.set(0, 0.004, z); k.userData.i = i; straight.add(k); kerbs.push(k);
+    k.rotation.x = -Math.PI / 2; k.position.set(0, 0.015, z); k.userData.i = i; straight.add(k); kerbs.push(k);
   }
 }
 function scrollTrack(s) {
@@ -81,12 +81,12 @@ const curve = new THREE.Group(); world.add(curve);
   ring.rotation.x = -Math.PI / 2; curve.add(ring);
   for (const r of [CURVE_R - 5.5, CURVE_R + 5.5]) {
     const e = new THREE.Mesh(new THREE.RingGeometry(r - 0.07, r + 0.07, 160, 1, 0, Math.PI), new THREE.MeshBasicMaterial({ color: INK, side: THREE.DoubleSide }));
-    e.rotation.x = -Math.PI / 2; e.position.y = 0.005; curve.add(e);
+    e.rotation.x = -Math.PI / 2; e.position.y = 0.025; curve.add(e);
   }
   for (let i = 0; i < 48; i++) {
     const a0 = i / 48 * Math.PI;
     const k = new THREE.Mesh(new THREE.RingGeometry(CURVE_R - 6.6, CURVE_R - 5.5, 6, 1, a0, Math.PI / 48), new THREE.MeshBasicMaterial({ color: i % 2 ? 0xffffff : RED, side: THREE.DoubleSide }));
-    k.rotation.x = -Math.PI / 2; k.position.y = 0.004; curve.add(k);
+    k.rotation.x = -Math.PI / 2; k.position.y = 0.015; curve.add(k);
   }
 }
 curve.position.set(0, 0, 0);
@@ -140,7 +140,7 @@ world.add(carA, carB);
   Object.assign(sun.shadow.camera, { left: -14, right: 14, top: 14, bottom: -14, near: 1, far: 60 });
 }
 const shadowCatcher = new THREE.Mesh(new THREE.PlaneGeometry(600, 600), new THREE.ShadowMaterial({ opacity: 0.22 }));
-shadowCatcher.rotation.x = -Math.PI / 2; shadowCatcher.position.y = 0.012; shadowCatcher.receiveShadow = true; scene.add(shadowCatcher);
+shadowCatcher.rotation.x = -Math.PI / 2; shadowCatcher.position.y = 0.03; shadowCatcher.receiveShadow = true; scene.add(shadowCatcher);
 function carMode() {
   const real = window.CARMODE !== 'toon';
   for (const c of [carA, carB]) { c.userData.realV.visible = real; c.userData.toonV.visible = !real; }
@@ -375,8 +375,10 @@ function captions(t, line, yc) {
           rrect(-w / 2 - 9, -30, w + 18, 58, 10); ctx.fillStyle = CSS_RED; ctx.globalAlpha = clamp(u * 2); ctx.fill();
           ctx.fillStyle = '#fff'; ctx.textAlign = 'center'; ctx.fillText(tk.w, 0, 2); ctx.restore();
         } else {
-          ctx.globalAlpha = u; ctx.fillStyle = t < tk.e + 0.05 ? '#111' : '#3a3a3a'; ctx.textAlign = 'left';
-          ctx.fillText(tk.w, x, y + 2); ctx.globalAlpha = 1;
+          const pk = lerp(1.3, 1, eob(clamp((t - tk.s) / 0.16)));   // cada palabra entra con un golpecito
+          ctx.save(); ctx.translate(x + w / 2, y); ctx.scale(pk, pk);
+          ctx.globalAlpha = u; ctx.fillStyle = t < tk.e + 0.05 ? '#111' : '#3a3a3a'; ctx.textAlign = 'center';
+          ctx.fillText(tk.w, 0, 2); ctx.restore();
         }
       }
       x += w + sp;
@@ -454,7 +456,27 @@ const HEAD = [
 const OJO_POSE = ['think', 'point', 'push', 'surprise', 'point', 'cheer', 'surprise', 'think', 'think', 'point', 'cheer'];
 const GAP_MIN = 6.2;   // morro-cola: 5 m de coche + aire; nunca se solapan en el mismo carril
 
-function setCam(px, py, pz, lx, ly, lz, up) { cam.up.set(...(up || [0, 1, 0])); cam.position.set(px, py, pz); cam.lookAt(lx, ly, lz); cam.updateMatrixWorld(); }
+const LOOK = new THREE.Vector3();
+function setCam(px, py, pz, lx, ly, lz, up) { cam.up.set(...(up || [0, 1, 0])); cam.position.set(px, py, pz); LOOK.set(lx, ly, lz); cam.fov = 38; cam.updateProjectionMatrix(); cam.lookAt(lx, ly, lz); cam.updateMatrixWorld(); }
+// Iker (28/10): «más dinámico y enérgico, sin cortes secos» → la cámara nunca está quieta y los cambios de escena
+// son un zoom continuo: la escena acaba acercándose a un detalle y la siguiente empieza pegada a otro y se abre.
+function camFx(t, t0, t1, si, keyTimes) {
+  const dur = Math.max(0.6, t1 - t0), k = clamp((t - t0) / dur);
+  const P = cam.position.clone(), D = LOOK.clone().sub(P);
+  let f = 0.14 * ease(k);                                   // empuje lento durante toda la escena
+  const tin = t - t0, tout = t1 - t;
+  let roll = 0, fov = 38;
+  if (si > 0 && tin < 0.55) { const a = 1 - ease(tin / 0.55); f += 0.72 * a; fov -= 12 * a; roll = (si % 2 ? 1 : -1) * 0.18 * a; }
+  if (tout < 0.4) { const a = Math.pow(1 - tout / 0.4, 2); f += 0.62 * a; fov -= 10 * a; roll += (si % 2 ? -1 : 1) * 0.14 * a; }
+  // pequeño balanceo de cámara en mano + golpe en las palabras clave
+  let kick = 0; for (const kt of keyTimes) { const d = t - kt; if (d >= 0 && d < 0.25) kick = Math.max(kick, (1 - d / 0.25)); }
+  const sw = 0.025 * D.length();
+  P.add(D.multiplyScalar(f));
+  P.x += Math.sin(t * 1.3) * sw * 0.5 + Math.sin(t * 31) * sw * 0.25 * kick;
+  P.y += Math.sin(t * 1.7 + 1) * sw * 0.3 + Math.cos(t * 27) * sw * 0.25 * kick;
+  cam.position.copy(P); cam.fov = fov - 3 * kick; cam.updateProjectionMatrix();
+  cam.lookAt(LOOK); cam.rotateZ(roll); cam.updateMatrixWorld();
+}
 function hideAll() {
   wakeCone.visible = false; arrows.forEach(a => a.visible = false); air.visible = false;
   straight.visible = true; curve.visible = false; carB.visible = true; carA.visible = true;
@@ -478,21 +500,21 @@ const SC = [
   },
   // 1 · pared de aire: lateral, solo el rojo
   (t, u) => {
-    scrollTrack(t * 85); carB.visible = false;
+    scrollTrack(t * 18); carB.visible = false;
     placeCar(carA, 0, 0); air.visible = true; airflow(t, 0, 0, 0.75, 0);
     setCam(lerp(4, 1, ease(u)), 3.2, 15, 0, 1, 0);
     return [['pill', W / 2, 330, '300 KM/H', clamp((u - 0.15) * 4)]];
   },
   // 2 · el aire frena: más cerca, barra de potencia
   (t, u) => {
-    scrollTrack(t * 85); carB.visible = false;
+    scrollTrack(t * 18); carB.visible = false;
     placeCar(carA, 0, 0); air.visible = true; airflow(t, 0, 0, 1, 0);
     setCam(5, 2.4, 9.5, 0.5, 0.8, 0);
     return [['meter', 150, 300, lerp(0, 0.8, ease((u - 0.2) * 1.6)), 'POTENCIA PARA APARTAR EL AIRE', clamp((u - 0.1) * 4)]];
   },
   // 3 · el rebufo: desde arriba, cono rojo
   (t, u) => {
-    scrollTrack(t * 85); carB.visible = false;
+    scrollTrack(t * 18); carB.visible = false;
     placeCar(carA, 4, 0); air.visible = true; airflow(t, 4, 0, 1, ease(u * 2));
     wakeCone.visible = true; wakeCone.position.set(4 - 2.6 - 8, 0.9, 0); wakeCone.material.opacity = 0.14 * ease(u * 2);
     setCam(lerp(0, -2, u), 40, 0.01, lerp(0, -2, u), 0, 0, [1, 0, 0]);
@@ -500,7 +522,7 @@ const SC = [
   },
   // 4 · se mete en el rebufo: el negro entra desde el otro carril y se coloca detrás
   (t, u) => {
-    scrollTrack(t * 85);
+    scrollTrack(t * 18);
     const k = ease(u * 1.3);
     placeCar(carA, 4, 0); placeCar(carB, 4 - GAP_MIN - 4, lerp(3.4, 0, k), lerp(0.18, 0, ease(u * 1.3 + 0.2)) * (k < 1 ? 1 : 0));
     air.visible = true; airflow(t, 4, 0, 1, 1);
@@ -510,7 +532,7 @@ const SC = [
   },
   // 5 · más rápido: vista de persecución, velocímetro, el hueco se cierra hasta el mínimo
   (t, u) => {
-    scrollTrack(t * 90);
+    scrollTrack(t * 18);
     placeCar(carA, 0, 0); placeCar(carB, -lerp(GAP_MIN + 4, GAP_MIN, ease(u)), 0);
     setCam(-27, 4.5, 1.6, -3, 0.2, -0.8);
     return [['gauge', W / 2, 400, lerp(300, 310, ease((u - 0.25) * 1.6)), clamp((u - 0.05) * 4)],
@@ -518,7 +540,7 @@ const SC = [
   },
   // 6 · adelanta en la frenada: sale al otro carril (3 m de lado) y pasa
   (t, u) => {
-    scrollTrack(t * 70);
+    scrollTrack(t * 18);
     const side = ease(u * 2.2), pass = ease((u - 0.35) * 1.6);
     placeCar(carA, 0, 0); placeCar(carB, lerp(-GAP_MIN, GAP_MIN + 1.5, pass), lerp(0, -3.2, side), side < 1 ? -0.12 * Math.sin(side * Math.PI) : 0);
     setCam(lerp(-30, -24, ease(u)), 21, -1.6, 3, 0, -1.6);
@@ -552,7 +574,7 @@ const SC = [
   },
   // 9 · 2026: a menos de 1 s, extra de energía
   (t, u) => {
-    scrollTrack(t * 88);
+    scrollTrack(t * 18);
     placeCar(carA, 0, 0); placeCar(carB, -GAP_MIN - 0.6, 0);
     setCam(-3.5, 9, 22, -3.2, 0.4, 0);
     const pa = proj(new THREE.Vector3(-2.8, 1.5, 0)), pb = proj(new THREE.Vector3(-GAP_MIN - 0.6 + 2.8, 1.5, 0));
@@ -563,7 +585,7 @@ const SC = [
   },
   // 10 · respuesta: plano que gira alrededor de los dos en fila
   (t, u) => {
-    scrollTrack(t * 85);
+    scrollTrack(t * 18);
     placeCar(carA, 0, 0); placeCar(carB, -GAP_MIN - 0.4, 0);
     air.visible = true; airflow(t, 0, 0, 0.8, 1);
     const a = lerp(-0.9, 0.5, ease(u));
@@ -598,6 +620,7 @@ window.renderAt = function (t) {
     const L = T.lines[si], end = si + 1 < T.lines.length ? T.lines[si + 1].start : outroAt;
     u = clamp((t - L.start) / Math.max(0.5, end - L.start));
     ui = SC[si](t, u, L);
+    camFx(t, L.start, end, si, L.tokens.filter(x => x.key).map(x => x.s));
     const sinceCut = t - L.start;
     poseOjo(OJO_POSE[si], OJO_POSE[si - 1] || 'idle', clamp(sinceCut / 0.35), t);
   } else {
@@ -620,7 +643,6 @@ window.renderAt = function (t) {
     else if (kind === 'gap') gapMarker(...a);
   }
   if (!inOutro) {
-    title(HEAD[si][0], HEAD[si][1], clamp((t - T.lines[si].start) / 0.6));
     captions(t, T.lines[si]);
   } else {
     outroCard(t, clamp((t - outroAt) / 1.2));
@@ -631,7 +653,7 @@ window.renderAt = function (t) {
   const cuts = T.lines.slice(1).map(l => l.start).concat([outroAt]);
   cuts.forEach((c, i) => {
     const d = t - c;
-    if (d > -0.12 && d < 0.16) {
+    if (false) {
       const a = 1 - Math.abs(d) / (d < 0 ? 0.12 : 0.16);
       if (i % 2 === 0) { ctx.fillStyle = `rgba(255,255,255,${a * 0.9})`; ctx.fillRect(0, 0, W, H); }
       else { const x = lerp(-W * 0.3, W * 1.3, (d + 0.12) / 0.28); ctx.fillStyle = CSS_RED; ctx.fillRect(x - 60, 0, 120, H); }
