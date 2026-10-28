@@ -71,6 +71,7 @@ for (let i = 0; i < 140; i++) {
 function scrollTrack(s) {
   dashes.forEach((d, i) => { d.position.x = ((i * 8 - s) % 560 + 560) % 560 - 280; });
   kerbs.forEach(k => { k.position.x = ((k.userData.i * 4 - s) % 560 + 560) % 560 - 280; });
+  for (const [tx, len] of (typeof SCROLLED !== 'undefined' ? SCROLLED : [])) tx.offset.x = (s / len) % 1;
 }
 
 // ---------- curva (escenas 7-8) ----------
@@ -90,6 +91,70 @@ const curve = new THREE.Group(); world.add(curve);
   }
 }
 curve.position.set(0, 0, 0);
+
+
+// ---------- entorno de circuito con texturas (Iker, 28/10: «mejora las texturas y adecua el fondo al tema») ----------
+function canvasTex(w, h, draw, rx = 1, ry = 1) {
+  const c = document.createElement('canvas'); c.width = w; c.height = h; draw(c.getContext('2d'), w, h);
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(rx, ry);
+  t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
+}
+const R0 = rng(11);
+const noise = (x, w, h, n, cols, size = 2) => { for (let i = 0; i < n; i++) { x.fillStyle = cols[(R0() * cols.length) | 0]; x.fillRect(R0() * w, R0() * h, size * (0.5 + R0()), size * (0.5 + R0())); } };
+const TEX = {
+  asphalt: canvasTex(256, 256, (x, w, h) => { x.fillStyle = '#4d5056'; x.fillRect(0, 0, w, h); noise(x, w, h, 5000, ['#43464b', '#5a5d63', '#3b3d42', '#63666c'], 2);
+    x.globalAlpha = 0.08; for (let i = 0; i < 6; i++) { x.fillStyle = '#000'; x.fillRect(0, R0() * h, w, 6 + R0() * 10); } x.globalAlpha = 1; }, 150, 1.4),
+  grass: canvasTex(256, 256, (x, w, h) => { for (let i = 0; i < 4; i++) { x.fillStyle = i % 2 ? '#5aa548' : '#66b453'; x.fillRect(0, i * h / 4, w, h / 4); }
+    noise(x, w, h, 6000, ['#4f9640', '#6fbd5b', '#58a046', '#78c463'], 2); }, 75, 75),
+  barrier: canvasTex(128, 64, (x, w, h) => { x.fillStyle = '#1e1f22'; x.fillRect(0, 0, w, h);
+    for (let r = 0; r < 2; r++) for (let c = 0; c < 4; c++) { const cx = 16 + c * 32, cy = 16 + r * 32;
+      x.fillStyle = (r + c) % 2 ? '#e8e8e8' : '#d8262b'; x.beginPath(); x.arc(cx, cy, 15, 0, 7); x.fill();
+      x.fillStyle = '#141416'; x.beginPath(); x.arc(cx, cy, 7, 0, 7); x.fill(); } }, 600, 1),
+  boards: canvasTex(512, 64, (x, w, h) => { x.fillStyle = '#E62828'; x.fillRect(0, 0, w / 2, h); x.fillStyle = '#ffffff'; x.fillRect(w / 2, 0, w / 2, h);
+    x.font = '900 30px Inter, Arial'; x.textBaseline = 'middle'; x.textAlign = 'center';
+    x.fillStyle = '#fff'; x.fillText('OJO AL DATO', w / 4, h / 2 + 2); x.fillStyle = '#E62828'; x.fillText('¡OJO AL DATO!', 3 * w / 4, h / 2 + 2); }, 120, 1),
+  crowd: canvasTex(256, 128, (x, w, h) => { x.fillStyle = '#6b6f78'; x.fillRect(0, 0, w, h);
+    for (let r = 0; r < 12; r++) { x.fillStyle = '#585c64'; x.fillRect(0, r * 10.6 + 8, w, 2.5); }
+    noise(x, w, h, 2600, ['#E62828', '#ffffff', '#ffd23f', '#2f6fd6', '#111111', '#f08a24', '#e8e8e8'], 3.2); }, 150, 1),
+  trees: canvasTex(256, 128, (x, w, h) => { x.fillStyle = '#9fd0f5'; x.fillRect(0, 0, w, h);
+    for (let i = 0; i < 40; i++) { const cx = R0() * w, r = 14 + R0() * 22; x.fillStyle = ['#3f7d3a', '#4a8c42', '#356c31'][i % 3];
+      x.beginPath(); x.arc(cx, h - 20 - R0() * 20, r, 0, 7); x.fill(); } x.fillStyle = '#3f7d3a'; x.fillRect(0, h - 30, w, 30); }, 20, 1),
+  sky: canvasTex(4, 256, (x, w, h) => { const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#5ea6ea'); g.addColorStop(0.6, '#a9d4f7'); g.addColorStop(1, '#e8f5ff'); x.fillStyle = g; x.fillRect(0, 0, w, h); }),
+};
+TEX.sky.wrapS = TEX.sky.wrapT = THREE.ClampToEdgeWrapping;
+const CIRCUIT = window.ENV !== 'plain';
+if (CIRCUIT) {
+  road.material = new THREE.MeshLambertMaterial({ map: TEX.asphalt });
+  ground.material = new THREE.MeshLambertMaterial({ map: TEX.grass, color: 0xffffff });
+  straight.children.forEach(m => { if (m.material && m.material.color && m.material.color.getHex() === INK) m.material.color.setHex(0xf2f2f2); });
+  dashes.forEach(d => d.material.color.setHex(0xf2f2f2));
+  // run-off asfaltado claro tras el piano, barrera de neumáticos con vallas, grada con público y árboles al fondo
+  const runoff = new THREE.MeshLambertMaterial({ map: TEX.asphalt.clone(), color: 0xc9ccd2 }); runoff.map.repeat.set(150, 0.6); runoff.map.needsUpdate = true;
+  for (const z of [-9, 9]) { const r = new THREE.Mesh(new THREE.PlaneGeometry(1200, 4.6), runoff); r.rotation.x = -Math.PI / 2; r.position.set(0, -0.01, z); straight.add(r); }
+  const bar = new THREE.MeshLambertMaterial({ map: TEX.barrier });
+  const brd = new THREE.MeshLambertMaterial({ map: TEX.boards });
+  for (const z of [-14, 14]) {
+    const b = new THREE.Mesh(new THREE.BoxGeometry(1200, 0.95, 0.9), bar); b.position.set(0, 0.47, z); straight.add(b);
+    const bd = new THREE.Mesh(new THREE.PlaneGeometry(1200, 1.0), brd); bd.position.set(0, 1.55, z - Math.sign(z) * 0.0); bd.rotation.y = z > 0 ? Math.PI : 0; straight.add(bd);
+    const post = new THREE.Mesh(new THREE.BoxGeometry(1200, 0.06, 0.06), new THREE.MeshLambertMaterial({ color: 0x9a9da3 })); post.position.set(0, 3.2, z); straight.add(post);
+  }
+  const stand = new THREE.Mesh(new THREE.PlaneGeometry(1200, 11), new THREE.MeshLambertMaterial({ map: TEX.crowd }));
+  stand.position.set(0, 5.2, -24); stand.rotation.x = -0.55; straight.add(stand);
+  const roof = new THREE.Mesh(new THREE.BoxGeometry(1200, 0.35, 7), new THREE.MeshLambertMaterial({ color: 0xf2f2f2 })); roof.position.set(0, 11.2, -26); straight.add(roof);
+  const standB = new THREE.Mesh(new THREE.PlaneGeometry(1200, 11), new THREE.MeshLambertMaterial({ map: TEX.crowd.clone() }));
+  standB.material.map.needsUpdate = true; standB.position.set(0, 5.2, 24); standB.rotation.set(0.55, Math.PI, 0); straight.add(standB);
+  const trees = new THREE.Mesh(new THREE.PlaneGeometry(1200, 22), new THREE.MeshBasicMaterial({ map: TEX.trees, transparent: false, fog: true }));
+  trees.position.set(0, 9, -70); straight.add(trees);
+  // curva: asfalto, run-off y barrera alrededor
+  curve.children[0].material = new THREE.MeshLambertMaterial({ map: (() => { const t = TEX.asphalt.clone(); t.repeat.set(10, 10); t.needsUpdate = true; return t; })(), side: THREE.DoubleSide });
+  curve.children.forEach((m, i) => { if (i > 0 && m.material.color && m.material.color.getHex() === INK) m.material.color.setHex(0xf2f2f2); });
+  for (const r of [CURVE_R + 12, CURVE_R - 11]) {
+    const tb = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 0.95, 160, 1, true, 0, Math.PI), new THREE.MeshLambertMaterial({ map: (() => { const t = TEX.barrier.clone(); t.repeat.set(r * 1.6, 1); t.needsUpdate = true; return t; })(), side: THREE.DoubleSide }));
+    tb.position.y = 0.47; tb.rotation.y = -Math.PI / 2; curve.add(tb);
+  }
+  scene.fog = new THREE.Fog(0xe8f5ff, 70, 230);
+}
+const SCROLLED = CIRCUIT ? [[TEX.asphalt, 8], [TEX.barrier, 2], [TEX.boards, 10], [TEX.crowd, 8]] : [];
 
 // ---------- coche de F1 (morro hacia +X, 5 m) ----------
 function makeCar(col, stripe) {
@@ -377,8 +442,10 @@ function captions(t, line, yc) {
         } else {
           const pk = lerp(1.3, 1, eob(clamp((t - tk.s) / 0.16)));   // cada palabra entra con un golpecito
           ctx.save(); ctx.translate(x + w / 2, y); ctx.scale(pk, pk);
-          ctx.globalAlpha = u; ctx.fillStyle = t < tk.e + 0.05 ? '#111' : '#3a3a3a'; ctx.textAlign = 'center';
-          ctx.fillText(tk.w, 0, 2); ctx.restore();
+          // sobre el asfalto: letra blanca con borde negro grueso (se lee en cualquier fondo)
+          ctx.globalAlpha = u; ctx.textAlign = 'center'; ctx.lineJoin = 'round';
+          ctx.lineWidth = 9; ctx.strokeStyle = '#111'; ctx.strokeText(tk.w, 0, 2);
+          ctx.fillStyle = t < tk.e + 0.05 ? '#ffffff' : '#ececec'; ctx.fillText(tk.w, 0, 2); ctx.restore();
         }
       }
       x += w + sp;
@@ -390,6 +457,7 @@ function proj(v) { const p = v.clone().project(cam); return [(p.x + 1) / 2 * W, 
 function gauge(x, y, val, u) {
   if (u <= 0) return;
   ctx.save(); ctx.globalAlpha = clamp(u * 3); ctx.translate(x, y); ctx.scale(eob(u), eob(u));
+  ctx.beginPath(); ctx.arc(0, 0, 118, 0, 7); ctx.fillStyle = 'rgba(255,255,255,0.92)'; ctx.fill();
   ctx.lineWidth = 14; ctx.lineCap = 'round';
   ctx.strokeStyle = '#e6e6e6'; ctx.beginPath(); ctx.arc(0, 0, 96, Math.PI * 0.8, Math.PI * 2.2); ctx.stroke();
   const f = clamp((val - 200) / 150);
@@ -401,6 +469,7 @@ function gauge(x, y, val, u) {
 function meter(x, y, f, label, u) {
   if (u <= 0) return;
   ctx.save(); ctx.globalAlpha = clamp(u * 3);
+  rrect(x - 14, y - 46, 448, 94, 16); ctx.fillStyle = 'rgba(255,255,255,0.92)'; ctx.fill();
   ctx.fillStyle = '#111'; ctx.font = F(800, 22); ctx.fillText(label, x, y - 16);
   rrect(x, y, 420, 34, 17); ctx.fillStyle = '#ececec'; ctx.fill();
   rrect(x, y, Math.max(34, 420 * f), 34, 17); ctx.fillStyle = CSS_RED; ctx.fill();
@@ -460,6 +529,7 @@ const LOOK = new THREE.Vector3();
 const prevFrame = document.createElement('canvas'); prevFrame.width = W; prevFrame.height = H; let prevA = 0;
 function setBg(si) {
   // fondo de color por escena, como en el vídeo del agujero (window.BGMODE = 'color'), o blanco
+  if (typeof CIRCUIT !== 'undefined' && CIRCUIT) { scene.background = TEX.sky; return; }
   if (window.BGMODE === 'color') {
     const P = [[0xFFE2B0, 0xF2C98A], [0xCFE6FF, 0xA9CBEA], [0xFFD2B5, 0xF0B48E], [0xFFF0A6, 0xEBD677], [0xD9F0CF, 0xB5DCA6],
                [0xFFE2B0, 0xF2C98A], [0xCFE6FF, 0xA9CBEA], [0xFFD2B5, 0xF0B48E], [0xFFF0A6, 0xEBD677], [0xD9F0CF, 0xB5DCA6], [0xFFE2B0, 0xF2C98A]][si];
@@ -472,15 +542,15 @@ function setCam(px, py, pz, lx, ly, lz, up) { cam.up.set(...(up || [0, 1, 0])); 
 function camFx(t, t0, t1, si, keyTimes) {
   const dur = Math.max(0.6, t1 - t0), k = clamp((t - t0) / dur);
   const P = cam.position.clone(), D = LOOK.clone().sub(P);
-  let f = 0.08 * ease(k);                                   // empuje lento durante toda la escena
+  let f = 0.06 * ease(k);                                   // empuje lento durante toda la escena
   const tin = t - t0, tout = Math.max(0, t1 - t);
   let roll = 0, fov = 38;
   // Iker (28/10): «demasiados zooms rápidos» → zoom de entrada/salida más corto de recorrido y más largo de tiempo,
   // con fundido entre las dos escenas (ver renderAt), sin golpes de cámara.
-  if (si > 0 && tin < 0.9) { const a = 1 - ease(tin / 0.9); f += 0.42 * a; fov -= 5 * a; roll = (si % 2 ? 1 : -1) * 0.05 * a; }
-  if (tout < 0.7) { const a = ease(1 - tout / 0.7); f += 0.38 * a; fov -= 4 * a; roll += (si % 2 ? -1 : 1) * 0.04 * a; }
+  if (si > 0 && tin < 1.3) { const a = 1 - ease(tin / 1.3); f += 0.28 * a; fov -= 3 * a; }
+  if (tout < 1.0) { const a = ease(1 - tout / 1.0); f += 0.24 * a; fov -= 2 * a; }
   const kick = 0;
-  const sw = 0.012 * D.length();
+  const sw = 0.006 * D.length();
   P.add(D.multiplyScalar(f));
   P.x += Math.sin(t * 0.9) * sw * 0.5;
   P.y += Math.sin(t * 1.1 + 1) * sw * 0.3;
@@ -622,7 +692,7 @@ window.renderAt = function (t) {
   if (!inOutro) {
     si = sceneAt(t);
     const L = T.lines[si], end = si + 1 < T.lines.length ? T.lines[si + 1].start : outroAt;
-    const FADE = 0.3;
+    const FADE = 0.55;   // Iker (28/10): «aún más suaves»
     if (si > 0 && t - L.start < FADE) {           // la escena anterior, ya acercándose a su detalle
       const Lp = T.lines[si - 1];
       hideAll(); setBg(si - 1);
@@ -682,7 +752,7 @@ Promise.all(['800 40px Inter', '700 28px Inter', '500 24px Inter'].map(f => docu
 // foto de estudio del coche (para revisar el modelo): window.studio(px,py,pz, lx,ly,lz)
 window.studio = function (px, py, pz, lx, ly, lz) {
   T = window.TIMING; hideAll(); straight.visible = true; carB.visible = false; air.visible = false; ojo.visible = false;
-  if (window.BGMODE === 'color') { scene.background.setHex(0xCFE6FF); ground.material.color.setHex(0xA9CBEA); }
+  setBg(1);
   placeCar(carA, 0, 0); carMode(); setCam(px, py, pz, lx, ly, lz);
   gl.clear(); gl.render(scene, cam);
   return gl.domElement.toDataURL('image/jpeg', 0.93);
