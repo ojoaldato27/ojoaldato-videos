@@ -513,36 +513,67 @@ function outroCard(t, u) {
 // ---------- Urda (Toledo), 28/10/2026 · tono informativo y triste (Iker, 29/10) ----------
 // El choque NO se ve: la escena 3 funde a oscuro antes. Nada de colores alegres: cielo nublado, campo seco de La Mancha.
 
+const LOOK_URDA = new URLSearchParams(location.search).get('look') || 'a';   // a: mañana dorada · b: día claro
 const OJO_POSE = ['think', 'point', 'point', 'think', 'think', 'think', 'point', 'point', 'think', 'think', 'think'];
 cam.far = 1200; cam.updateProjectionMatrix();
-scene.fog = new THREE.Fog(0xf3e2c4, 220, 1100);
+scene.fog = new THREE.Fog({ a: 0xf1d9b5, b: 0xd9ebf8, c: 0xf2a873 }[LOOK_URDA], 260, 1300);
 
 // texturas
+// Iker (29/10): «colores, texturas y fondo» → texturas más reales (como el circuito del F1) y dos looks a elegir
+const SKYC = { a: ['#4a86c9', '#94c3e8', '#f6d9b0', '#f3b77c'], b: ['#2f7fd8', '#7fbdf0', '#cfe8fb', '#eaf5fd'], c: ['#3b3f86', '#b8669a', '#f59a5c', '#ffcf7a'] }[LOOK_URDA];
+const R1 = rng(31);
 const UT = {
-  field: canvasTex(512, 512, (x, w, h) => {   // mosaico de parcelas: viñas, rastrojo, tierra roja, verde
-    const P = ['#b9532f', '#c9a14a', '#7fa83a', '#d8b65c', '#a8462a', '#95b84a', '#c98b3c', '#6f9a34'];
-    const r = rng(9); let y = 0;
-    while (y < h) { const hh = 40 + r() * 90; let xx = 0;
-      while (xx < w) { const ww = 60 + r() * 160, c = P[(r() * P.length) | 0]; x.fillStyle = c; x.fillRect(xx, y, ww, hh);
-        x.globalAlpha = 0.25; x.fillStyle = '#000'; for (let k = 0; k < hh; k += 6) x.fillRect(xx, y + k, ww, 2); x.globalAlpha = 1; xx += ww; }
-      y += hh; }
-    noise(x, w, h, 6000, ['rgba(0,0,0,0.12)', 'rgba(255,255,255,0.10)'], 2); }, 18, 18),
-  vines: canvasTex(256, 256, (x, w, h) => { x.fillStyle = '#b4532f'; x.fillRect(0, 0, w, h);
-    for (let i = 0; i < 16; i++) { x.fillStyle = i % 2 ? '#7da33a' : '#c99a3a'; for (let j = 0; j < 32; j++) { x.beginPath(); x.arc(j * 8 + 4, i * 16 + 8, 4.5, 0, 7); x.fill(); } }
-    noise(x, w, h, 3000, ['#9c4527', '#c8643a', '#5f8a2c'], 2); }, 160, 12),
-  slab: canvasTex(64, 256, (x, w, h) => { x.fillStyle = '#9ea2a6'; x.fillRect(0, 0, w, h);
-    for (let i = 0; i < 8; i++) { x.fillStyle = '#7f8387'; x.fillRect(0, i * 32 + 4, w, 12); } noise(x, w, h, 600, ['#8d9195', '#b0b4b8'], 2); }, 1, 400),
-  ballast: canvasTex(128, 128, (x, w, h) => { x.fillStyle = '#7d7a74'; x.fillRect(0, 0, w, h); noise(x, w, h, 4000, ['#6a6761', '#8f8b84', '#5c5a55', '#a39f97'], 3); }, 300, 4),
-  hills: canvasTex(512, 128, (x, w, h) => { const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, 'rgba(0,0,0,0)'); x.fillStyle = g; x.fillRect(0, 0, w, h);
-    x.fillStyle = '#9c8f6a'; x.beginPath(); x.moveTo(0, h); for (let i = 0; i <= 32; i++) x.lineTo(i * w / 32, h * 0.45 + Math.sin(i * 0.9) * 14 + Math.sin(i * 2.3) * 7); x.lineTo(w, h); x.fill(); }, 4, 1),
-  sky: canvasTex(4, 256, (x, w, h) => { const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#3f86d6'); g.addColorStop(0.55, '#9fcff1'); g.addColorStop(0.85, '#ffe3bd'); g.addColorStop(1, '#ffd29a'); x.fillStyle = g; x.fillRect(0, 0, w, h); }),
+  field: canvasTex(1024, 1024, (x, w, h) => {
+    // parcelas irregulares con surcos en distintas direcciones y caminos de tierra clara entre ellas
+    const P = ['#a8743f', '#c29a55', '#8f9a4c', '#b25a36', '#a3ad5c', '#cdb177', '#97683a', '#7f8f45', '#c48a4a'];
+    x.fillStyle = '#d8c39a'; x.fillRect(0, 0, w, h);
+    for (let gy = 0; gy < 6; gy++) for (let gx = 0; gx < 5; gx++) {
+      const x0 = gx * w / 5 + 3, y0 = gy * h / 6 + 3, ww = w / 5 - 6, hh = h / 6 - 6;
+      x.save(); x.beginPath(); x.moveTo(x0 + R1() * 8, y0 + R1() * 8); x.lineTo(x0 + ww - R1() * 8, y0 + R1() * 8);
+      x.lineTo(x0 + ww - R1() * 8, y0 + hh - R1() * 8); x.lineTo(x0 + R1() * 8, y0 + hh - R1() * 8); x.closePath(); x.clip();
+      x.fillStyle = P[(R1() * P.length) | 0]; x.fillRect(x0, y0, ww, hh);
+      const ang = R1() * Math.PI; x.translate(x0 + ww / 2, y0 + hh / 2); x.rotate(ang);
+      x.globalAlpha = 0.18; x.fillStyle = '#2b1c10'; for (let k = -300; k < 300; k += 5) x.fillRect(-300, k, 600, 1.6);
+      x.globalAlpha = 0.10; x.fillStyle = '#fff3d6'; for (let k = -300; k < 300; k += 5) x.fillRect(-300, k + 2.5, 600, 1);
+      x.restore(); }
+    x.globalAlpha = 1; noise(x, w, h, 26000, ['rgba(40,25,10,0.18)', 'rgba(255,245,220,0.14)', 'rgba(70,90,30,0.12)'], 2.2);
+  }, 10, 10),
+  vines: canvasTex(256, 256, (x, w, h) => {   // viñedo en otoño: tierra rojiza clara y cepas verdes/amarillas en hileras
+    x.fillStyle = '#c98a5a'; x.fillRect(0, 0, w, h); noise(x, w, h, 5000, ['#b97a4c', '#d89a68', '#c4845a'], 2);
+    for (let i = 0; i < 8; i++) { const y = i * 32 + 16;
+      x.fillStyle = 'rgba(80,40,20,0.25)'; x.fillRect(0, y + 5, w, 6);
+      for (let j = 0; j < 22; j++) { const cx = j * 11.6 + 6, c = R1() < 0.35 ? '#e8c04e' : (R1() < 0.5 ? '#b8cf5e' : '#93b648');
+        x.fillStyle = c; x.beginPath(); x.ellipse(cx, y, 6.5, 5, 0, 0, 7); x.fill();
+        x.fillStyle = 'rgba(255,255,220,0.35)'; x.beginPath(); x.ellipse(cx - 2, y - 2, 2.5, 1.8, 0, 0, 7); x.fill(); } } }, 120, 6),
+  slab: canvasTex(128, 512, (x, w, h) => { x.fillStyle = '#7d766c'; x.fillRect(0, 0, w, h); noise(x, w, h, 5000, ['#6b655c', '#8f887d', '#5c574f', '#a29b8f'], 2.5);
+    for (let i = 0; i < 8; i++) { const y = i * 64 + 20; x.fillStyle = 'rgba(0,0,0,0.35)'; x.fillRect(4, y + 3, w - 8, 22); x.fillStyle = '#b9b5ae'; x.fillRect(2, y, w - 4, 20);
+      x.fillStyle = 'rgba(255,255,255,0.25)'; x.fillRect(2, y, w - 4, 3); noise(x, w, 0, 0, ['#000'], 1); } }, 1, 400),
+  ballast: canvasTex(256, 256, (x, w, h) => { x.fillStyle = '#7a756d'; x.fillRect(0, 0, w, h); noise(x, w, h, 14000, ['#5f5b55', '#8f8a82', '#4e4b46', '#a8a399', '#6d6258'], 3.2); }, 300, 4),
+  hills: canvasTex(1024, 256, (x, w, h) => {
+    const ridge = (base, amp, col, seed) => { const r = rng(seed); x.fillStyle = col; x.beginPath(); x.moveTo(0, h);
+      for (let i = 0; i <= 64; i++) x.lineTo(i * w / 64, base + Math.sin(i * 0.5 + seed) * amp + (r() - 0.5) * amp * 0.6); x.lineTo(w, h); x.fill(); };
+    ridge(h * 0.35, 18, LOOK_URDA === 'a' ? '#b7aea6' : '#a9b8c9', 3);   // sierra lejana, azulada por la distancia
+    ridge(h * 0.55, 14, LOOK_URDA === 'a' ? '#a08a62' : '#8f9a6a', 7);   // loma cercana
+    for (let i = 0; i < 9; i++) { const cx = 360 + i * 34, cy = h * 0.55 - 4 + Math.sin(i * 0.5 + 7) * 14;   // molinos blancos en la loma
+      x.fillStyle = '#f7f4ee'; x.fillRect(cx - 5, cy - 22, 10, 22); x.fillStyle = '#333'; x.beginPath(); x.moveTo(cx - 6, cy - 22); x.lineTo(cx, cy - 30); x.lineTo(cx + 6, cy - 22); x.fill();
+      x.strokeStyle = '#5a4433'; x.lineWidth = 1.5; for (let k = 0; k < 4; k++) { const a = k * Math.PI / 2 + i; x.beginPath(); x.moveTo(cx, cy - 25); x.lineTo(cx + Math.cos(a) * 14, cy - 25 + Math.sin(a) * 14); x.stroke(); } }
+  }, 3, 1),
+  sky: canvasTex(512, 1024, (x, w, h) => {
+    const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, SKYC[0]); g.addColorStop(0.5, SKYC[1]); g.addColorStop(0.82, SKYC[2]); g.addColorStop(1, SKYC[3]);
+    x.fillStyle = g; x.fillRect(0, 0, w, h);
+    x.filter = 'blur(10px)'; const r = rng(4);
+    for (let i = 0; i < 26; i++) { const cx = r() * w, cy = h * (0.12 + r() * 0.55), rw = 40 + r() * 110;
+      x.fillStyle = LOOK_URDA !== 'b' ? `rgba(255,${235 + (r() * 15) | 0},${215 + (r() * 20) | 0},${0.55 + r() * 0.3})` : `rgba(255,255,255,${0.6 + r() * 0.3})`;
+      for (let k = 0; k < 5; k++) { x.beginPath(); x.ellipse(cx + (k - 2) * rw * 0.35, cy + (r() - 0.5) * 12, rw * 0.45, rw * 0.22, 0, 0, 7); x.fill(); } }
+    x.filter = 'none';
+  }),
 };
 UT.hills.wrapT = THREE.ClampToEdgeWrapping; UT.hills.transparent = true;
 UT.sky.wrapS = UT.sky.wrapT = THREE.ClampToEdgeWrapping;
 
 const rail = new THREE.Group(); scene.add(rail);
 {
-  const fld = new THREE.Mesh(new THREE.PlaneGeometry(3000, 3000), new THREE.MeshLambertMaterial({ map: UT.field })); fld.rotation.x = -Math.PI / 2; fld.position.y = -0.3; rail.add(fld);
+  const fld = new THREE.Mesh(new THREE.PlaneGeometry(3000, 3000), new THREE.MeshStandardMaterial({ map: UT.field, roughness: 1 })); fld.rotation.x = -Math.PI / 2; fld.position.y = -0.3; rail.add(fld);
   const bal = new THREE.Mesh(new THREE.PlaneGeometry(1600, 16), new THREE.MeshLambertMaterial({ map: UT.ballast })); bal.rotation.x = -Math.PI / 2; bal.position.set(0, -0.05, 3); rail.add(bal);
   const steel = new THREE.MeshStandardMaterial({ color: 0x9aa0a6, metalness: 0.85, roughness: 0.35 });
   for (const z of [0, 6]) {
@@ -575,7 +606,7 @@ const rail = new THREE.Group(); scene.add(rail);
     for (let k = 0; k < 4; k++) { const sail = new THREE.Mesh(new THREE.BoxGeometry(0.5, 9, 0.2), new THREE.MeshLambertMaterial({ color: 0x6b4a33 }));
       sail.position.set(0, 12 + Math.cos(k * Math.PI / 2 + i) * 4.5, 3.9 + 0); sail.position.x = Math.sin(k * Math.PI / 2 + i) * 4.5; sail.rotation.z = -(k * Math.PI / 2 + i); m.add(sail); }
     rail.add(m); }
-  const hl = new THREE.Mesh(new THREE.PlaneGeometry(3000, 120), new THREE.MeshBasicMaterial({ map: UT.hills, transparent: true, fog: false, color: 0xc8c8c8 })); hl.position.set(0, 30, -700); rail.add(hl);
+  const hl = new THREE.Mesh(new THREE.PlaneGeometry(3400, 200), new THREE.MeshBasicMaterial({ map: UT.hills, transparent: true, fog: false })); hl.position.set(0, 55, -900); rail.add(hl);
 }
 
 // tren de alta velocidad genérico (sin logotipos): morro afilado + coches con ventanas y franja
@@ -658,7 +689,7 @@ const candles = new THREE.Group(); scene.add(candles);
   candles.position.set(40, 0.0, -6);
 }
 
-function setBg() { scene.background = UT.sky; sun.color.setHex(0xfff0d8); }
+function setBg() { scene.background = UT.sky; sun.color.setHex({ a: 0xffd9a8, b: 0xffffff, c: 0xff9c5a }[LOOK_URDA]); sun.position.set(LOOK_URDA === 'b' ? 20 : -60, { a: 30, b: 90, c: 14 }[LOOK_URDA], 60); }
 const LOOK = new THREE.Vector3();
 const prevFrame = document.createElement('canvas'); prevFrame.width = W * PR; prevFrame.height = H * PR; let prevA = 0;
 function setCam(px, py, pz, lx, ly, lz, up) { cam.up.set(...(up || [0, 1, 0])); cam.position.set(px, py, pz); LOOK.set(lx, ly, lz); cam.fov = 38; cam.updateProjectionMatrix(); cam.lookAt(lx, ly, lz); cam.updateMatrixWorld(); }
