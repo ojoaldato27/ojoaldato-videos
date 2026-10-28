@@ -8,7 +8,7 @@ import sys, os, re, subprocess, importlib, json
 
 ROOT = "/home/claude/shorts-ingenieria"
 TTS = "/home/claude/tts"
-VOZ = "em_alex"
+VOZ = {"em_alex": 0.75, "am_fenrir": 0.25}   # «Alex 5 · enérgico», elegida por Iker el 28/10
 SPEED = 1.0
 sys.path[:0] = [ROOT + "/content/cine", ROOT + "/pipeline", ROOT + "/tools"]
 
@@ -27,7 +27,8 @@ def sintetiza(texto, mp3):
     from kokoro_onnx import Kokoro
     import soundfile as sf
     k = Kokoro(os.path.join(TTS, "kokoro-v1.0.onnx"), os.path.join(TTS, "voices-v1.0.bin"))
-    a, sr = k.create(para_voz(texto), voice=VOZ, speed=SPEED, lang="es")
+    st = sum(k.get_voice_style(n) * w for n, w in VOZ.items())
+    a, sr = k.create(para_voz(texto), voice=st, speed=SPEED, lang="es")
     wav = mp3[:-4] + ".wav"
     sf.write(wav, a, sr)
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", wav, "-af", "loudnorm=I=-16:TP=-1.5", "-b:a", "160k", mp3], check=True)

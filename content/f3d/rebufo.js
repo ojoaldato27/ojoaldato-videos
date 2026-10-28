@@ -131,51 +131,74 @@ function heatWheels(car, h) {
   car.userData.wheels.forEach(w => w.userData.mat.color.copy(c));
 }
 
-// ---------- aire: rayas que fluyen alrededor del coche de delante ----------
-const NS = 420;
-const airGeo = new THREE.BufferGeometry();
-const airPos = new Float32Array(NS * 6), airCol = new Float32Array(NS * 6);
-airGeo.setAttribute('position', new THREE.BufferAttribute(airPos, 3));
-airGeo.setAttribute('color', new THREE.BufferAttribute(airCol, 3));
-const air = new THREE.LineSegments(airGeo, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.9 }));
-scene.add(air);
-const seeds = []; { const r = rng(7); for (let i = 0; i < NS; i++) seeds.push([r(), r(), r(), r()]); }
-// opts: car (x,z de referencia), amount 0..1, wake 0..1 (remolino rojo), wakeOnly
-function airflow(t, cx, cz, amount, wake, yaw = 0) {
-  const grey = new THREE.Color(0xa7adb5), red = new THREE.Color(RED);
-  for (let i = 0; i < NS; i++) {
-    const [a, b, c, d] = seeds[i];
-    const on = a < amount;
-    let y = 0.15 + b * 2.4, z = (c - 0.5) * 7;
-    const L = 46, v = 34;
-    let x = 24 - (((t * v + d * L) % L));           // de delante (+) hacia atrás (-)
-    let xs = x, ys = y, zs = z;
-    const f = Math.exp(-Math.pow((x - 0.3) / 2.6, 2));
-    if (Math.abs(z) < 1.6 && y < 1.7) { ys = y + f * (1.75 - y) * 0.9; zs = z + f * Math.sign(z || 0.01) * (1.6 - Math.abs(z)) * 0.6; }
-    let wk = 0;
-    if (x < -2.4 && Math.abs(z) < 1.7 && y < 1.9) {
-      wk = Math.exp(-(-2.4 - x) / 14) * wake;
-      const ph = t * 9 + d * 40 + x * 0.6;
-      ys = y + Math.sin(ph) * 0.45 * wk; zs = z + Math.cos(ph * 1.3) * 0.45 * wk;
+// ---------- aire: líneas de corriente limpias (túnel de viento) + remolinos rojos del rebufo ----------
+// Iker (28/10): las rayitas de antes no gustaban → curvas suaves fijas alrededor del coche con «gotas» que viajan por ellas.
+const AIR_BLUE = 0x3a86d8, AIR_SOFT = 0xb9cde3;
+const air = new THREE.Group(); scene.add(air);
+const flowLines = [];
+{
+  const seeds = [];
+  for (const y of [0.35, 0.8, 1.3]) for (const z of [-1.15, -0.4, 0.4, 1.15]) seeds.push([y, z]);
+  for (const [y, z] of [[2.0, 0], [2.0, -0.9], [2.0, 0.9], [0.5, -2.0], [0.5, 2.0], [1.2, -2.0], [1.2, 2.0]]) seeds.push([y, z]);
+  seeds.forEach(([y, z], i) => {
+    const pts = [];
+    for (let x = 13; x >= -3.2; x -= 0.4) {
+      const f = Math.exp(-Math.pow((x - 0.6) / 2.4, 2)) + (x < 0.6 ? Math.exp(-Math.pow((x - 0.6) / 1.6, 2)) * 0 : 0);
+      let yy = y, zz = z;
+      if (Math.abs(z) < 1.5 && y < 1.6) { yy = y + f * (1.75 - y) * 0.95; zz = z + f * Math.sign(z) * (1.5 - Math.abs(z)) * 0.55; }
+      else { yy = y + f * 0.12; }
+      pts.push(new THREE.Vector3(x, yy, zz));
     }
-    const len = 1.3 * (1 - wk * 0.5);
-    const cs = Math.cos(yaw), sn = Math.sin(yaw);
-    const P = (px, pz) => [cx + px * cs + pz * sn, cz - px * sn + pz * cs];
-    const [x1, z1] = P(xs, zs), [x2, z2] = P(xs + len, zs);
-    const k = i * 6;
-    if (!on) { airPos.fill(0, k, k + 6); airPos[k + 1] = airPos[k + 4] = -50; continue; }
-    airPos[k] = x1; airPos[k + 1] = ys; airPos[k + 2] = z1;
-    airPos[k + 3] = x2; airPos[k + 4] = ys + (wk ? Math.sin(t * 12 + i) * 0.15 * wk : 0); airPos[k + 5] = z2;
-    const col = grey.clone().lerp(red, clamp(wk * 1.6));
-    const fade = clamp((24 - x) / 4) * clamp((x + 22) / 5);
-    for (const o of [0, 3]) { airCol[k + o] = lerp(1, col.r, fade); airCol[k + o + 1] = lerp(1, col.g, fade); airCol[k + o + 2] = lerp(1, col.b, fade); }
+    const curve = new THREE.CatmullRomCurve3(pts);
+    const tube = new THREE.Mesh(new THREE.TubeGeometry(curve, 80, 0.028, 6, false),
+      new THREE.MeshBasicMaterial({ color: AIR_SOFT, transparent: true, opacity: 0.85 }));
+    air.add(tube);
+    const drops = [];
+    for (let k = 0; k < 3; k++) {
+      const d = new THREE.Mesh(new THREE.CapsuleGeometry(0.06, 0.55, 4, 8), new THREE.MeshBasicMaterial({ color: AIR_BLUE, transparent: true }));
+      air.add(d); drops.push(d);
+    }
+    flowLines.push({ curve, tube, drops, ph: (i * 0.137) % 1 });
+  });
+}
+// remolinos del rebufo: hélices rojas que giran y se abren detrás del coche
+const wakeG = new THREE.Group(); air.add(wakeG);
+const wakeMats = [];
+for (let h = 0; h < 5; h++) {
+  const pts = [];
+  for (let x = -2.4; x >= -17; x -= 0.25) {
+    const k = (-2.4 - x) / 14.6, r = 0.25 + k * 1.2, a = x * 1.05 + h * (Math.PI * 2 / 5);
+    pts.push(new THREE.Vector3(x, 0.85 + Math.sin(a) * r * 0.8, Math.cos(a) * r));
   }
-  airGeo.attributes.position.needsUpdate = true; airGeo.attributes.color.needsUpdate = true;
+  const m = new THREE.MeshBasicMaterial({ color: RED, transparent: true, opacity: 0.5, depthWrite: false });
+  wakeMats.push(m);
+  wakeG.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 160, 0.035, 6, false), m));
+}
+const _up = new THREE.Vector3(0, 1, 0);
+// amount: cuántas líneas se ven (0..1); wake: fuerza de los remolinos (0..1). Va pegado al coche rojo (carA).
+function airflow(t, cx, cz, amount, wake) {
+  air.position.copy(carA.position); air.rotation.copy(carA.rotation);
+  const n = Math.round(flowLines.length * amount);
+  flowLines.forEach((L, i) => {
+    const on = i < n;
+    L.tube.visible = on;
+    L.drops.forEach((d, k) => {
+      d.visible = on;
+      if (!on) return;
+      const u = ((t * 0.55 + L.ph + k / 3) % 1);
+      const p = L.curve.getPointAt(u), tg = L.curve.getTangentAt(u);
+      d.position.copy(p); d.quaternion.setFromUnitVectors(_up, tg);
+      d.material.opacity = Math.min(1, u * 8, (1 - u) * 8);
+    });
+  });
+  wakeG.visible = wake > 0.02;
+  wakeG.rotation.x = -t * 3.2;
+  wakeMats.forEach(m => { m.opacity = 0.55 * wake; });
 }
 
 // cono del rebufo
 const wakeCone = new THREE.Mesh(new THREE.ConeGeometry(1.6, 16, 24, 1, true), new THREE.MeshBasicMaterial({ color: RED, transparent: true, opacity: 0.12, depthWrite: false, side: THREE.DoubleSide }));
-wakeCone.rotation.z = -Math.PI / 2; scene.add(wakeCone);
+wakeCone.rotation.z = -Math.PI / 2; wakeCone.material.visible = false; scene.add(wakeCone);
 
 // flechas de carga aerodinámica
 const arrows = [];
@@ -538,7 +561,7 @@ window.renderAt = function (t) {
   hideAll();
   let ui = [], si = 0, u = 0;
   // Ojo en la esquina (abajo a la izquierda, hueco reservado)
-  ojo.position.set(-1.0, -1.47, -7.5); ojo.scale.setScalar(0.19); ojo.visible = true; world.visible = true;
+  ojo.position.set(-1.0, -1.47, -7.5); ojo.scale.setScalar(0.19); ojo.visible = false; world.visible = true;
   if (!inOutro) {
     si = sceneAt(t);
     const L = T.lines[si], end = si + 1 < T.lines.length ? T.lines[si + 1].start : outroAt;
@@ -550,7 +573,7 @@ window.renderAt = function (t) {
     // cierre: Ojo al centro, saludando
     const uo = clamp((t - outroAt) / 0.6);
     straight.visible = false; carA.visible = carB.visible = false;
-    world.visible = false; ojo.position.set(lerp(-1.0, 0, ease(uo)), lerp(-1.47, -1.3, ease(uo)), -7.5); ojo.scale.setScalar(lerp(0.19, 0.42, ease(uo)));
+    world.visible = false; ojo.position.set(lerp(-1.0, 0, ease(uo)), lerp(-1.47, -1.3, ease(uo)), -7.5); ojo.scale.setScalar(lerp(0.19, 0.42, ease(uo))); ojo.visible = false;
     setCam(0, 0, 10, 0, 0, 0);
     poseOjo('wave', 'cheer', uo, t);
   }

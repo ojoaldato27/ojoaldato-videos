@@ -127,6 +127,78 @@ def open_page(p, T):
     return b, pg
 
 
+# ---------- Ojo de siempre (el 2D de los demás vídeos: pipeline/ojo.py), encima del 3D ----------
+OJO_POSES = ["think", "point", "point", "surprise", "point", "smirk", "surprise", "think", "think", "point", "smirk"]
+OJO_TRAJE = "c_inventor"          # motor → inventor (Iker, 28/10: «B · Inventor»)
+# Iker (28/10): «mezcla» → en estas escenas Ojo actúa grande dentro de la escena (como en el del agujero);
+# en el resto narra pequeño desde la esquina. escena: (pose, x, y, escala) en 1080x1920
+OJO_ACT = {0: ("think", 640, 900, 0.75), 6: ("flag", 40, 860, 0.8), 8: ("surprise", 600, 1000, 0.7), 10: ("smirk", 620, 930, 0.75)}
+_FIG = {}
+
+
+def _fig(pose, lid, look, talk):
+    sys.path[:0] = [ROOT + "/pipeline"] if ROOT + "/pipeline" not in sys.path else []
+    import ojo
+    k = (pose, lid, look, talk)
+    if k not in _FIG:
+        if len(_FIG) > 400:
+            _FIG.clear()
+        _FIG[k] = ojo.figure(pose, OJO_TRAJE, lid, look, talk)
+    return _FIG[k]
+
+
+def _speaking(t, T):
+    for L in T["lines"] + [T["outro"]]:
+        if L["tokens"][0]["s"] - 0.05 <= t <= L["tokens"][-1]["e"] + 0.1:
+            return any(tk["s"] - 0.03 <= t <= tk["e"] + 0.06 for tk in L["tokens"])
+    return False
+
+
+def narr(img, t, T):
+    from PIL import Image
+    import math
+    outro = t >= T["outro"]["start"] - 0.1
+    si = 0
+    for i, L in enumerate(T["lines"]):
+        if t >= L["start"] - 0.08:
+            si = i
+    pose = "wave" if outro else OJO_POSES[si]
+    spk = _speaking(t, T)
+    talk = round(0.7 * math.sin(t * 4.6) * (1 if spk else 0.15), 1)
+    lid = 0.9 if ((t * 1.0) % 4.3) < 0.11 or ((t + 1.7) % 6.1) < 0.09 else 0.0
+    base = {"think": (0.06, -0.05), "surprise": (0.03, 0.0)}.get(pose, (0.08, 0.0))
+    look = (round(base[0] + 0.03 * math.sin(t * 0.9), 2), round(base[1] + 0.02 * math.sin(t * 0.6 + 1), 2))
+    f = _fig(pose, lid, look, talk)
+    if not outro:
+        dt = t - T["lines"][si]["start"]
+        if si > 0 and dt < 0.3 and OJO_POSES[si - 1] != pose:
+            f = Image.blend(_fig(OJO_POSES[si - 1], lid, look, talk), f, max(0.0, min(1.0, dt / 0.3)))
+        x, y, s = -15, 1165, 0.6
+        if si in OJO_ACT:
+            pose, x, y, s = OJO_ACT[si]
+            f = _fig(pose, lid, look, talk)
+            k = max(0.0, min(1.0, dt / 0.35))          # entra con un saltito
+            y += (1 - k) * 120
+    else:
+        u = max(0.0, min(1.0, (t - T["outro"]["start"]) / 0.6))
+        u = u * u * (3 - 2 * u)
+        x, y, s = -15 + (190 + 15) * u, 1165 + (700 - 1165) * u, 0.6 + (1.4 - 0.6) * u
+    breath = 1 + 0.012 * math.sin(t * 2.1)
+    sway = 2.2 * math.sin(t * 1.25) + (1.5 * math.sin(t * 4.6) if spk else 0)
+    bob = (3.5 * abs(math.sin(t * 4.6)) if spk else 0) + 2 * math.sin(t * 2.1)
+    ff = f.resize((int(f.width * s), int(f.height * s * breath)), Image.BILINEAR)
+    ff = ff.rotate(sway, center=(ff.width / 2, ff.height * 0.95), resample=Image.BICUBIC)
+    img.paste(ff, (int(x + (f.width * s - ff.width) / 2), int(y + (f.height * s - ff.height) - bob)), ff)
+    return img
+
+
+def compose(jpg, t, T):
+    from PIL import Image
+    import io
+    im = Image.open(io.BytesIO(jpg)).convert("RGB").resize((1080, 1920), Image.LANCZOS)
+    return narr(im, t, T)
+
+
 def frame(pg, t):
     d = pg.evaluate(f"renderAt({t:.4f})")
     return base64.b64decode(d.split(",", 1)[1])
@@ -143,7 +215,7 @@ def preview(outp):
     ts.append(T["outro"]["start"] + 1.5)
     with sync_playwright() as p:
         b, pg = open_page(p, T)
-        ims = [Image.open(io.BytesIO(frame(pg, t))).convert("RGB") for t in ts]
+        ims = [compose(frame(pg, t), t, T) for t in ts]
         b.close()
     cols, sc = 6, 0.42
     w, h = int(720 * sc), int(1280 * sc)
@@ -198,14 +270,14 @@ def full(outp):
     wav = outp + ".wav"
     audio(T, wav)
     nfr = int(T["total"] * FPS)
-    ff = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "image2pipe", "-c:v", "mjpeg", "-framerate", str(FPS), "-i", "-",
-                           "-i", wav, "-vf", "scale=1080:1920:flags=lanczos", "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
+    ff = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", "1080x1920", "-framerate", str(FPS), "-i", "-",
+                           "-i", wav, "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
                            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", outp],
                           stdin=subprocess.PIPE)
     with sync_playwright() as p:
         b, pg = open_page(p, T)
         for i in range(nfr):
-            ff.stdin.write(frame(pg, i / FPS))
+            ff.stdin.write(compose(frame(pg, i / FPS), i / FPS, T).tobytes())
             if i % 300 == 0:
                 print("frame", i, "/", nfr, flush=True)
         b.close()
