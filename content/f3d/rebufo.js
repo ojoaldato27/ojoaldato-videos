@@ -11,8 +11,9 @@ const CSS_RED = '#E62828';
 
 // ---------- renderer y capa 2D ----------
 const gl = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
-gl.setSize(W, H); gl.setPixelRatio(1);
-const out = document.createElement('canvas'); out.width = W; out.height = H;
+const PR = 1.5;   // Iker (28/10): «no se ve con mucha calidad» → se dibuja a 1080x1920 de verdad
+gl.setPixelRatio(PR); gl.setSize(W, H);
+const out = document.createElement('canvas'); out.width = W * PR; out.height = H * PR;
 const ctx = out.getContext('2d');
 document.body.appendChild(out);
 
@@ -526,7 +527,7 @@ const OJO_POSE = ['think', 'point', 'push', 'surprise', 'point', 'cheer', 'surpr
 const GAP_MIN = 6.2;   // morro-cola: 5 m de coche + aire; nunca se solapan en el mismo carril
 
 const LOOK = new THREE.Vector3();
-const prevFrame = document.createElement('canvas'); prevFrame.width = W; prevFrame.height = H; let prevA = 0;
+const prevFrame = document.createElement('canvas'); prevFrame.width = W * PR; prevFrame.height = H * PR; let prevA = 0;
 function setBg(si) {
   // fondo de color por escena, como en el vídeo del agujero (window.BGMODE = 'color'), o blanco
   if (typeof CIRCUIT !== 'undefined' && CIRCUIT) { scene.background = TEX.sky; return; }
@@ -718,8 +719,9 @@ window.renderAt = function (t) {
   }
   carMode(); shadowCatcher.visible = world.visible;
   gl.clear(); gl.render(scene, cam); gl.clearDepth(); gl.render(ojoScene, ojoCam);
-  ctx.globalAlpha = 1; ctx.clearRect(0, 0, W, H); ctx.drawImage(gl.domElement, 0, 0);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.clearRect(0, 0, out.width, out.height); ctx.drawImage(gl.domElement, 0, 0);
   if (prevA > 0 && !inOutro) { ctx.globalAlpha = prevA; ctx.drawImage(prevFrame, 0, 0); ctx.globalAlpha = 1; }
+  ctx.setTransform(PR, 0, 0, PR, 0, 0);
   for (const it of ui) {
     const [kind, ...a] = it;
     if (kind === 'pill') pill(...a);
@@ -745,7 +747,7 @@ window.renderAt = function (t) {
       else { const x = lerp(-W * 0.3, W * 1.3, (d + 0.12) / 0.28); ctx.fillStyle = CSS_RED; ctx.fillRect(x - 60, 0, 120, H); }
     }
   });
-  return out.toDataURL('image/jpeg', 0.93);
+  return out.toDataURL('image/jpeg', 0.97);
 };
 Promise.all(['800 40px Inter', '700 28px Inter', '500 24px Inter'].map(f => document.fonts.load(f))).then(() => { window.READY = true; });
 

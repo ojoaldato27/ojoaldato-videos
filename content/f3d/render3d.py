@@ -274,7 +274,7 @@ def full(outp, t0=None, t1=None):
     f0 = int(float(t0) * FPS) if t0 else 0
     nfr = int(float(t1) * FPS) if t1 else int(T["total"] * FPS)
     ff = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", "1080x1920", "-framerate", str(FPS), "-i", "-",
-                           "-ss", f"{f0 / FPS:.3f}", "-i", wav, "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
+                           "-ss", f"{f0 / FPS:.3f}", "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "17",
                            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", outp],
                           stdin=subprocess.PIPE)
     with sync_playwright() as p:
@@ -289,5 +289,37 @@ def full(outp, t0=None, t1=None):
     print(outp, T["total"], "s")
 
 
+def seg(outp, f0, f1):
+    """Solo vídeo, fotogramas f0..f1 (para renderizar por trozos y que no se corte a medias)."""
+    from playwright.sync_api import sync_playwright
+    T = timing()
+    f0, f1 = int(f0), min(int(f1), int(T["total"] * FPS))
+    ff = subprocess.Popen(["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", "1080x1920", "-framerate", str(FPS), "-i", "-",
+                           "-c:v", "libx264", "-preset", "medium", "-crf", "14", "-pix_fmt", "yuv420p", outp + ".part.mp4"], stdin=subprocess.PIPE)
+    with sync_playwright() as p:
+        b, pg = open_page(p, T)
+        for i in range(f0, f1):
+            ff.stdin.write(compose(frame(pg, i / FPS), i / FPS, T).tobytes())
+        b.close()
+    ff.stdin.close(); ff.wait()
+    os.replace(outp + ".part.mp4", outp)
+    print("seg ok", outp, f0, f1, flush=True)
+
+
+def join(outp, *segs):
+    """Une los trozos y pone el audio: versión óptima para YouTube, TikTok e Instagram (H.264 High, 1080x1920, 30 fps, AAC 48 kHz)."""
+    T = timing()
+    wav = outp + ".wav"
+    audio(T, wav)
+    lst = outp + ".txt"
+    open(lst, "w").write("".join(f"file '{os.path.abspath(x)}'\n" for x in segs))
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst, "-i", wav,
+                    "-c:v", "libx264", "-profile:v", "high", "-level", "4.2", "-preset", "slow", "-crf", "16", "-maxrate", "16M", "-bufsize", "24M",
+                    "-pix_fmt", "yuv420p", "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest",
+                    "-movflags", "+faststart", outp], check=True)
+    os.remove(wav); os.remove(lst)
+    print("join ok", outp)
+
+
 if __name__ == "__main__":
-    {"preview": preview, "full": full}[sys.argv[1]](*sys.argv[2:])
+    {"preview": preview, "full": full, "seg": seg, "join": join}[sys.argv[1]](*sys.argv[2:])
