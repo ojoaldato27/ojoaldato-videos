@@ -114,6 +114,12 @@ export function makeTrainPro(L, n = 4) {
 }
 
 export const LIVERY = {
+  // Iryo en blanco con franja roja (opción B, Iker 29/10: «me gusta el tren blanco»)
+  iryoBlanco: { body: '#f4f4f2', roof: '#dcdcd8', skirt: '#8e949c', band: '#2b2f36', win: [2.35, 3.15], nose: 0xf4f4f2,
+          stripes: [{ y: 1.0, h: 0.42, c: '#c4122f' }, { y: 0.9, h: 0.06, c: '#f08a24' }] },
+  // Iryo bicolor: techo y ventanas en blanco, mitad baja y morro en rojo (para distinguirlo bien del AVE)
+  iryoBicolor: { body: '#f4f4f2', roof: '#e9e9e6', skirt: '#2a2c31', band: '#2b2f36', win: [2.35, 3.15], nose: 0xc4122f,
+          stripes: [{ y: 0.55, h: 1.65, c: '#c4122f' }, { y: 2.2, h: 0.07, c: '#f08a24' }] },
   // Iryo: rojo intenso, banda negra de ventanas, línea blanca baja
   iryo: { body: '#c4122f', roof: '#9e0e25', skirt: '#2a2c31', band: '#0f1114', win: [2.35, 3.15], nose: 0xc4122f,
           stripes: [{ y: 0.95, h: 0.08, c: '#ffffff' }, { y: 1.1, h: 0.04, c: '#f08a24' }] },

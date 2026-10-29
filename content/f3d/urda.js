@@ -660,7 +660,7 @@ function makeTrain(body, stripe, label, n = 4) {
   g.userData.label = label;
   return g;
 }
-const iryo = makeTrainPro(LIVERY.iryo);      // rojo (librea genérica)
+const iryo = makeTrainPro(LIVERY[{ blanco: 'iryoBlanco', bicolor: 'iryoBicolor' }[new URLSearchParams(location.search).get('iryo')] || 'iryo']);   // rojo, blanco o bicolor
 const ave = makeTrainPro(LIVERY.ave);        // blanco con franja morada
 scene.add(iryo, ave);
 
@@ -704,6 +704,19 @@ const candles = new THREE.Group(); scene.add(candles);
   candles.position.set(40, 0.0, -6);
 }
 
+const blocks = [], BL = 40;
+for (let x = -420; x < 60; x += BL) { const m = new THREE.Mesh(new THREE.PlaneGeometry(BL - 4, 16), new THREE.MeshBasicMaterial({ color: 0x2bd96b, transparent: true, opacity: 0.85, depthWrite: false }));
+  m.rotation.x = -Math.PI / 2; m.position.set(x + BL / 2, 0.42, 0); m.renderOrder = 2; m.userData.x0 = x; scene.add(m); blocks.push(m); }
+function setBlocks(t, u, mode) {
+  blocks.forEach((b, i) => { b.visible = true; const x0 = b.userData.x0, mat = b.material;
+    if (mode === 'off') { const k = clamp((u - 0.15) * 1.6 - (blocks.length - i) * 0.05); mat.color.setHex(k > 0 ? 0x3a3d41 : 0x2bd96b); mat.opacity = 0.85; }
+    else if (mode === 'stop') { mat.color.setHex(x0 > -100 && x0 < 30 ? 0xe62828 : 0x3a3d41); }
+    else { const occ = x0 > -100 && x0 < 30; const on = occ || u > 0.2 + (i / blocks.length) * 0.5;
+      mat.color.setHex(occ ? 0xe62828 : (on ? 0x2bd96b : 0x3a3d41)); mat.opacity = occ ? 0.6 + 0.35 * Math.abs(Math.sin(t * 5)) : 0.85; } });
+}
+const glows = [iryo, ave].map((tr, i) => { const g = new THREE.Mesh(new THREE.PlaneGeometry(86, 30), new THREE.MeshBasicMaterial({ color: i ? 0x9c6bd1 : 0xff4d4d, transparent: true, opacity: 0.35, depthWrite: false }));
+  g.rotation.x = -Math.PI / 2; g.position.set(-31, 0.45, 0); tr.add(g); g.visible = false; return g; });
+function glowOn() { glows.forEach(g => g.visible = true); }
 function setBg() { scene.background = UT.sky; sun.color.setHex({ a: 0xffd9a8, b: 0xffffff, c: 0xff9c5a }[LOOK_URDA]); sun.position.set(LOOK_URDA === 'b' ? 20 : -60, { a: 30, b: 90, c: 14 }[LOOK_URDA], 60); }
 const LOOK = new THREE.Vector3();
 const prevFrame = document.createElement('canvas'); prevFrame.width = W * PR; prevFrame.height = H * PR; let prevA = 0;
@@ -725,6 +738,7 @@ function hideAll() {
   rail.visible = true; iryo.visible = true; ave.visible = false; tape.visible = false; flag.visible = false; candles.visible = false;
   signals.forEach(s => s.userData.lamp.material.color.setHex(0x2bd96b));
   iryo.userData.cars.forEach(c => { c.position.z = 0; c.rotation.set(0, 0, 0); c.position.y = 0; });
+  blocks.forEach(b => b.visible = false); glows.forEach(g => g.visible = false);
   iryo.position.set(0, 0, 0); ave.position.set(-400, 0, 0); ave.userData.cars.forEach(c => c.rotation.set(0, 0, 0)); iryo.userData.cars.forEach((c, i) => { c.position.x = -i * 20.6; }); DIM = 0;
   sun.intensity = 1.0;
 }
@@ -734,32 +748,53 @@ const SC = [
   // 1 · fecha y lugar
   (t, u) => { iryo.visible = false; setCam(-60 + u * 20, 6, 22, 20 + u * 20, 2, 0);
     return [['clock', '28 OCT', 'MADRID – ANDALUCÍA', clamp(u * 4)], ['pill', W / 2, 520, 'CERCA DE URDA · TOLEDO', clamp((u - 0.25) * 4)]]; },
-  // 2 · 8:30 · falla la señalización: las señales se apagan una a una
-  (t, u) => { iryo.visible = false; signals.forEach((s, i) => { if (u > 0.2 + i * 0.07) s.userData.lamp.material.color.setHex(0x3a3d41); });
-    setCam(-80, 3.6, -6, 80, 3, -2.2);
-    return [['clock', '8:30', 'FALLA EL LZB', clamp(u * 4)], ['pill', W / 2, 520, 'SIN SEÑALES EN EL TRAMO', clamp((u - 0.4) * 4), CSS_RED]]; },
-  // 3 · los trenes se paran: el Iryo delante y el AVE más atrás, en la misma vía
-  (t, u) => { ave.visible = true; ave.position.x = -215; setCam(-420, 48, -24, -90, 0, 3);
-    const pi = proj(new THREE.Vector3(-30, 6, 0)), pa = proj(new THREE.Vector3(-245, 6, 0));
-    return [['pill', pi[0], pi[1] - 40, 'IRYO · PARADO', clamp((u - 0.15) * 4)], ['pill', pa[0], pa[1] - 40, 'AVE · PARADO', clamp((u - 0.45) * 4), CSS_RED]]; },
-  // 4 · el centro de control autoriza seguir (según el ministro)
-  (t, u) => { ave.visible = true; ave.position.x = -215; setCam(-420, 48, -24, -90, 0, 3); DIM = 0.35;
-    return [['panel', u], ['pill', W / 2, 330, 'SEGÚN EL MINISTRO DE TRANSPORTES', clamp(u * 4)]]; },
-  // 5 · el AVE arranca por la misma vía y se acerca
-  (t, u) => { ave.visible = true; ave.position.x = lerp(-215, -165, ease(u)); setCam(lerp(-400, -340, u), 30, -20, -100, 0, 3);
-    const gap = 0;
-    const pm = proj(new THREE.Vector3((ave.position.x + 19.3 - 81.1) / 2, 7, 0));
-    return [['pill', pm[0], pm[1], 'MISMA VÍA', clamp((u - 0.2) * 4), CSS_RED]]; },   // sin distancias inventadas
-  // 6 · el alcance: reconstrucción esquemática, a cámara lenta y sin dramatismo
-  (t, u) => { ave.visible = true; const cs = iryo.userData.cars;
-    const hit = 0.42;
-    ave.position.x = u < hit ? lerp(-165, -100.4, ease(u / hit) * 0.5 + (u / hit) * 0.5) : -100.4 + Math.min(1, (u - hit) / 0.2) * -1.2;
-    const d = ease(clamp((u - hit) / 0.4));
-    cs[3].position.z = 5.2 * d; cs[3].rotation.set(0.25 * d, 0.16 * d, 0); cs[3].position.y = -0.4 * d; cs[3].position.x = -61.8 + 2.5 * d;
-    cs[2].position.z = 2.4 * clamp((u - hit - 0.05) / 0.4); cs[2].rotation.set(0.12 * d, 0.08 * d, 0);
+  // 2 · 8:30 · falla la señalización. Vista cenital tipo esquema: la vía dividida en tramos que se apagan
+  (t, u) => { iryo.visible = false; setBlocks(t, u, 'off'); setCam(-140, 430, 0.01, -140, 0, 3, [1, 0, 0]);
+    return [['clock', '8:30', 'FALLA EL LZB', clamp(u * 4)], ['pill', W / 2, 1000, 'LOS TRAMOS SE QUEDAN SIN SEÑAL', clamp((u - 0.4) * 4), CSS_RED]]; },
+  // 3 · los trenes se paran: el Iryo ocupa su tramo (rojo) y el AVE espera detrás
+  (t, u) => { ave.visible = true; ave.position.x = -235; setBlocks(t, u, 'stop'); glowOn(); setCam(-140, 430, 0.01, -140, 0, 3, [1, 0, 0]);
+    const pi = proj(new THREE.Vector3(-20, 4, 0)), pa = proj(new THREE.Vector3(-255, 4, 0));
+    return [['pill', pi[0] + 140, pi[1], 'IRYO · PARADO', clamp((u - 0.15) * 4)], ['pill', pa[0] + 140, pa[1], 'AVE · PARADO', clamp((u - 0.45) * 4), '#5b2a86']]; },
+  // 4 · la clave: desde control se da vía libre… y el camino verde del AVE acaba en el tramo ocupado por el Iryo
+  (t, u) => { ave.visible = true; ave.position.x = -235; setBlocks(t, u, 'green'); glowOn(); setCam(-140, 430, 0.01, -140, 0, 3, [1, 0, 0]);
+    const pr = proj(new THREE.Vector3(-30, 4, 0));
+    return [['pill', W / 2, 250, 'SEGÚN EL MINISTRO DE TRANSPORTES', clamp(u * 4)], ['pill', W / 2, 310, 'MARCHA AUTORIZADA', clamp((u - 0.2) * 4), '#1fa85a'],
+            ['pill', pr[0] + 150, pr[1], 'TRAMO OCUPADO', clamp((u - 0.55) * 4), CSS_RED]]; },
+  // 5 · el AVE arranca: cámara de persecución detrás del AVE, el Iryo al fondo en la misma vía
+  (t, u) => { ave.visible = true; ave.position.x = lerp(-235, -175, ease(u)); setBlocks(t, 1, 'green'); glowOn();
+    setCam(ave.position.x - 75, 13, 7, ave.position.x + 60, 2, 0);
+    const pi = proj(new THREE.Vector3(-30, 7, 0)); return [['pill', pi[0], pi[1] - 40, 'IRYO PARADO DELANTE', clamp((u - 0.2) * 4), CSS_RED], ['arrow', u]]; },
+  // 6 · el alcance: persecución detrás del AVE (la distancia se cierra), contacto con destello, temblor y polvo,
+  //     vista 3/4 del descarrilamiento con etiquetas y, al final, repetición desde arriba con los tramos de colores
+  (t, u0) => { ave.visible = true; const cs = iryo.userData.cars, RP = 0.66, CX = -81;
+    const rep = u0 > RP, u = rep ? clamp((u0 - RP) / (1 - RP)) : u0 / RP;
+    const hit = rep ? 0.45 : 0.42;
+    ave.position.x = u < hit ? lerp(rep ? -140 : -165, -100.4, u / hit) : -100.4 - 1.2 * ease(clamp((u - hit) / 0.25));
+    const front = ave.position.x + 19.4, d = ease(clamp((u - hit) / (rep ? 0.35 : 0.45)));
+    cs[3].position.z = 5.4 * d; cs[3].rotation.set(0.28 * d, 0.18 * d, 0); cs[3].position.y = -0.45 * d; cs[3].position.x = -61.8 + 2.5 * d;
+    cs[2].position.z = 2.6 * clamp((u - hit - 0.05) / 0.45); cs[2].rotation.set(0.13 * d, 0.09 * d, 0);
     ave.userData.cars[0].rotation.x = 0.03 * d;
-    setCam(-150, 15, -17, -72, 1, 3); DIM = 0.1 * d;
-    return [['clock', '8:54', 'ALCANCE', clamp((u - hit + 0.05) * 6)]]; },
+    const sh = u > hit ? Math.exp(-(u - hit) * 14) : 0, jx = Math.sin(t * 71) * 0.9 * sh, jy = Math.cos(t * 53) * 0.7 * sh;
+    const pc = proj(new THREE.Vector3(CX, 2.5, 0));
+    if (rep) {
+      setBlocks(t, 1, 'green'); glowOn(); setCam(-95 + jx, 210 + jy * 4, 0.01, -95, 0, 3, [1, 0, 0]);
+      const pa = proj(new THREE.Vector3(ave.position.x - 20, 3, 0)), pi = proj(new THREE.Vector3(-40, 3, 0));
+      return [['pill', W / 2, 250, 'REPETICIÓN · VISTA DESDE ARRIBA', clamp(u * 6), '#1d2228'], ['pill', pa[0] + 130, pa[1], 'AVE', clamp(u * 5), '#5b2a86'],
+              ['pill', pi[0] + 130, pi[1], 'IRYO', clamp(u * 5), CSS_RED], ['flash', clamp(1 - (u - hit) * 9) * (u > hit ? 0.55 : 0)],
+              ['impact', pc[0], pc[1], clamp((u - hit) / 0.3)], ['dust', pc[0], pc[1], clamp((u - hit) / 0.5)]];
+    }
+    const k = ease(clamp((u - hit + 0.04) / 0.32)), fx = Math.min(front, CX);
+    setCam(lerp(fx - 42, -112, k) + jx, lerp(11, 36, k) + jy, lerp(8, 50, k), lerp(CX + 12, -72, k), lerp(1, 0.5, k), lerp(0, 2, k));
+    const pf = proj(new THREE.Vector3(front, 1.2, 0)), pr = proj(new THREE.Vector3(CX, 1.2, 0));
+    const p3 = proj(new THREE.Vector3(-70, 3, 0)), q3 = proj(new THREE.Vector3(-66, 3, 9)), p2 = proj(new THREE.Vector3(-50, 3, 0)), q2 = proj(new THREE.Vector3(-48, 3, 6));
+    const la = proj(new THREE.Vector3(-85, 5, 0)), li = proj(new THREE.Vector3(-64, 7, 3));
+    const pre = clamp((hit - u) * 8), post = clamp((u - hit - 0.12) * 5);
+    return [['pill', W / 2, 880, 'AVE', pre, '#5b2a86'], ['pill', pr[0], pr[1] - 110, 'IRYO PARADO', pre, CSS_RED], ['gap', pf[0], pf[1], pr[0], pr[1], pre],
+            ['flash', u > hit ? clamp(1 - (u - hit) * 10) * 0.85 : 0], ['dust', pc[0], pc[1], clamp((u - hit) / 0.6)],
+            ['clock', '8:54', 'ALCANCE', clamp((u - hit + 0.05) * 6)], ['impact', pc[0], pc[1], clamp((u - hit) / 0.3)],
+            ['pill', la[0], la[1], 'AVE', post, '#5b2a86'], ['pill', li[0], li[1], 'IRYO', post, CSS_RED],
+            ['darr', p3[0], p3[1], q3[0], q3[1], clamp((u - hit - 0.18) * 5)], ['darr', p2[0], p2[1], q2[0], q2[1], clamp((u - hit - 0.25) * 5)],
+            ['pill', W / 2, 1000, 'DESCARRILAN LOS DOS ÚLTIMOS COCHES', clamp((u - hit - 0.2) * 4), CSS_RED]]; },
   // 7 · las víctimas
   (t, u) => { iryo.visible = false; setCam(-20, 3, 18, 60, 2, 3); DIM = 0.62;
     return [['bignum', '68', 'FALLECIDOS', clamp(u * 3)], ['pill', W / 2, 760, '≈540 VIAJEROS · MÁS DE 100 HERIDOS', clamp((u - 0.45) * 4)]]; },
@@ -817,6 +852,36 @@ function ribbon(u) {
   ctx.beginPath(); ctx.moveTo(0, -10); ctx.bezierCurveTo(-70, -110, -120, -20, -45, 40); ctx.lineTo(-95, 170); ctx.lineTo(-55, 160); ctx.lineTo(0, 20);
   ctx.lineTo(55, 160); ctx.lineTo(95, 170); ctx.lineTo(45, 40); ctx.bezierCurveTo(120, -20, 70, -110, 0, -10); ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.restore();
 }
+function arrowFwd(u) {
+  const a = clamp(u * 3); if (a <= 0) return; ctx.save(); ctx.globalAlpha = a; ctx.translate(W / 2, 760 - (u * 140 % 60));
+  for (let k = 0; k < 3; k++) { ctx.strokeStyle = `rgba(255,255,255,${0.9 - k * 0.25})`; ctx.lineWidth = 10; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(-40, -k * 40 + 20); ctx.lineTo(0, -k * 40 - 10); ctx.lineTo(40, -k * 40 + 20); ctx.stroke(); } ctx.restore();
+}
+function gap(x0, y0, x1, y1, a) {
+  if (a <= 0 || x1 - x0 < 8) return; ctx.save(); ctx.globalAlpha = a; ctx.strokeStyle = '#ffd23f'; ctx.lineWidth = 7; ctx.setLineDash([16, 10]);
+  ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); ctx.setLineDash([]);
+  for (const [x, y] of [[x0, y0], [x1, y1]]) { ctx.beginPath(); ctx.moveTo(x, y - 22); ctx.lineTo(x, y + 22); ctx.stroke(); } ctx.restore();
+}
+function darr(x0, y0, x1, y1, a) {
+  if (a <= 0) return; const dx = x1 - x0, dy = y1 - y0, L = Math.hypot(dx, dy) || 1, ux = dx / L, uy = dy / L, e = 0.3 + 0.7 * a;
+  const ex = x0 + dx * 1.3 * e, ey = y0 + dy * 1.3 * e; ctx.save(); ctx.globalAlpha = a; ctx.strokeStyle = '#ff2b2b'; ctx.fillStyle = '#ff2b2b'; ctx.lineWidth = 12; ctx.lineCap = 'round';
+  ctx.shadowColor = 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 10; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(ex, ey); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(ex + ux * 26, ey + uy * 26); ctx.lineTo(ex - uy * 22, ey + ux * 22); ctx.lineTo(ex + uy * 22, ey - ux * 22); ctx.fill(); ctx.restore();
+}
+function flash(a) { if (a <= 0) return; ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H); ctx.restore(); }
+function dust(x, y, u) {
+  if (u <= 0 || u >= 1) return; ctx.save(); const r = rng(9);
+  for (let i = 0; i < 26; i++) { const an = r() * 6.28, sp = 40 + r() * 170, rr = 14 + r() * 34 + u * 50;
+    ctx.globalAlpha = 0.5 * (1 - u) * (0.5 + r() * 0.5); ctx.fillStyle = r() < 0.5 ? '#d9c7a8' : '#b9a58a';
+    ctx.beginPath(); ctx.arc(x + Math.cos(an) * sp * ease(u), y + Math.sin(an) * sp * 0.55 * ease(u) - u * 40, rr, 0, 7); ctx.fill(); }
+  ctx.restore();
+}
+function impact(x, y, u) {
+  if (u <= 0 || u >= 1) return; ctx.save();
+  for (let k = 0; k < 3; k++) { const r = 20 + (u * 1.4 - k * 0.15) * 160; if (r <= 20) continue;
+    ctx.globalAlpha = clamp(1 - u * 1.1 - k * 0.15); ctx.strokeStyle = k ? '#ffffff' : '#ffd23f'; ctx.lineWidth = 8 - k * 2; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.stroke(); }
+  ctx.restore();
+}
 function memorialCard(t, u) {
   ctx.save(); ctx.globalAlpha = clamp(u * 1.5); ctx.fillStyle = '#0d0e10'; ctx.fillRect(0, 0, W, H);
   // lazo negro con borde blanco
@@ -835,7 +900,7 @@ function sceneAt(t) { const n = T.lines.length; for (let i = n - 1; i >= 0; i--)
 function drawUi(ui) {
   for (const it of ui) { const [k, ...a] = it;
     if (k === 'pill') pill(...a); else if (k === 'clock') clockCard(...a); else if (k === 'people') peopleGrid(...a);
-    else if (k === 'bignum') bigNum(...a); else if (k === 'panel') controlPanel(...a); else if (k === 'ribbon') ribbon(...a); }
+    else if (k === 'bignum') bigNum(...a); else if (k === 'panel') controlPanel(...a); else if (k === 'ribbon') ribbon(...a); else if (k === 'arrow') arrowFwd(...a); else if (k === 'impact') impact(...a); else if (k === 'gap') gap(...a); else if (k === 'darr') darr(...a); else if (k === 'flash') flash(...a); else if (k === 'dust') dust(...a); }
 }
 function render3(si, t, L, end) {
   hideAll(); setBg();

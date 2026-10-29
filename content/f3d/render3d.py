@@ -119,7 +119,7 @@ def open_page(p, T, bg="color", car="real"):
     b = p.chromium.launch(args=["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"])
     pg = b.new_page(viewport={"width": 720, "height": 1280})
     pg.on("pageerror", lambda e: print("JS:", e))
-    pg.goto(f"http://127.0.0.1:{srv.server_address[1]}/index.html?v={PAGE}&look={os.environ.get('LOOK', 'a')}")
+    pg.goto(f"http://127.0.0.1:{srv.server_address[1]}/index.html?v={PAGE}&look={os.environ.get('LOOK', 'a')}&iryo={os.environ.get('IRYO', 'rojo')}")
     pg.wait_for_function("window.READY === true", timeout=60000)
     pg.evaluate("document.fonts.ready")
     pg.evaluate(f"window.TIMING = {json.dumps(T)}; window.BGMODE = {json.dumps(bg)}; window.CARMODE = {json.dumps(car)}")
