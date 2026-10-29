@@ -34,12 +34,12 @@
 "text": "contra",
 "type": "word",
 "start": 1.254,
-"end": 1.586
+"end": 1.587
 },
 {
 "text": "un",
 "type": "word",
-"start": 1.615,
+"start": 1.616,
 "end": 1.763
 },
 {
@@ -63,14 +63,14 @@
 {
 "text": "la",
 "type": "word",
-"start": 2.558,
+"start": 2.559,
 "end": 2.706
 },
 {
 "text": "misma",
 "type": "word",
 "start": 2.719,
-"end": 3.005
+"end": 3.006
 },
 {
 "text": "vía?",
@@ -87,1010 +87,1172 @@
 {
 "text": "el",
 "type": "word",
-"start": 3.791,
-"end": 3.899
+"start": 3.79,
+"end": 3.898
 },
 {
 "text": "28",
 "type": "word",
-"start": 3.908,
-"end": 4.165
+"start": 3.907,
+"end": 4.163
 },
 {
 "text": "de",
 "type": "word",
-"start": 4.187,
-"end": 4.296
+"start": 4.186,
+"end": 4.293
 },
 {
 "text": "octubre,",
 "type": "word",
-"start": 4.305,
-"end": 4.582
+"start": 4.303,
+"end": 4.579
 },
 {
 "text": "en",
 "type": "word",
 "start": 4.737,
-"end": 4.943
+"end": 4.902
 },
 {
 "text": "la",
 "type": "word",
-"start": 4.961,
-"end": 5.168
+"start": 4.917,
+"end": 5.082
 },
 {
 "text": "línea",
 "type": "word",
-"start": 5.186,
-"end": 5.586
+"start": 5.096,
+"end": 5.417
 },
 {
 "text": "de",
 "type": "word",
-"start": 5.62,
-"end": 5.827
+"start": 5.445,
+"end": 5.61
 },
 {
 "text": "alta",
 "type": "word",
-"start": 5.845,
-"end": 6.181
+"start": 5.625,
+"end": 5.893
 },
 {
 "text": "velocidad",
 "type": "word",
-"start": 6.21,
-"end": 6.868
+"start": 5.917,
+"end": 6.444
 },
 {
 "text": "entre",
 "type": "word",
-"start": 6.925,
-"end": 7.325
+"start": 6.49,
+"end": 6.811
 },
 {
 "text": "Madrid",
 "type": "word",
-"start": 7.36,
-"end": 7.825
+"start": 6.838,
+"end": 7.211
 },
 {
 "text": "y",
 "type": "word",
-"start": 7.865,
-"end": 8.039
+"start": 7.243,
+"end": 7.383
 },
 {
 "text": "Andalucía,",
 "type": "word",
-"start": 8.055,
-"end": 8.713
+"start": 7.395,
+"end": 7.922
 },
 {
 "text": "cerca",
 "type": "word",
-"start": 9.188,
-"end": 9.475
+"start": 7.968,
+"end": 8.289
 },
 {
 "text": "de",
 "type": "word",
-"start": 9.5,
-"end": 9.648
+"start": 8.316,
+"end": 8.482
 },
 {
 "text": "Urda.",
 "type": "word",
-"start": 9.661,
-"end": 9.902
+"start": 8.496,
+"end": 8.765
 },
 {
 "text": "Hacia",
 "type": "word",
-"start": 9.923,
-"end": 10.21
+"start": 9.213,
+"end": 9.522
 },
 {
 "text": "las",
 "type": "word",
-"start": 10.235,
-"end": 10.429
+"start": 9.549,
+"end": 9.759
 },
 {
 "text": "ocho",
 "type": "word",
-"start": 10.446,
-"end": 10.687
+"start": 9.777,
+"end": 10.036
 },
 {
 "text": "y",
 "type": "word",
-"start": 10.708,
-"end": 10.833
+"start": 10.059,
+"end": 10.193
 },
 {
 "text": "media",
 "type": "word",
-"start": 10.844,
-"end": 11.131
+"start": 10.205,
+"end": 10.514
 },
 {
 "text": "falló",
 "type": "word",
-"start": 11.156,
-"end": 11.443
+"start": 10.541,
+"end": 10.85
 },
 {
 "text": "el",
 "type": "word",
-"start": 11.468,
-"end": 11.616
+"start": 10.877,
+"end": 11.037
+},
+{
+"text": "LZB,",
+"type": "word",
+"start": 11.051,
+"end": 11.26
+},
+{
+"text": "el",
+"type": "word",
+"start": 11.278,
+"end": 11.438
 },
 {
 "text": "sistema",
 "type": "word",
-"start": 11.629,
-"end": 12.009
+"start": 11.452,
+"end": 11.861
 },
 {
 "text": "que",
 "type": "word",
-"start": 12.042,
-"end": 12.236
+"start": 11.896,
+"end": 12.106
 },
 {
 "text": "controla",
 "type": "word",
-"start": 12.253,
-"end": 12.679
+"start": 12.124,
+"end": 12.582
 },
 {
 "text": "las",
 "type": "word",
-"start": 12.716,
-"end": 12.91
+"start": 12.622,
+"end": 12.832
 },
 {
 "text": "señales",
 "type": "word",
-"start": 12.927,
-"end": 13.307
+"start": 12.85,
+"end": 13.259
 },
 {
 "text": "en",
 "type": "word",
-"start": 13.34,
-"end": 13.488
+"start": 13.294,
+"end": 13.454
 },
 {
 "text": "ese",
 "type": "word",
-"start": 13.501,
-"end": 13.696
+"start": 13.468,
+"end": 13.677
 },
 {
-"text": "tramo,",
+"text": "tramo.",
 "type": "word",
-"start": 13.712,
-"end": 14.0
-},
-{
-"text": "el",
-"type": "word",
-"start": 14.424,
-"end": 14.563
-},
-{
-"text": "LZB.",
-"type": "word",
-"start": 14.575,
-"end": 14.757
+"start": 13.695,
+"end": 14.005
 },
 {
 "text": "Sin",
 "type": "word",
-"start": 14.772,
-"end": 14.954
+"start": 14.458,
+"end": 14.674
 },
 {
 "text": "señales,",
 "type": "word",
-"start": 14.97,
-"end": 15.325
+"start": 14.693,
+"end": 15.116
 },
 {
 "text": "los",
 "type": "word",
-"start": 15.356,
-"end": 15.538
+"start": 15.153,
+"end": 15.369
 },
 {
 "text": "trenes",
 "type": "word",
-"start": 15.554,
-"end": 15.866
+"start": 15.388,
+"end": 15.759
 },
 {
 "text": "se",
 "type": "word",
-"start": 15.893,
-"end": 16.032
+"start": 15.791,
+"end": 15.956
 },
 {
 "text": "pararon.",
 "type": "word",
-"start": 16.044,
-"end": 16.399
+"start": 15.971,
+"end": 16.393
 },
 {
 "text": "Entre",
 "type": "word",
 "start": 16.776,
-"end": 17.123
+"end": 17.12
 },
 {
 "text": "ellos,",
 "type": "word",
-"start": 17.153,
-"end": 17.5
+"start": 17.15,
+"end": 17.495
 },
 {
 "text": "un",
 "type": "word",
-"start": 17.531,
-"end": 17.71
+"start": 17.525,
+"end": 17.702
 },
 {
 "text": "Iryo…",
 "type": "word",
-"start": 17.725,
-"end": 18.017
+"start": 17.718,
+"end": 18.007
 },
 {
 "text": "y,",
 "type": "word",
-"start": 18.042,
-"end": 18.193
+"start": 18.032,
+"end": 18.182
 },
 {
 "text": "más",
 "type": "word",
-"start": 18.207,
-"end": 18.442
+"start": 18.195,
+"end": 18.428
 },
 {
 "text": "atrás,",
 "type": "word",
-"start": 18.462,
-"end": 18.81
+"start": 18.449,
+"end": 18.793
 },
 {
 "text": "un",
 "type": "word",
-"start": 18.84,
-"end": 19.019
+"start": 18.823,
+"end": 19.001
 },
 {
 "text": "AVE",
 "type": "word",
-"start": 19.035,
-"end": 19.27
+"start": 19.016,
+"end": 19.25
 },
 {
 "text": "de",
 "type": "word",
-"start": 19.29,
-"end": 19.47
+"start": 19.27,
+"end": 19.448
 },
 {
 "text": "Renfe.",
 "type": "word",
-"start": 19.485,
-"end": 19.833
+"start": 19.463,
+"end": 19.808
 },
 {
 "text": "Según",
 "type": "word",
-"start": 20.235,
-"end": 20.534
+"start": 20.194,
+"end": 20.489
 },
 {
 "text": "el",
 "type": "word",
-"start": 20.56,
-"end": 20.715
+"start": 20.514,
+"end": 20.666
 },
 {
 "text": "ministro",
 "type": "word",
-"start": 20.728,
-"end": 21.173
+"start": 20.679,
+"end": 21.116
 },
 {
 "text": "de",
 "type": "word",
-"start": 21.211,
-"end": 21.366
+"start": 21.154,
+"end": 21.306
 },
 {
 "text": "Transportes,",
 "type": "word",
-"start": 21.379,
-"end": 21.969
+"start": 21.32,
+"end": 21.899
 },
 {
 "text": "desde",
 "type": "word",
-"start": 22.02,
-"end": 22.319
+"start": 22.118,
+"end": 22.379
 },
 {
 "text": "el",
 "type": "word",
-"start": 22.345,
-"end": 22.5
+"start": 22.401,
+"end": 22.536
 },
 {
 "text": "centro",
 "type": "word",
-"start": 22.513,
-"end": 22.861
+"start": 22.547,
+"end": 22.85
 },
 {
 "text": "de",
 "type": "word",
-"start": 22.891,
-"end": 23.046
+"start": 22.876,
+"end": 23.011
 },
 {
 "text": "control",
 "type": "word",
-"start": 23.059,
-"end": 23.455
+"start": 23.022,
+"end": 23.367
 },
 {
 "text": "se",
 "type": "word",
-"start": 23.49,
-"end": 23.644
+"start": 23.397,
+"end": 23.531
 },
 {
 "text": "autorizó",
 "type": "word",
-"start": 23.658,
-"end": 24.102
+"start": 23.543,
+"end": 23.929
 },
 {
 "text": "a",
 "type": "word",
-"start": 24.141,
-"end": 24.271
+"start": 23.963,
+"end": 24.076
 },
 {
 "text": "los",
 "type": "word",
-"start": 24.282,
-"end": 24.485
+"start": 24.086,
+"end": 24.262
 },
 {
 "text": "trenes",
 "type": "word",
-"start": 24.503,
-"end": 24.85
+"start": 24.278,
+"end": 24.58
 },
 {
 "text": "a",
 "type": "word",
-"start": 24.881,
-"end": 25.011
+"start": 24.606,
+"end": 24.72
 },
 {
 "text": "seguir",
 "type": "word",
-"start": 25.022,
-"end": 25.37
+"start": 24.73,
+"end": 25.032
 },
 {
 "text": "con",
 "type": "word",
-"start": 25.4,
-"end": 25.603
+"start": 25.058,
+"end": 25.235
 },
 {
 "text": "normalidad…",
 "type": "word",
-"start": 25.621,
-"end": 26.162
+"start": 25.25,
+"end": 25.721
 },
 {
 "text": "con",
 "type": "word",
-"start": 26.209,
-"end": 26.412
+"start": 25.987,
+"end": 26.185
 },
 {
 "text": "el",
 "type": "word",
-"start": 26.429,
-"end": 26.584
+"start": 26.202,
+"end": 26.353
 },
 {
 "text": "Iryo",
 "type": "word",
-"start": 26.597,
-"end": 26.848
+"start": 26.366,
+"end": 26.611
 },
 {
 "text": "todavía",
 "type": "word",
-"start": 26.87,
-"end": 27.266
+"start": 26.633,
+"end": 27.019
 },
 {
 "text": "parado",
 "type": "word",
-"start": 27.301,
-"end": 27.649
+"start": 27.053,
+"end": 27.392
 },
 {
 "text": "delante.",
 "type": "word",
-"start": 27.679,
-"end": 28.075
+"start": 27.421,
+"end": 27.808
 },
 {
 "text": "El",
 "type": "word",
-"start": 28.468,
-"end": 28.621
+"start": 28.21,
+"end": 28.352
 },
 {
 "text": "AVE",
 "type": "word",
-"start": 28.634,
-"end": 28.835
+"start": 28.364,
+"end": 28.55
 },
 {
 "text": "volvió",
 "type": "word",
-"start": 28.853,
-"end": 29.197
+"start": 28.567,
+"end": 28.886
 },
 {
 "text": "a",
 "type": "word",
-"start": 29.227,
-"end": 29.356
+"start": 28.913,
+"end": 29.033
 },
 {
 "text": "arrancar",
 "type": "word",
-"start": 29.367,
-"end": 29.806
+"start": 29.043,
+"end": 29.451
 },
 {
 "text": "por",
 "type": "word",
-"start": 29.845,
-"end": 30.045
+"start": 29.486,
+"end": 29.672
 },
 {
 "text": "la",
 "type": "word",
-"start": 30.063,
-"end": 30.216
+"start": 29.688,
+"end": 29.83
 },
 {
 "text": "misma",
 "type": "word",
-"start": 30.229,
-"end": 30.525
+"start": 29.842,
+"end": 30.117
 },
 {
 "text": "vía,",
 "type": "word",
-"start": 30.551,
-"end": 30.752
+"start": 30.141,
+"end": 30.327
 },
 {
 "text": "con",
 "type": "word",
-"start": 30.901,
-"end": 31.102
+"start": 30.343,
+"end": 30.529
 },
 {
 "text": "el",
 "type": "word",
-"start": 31.12,
-"end": 31.273
+"start": 30.545,
+"end": 30.687
 },
 {
 "text": "Iryo",
 "type": "word",
-"start": 31.287,
-"end": 31.536
+"start": 30.699,
+"end": 30.93
 },
 {
 "text": "parado",
 "type": "word",
-"start": 31.558,
-"end": 31.904
+"start": 30.95,
+"end": 31.269
 },
 {
 "text": "más",
 "type": "word",
-"start": 31.934,
-"end": 32.135
+"start": 31.296,
+"end": 31.482
 },
 {
 "text": "adelante.",
 "type": "word",
-"start": 32.153,
-"end": 32.594
+"start": 31.499,
+"end": 31.906
 },
 {
 "text": "A",
 "type": "word",
-"start": 32.969,
-"end": 33.097
+"start": 32.31,
+"end": 32.425
 },
 {
 "text": "las",
 "type": "word",
-"start": 33.108,
-"end": 33.307
+"start": 32.435,
+"end": 32.615
 },
 {
 "text": "nueve",
 "type": "word",
-"start": 33.324,
-"end": 33.618
+"start": 32.631,
+"end": 32.896
 },
 {
 "text": "menos",
 "type": "word",
-"start": 33.643,
-"end": 33.937
+"start": 32.919,
+"end": 33.184
 },
 {
-"text": "cinco",
+"text": "cinco,",
 "type": "word",
-"start": 33.962,
-"end": 34.256
+"start": 33.207,
+"end": 33.473
+},
+{
+"text": "el",
+"type": "word",
+"start": 33.496,
+"end": 33.633
+},
+{
+"text": "AVE",
+"type": "word",
+"start": 33.644,
+"end": 33.824
 },
 {
 "text": "lo",
 "type": "word",
-"start": 34.282,
-"end": 34.433
+"start": 33.84,
+"end": 33.977
 },
 {
 "text": "alcanzó",
 "type": "word",
-"start": 34.446,
-"end": 34.835
+"start": 33.989,
+"end": 34.339
 },
 {
-"text": "por",
+"text": "y",
 "type": "word",
-"start": 34.868,
-"end": 35.067
+"start": 34.37,
+"end": 34.485
 },
 {
-"text": "detrás.",
+"text": "se",
 "type": "word",
-"start": 35.084,
-"end": 35.425
+"start": 34.496,
+"end": 34.632
 },
 {
-"text": "Los",
+"text": "empotró",
 "type": "word",
-"start": 35.772,
-"end": 35.988
+"start": 34.644,
+"end": 34.995
 },
 {
-"text": "dos",
+"text": "en",
 "type": "word",
-"start": 36.007,
-"end": 36.223
+"start": 35.026,
+"end": 35.163
 },
 {
-"text": "últimos",
+"text": "su",
 "type": "word",
-"start": 36.241,
-"end": 36.662
+"start": 35.174,
+"end": 35.311
 },
 {
-"text": "vagones",
+"text": "último",
 "type": "word",
-"start": 36.699,
-"end": 37.12
+"start": 35.323,
+"end": 35.631
+},
+{
+"text": "coche.",
+"type": "word",
+"start": 35.658,
+"end": 35.923
+},
+{
+"text": "La",
+"type": "word",
+"start": 36.428,
+"end": 36.573
+},
+{
+"text": "cabeza",
+"type": "word",
+"start": 36.586,
+"end": 36.915
 },
 {
 "text": "del",
 "type": "word",
-"start": 37.157,
-"end": 37.373
+"start": 36.943,
+"end": 37.135
 },
 {
-"text": "Iryo",
+"text": "AVE",
 "type": "word",
-"start": 37.391,
-"end": 37.658
+"start": 37.151,
+"end": 37.343
 },
 {
-"text": "descarrilaron.",
+"text": "cayó",
 "type": "word",
-"start": 37.682,
-"end": 38.411
+"start": 37.359,
+"end": 37.597
 },
 {
-"text": "En",
+"text": "hacia",
 "type": "word",
-"start": 38.877,
-"end": 39.06
+"start": 37.617,
+"end": 37.9
 },
 {
-"text": "los",
+"text": "un",
 "type": "word",
-"start": 39.076,
-"end": 39.315
+"start": 37.925,
+"end": 38.071
+},
+{
+"text": "terraplén,",
+"type": "word",
+"start": 38.083,
+"end": 38.548
 },
 {
 "text": "dos",
 "type": "word",
-"start": 39.336,
-"end": 39.576
-},
-{
-"text": "trenes",
-"type": "word",
-"start": 39.597,
-"end": 40.008
-},
-{
-"text": "viajaban",
-"type": "word",
-"start": 40.044,
-"end": 40.569
-},
-{
-"text": "unas",
-"type": "word",
-"start": 40.614,
-"end": 40.911
-},
-{
-"text": "540",
-"type": "word",
-"start": 40.937,
-"end": 41.553
-},
-{
-"text": "personas.",
-"type": "word",
-"start": 41.607,
-"end": 42.132
-},
-{
-"text": "Al",
-"type": "word",
-"start": 42.537,
-"end": 42.699
-},
-{
-"text": "menos",
-"type": "word",
-"start": 42.714,
-"end": 43.029
-},
-{
-"text": "68",
-"type": "word",
-"start": 43.056,
-"end": 43.443
-},
-{
-"text": "han",
-"type": "word",
-"start": 43.477,
-"end": 43.69
-},
-{
-"text": "muerto,",
-"type": "word",
-"start": 43.709,
-"end": 44.075
-},
-{
-"text": "y",
-"type": "word",
-"start": 44.107,
-"end": 44.245
-},
-{
-"text": "más",
-"type": "word",
-"start": 44.256,
-"end": 44.47
+"start": 38.589,
+"end": 38.78
 },
 {
 "text": "de",
 "type": "word",
-"start": 44.489,
-"end": 44.652
-},
-{
-"text": "un",
-"type": "word",
-"start": 44.666,
-"end": 44.829
-},
-{
-"text": "centenar",
-"type": "word",
-"start": 44.843,
-"end": 45.311
-},
-{
-"text": "están",
-"type": "word",
-"start": 45.351,
-"end": 45.667
-},
-{
-"text": "heridas.",
-"type": "word",
-"start": 45.694,
-"end": 46.112
-},
-{
-"text": "Ahora",
-"type": "word",
-"start": 46.148,
-"end": 46.463
-},
-{
-"text": "un",
-"type": "word",
-"start": 46.491,
-"end": 46.654
-},
-{
-"text": "juzgado",
-"type": "word",
-"start": 46.668,
-"end": 47.085
-},
-{
-"text": "de",
-"type": "word",
-"start": 47.121,
-"end": 47.284
-},
-{
-"text": "Orgaz",
-"type": "word",
-"start": 47.298,
-"end": 47.614
-},
-{
-"text": "investiga",
-"type": "word",
-"start": 47.641,
-"end": 48.16
-},
-{
-"text": "qué",
-"type": "word",
-"start": 48.205,
-"end": 48.419
-},
-{
-"text": "falló",
-"type": "word",
-"start": 48.437,
-"end": 48.753
-},
-{
-"text": "exactamente.",
-"type": "word",
-"start": 48.78,
-"end": 49.401
-},
-{
-"text": "El",
-"type": "word",
-"start": 49.787,
-"end": 50.016
-},
-{
-"text": "Gobierno",
-"type": "word",
-"start": 50.036,
-"end": 50.696
-},
-{
-"text": "ha",
-"type": "word",
-"start": 50.753,
-"end": 50.983
-},
-{
-"text": "declarado",
-"type": "word",
-"start": 51.003,
-"end": 51.734
-},
-{
-"text": "tres",
-"type": "word",
-"start": 51.798,
-"end": 52.171
-},
-{
-"text": "días",
-"type": "word",
-"start": 52.203,
-"end": 52.576
-},
-{
-"text": "de",
-"type": "word",
-"start": 52.608,
-"end": 52.838
-},
-{
-"text": "luto",
-"type": "word",
-"start": 52.858,
-"end": 53.231
-},
-{
-"text": "oficial,",
-"type": "word",
-"start": 53.263,
-"end": 53.851
-},
-{
-"text": "y",
-"type": "word",
-"start": 54.226,
-"end": 54.416
-},
-{
-"text": "la",
-"type": "word",
-"start": 54.433,
-"end": 54.659
-},
-{
-"text": "línea",
-"type": "word",
-"start": 54.679,
-"end": 55.117
-},
-{
-"text": "sigue",
-"type": "word",
-"start": 55.155,
-"end": 55.593
-},
-{
-"text": "cortada.",
-"type": "word",
-"start": 55.631,
-"end": 56.211
-},
-{
-"text": "Detrás",
-"type": "word",
-"start": 56.683,
-"end": 56.934
-},
-{
-"text": "de",
-"type": "word",
-"start": 56.956,
-"end": 57.068
-},
-{
-"text": "cada",
-"type": "word",
-"start": 57.078,
-"end": 57.259
-},
-{
-"text": "cifra",
-"type": "word",
-"start": 57.275,
-"end": 57.491
-},
-{
-"text": "hay",
-"type": "word",
-"start": 57.51,
-"end": 57.657
-},
-{
-"text": "una",
-"type": "word",
-"start": 57.67,
-"end": 57.816
-},
-{
-"text": "familia.",
-"type": "word",
-"start": 57.829,
-"end": 58.115
-},
-{
-"text": "Todo",
-"type": "word",
-"start": 58.263,
-"end": 58.392
-},
-{
-"text": "nuestro",
-"type": "word",
-"start": 58.404,
-"end": 58.608
-},
-{
-"text": "cariño",
-"type": "word",
-"start": 58.626,
-"end": 58.806
-},
-{
-"text": "para",
-"type": "word",
-"start": 58.821,
-"end": 58.951
-},
-{
-"text": "las",
-"type": "word",
-"start": 58.963,
-"end": 59.067
-},
-{
-"text": "víctimas",
-"type": "word",
-"start": 59.076,
-"end": 59.306
-},
-{
-"text": "y",
-"type": "word",
-"start": 59.326,
-"end": 59.393
-},
-{
-"text": "para",
-"type": "word",
-"start": 59.399,
-"end": 59.529
+"start": 38.797,
+"end": 38.943
 },
 {
 "text": "sus",
 "type": "word",
-"start": 59.54,
-"end": 59.645
+"start": 38.956,
+"end": 39.147
+},
+{
+"text": "coches",
+"type": "word",
+"start": 39.164,
+"end": 39.492
+},
+{
+"text": "acabaron",
+"type": "word",
+"start": 39.521,
+"end": 39.94
+},
+{
+"text": "al",
+"type": "word",
+"start": 39.977,
+"end": 40.123
+},
+{
+"text": "otro",
+"type": "word",
+"start": 40.136,
+"end": 40.373
+},
+{
+"text": "lado",
+"type": "word",
+"start": 40.393,
+"end": 40.631
+},
+{
+"text": "de",
+"type": "word",
+"start": 40.651,
+"end": 40.797
+},
+{
+"text": "la",
+"type": "word",
+"start": 40.81,
+"end": 40.956
+},
+{
+"text": "vía,",
+"type": "word",
+"start": 40.968,
+"end": 41.16
+},
+{
+"text": "y",
+"type": "word",
+"start": 41.316,
+"end": 41.449
+},
+{
+"text": "el",
+"type": "word",
+"start": 41.461,
+"end": 41.619
+},
+{
+"text": "último",
+"type": "word",
+"start": 41.633,
+"end": 41.989
+},
+{
+"text": "coche",
+"type": "word",
+"start": 42.02,
+"end": 42.327
+},
+{
+"text": "del",
+"type": "word",
+"start": 42.354,
+"end": 42.562
+},
+{
+"text": "Iryo",
+"type": "word",
+"start": 42.58,
+"end": 42.837
+},
+{
+"text": "quedó",
+"type": "word",
+"start": 42.859,
+"end": 43.166
+},
+{
+"text": "calcinado.",
+"type": "word",
+"start": 43.193,
+"end": 43.698
+},
+{
+"text": "En",
+"type": "word",
+"start": 44.104,
+"end": 44.287
+},
+{
+"text": "los",
+"type": "word",
+"start": 44.302,
+"end": 44.542
+},
+{
+"text": "dos",
+"type": "word",
+"start": 44.563,
+"end": 44.803
+},
+{
+"text": "trenes",
+"type": "word",
+"start": 44.824,
+"end": 45.235
+},
+{
+"text": "viajaban",
+"type": "word",
+"start": 45.27,
+"end": 45.795
+},
+{
+"text": "unas",
+"type": "word",
+"start": 45.841,
+"end": 46.138
+},
+{
+"text": "540",
+"type": "word",
+"start": 46.164,
+"end": 46.78
+},
+{
+"text": "personas.",
+"type": "word",
+"start": 46.834,
+"end": 47.359
+},
+{
+"text": "Al",
+"type": "word",
+"start": 47.763,
+"end": 47.926
+},
+{
+"text": "menos",
+"type": "word",
+"start": 47.94,
+"end": 48.256
+},
+{
+"text": "68",
+"type": "word",
+"start": 48.283,
+"end": 48.67
+},
+{
+"text": "han",
+"type": "word",
+"start": 48.703,
+"end": 48.917
+},
+{
+"text": "muerto,",
+"type": "word",
+"start": 48.936,
+"end": 49.302
+},
+{
+"text": "y",
+"type": "word",
+"start": 49.334,
+"end": 49.471
+},
+{
+"text": "más",
+"type": "word",
+"start": 49.483,
+"end": 49.697
+},
+{
+"text": "de",
+"type": "word",
+"start": 49.715,
+"end": 49.878
+},
+{
+"text": "un",
+"type": "word",
+"start": 49.892,
+"end": 50.055
+},
+{
+"text": "centenar",
+"type": "word",
+"start": 50.069,
+"end": 50.537
+},
+{
+"text": "están",
+"type": "word",
+"start": 50.578,
+"end": 50.894
+},
+{
+"text": "heridas.",
+"type": "word",
+"start": 50.921,
+"end": 51.338
+},
+{
+"text": "Ahora",
+"type": "word",
+"start": 51.375,
+"end": 51.69
+},
+{
+"text": "un",
+"type": "word",
+"start": 51.717,
+"end": 51.88
+},
+{
+"text": "juzgado",
+"type": "word",
+"start": 51.894,
+"end": 52.312
+},
+{
+"text": "de",
+"type": "word",
+"start": 52.348,
+"end": 52.511
+},
+{
+"text": "Orgaz",
+"type": "word",
+"start": 52.525,
+"end": 52.84
+},
+{
+"text": "investiga",
+"type": "word",
+"start": 52.868,
+"end": 53.387
+},
+{
+"text": "qué",
+"type": "word",
+"start": 53.432,
+"end": 53.645
+},
+{
+"text": "falló",
+"type": "word",
+"start": 53.664,
+"end": 53.979
+},
+{
+"text": "exactamente.",
+"type": "word",
+"start": 54.007,
+"end": 54.628
+},
+{
+"text": "El",
+"type": "word",
+"start": 55.014,
+"end": 55.166
+},
+{
+"text": "Gobierno",
+"type": "word",
+"start": 55.18,
+"end": 55.619
+},
+{
+"text": "ha",
+"type": "word",
+"start": 55.657,
+"end": 55.81
+},
+{
+"text": "declarado",
+"type": "word",
+"start": 55.823,
+"end": 56.31
+},
+{
+"text": "tres",
+"type": "word",
+"start": 56.352,
+"end": 56.601
+},
+{
+"text": "días",
+"type": "word",
+"start": 56.622,
+"end": 56.871
+},
+{
+"text": "de",
+"type": "word",
+"start": 56.892,
+"end": 57.045
+},
+{
+"text": "luto",
+"type": "word",
+"start": 57.058,
+"end": 57.306
+},
+{
+"text": "oficial,",
+"type": "word",
+"start": 57.328,
+"end": 57.72
+},
+{
+"text": "y",
+"type": "word",
+"start": 57.754,
+"end": 57.882
+},
+{
+"text": "la",
+"type": "word",
+"start": 57.894,
+"end": 58.046
+},
+{
+"text": "línea",
+"type": "word",
+"start": 58.06,
+"end": 58.356
+},
+{
+"text": "sigue",
+"type": "word",
+"start": 58.382,
+"end": 58.678
+},
+{
+"text": "cortada.",
+"type": "word",
+"start": 58.703,
+"end": 59.095
+},
+{
+"text": "Detrás",
+"type": "word",
+"start": 59.452,
+"end": 59.803
+},
+{
+"text": "de",
+"type": "word",
+"start": 59.834,
+"end": 59.99
+},
+{
+"text": "cada",
+"type": "word",
+"start": 60.004,
+"end": 60.257
+},
+{
+"text": "cifra",
+"type": "word",
+"start": 60.279,
+"end": 60.582
+},
+{
+"text": "hay",
+"type": "word",
+"start": 60.608,
+"end": 60.813
+},
+{
+"text": "una",
+"type": "word",
+"start": 60.83,
+"end": 61.035
+},
+{
+"text": "familia.",
+"type": "word",
+"start": 61.053,
+"end": 61.453
+},
+{
+"text": "Todo",
+"type": "word",
+"start": 61.91,
+"end": 62.153
+},
+{
+"text": "nuestro",
+"type": "word",
+"start": 62.174,
+"end": 62.558
+},
+{
+"text": "cariño",
+"type": "word",
+"start": 62.592,
+"end": 62.929
+},
+{
+"text": "para",
+"type": "word",
+"start": 62.958,
+"end": 63.201
+},
+{
+"text": "las",
+"type": "word",
+"start": 63.223,
+"end": 63.419
+},
+{
+"text": "víctimas",
+"type": "word",
+"start": 63.436,
+"end": 63.867
+},
+{
+"text": "y",
+"type": "word",
+"start": 63.905,
+"end": 64.031
+},
+{
+"text": "para",
+"type": "word",
+"start": 64.042,
+"end": 64.285
+},
+{
+"text": "sus",
+"type": "word",
+"start": 64.307,
+"end": 64.503
 },
 {
 "text": "seres",
 "type": "word",
-"start": 59.654,
-"end": 59.809
+"start": 64.52,
+"end": 64.811
 },
 {
 "text": "queridos.",
 "type": "word",
-"start": 59.822,
-"end": 60.052
+"start": 64.836,
+"end": 65.267
 }
 ],
 "source": "kokoro+align_local"

@@ -574,7 +574,10 @@ UT.sky.wrapS = UT.sky.wrapT = THREE.ClampToEdgeWrapping;
 
 const rail = new THREE.Group(); scene.add(rail);
 {
-  const fld = new THREE.Mesh(new THREE.PlaneGeometry(3000, 3000), new THREE.MeshStandardMaterial({ map: UT.field, roughness: 1 })); fld.rotation.x = -Math.PI / 2; fld.position.y = -0.3; rail.add(fld);
+  const fld = new THREE.Mesh(new THREE.PlaneGeometry(3000, 3000), new THREE.MeshStandardMaterial({ map: UT.field, roughness: 1 })); fld.rotation.x = -Math.PI / 2; fld.position.y = -3.3; rail.add(fld);
+  { const sh = new THREE.Shape(); sh.moveTo(-14, -3.25); sh.lineTo(-6, 0); sh.lineTo(12, 0); sh.lineTo(20, -3.25); sh.lineTo(-14, -3.25);   // sección del terraplén (z, y)
+    const eg = new THREE.ExtrudeGeometry(sh, { depth: 1600, bevelEnabled: false }); eg.rotateY(-Math.PI / 2); eg.translate(800, -0.06, 0);
+    const em = new THREE.Mesh(eg, new THREE.MeshLambertMaterial({ color: 0xb39064 })); em.receiveShadow = true; rail.add(em); }
   const bal = new THREE.Mesh(new THREE.PlaneGeometry(1600, 16), new THREE.MeshLambertMaterial({ map: UT.ballast })); bal.rotation.x = -Math.PI / 2; bal.position.set(0, -0.05, 3); rail.add(bal);
   const steel = new THREE.MeshStandardMaterial({ color: 0x9aa0a6, metalness: 0.85, roughness: 0.35 });
   for (const z of [0, 6]) {
@@ -592,29 +595,29 @@ const rail = new THREE.Group(); scene.add(rail);
   const tr = rng(5), crown = new THREE.MeshLambertMaterial({ color: 0x5f6b45 }), trunk = new THREE.MeshLambertMaterial({ color: 0x5a4632 });
   for (let i = 0; i < 260; i++) {
     const x = (tr() - 0.5) * 1400, z = (tr() < 0.5 ? -1 : 1) * (22 + tr() * 420) + 3;
-    const c = new THREE.Mesh(new THREE.SphereGeometry(1.6 + tr(), 8, 6), crown); c.scale.y = 0.75; c.position.set(x, 2.1, z); rail.add(c);
-    const k = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.25, 1.6, 6), trunk); k.position.set(x, 0.6, z); rail.add(k);
+    const c = new THREE.Mesh(new THREE.SphereGeometry(1.6 + tr(), 8, 6), crown); c.scale.y = 0.75; c.position.set(x, 2.1 - 3, z); rail.add(c);
+    const k = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.25, 1.6, 6), trunk); k.position.set(x, 0.6 - 3, z); rail.add(k);
   }
   // viñedo de verdad en 3D (Iker 29/10: «el campo y el fondo»): hileras de cepas con colores de otoño sobre tierra rojiza
-  for (const z of [-44, 50]) { const v = new THREE.Mesh(new THREE.PlaneGeometry(1600, 60), new THREE.MeshLambertMaterial({ color: 0xb8794c })); v.rotation.x = -Math.PI / 2; v.position.set(0, -0.2, z); rail.add(v); }
+  for (const z of [-44, 50]) { const v = new THREE.Mesh(new THREE.PlaneGeometry(1600, 60), new THREE.MeshLambertMaterial({ color: 0xb8794c })); v.rotation.x = -Math.PI / 2; v.position.set(0, -3.2, z); rail.add(v); }
   {
     const geo = new THREE.IcosahedronGeometry(0.75, 0); geo.scale(1.3, 0.8, 1);
-    const rows = []; for (let z = 16; z < 72; z += 3.2) rows.push(z); for (let z = -13; z > -70; z -= 3.2) rows.push(z);
+    const rows = []; for (let z = 23; z < 72; z += 3.2) rows.push(z); for (let z = -17; z > -70; z -= 3.2) rows.push(z);
     const per = Math.floor(900 / 1.9), N = rows.length * per;
     const vm = new THREE.InstancedMesh(geo, new THREE.MeshLambertMaterial(), N);
     const M = new THREE.Matrix4(), q = new THREE.Quaternion(), col = new THREE.Color(), rv = rng(77); let k = 0;
     const PAL = [0x9cbf4a, 0x7fa83c, 0xd9b545, 0xc98b3a, 0xb5c95a, 0xa04a2c];
     for (const z of rows) for (let i = 0; i < per; i++) {
       const sc = 0.8 + rv() * 0.5; q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), rv() * 6.3);
-      M.compose(new THREE.Vector3(-650 + i * 1.9 + rv() * 0.3, 0.45 * sc, z + (rv() - 0.5) * 0.3), q, new THREE.Vector3(sc, sc, sc));
+      M.compose(new THREE.Vector3(-650 + i * 1.9 + rv() * 0.3, 0.45 * sc - 3, z + (rv() - 0.5) * 0.3), q, new THREE.Vector3(sc, sc, sc));
       vm.setMatrixAt(k, M); vm.setColorAt(k, col.setHex(PAL[(rv() < 0.55 ? 0 : (rv() * PAL.length) | 0)]).offsetHSL(0, 0, (rv() - 0.5) * 0.08)); k++; }
     vm.instanceMatrix.needsUpdate = true; vm.instanceColor.needsUpdate = true; vm.frustumCulled = false; rail.add(vm);
   }
   const wall = new THREE.MeshLambertMaterial({ color: 0xf6f3ec }), roofM = new THREE.MeshLambertMaterial({ color: 0xc0583a });
   const hr = rng(21);
   for (let i = 0; i < 26; i++) { const x = (hr() - 0.5) * 1300, z = (hr() < 0.5 ? -1 : 1) * (90 + hr() * 300);
-    const h = new THREE.Mesh(new THREE.BoxGeometry(9, 4, 6), wall); h.position.set(x, 2, z); rail.add(h);
-    const r = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 6, 2.2, 4), roofM); r.rotation.y = Math.PI / 4; r.scale.set(1.1, 1, 0.75); r.position.set(x, 5.1, z); rail.add(r); }
+    const h = new THREE.Mesh(new THREE.BoxGeometry(9, 4, 6), wall); h.position.set(x, 2 - 3, z); rail.add(h);
+    const r = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 6, 2.2, 4), roofM); r.rotation.y = Math.PI / 4; r.scale.set(1.1, 1, 0.75); r.position.set(x, 5.1 - 3, z); rail.add(r); }
   for (let i = 0; i < 7; i++) { const m = new THREE.Group(); m.position.set(-260 + i * 38, 22, -560);
     const tw = new THREE.Mesh(new THREE.CylinderGeometry(3.2, 3.8, 12, 16), wall); tw.position.y = 6; m.add(tw);
     const cap = new THREE.Mesh(new THREE.ConeGeometry(3.6, 4, 16), new THREE.MeshLambertMaterial({ color: 0x2b2b2b })); cap.position.y = 14; m.add(cap);
@@ -660,8 +663,8 @@ function makeTrain(body, stripe, label, n = 4) {
   g.userData.label = label;
   return g;
 }
-const iryo = makeTrainPro(LIVERY[{ blanco: 'iryoBlanco', bicolor: 'iryoBicolor' }[new URLSearchParams(location.search).get('iryo')] || 'iryo']);   // rojo, blanco o bicolor
-const ave = makeTrainPro(LIVERY.ave);        // blanco con franja morada
+const iryo = makeTrainPro(LIVERY[{ blanco: 'iryoBlanco', bicolor: 'iryoBicolor' }[new URLSearchParams(location.search).get('iryo')] || 'iryo'], 8);   // 8 coches, como el Frecciarossa de Iryo
+const ave = makeTrainPro(LIVERY.ave, 8);        // blanco con franja morada
 scene.add(iryo, ave);
 
 // señales a pie de vía (para explicar el fallo de señalización)
@@ -710,8 +713,8 @@ for (let x = -420; x < 60; x += BL) { const m = new THREE.Mesh(new THREE.PlaneGe
 function setBlocks(t, u, mode) {
   blocks.forEach((b, i) => { b.visible = true; const x0 = b.userData.x0, mat = b.material;
     if (mode === 'off') { const k = clamp((u - 0.15) * 1.6 - (blocks.length - i) * 0.05); mat.color.setHex(k > 0 ? 0x3a3d41 : 0x2bd96b); mat.opacity = 0.85; }
-    else if (mode === 'stop') { mat.color.setHex(x0 > -100 && x0 < 30 ? 0xe62828 : 0x3a3d41); }
-    else { const occ = x0 > -100 && x0 < 30; const on = occ || u > 0.2 + (i / blocks.length) * 0.5;
+    else if (mode === 'stop') { mat.color.setHex(x0 > -100 ? 0xe62828 : 0x3a3d41); }
+    else { const occ = x0 > -100; const on = occ || u > 0.2 + (i / blocks.length) * 0.5;
       mat.color.setHex(occ ? 0xe62828 : (on ? 0x2bd96b : 0x3a3d41)); mat.opacity = occ ? 0.6 + 0.35 * Math.abs(Math.sin(t * 5)) : 0.85; } });
 }
 const glows = [iryo, ave].map((tr, i) => { const g = new THREE.Mesh(new THREE.PlaneGeometry(86, 30), new THREE.MeshBasicMaterial({ color: i ? 0x9c6bd1 : 0xff4d4d, transparent: true, opacity: 0.35, depthWrite: false }));
@@ -732,6 +735,49 @@ function camFx(t, t0, t1, si) {
   cam.position.copy(P); cam.fov = fov; cam.updateProjectionMatrix(); cam.lookAt(LOOK); cam.updateMatrixWorld();
 }
 let DIM = 0;   // oscurecido general de la escena (0..1)
+// ---------- cómo quedaron los trenes (El Español, Libertad Digital, Euronews, 28-29/10) ----------
+// Iryo: los 4 primeros coches intactos; luego uno torcido, otro inclinado y el último destrozado y calcinado, con el AVE empotrado.
+// AVE: la cabeza motriz cayó hacia un terraplén; sus coches 6 y 7 quedaron al otro lado de la vía; restos a ambos lados.
+const IRYO_X = 82.4;                                  // 8 coches: la cola sigue en x ≈ -81 como antes
+const burnM = []; iryo.userData.cars[7].traverse(m => { if (m.isMesh) { m.material = m.material.clone(); burnM.push([m.material, m.material.color.clone()]); } });
+function burnt(k) { const dk = new THREE.Color(0x15110f); burnM.forEach(([m, c0]) => m.color.copy(c0).lerp(dk, k * 0.97)); }
+const mound = new THREE.Mesh(new THREE.SphereGeometry(1, 18, 10, 0, 6.3, 0, 1.5), new THREE.MeshLambertMaterial({ color: 0x9b6a42 }));
+mound.scale.set(22, 1.4, 9); mound.position.set(-100, -0.6, -12); scene.add(mound); mound.visible = false;
+const debris = new THREE.Group(); debris.position.set(-80, 0, 0); scene.add(debris);
+{ const r = rng(31), cols = [0xf2f3f5, 0xd9dce1, 0x6b2c8f, 0xc4122f, 0x2a2c31, 0x8c9198, 0x15110f];
+  for (let i = 0; i < 90; i++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.15 + r() * 0.7, 0.04 + r() * 0.12, 0.15 + r() * 0.5), new THREE.MeshStandardMaterial({ color: cols[(r() * cols.length) | 0], roughness: 0.6, metalness: 0.3 }));
+    const z = (r() - 0.45) * 22; m.position.set((r() - 0.5) * 40, (z < -6 ? -3 * (-z - 6) / 8 : z > 12 ? -3 * (z - 12) / 8 : 0) + 0.15, z); m.rotation.set(r() * 3, r() * 3, r() * 3); m.castShadow = true; debris.add(m); } }
+const rescue = new THREE.Group(); scene.add(rescue);
+{ const veh = (x, z, ry, body, stripe, len, light) => { const g = new THREE.Group(); g.position.set(x, -3, z); g.rotation.y = ry;
+    const b = new THREE.Mesh(new RoundedBoxGeometry(len, 2.6, 2.3, 2, 0.2), new THREE.MeshStandardMaterial({ color: body, roughness: 0.5 })); b.position.y = 1.7; g.add(b);
+    const st = new THREE.Mesh(new THREE.BoxGeometry(len + 0.02, 0.35, 2.32), new THREE.MeshStandardMaterial({ color: stripe })); st.position.y = 1.4; g.add(st);
+    for (const wx of [-len * 0.32, len * 0.32]) for (const wz of [-1.1, 1.1]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.42, 0.3, 14), new THREE.MeshStandardMaterial({ color: 0x1b1b1b })); w.rotation.x = Math.PI / 2; w.position.set(wx, 0.42, wz); g.add(w); }
+    const lt = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.25, 1.6), new THREE.MeshBasicMaterial({ color: light })); lt.position.set(len * 0.35, 3.1, 0); g.add(lt); g.userData.lt = lt; rescue.add(g); return g; };
+  const V = [[-70, -24, 0.2, 0xf4f4f0, 0xf2c200, 6, 0x2a7bff], [-60, -27, -0.1, 0xf4f4f0, 0xf2c200, 6, 0x2a7bff], [-125, -25, 0.3, 0xf4f4f0, 0xf2c200, 6, 0x2a7bff],
+             [-95, -30, 0, 0xc8102e, 0xf4f4f0, 9, 0x2a7bff], [-150, 30, -0.2, 0xc8102e, 0xf4f4f0, 9, 0x2a7bff], [-40, 29, 0.1, 0xf4f4f0, 0x1f9d55, 6, 0x2a7bff], [-200, -26, 0.15, 0xf4f4f0, 0xf2c200, 6, 0x2a7bff]];
+  rescue.userData.v = V.map(v => veh(...v));
+  // grúa amarilla y torres de luz
+  const yel = new THREE.MeshStandardMaterial({ color: 0xf2b705, roughness: 0.5 });
+  const cr = new THREE.Group(); cr.position.set(-140, -3, -42); const cb = new THREE.Mesh(new THREE.BoxGeometry(10, 3, 3), yel); cb.position.y = 1.9; cr.add(cb);
+  const boom = new THREE.Mesh(new THREE.BoxGeometry(16, 0.6, 0.6), yel); boom.position.set(4, 7, 0); boom.rotation.set(0, 0, 0.6); cr.add(boom); rescue.add(cr);
+  for (const [x, z] of [[-110, -20], [-55, -20], [-80, 25]]) { const m = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 9, 6), new THREE.MeshLambertMaterial({ color: 0x777 })); m.position.set(x, 1.5, z); rescue.add(m);
+    const l = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.8, 0.4), new THREE.MeshBasicMaterial({ color: 0xfff6c8 })); l.position.set(x, 6.2, z); rescue.add(l); }
+  rescue.visible = false; }
+function rescueOn(t) { rescue.visible = true; rescue.userData.v.forEach((g, i) => g.userData.lt.material.color.setHex(Math.sin(t * 12 + i) > 0 ? 0x2a7bff : 0x0b1a40)); }
+const FIN = {
+  iryo: { 4: [0, 0.3, 0, 0, 0.03], 5: [0, 0.8, 0, 0.12, -0.06], 6: [1.5, 2.2, -0.15, 0.32, 0.12], 7: [3, 3.2, -0.3, 0.22, -0.24] },   // [dx, z, y, roll, yaw]
+  ave: { 0: [6.5, -9.5, -1.4, -0.7, 0.42], 1: [5.5, -2, -0.2, -0.12, -0.22], 2: [4.5, 0.6, 0, 0, 0.16], 3: [3.5, 0, 0, 0.05, -0.1],
+         4: [3, 3, -0.1, 0.15, 0.3], 5: [2.5, 10, -0.4, 0.35, -0.42], 6: [2, 11, -0.4, 0.3, 0.36], 7: [1.5, 2, 0, 0, 0.1] },
+};
+function crashPose(d) {   // d: 0 → 1, cada coche con su pequeño retraso
+  for (const [tr, key, dl] of [[iryo, 'iryo', i => (7 - i) * 0.06], [ave, 'ave', i => i * 0.06]])
+    for (const [i, v] of Object.entries(FIN[key])) { const c = tr.userData.cars[i], k = ease(clamp((d - dl(+i)) / (1 - dl(+i))));
+      const lift = 1.5 * Math.abs(Math.sin(v[3] * k)) + v[2] * k;   // ningún coche se mete en el suelo (Iker 29/10)
+      c.position.set(-i * 20.6 + v[0] * k, lift, v[1] * k); c.rotation.set(v[3] * k, v[4] * k, 0); }
+  burnt(clamp((d - 0.5) * 2)); mound.visible = false;
+  const cr = ease(clamp(d * 2)); ave.userData.cars[0].scale.x = 1 - 0.14 * cr; iryo.userData.cars[7].scale.x = 1 - 0.18 * cr;   // chapa aplastada
+  debris.visible = d > 0.05; debris.scale.setScalar(Math.max(0.01, ease(clamp(d * 1.5))));
+}
 function hideAll() {
   wakeCone.visible = false; arrows.forEach(a => a.visible = false); air.visible = false;
   straight.visible = false; curve.visible = false; carA.visible = carB.visible = false; ground.visible = false; shadowCatcher.visible = false;
@@ -739,92 +785,79 @@ function hideAll() {
   signals.forEach(s => s.userData.lamp.material.color.setHex(0x2bd96b));
   iryo.userData.cars.forEach(c => { c.position.z = 0; c.rotation.set(0, 0, 0); c.position.y = 0; });
   blocks.forEach(b => b.visible = false); glows.forEach(g => g.visible = false);
-  iryo.position.set(0, 0, 0); ave.position.set(-400, 0, 0); ave.userData.cars.forEach(c => c.rotation.set(0, 0, 0)); iryo.userData.cars.forEach((c, i) => { c.position.x = -i * 20.6; }); DIM = 0;
+  iryo.position.set(IRYO_X, 0, 0); ave.position.set(-400, 0, 0); ave.userData.cars.forEach((c, i) => { c.rotation.set(0, 0, 0); c.position.set(-i * 20.6, 0, 0); }); burnt(0); mound.visible = false; debris.visible = false; rescue.visible = false; ave.userData.cars[0].scale.x = 1; iryo.userData.cars[7].scale.x = 1; iryo.userData.cars.forEach((c, i) => { c.position.x = -i * 20.6; }); DIM = 0;
   sun.intensity = 1.0;
 }
 const SC = [
-  // 0 · gancho (Iker 29/10: «quiero un mejor hook»). Tres variantes con ?hook=a|b|c
-  (t, u) => { const HK = new URLSearchParams(location.search).get('hook') || 'a', cs = iryo.userData.cars, CX = -81;
-    ave.visible = true;
-    const pose = d => { cs[3].position.z = 5.4 * d; cs[3].rotation.set(0.28 * d, 0.18 * d, 0); cs[3].position.y = -0.45 * d; cs[3].position.x = -61.8 + 2.5 * d;
-      cs[2].position.z = 2.6 * d; cs[2].rotation.set(0.13 * d, 0.09 * d, 0); };
-    const pc = () => proj(new THREE.Vector3(CX, 2.5, 0));
-    if (HK === 'a') {            // persecución detrás del AVE hasta el impacto, que se congela
-      const hit = 0.7; ave.position.x = u < hit ? lerp(-175, -100.4, Math.pow(u / hit, 1.6)) : -100.4;
-      const front = ave.position.x + 19.4, sh = u > hit ? Math.exp(-(u - hit) * 14) : 0;
-      setCam(Math.min(front, CX) - 42 + Math.sin(t * 71) * sh, 11 + Math.cos(t * 53) * sh, 8, CX + 12, 1, 0);
-      const pf = proj(new THREE.Vector3(front, 1.2, 0)), pr = proj(new THREE.Vector3(CX, 1.2, 0)), c = pc();
-      return [['pill', pr[0], pr[1] - 110, 'TREN PARADO', clamp((hit - u) * 8), CSS_RED], ['pill', W / 2, 880, 'AVE', clamp((hit - u) * 8), '#5b2a86'],
-              ['gap', pf[0], pf[1], pr[0], pr[1], clamp((hit - u) * 8)], ['flash', u > hit ? clamp(1 - (u - hit) * 8) * 0.9 : 0],
-              ['impact', c[0], c[1], clamp((u - hit) / 0.3)], ['dust', c[0], c[1], clamp((u - hit) / 0.45)],
-              ['pill', W / 2, 1000, 'MISMA VÍA', clamp(u * 5) * clamp((hit - u) * 8), '#1d2228']];
-    }
-    if (HK === 'b') {            // desde arriba: el camino verde del AVE acaba en el tramo rojo del tren parado
-      ave.position.x = lerp(-235, -128, ease(u)); setBlocks(t, 0.2 + u * 0.8, 'green'); glowOn();
-      setCam(lerp(-150, -115, u), lerp(470, 330, ease(u)), 0.01, lerp(-150, -115, u), 0, 3, [1, 0, 0]);
-      const pr = proj(new THREE.Vector3(-30, 4, 0));
-      return [['pill', W / 2, 250, 'VÍA LIBRE…', clamp(u * 5), '#1fa85a'], ['pill', pr[0] + 150, pr[1], 'TREN PARADO', clamp((u - 0.2) * 5), CSS_RED],
-              ['pill', W / 2, 310, '…HACIA UN TREN PARADO', clamp((u - 0.5) * 5), CSS_RED]];
-    }
-    // c · el impacto congelado: cámara que gira despacio alrededor, polvo suspendido
-    ave.position.x = -100.4; pose(0.35); const orb = lerp(-0.5, 0.25, u);
-    setCam(-80 + Math.sin(orb) * 48, 26, Math.cos(orb) * 48 + 2, -76, 0.5, 2); const c = pc();
-    return [['flash', clamp(0.8 - u * 6)], ['dust', c[0], c[1], 0.25 + u * 0.3], ['clock', '28 OCT', '8:54 · URDA (TOLEDO)', clamp((u - 0.15) * 5)]]; },
-  // 1 · fecha y lugar
-  (t, u) => { iryo.visible = false; setCam(-60 + u * 20, 6, 22, 20 + u * 20, 2, 0);
-    return [['clock', '28 OCT', 'MADRID – ANDALUCÍA', clamp(u * 4)], ['pill', W / 2, 520, 'CERCA DE URDA · TOLEDO', clamp((u - 0.25) * 4)]]; },
-  // 2 · 8:30 · falla la señalización. Vista cenital tipo esquema: la vía dividida en tramos que se apagan
-  (t, u) => { iryo.visible = false; setBlocks(t, u, 'off'); setCam(-140, 430, 0.01, -140, 0, 3, [1, 0, 0]);
-    return [['clock', '8:30', 'FALLA EL LZB', clamp(u * 4)], ['pill', W / 2, 1000, 'LOS TRAMOS SE QUEDAN SIN SEÑAL', clamp((u - 0.4) * 4), CSS_RED]]; },
-  // 3 · los trenes se paran: el Iryo ocupa su tramo (rojo) y el AVE espera detrás
-  (t, u) => { ave.visible = true; ave.position.x = -235; setBlocks(t, u, 'stop'); glowOn(); setCam(-140, 430, 0.01, -140, 0, 3, [1, 0, 0]);
-    const pi = proj(new THREE.Vector3(-20, 4, 0)), pa = proj(new THREE.Vector3(-255, 4, 0));
-    return [['pill', pi[0] + 140, pi[1], 'IRYO · PARADO', clamp((u - 0.15) * 4)], ['pill', pa[0] + 140, pa[1], 'AVE · PARADO', clamp((u - 0.45) * 4), '#5b2a86']]; },
-  // 4 · la clave: desde control se da vía libre… y el camino verde del AVE acaba en el tramo ocupado por el Iryo
-  (t, u) => { ave.visible = true; ave.position.x = -235; setBlocks(t, u, 'green'); glowOn(); setCam(-140, 430, 0.01, -140, 0, 3, [1, 0, 0]);
-    const pr = proj(new THREE.Vector3(-30, 4, 0));
-    return [['pill', W / 2, 250, 'SEGÚN EL MINISTRO DE TRANSPORTES', clamp(u * 4)], ['pill', W / 2, 310, 'MARCHA AUTORIZADA', clamp((u - 0.2) * 4), '#1fa85a'],
+  // 0 · gancho: persecución detrás del AVE hasta el impacto, que se congela
+  (t, u) => { ave.visible = true; const CX = -81, hit = 0.7;
+    ave.position.x = u < hit ? lerp(-175, -100.4, Math.pow(u / hit, 1.6)) : -100.4 + 4 * ease(clamp((u - hit) / 0.3)); crashPose(clamp((u - hit) / 0.3) * 0.35);
+    const front = ave.position.x + 19.4, sh = u > hit ? Math.exp(-(u - hit) * 14) : 0;
+    setCam(Math.min(front, CX) - 42 + Math.sin(t * 71) * sh, 11 + Math.cos(t * 53) * sh, 8, CX + 12, 1, 0);
+    const pf = proj(new THREE.Vector3(front, 1.2, 0)), pr = proj(new THREE.Vector3(CX, 1.2, 0)), c = proj(new THREE.Vector3(CX, 2.5, 0));
+    return [['pill', pr[0], pr[1] - 110, 'TREN PARADO', clamp((hit - u) * 8), CSS_RED], ['pill', W / 2, 880, 'AVE', clamp((hit - u) * 8), '#5b2a86'],
+            ['gap', pf[0], pf[1], pr[0], pr[1], clamp((hit - u) * 8)], ['flash', u > hit ? clamp(1 - (u - hit) * 8) * 0.9 : 0],
+            ['impact', c[0], c[1], clamp((u - hit) / 0.3)], ['dust', c[0], c[1], clamp((u - hit) / 0.45)],
+            ['pill', W / 2, 1000, 'MISMA VÍA', clamp(u * 5) * clamp((hit - u) * 8), '#1d2228']]; },
+  // 1 · dónde: dron que baja del cielo sobre la línea, el Iryo pasa a toda velocidad (antes de las 8:30)
+  (t, u) => { iryo.position.x = lerp(420, 160, u); const e = ease(u);
+    setCam(lerp(-330, -60, e), lerp(260, 16, e), lerp(150, 34, e), lerp(-40, 40, e), 0, 0);
+    const pn = proj(new THREE.Vector3(-81, 2, 0));
+    return [['clock', '28 OCT', 'MADRID – ANDALUCÍA', clamp(u * 4)], ['pill', pn[0], pn[1] - 60, 'PK 118 · CERCA DE URDA (TOLEDO)', clamp((u - 0.2) * 4) * clamp((0.85 - u) * 6), CSS_RED]]; },
+  // 2 · 8:30: zoom a una señal de la vía que se apaga y subida rápida a la vista de tramos, que se quedan sin señal
+  (t, u) => { iryo.visible = false; const sg = signals[1], off = u > 0.3;
+    sg.userData.lamp.material.color.setHex(off ? 0x1a1a1a : (Math.sin(t * 20) > 0 || u < 0.2 ? 0x2bd96b : 0x1a1a1a));
+    if (u < 0.5) { const z = ease(u / 0.5); const sx = sg.position.x + rail.position.x;
+      setCam(sx - lerp(18, 5, z), lerp(4, 3.2, z), lerp(-14, -6, z), sx, 3.2, -2.2);
+      return [['clock', '8:30', 'FALLA EL LZB', clamp(u * 6)], ['pill', W / 2, 1000, 'EL SISTEMA QUE DA ÓRDENES A LOS TRENES', clamp((u - 0.15) * 6), CSS_RED]]; }
+    const k = ease(clamp((u - 0.5) / 0.3)); setBlocks(t, 0.15 + (u - 0.5) * 2, 'off');
+    setCam(-140 + (1 - k) * 60, lerp(10, 430, k), lerp(-8, 0.01, k), -140, 0, 3, [k, 1 - k, 0]);
+    return [['pill', W / 2, 1000, 'LOS TRAMOS SE QUEDAN SIN SEÑAL', clamp((u - 0.6) * 5), CSS_RED]]; },
+  // 3 · se paran: travelling lateral a lo largo del Iryo parado y grúa hacia atrás que descubre el AVE parado más atrás
+  (t, u) => { ave.visible = true; ave.position.x = -235;
+    if (u < 0.55) { const k = ease(u / 0.55); setCam(lerp(95, -40, k), 4.5, -16, lerp(85, -60, k), 2.2, 0);
+      const pi = proj(new THREE.Vector3(lerp(85, -60, k), 6, 0)); return [['pill', pi[0], pi[1] - 60, 'IRYO · PARADO', clamp(u * 6), CSS_RED]]; }
+    const k = ease(clamp((u - 0.55) / 0.35)); setCam(lerp(-40, -330, k), lerp(4.5, 55, k), lerp(-16, -25, k), lerp(-60, -90, k), 0, 0);
+    const pa = proj(new THREE.Vector3(-250, 6, 0)), pi = proj(new THREE.Vector3(-40, 6, 0));
+    return [['pill', pi[0], pi[1] - 50, 'IRYO · PARADO', 1, CSS_RED], ['pill', pa[0], pa[1] - 50, 'AVE · PARADO DETRÁS', clamp((u - 0.7) * 5), '#5b2a86']]; },
+  // 4 · la clave: zoom desde muy arriba al esquema; el camino verde del AVE acaba en el tramo rojo del Iryo
+  (t, u) => { ave.visible = true; ave.position.x = -235; setBlocks(t, u, 'green'); glowOn(); const h = lerp(760, 360, ease(clamp(u * 1.4)));
+    setCam(-120, h, 0.01, -120, 0, 3, [1, 0, 0]); const pr = proj(new THREE.Vector3(-30, 4, 0));
+    return [['pill', W / 2, 250, 'SEGÚN EL MINISTRO DE TRANSPORTES', clamp(u * 4)], ['pill', W / 2, 310, 'VÍA LIBRE PARA SEGUIR', clamp((u - 0.2) * 4), '#1fa85a'],
             ['pill', pr[0] + 150, pr[1], 'TRAMO OCUPADO', clamp((u - 0.55) * 4), CSS_RED]]; },
-  // 5 · el AVE arranca: cámara de persecución detrás del AVE, el Iryo al fondo en la misma vía
-  (t, u) => { ave.visible = true; ave.position.x = lerp(-235, -175, ease(u)); setBlocks(t, 1, 'green'); glowOn();
-    setCam(ave.position.x - 75, 13, 7, ave.position.x + 60, 2, 0);
-    const pi = proj(new THREE.Vector3(-30, 7, 0)); return [['pill', pi[0], pi[1] - 40, 'IRYO PARADO DELANTE', clamp((u - 0.2) * 4), CSS_RED], ['arrow', u]]; },
-  // 6 · el alcance: persecución detrás del AVE (la distancia se cierra), contacto con destello, temblor y polvo,
-  //     vista 3/4 del descarrilamiento con etiquetas y, al final, repetición desde arriba con los tramos de colores
-  (t, u0) => { ave.visible = true; const cs = iryo.userData.cars, RP = 0.66, CX = -81;
-    const rep = u0 > RP, u = rep ? clamp((u0 - RP) / (1 - RP)) : u0 / RP;
-    const hit = rep ? 0.45 : 0.42;
-    ave.position.x = u < hit ? lerp(rep ? -140 : -165, -100.4, u / hit) : -100.4 - 1.2 * ease(clamp((u - hit) / 0.25));
-    const front = ave.position.x + 19.4, d = ease(clamp((u - hit) / (rep ? 0.35 : 0.45)));
-    cs[3].position.z = 5.4 * d; cs[3].rotation.set(0.28 * d, 0.18 * d, 0); cs[3].position.y = -0.45 * d; cs[3].position.x = -61.8 + 2.5 * d;
-    cs[2].position.z = 2.6 * clamp((u - hit - 0.05) / 0.45); cs[2].rotation.set(0.13 * d, 0.09 * d, 0);
-    ave.userData.cars[0].rotation.x = 0.03 * d;
-    const sh = u > hit ? Math.exp(-(u - hit) * 14) : 0, jx = Math.sin(t * 71) * 0.9 * sh, jy = Math.cos(t * 53) * 0.7 * sh;
-    const pc = proj(new THREE.Vector3(CX, 2.5, 0));
-    if (rep) {
-      setBlocks(t, 1, 'green'); glowOn(); setCam(-95 + jx, 210 + jy * 4, 0.01, -95, 0, 3, [1, 0, 0]);
-      const pa = proj(new THREE.Vector3(ave.position.x - 20, 3, 0)), pi = proj(new THREE.Vector3(-40, 3, 0));
-      return [['pill', W / 2, 250, 'REPETICIÓN · VISTA DESDE ARRIBA', clamp(u * 6), '#1d2228'], ['pill', pa[0] + 130, pa[1], 'AVE', clamp(u * 5), '#5b2a86'],
-              ['pill', pi[0] + 130, pi[1], 'IRYO', clamp(u * 5), CSS_RED], ['flash', clamp(1 - (u - hit) * 9) * (u > hit ? 0.55 : 0)],
-              ['impact', pc[0], pc[1], clamp((u - hit) / 0.3)], ['dust', pc[0], pc[1], clamp((u - hit) / 0.5)]];
-    }
-    const k = ease(clamp((u - hit + 0.04) / 0.32)), fx = Math.min(front, CX);
-    setCam(lerp(fx - 42, -112, k) + jx, lerp(11, 36, k) + jy, lerp(8, 50, k), lerp(CX + 12, -72, k), lerp(1, 0.5, k), lerp(0, 2, k));
-    const pf = proj(new THREE.Vector3(front, 1.2, 0)), pr = proj(new THREE.Vector3(CX, 1.2, 0));
-    const p3 = proj(new THREE.Vector3(-70, 3, 0)), q3 = proj(new THREE.Vector3(-66, 3, 9)), p2 = proj(new THREE.Vector3(-50, 3, 0)), q2 = proj(new THREE.Vector3(-48, 3, 6));
-    const la = proj(new THREE.Vector3(-85, 5, 0)), li = proj(new THREE.Vector3(-64, 7, 3));
-    const pre = clamp((hit - u) * 8), post = clamp((u - hit - 0.12) * 5);
+  // 5 · el AVE arranca: cámara baja junto a las ruedas y luego persecución, el Iryo al fondo en la misma vía
+  (t, u) => { ave.visible = true; ave.position.x = lerp(-235, -175, ease(u)); if (u > 0.4) { setBlocks(t, 1, 'green'); glowOn(); }
+    if (u < 0.35) setCam(ave.position.x + 30, 1.4, -6, ave.position.x + 10, 1, 0);
+    else { const k = ease(clamp((u - 0.35) / 0.3)); setCam(ave.position.x + lerp(30, -75, k), lerp(1.4, 13, k), lerp(-6, 7, k), ave.position.x + lerp(10, 60, k), 2, 0); }
+    const pi = proj(new THREE.Vector3(-30, 7, 0)); return [['pill', pi[0], pi[1] - 40, 'IRYO PARADO DELANTE', clamp((u - 0.45) * 4), CSS_RED], ['arrow', clamp((u - 0.35) * 1.5)]]; },
+  // 6 · el alcance: la distancia se cierra, impacto (destello, temblor, polvo) y, a cámara lenta, cómo se mueve cada coche
+  (t, u) => { ave.visible = true; const CX = -81, hit = 0.3;
+    ave.position.x = u < hit ? lerp(-165, -100.4, u / hit) : -100.4 + 4 * ease(clamp((u - hit) / 0.3));
+    const d = clamp((u - hit) / 0.6); crashPose(d);
+    const front = ave.position.x + 19.4, sh = u > hit ? Math.exp(-(u - hit) * 14) : 0, jx = Math.sin(t * 71) * 0.9 * sh, jy = Math.cos(t * 53) * 0.7 * sh;
+    const k = ease(clamp((u - hit + 0.04) / 0.3)), fx = Math.min(front, CX), orb = lerp(-0.3, 0.5, clamp((u - hit) / 0.7));
+    setCam(lerp(fx - 42, -80 + Math.sin(orb) * 19, k) + jx, lerp(11, 8, k) + jy, lerp(8, Math.cos(orb) * 19, k), lerp(CX + 12, -80, k), lerp(1, 3.5, k), lerp(0, 0, k));
+    const pf = proj(new THREE.Vector3(front, 1.2, 0)), pr = proj(new THREE.Vector3(CX, 1.2, 0)), c = proj(new THREE.Vector3(CX, 2.5, 0));
+    const pre = clamp((hit - u) * 8), la = proj(new THREE.Vector3(-90, 6, -6)), li = proj(new THREE.Vector3(-55, 7, 3));
     return [['pill', W / 2, 880, 'AVE', pre, '#5b2a86'], ['pill', pr[0], pr[1] - 110, 'IRYO PARADO', pre, CSS_RED], ['gap', pf[0], pf[1], pr[0], pr[1], pre],
-            ['flash', u > hit ? clamp(1 - (u - hit) * 10) * 0.85 : 0], ['dust', pc[0], pc[1], clamp((u - hit) / 0.6)],
-            ['clock', '8:54', 'ALCANCE', clamp((u - hit + 0.05) * 6)], ['impact', pc[0], pc[1], clamp((u - hit) / 0.3)],
-            ['pill', la[0], la[1], 'AVE', post, '#5b2a86'], ['pill', li[0], li[1], 'IRYO', post, CSS_RED],
-            ['darr', p3[0], p3[1], q3[0], q3[1], clamp((u - hit - 0.18) * 5)], ['darr', p2[0], p2[1], q2[0], q2[1], clamp((u - hit - 0.25) * 5)],
-            ['pill', W / 2, 1000, 'DESCARRILAN LOS DOS ÚLTIMOS COCHES', clamp((u - hit - 0.2) * 4), CSS_RED]]; },
-  // 7 · las víctimas
-  (t, u) => { iryo.visible = false; setCam(-20, 3, 18, 60, 2, 3); DIM = 0.62;
+            ['flash', u > hit ? clamp(1 - (u - hit) * 10) * 0.85 : 0], ['dust', c[0], c[1], clamp((u - hit) / 0.6)],
+            ['clock', '8:54', 'ALCANCE', clamp((u - hit + 0.05) * 6)], ['impact', c[0], c[1], clamp((u - hit) / 0.3)],
+            ['pill', la[0], la[1], 'AVE', clamp((u - hit - 0.1) * 5), '#5b2a86'], ['pill', li[0], li[1], 'IRYO', clamp((u - hit - 0.1) * 5), CSS_RED],
+            ['pill', W / 2, 1000, 'EL AVE SE EMPOTRA EN EL ÚLTIMO COCHE', clamp((u - hit - 0.15) * 4), CSS_RED]]; },
+  // 7 · cómo quedaron, plano a plano (Iker: «no se ve bien»): cabeza del AVE en el terraplén → coches 6 y 7 al otro lado → último coche del Iryo calcinado
+  (t, u) => { ave.visible = true; ave.position.x = -96.4; crashPose(1); rescueOn(t);
+    const S = [[[-120, 3, -32], [-92, -1, -8]], [[-178, 16, 38], [-206, 0, 9]], [[-36, 9, 26], [-62, 1.5, 2]]];
+    const i = Math.min(2, Math.floor(u * 3)), f = u * 3 - i, m = ease(clamp(f / 0.25)), A = S[Math.max(0, i - 1)], B = S[i], w = i ? m : 1;
+    const P = A[0].map((v, j) => lerp(v, B[0][j], w)), L = A[1].map((v, j) => lerp(v, B[1][j], w)), push = 1 - 0.12 * ease(f);
+    setCam(L[0] + (P[0] - L[0]) * push, L[1] + (P[1] - L[1]) * push, L[2] + (P[2] - L[2]) * push, ...L);
+    const sm = proj(new THREE.Vector3(-59, 5, 3)), al = clamp((f - 0.2) * 6) * clamp((1 - f) * 12 + (i === 2 ? 1 : 0));
+    const TX = [['CABEZA DEL AVE', 'CAYÓ HACIA UN TERRAPLÉN', '#5b2a86'], ['COCHES 6 Y 7 DEL AVE', 'AL OTRO LADO DE LA VÍA', '#5b2a86'], ['ÚLTIMO COCHE DEL IRYO', 'DESTROZADO Y CALCINADO', CSS_RED]][i];
+    return [['dust', sm[0], sm[1] - 60, i === 2 ? 0.3 + 0.15 * Math.sin(t * 2) : 0], ['pill', W / 2, 250, TX[0], al, TX[2]], ['pill', W / 2, 310, TX[1], al, '#1d2228']]; },
+  // 8 · las víctimas: plano bajo desde el campo hacia los restos, con la cifra
+  (t, u) => { ave.visible = true; ave.position.x = -96.4; crashPose(1); rescueOn(t); setCam(-95 + Math.sin(lerp(0.5, 1.1, u)) * 110, 95, Math.cos(lerp(0.5, 1.1, u)) * 110, -120, 0, 0); DIM = 0.3;
     return [['bignum', '68', 'FALLECIDOS', clamp(u * 3)], ['pill', W / 2, 760, '≈540 VIAJEROS · MÁS DE 100 HERIDOS', clamp((u - 0.45) * 4)]]; },
-  // 8 · la investigación
-  (t, u) => { iryo.visible = false; tape.visible = true; setCam(14, 2.2, 10, 31, 1.2, 3); return [['pill', W / 2, 420, 'INVESTIGA UN JUZGADO DE ORGAZ', clamp((u - 0.2) * 4)]]; },
+  // 9 · la investigación: cámara que se acerca a los restos tras la cinta
+  (t, u) => { ave.visible = true; ave.position.x = -96.4; crashPose(1); rescueOn(t); setCam(lerp(-20, -40, u), 2, lerp(-48, -38, u), -85, 1, 0); return [['pill', W / 2, 420, 'INVESTIGA UN JUZGADO DE ORGAZ', clamp((u - 0.2) * 4)]]; },
   // 9 · luto oficial y línea cortada (sin bandera, Iker 29/10)
   (t, u) => { iryo.visible = false; tape.visible = true; setCam(12, 2.6, 13, 30, 1.2, 3);
     return [['ribbon', clamp(u * 3)], ['pill', W / 2, 560, '3 DÍAS DE LUTO OFICIAL', clamp((u - 0.15) * 4)], ['pill', W / 2, 630, 'LÍNEA MADRID–ANDALUCÍA CORTADA', clamp((u - 0.4) * 4), CSS_RED]]; },
@@ -924,7 +957,7 @@ let T = null;
 function sceneAt(t) { const n = T.lines.length; for (let i = n - 1; i >= 0; i--) if (t >= T.lines[i].start - (i ? 0.08 : 99)) return i; return 0; }
 function drawUi(ui) {
   for (const it of ui) { const [k, ...a] = it;
-    if (k === 'pill') pill(...a); else if (k === 'clock') clockCard(...a); else if (k === 'people') peopleGrid(...a);
+    if (k === 'pill') { a[0] = Math.max(260, Math.min(W - 260, a[0])); pill(...a); } else if (k === 'clock') clockCard(...a); else if (k === 'people') peopleGrid(...a);
     else if (k === 'bignum') bigNum(...a); else if (k === 'panel') controlPanel(...a); else if (k === 'ribbon') ribbon(...a); else if (k === 'arrow') arrowFwd(...a); else if (k === 'impact') impact(...a); else if (k === 'gap') gap(...a); else if (k === 'darr') darr(...a); else if (k === 'flash') flash(...a); else if (k === 'dust') dust(...a); }
 }
 function render3(si, t, L, end) {
