@@ -14,3 +14,4 @@ Shorts de curiosidades del canal «Ojo al dato» (Iker). Todo se renderiza aquí
 - **Música (Iker, 27/10):** alterna synthwave, lofi_hh, premium, playful y exp (una distinta por vídeo); ver INSTRUCCIONES_NOCHE.md.
 - **Guardar siempre en el repo:** voz y copia ligera de cada vídeo en cuanto existan (commit + push).
 - **Ahorro de uso (Iker, 27/10):** mínimas búsquedas y pasos, mensajes cortos. Nunca guardes claves ni contraseñas en el repo.
+- **Temas y plan (Iker, 29/10):** antes de crear cualquier vídeo, propón temas y deja que Iker elija. Actualiza el doc «Plan de subidas» cada vez que haya un cambio (subida, programación, tema nuevo, cambio de voz o estilo).
