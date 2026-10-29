@@ -743,8 +743,33 @@ function hideAll() {
   sun.intensity = 1.0;
 }
 const SC = [
-  // 0 · gancho: la vía vacía en el campo, plano aéreo lento
-  (t, u) => { iryo.visible = false; setCam(lerp(-140, -100, u), 38, 70, lerp(20, 40, u), 0, 0); return []; },
+  // 0 · gancho (Iker 29/10: «quiero un mejor hook»). Tres variantes con ?hook=a|b|c
+  (t, u) => { const HK = new URLSearchParams(location.search).get('hook') || 'a', cs = iryo.userData.cars, CX = -81;
+    ave.visible = true;
+    const pose = d => { cs[3].position.z = 5.4 * d; cs[3].rotation.set(0.28 * d, 0.18 * d, 0); cs[3].position.y = -0.45 * d; cs[3].position.x = -61.8 + 2.5 * d;
+      cs[2].position.z = 2.6 * d; cs[2].rotation.set(0.13 * d, 0.09 * d, 0); };
+    const pc = () => proj(new THREE.Vector3(CX, 2.5, 0));
+    if (HK === 'a') {            // persecución detrás del AVE hasta el impacto, que se congela
+      const hit = 0.7; ave.position.x = u < hit ? lerp(-175, -100.4, Math.pow(u / hit, 1.6)) : -100.4;
+      const front = ave.position.x + 19.4, sh = u > hit ? Math.exp(-(u - hit) * 14) : 0;
+      setCam(Math.min(front, CX) - 42 + Math.sin(t * 71) * sh, 11 + Math.cos(t * 53) * sh, 8, CX + 12, 1, 0);
+      const pf = proj(new THREE.Vector3(front, 1.2, 0)), pr = proj(new THREE.Vector3(CX, 1.2, 0)), c = pc();
+      return [['pill', pr[0], pr[1] - 110, 'TREN PARADO', clamp((hit - u) * 8), CSS_RED], ['pill', W / 2, 880, 'AVE', clamp((hit - u) * 8), '#5b2a86'],
+              ['gap', pf[0], pf[1], pr[0], pr[1], clamp((hit - u) * 8)], ['flash', u > hit ? clamp(1 - (u - hit) * 8) * 0.9 : 0],
+              ['impact', c[0], c[1], clamp((u - hit) / 0.3)], ['dust', c[0], c[1], clamp((u - hit) / 0.45)],
+              ['pill', W / 2, 1000, 'MISMA VÍA', clamp(u * 5) * clamp((hit - u) * 8), '#1d2228']];
+    }
+    if (HK === 'b') {            // desde arriba: el camino verde del AVE acaba en el tramo rojo del tren parado
+      ave.position.x = lerp(-235, -128, ease(u)); setBlocks(t, 0.2 + u * 0.8, 'green'); glowOn();
+      setCam(lerp(-150, -115, u), lerp(470, 330, ease(u)), 0.01, lerp(-150, -115, u), 0, 3, [1, 0, 0]);
+      const pr = proj(new THREE.Vector3(-30, 4, 0));
+      return [['pill', W / 2, 250, 'VÍA LIBRE…', clamp(u * 5), '#1fa85a'], ['pill', pr[0] + 150, pr[1], 'TREN PARADO', clamp((u - 0.2) * 5), CSS_RED],
+              ['pill', W / 2, 310, '…HACIA UN TREN PARADO', clamp((u - 0.5) * 5), CSS_RED]];
+    }
+    // c · el impacto congelado: cámara que gira despacio alrededor, polvo suspendido
+    ave.position.x = -100.4; pose(0.35); const orb = lerp(-0.5, 0.25, u);
+    setCam(-80 + Math.sin(orb) * 48, 26, Math.cos(orb) * 48 + 2, -76, 0.5, 2); const c = pc();
+    return [['flash', clamp(0.8 - u * 6)], ['dust', c[0], c[1], 0.25 + u * 0.3], ['clock', '28 OCT', '8:54 · URDA (TOLEDO)', clamp((u - 0.15) * 5)]]; },
   // 1 · fecha y lugar
   (t, u) => { iryo.visible = false; setCam(-60 + u * 20, 6, 22, 20 + u * 20, 2, 0);
     return [['clock', '28 OCT', 'MADRID – ANDALUCÍA', clamp(u * 4)], ['pill', W / 2, 520, 'CERCA DE URDA · TOLEDO', clamp((u - 0.25) * 4)]]; },

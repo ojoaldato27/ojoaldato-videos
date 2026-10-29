@@ -14,7 +14,7 @@ ROOT = "/home/claude/shorts-ingenieria"
 PAGE = "urda"
 VOZ = os.path.join(ROOT, "content/cine/voz/f3d_urda")
 LINES = [
-    "¿Cómo pudo pasar el choque de trenes de *Toledo*?",
+    "¿Cómo pudo un AVE chocar contra un *tren parado*… en la misma vía?",
     "Fue el 28 de octubre, en la línea de alta velocidad entre Madrid y Andalucía, cerca de *Urda*.",
     "Hacia las ocho y media falló el sistema que controla las *señales* en ese tramo, el LZB.",
     "Sin señales, los trenes se pararon. Entre ellos, un *Iryo*… y, más atrás, un *AVE* de Renfe.",
@@ -30,8 +30,8 @@ OUTRO_LINE = "Todo nuestro cariño para las víctimas y para sus seres queridos.
 OUTRO_HOLD = 3.5
 OJO_TRAJE = "reportero"
 OJO_POSES = ["think", "point", "point", "point", "point", "think", "think", "think", "point", "think", "think"]
-OJO_ACT = {0: ("think", 620, 980, 0.72), 1: ("point", 30, 1000, 0.72), 5: ("point", 40, 1040, 0.68), 8: ("point", 640, 1020, 0.7), 9: ("think", 640, 1040, 0.7)}   # Ojo actúa, como en el F1
-OJO_HIDE = {6, 7, 10}        # sin Ojo en el choque, las víctimas ni las velas
+OJO_ACT = {1: ("point", 30, 1000, 0.72), 5: ("point", 40, 1040, 0.68), 8: ("point", 640, 1020, 0.7), 9: ("think", 640, 1040, 0.7)}   # Ojo actúa, como en el F1
+OJO_HIDE = {0, 6, 7, 10}        # sin Ojo en el choque, las víctimas ni las velas
 OJO_HIDE_OUTRO = True
 OUTRO_POSE = "think"
 MUSIC, MUSIC_GAIN = "drone", 1.0
