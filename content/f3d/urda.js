@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { makeCarPro } from './car_pro.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { makeTrainPro, LIVERY } from './train_pro.js';
 // Ojo al dato · vídeo 3D «El rebufo en F1» (estilo C: minimal blanco con Ojo en 3D).
 // Render determinista: window.renderAt(t) dibuja el fotograma del segundo t y devuelve un JPEG en dataURL.
 // window.TIMING (lo pone render3d.py): {total, lines:[{start,end,tokens:[{w,key,s,e}]}], outro:{...}}
@@ -594,7 +595,21 @@ const rail = new THREE.Group(); scene.add(rail);
     const c = new THREE.Mesh(new THREE.SphereGeometry(1.6 + tr(), 8, 6), crown); c.scale.y = 0.75; c.position.set(x, 2.1, z); rail.add(c);
     const k = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.25, 1.6, 6), trunk); k.position.set(x, 0.6, z); rail.add(k);
   }
-  for (const z of [-44, 50]) { const v = new THREE.Mesh(new THREE.PlaneGeometry(1600, 60), new THREE.MeshLambertMaterial({ map: UT.vines })); v.rotation.x = -Math.PI / 2; v.position.set(0, -0.2, z); rail.add(v); }
+  // viñedo de verdad en 3D (Iker 29/10: «el campo y el fondo»): hileras de cepas con colores de otoño sobre tierra rojiza
+  for (const z of [-44, 50]) { const v = new THREE.Mesh(new THREE.PlaneGeometry(1600, 60), new THREE.MeshLambertMaterial({ color: 0xb8794c })); v.rotation.x = -Math.PI / 2; v.position.set(0, -0.2, z); rail.add(v); }
+  {
+    const geo = new THREE.IcosahedronGeometry(0.75, 0); geo.scale(1.3, 0.8, 1);
+    const rows = []; for (let z = 16; z < 72; z += 3.2) rows.push(z); for (let z = -13; z > -70; z -= 3.2) rows.push(z);
+    const per = Math.floor(900 / 1.9), N = rows.length * per;
+    const vm = new THREE.InstancedMesh(geo, new THREE.MeshLambertMaterial(), N);
+    const M = new THREE.Matrix4(), q = new THREE.Quaternion(), col = new THREE.Color(), rv = rng(77); let k = 0;
+    const PAL = [0x9cbf4a, 0x7fa83c, 0xd9b545, 0xc98b3a, 0xb5c95a, 0xa04a2c];
+    for (const z of rows) for (let i = 0; i < per; i++) {
+      const sc = 0.8 + rv() * 0.5; q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), rv() * 6.3);
+      M.compose(new THREE.Vector3(-650 + i * 1.9 + rv() * 0.3, 0.45 * sc, z + (rv() - 0.5) * 0.3), q, new THREE.Vector3(sc, sc, sc));
+      vm.setMatrixAt(k, M); vm.setColorAt(k, col.setHex(PAL[(rv() < 0.55 ? 0 : (rv() * PAL.length) | 0)]).offsetHSL(0, 0, (rv() - 0.5) * 0.08)); k++; }
+    vm.instanceMatrix.needsUpdate = true; vm.instanceColor.needsUpdate = true; vm.frustumCulled = false; rail.add(vm);
+  }
   const wall = new THREE.MeshLambertMaterial({ color: 0xf6f3ec }), roofM = new THREE.MeshLambertMaterial({ color: 0xc0583a });
   const hr = rng(21);
   for (let i = 0; i < 26; i++) { const x = (hr() - 0.5) * 1300, z = (hr() < 0.5 ? -1 : 1) * (90 + hr() * 300);
@@ -645,8 +660,8 @@ function makeTrain(body, stripe, label, n = 4) {
   g.userData.label = label;
   return g;
 }
-const iryo = makeTrain(0xc0172d, 0xffffff, 'IRYO');      // rojo
-const ave = makeTrain(0xf2f3f5, 0x5b2a86, 'AVE');        // blanco con franja morada
+const iryo = makeTrainPro(LIVERY.iryo);      // rojo (librea genérica)
+const ave = makeTrainPro(LIVERY.ave);        // blanco con franja morada
 scene.add(iryo, ave);
 
 // señales a pie de vía (para explicar el fallo de señalización)
@@ -732,13 +747,13 @@ const SC = [
     return [['panel', u], ['pill', W / 2, 330, 'SEGÚN EL MINISTRO DE TRANSPORTES', clamp(u * 4)]]; },
   // 5 · el AVE arranca por la misma vía y se acerca
   (t, u) => { ave.visible = true; ave.position.x = lerp(-215, -165, ease(u)); setCam(lerp(-400, -340, u), 30, -20, -100, 0, 3);
-    const gap = Math.max(0, (-78.8) - (ave.position.x + 17));
-    const pm = proj(new THREE.Vector3((ave.position.x + 17 - 78.8) / 2, 7, 0));
+    const gap = 0;
+    const pm = proj(new THREE.Vector3((ave.position.x + 19.3 - 81.1) / 2, 7, 0));
     return [['pill', pm[0], pm[1], 'MISMA VÍA', clamp((u - 0.2) * 4), CSS_RED]]; },   // sin distancias inventadas
   // 6 · el alcance: reconstrucción esquemática, a cámara lenta y sin dramatismo
   (t, u) => { ave.visible = true; const cs = iryo.userData.cars;
     const hit = 0.42;
-    ave.position.x = u < hit ? lerp(-165, -95.8, ease(u / hit) * 0.5 + (u / hit) * 0.5) : -95.8 + Math.min(1, (u - hit) / 0.2) * -1.2;
+    ave.position.x = u < hit ? lerp(-165, -100.4, ease(u / hit) * 0.5 + (u / hit) * 0.5) : -100.4 + Math.min(1, (u - hit) / 0.2) * -1.2;
     const d = ease(clamp((u - hit) / 0.4));
     cs[3].position.z = 5.2 * d; cs[3].rotation.set(0.25 * d, 0.16 * d, 0); cs[3].position.y = -0.4 * d; cs[3].position.x = -61.8 + 2.5 * d;
     cs[2].position.z = 2.4 * clamp((u - hit - 0.05) / 0.4); cs[2].rotation.set(0.12 * d, 0.08 * d, 0);
@@ -858,3 +873,12 @@ window.renderAt = function (t) {
 };
 Promise.all(['800 40px Inter', '700 28px Inter', '500 24px Inter'].map(f => document.fonts.load(f))).then(() => { window.READY = true; });
 [iryo, ave].forEach(tr => tr.traverse(m => { if (m.isMesh) m.frustumCulled = false; }));
+
+// foto de estudio de los trenes (para elegir colores y texturas)
+window.trainStudio = function (k) {
+  T = window.TIMING; hideAll(); setBg(); ave.visible = true; ave.position.set(-140, 0, 6);
+  const V = [[24, 4, 14, 6, 2.2, 0], [-110, 5, 14, -132, 2.2, 6], [10, 9, 26, -20, 1.5, 3]][k];
+  setCam(...V); gl.clear(); gl.render(scene, cam);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, out.width, out.height); ctx.drawImage(gl.domElement, 0, 0);
+  return out.toDataURL('image/jpeg', 0.95);
+};
