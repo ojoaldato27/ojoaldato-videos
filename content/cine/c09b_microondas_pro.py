@@ -39,9 +39,9 @@ LINES = [
     "Por eso el plato *gira*… y por eso el centro a veces sigue *helado*.",
     "¿Y por qué no te cocina a ti? Los agujeros de la rejilla son *más pequeños* que las ondas: no caben, y *rebotan*.",
     "Lo descubrió *Percy Spencer* en 1945, cuando un radar le *derritió la chocolatina* del bolsillo.",
-    "Así que… ¿sin fuego? Sí: poniendo a *bailar el agua* de tu comida.",
+    "Así que… ¿sin fuego? Sí: las ondas hacen *girar el agua* de la comida… y ese roce la *calienta*.",
 ]
-OUTRO_LINE = "La próxima vez que lo enciendas, piensa en el agua bailando… ¡Ojo al dato!"
+OUTRO_LINE = "La próxima vez que lo enciendas, acuérdate: no es fuego, es agua girando… ¡Ojo al dato!"
 NAMES = ["q", "magnet", "water", "dipole", "spin", "heat", "depth", "plate", "mesh", "spencer", "answer"]
 SHOTS = [(n, i, i, 0) for i, n in enumerate(NAMES)]
 FOCUS = {}
@@ -584,21 +584,53 @@ def sh_spencer(img, t, T, L):
 
 
 def sh_answer(img, t, T, L):
-    """Respuesta: microondas encendido con moléculas bailando dentro; vuelve la pregunta del principio, ya resuelta."""
-    g = 0.8 + 0.15 * math.sin(t * 6)
-    glow(img, 580, 880, 520, 300, WARM, 0.5 * g)
-    box = {}
+    """Respuesta clara en 3 pasos (30/10, Iker: «lo de bailar el agua no lo entiendo»):
+    ONDAS → el AGUA GIRA → el roce da CALOR, cada paso a la vez que la voz lo dice."""
+    k1 = clamp((t - 0.2) / 0.35)
+    k2 = clamp((t - lt(L, 0, 0.32)) / 0.35)
+    k3 = clamp((t - lt(L, 0, 0.62)) / 0.35)
+    y = 840
+    xs = (190, 540, 890)
+    # 1 · ondas
+    if k1 > 0:
+        def p1(Lr):
+            d = K.D(Lr)
+            s = pop(k1)
+            d.rounded_rectangle([xs[0] - 140 * s, y - 140 * s, xs[0] + 140 * s, y + 140 * s], radius=36, fill=WHITE, outline=INK, width=6)
+        solid(img, p1)
+        for j in range(3):
+            wave(img, xs[0] - 110, xs[0] + 110, y - 60 + j * 60, 18, 70, t * 9 + j, col=RED if j == 1 else (240, 150, 150), w=6)
+        FL.pill(img, xs[0], y + 200, "ONDAS", k1, col=RED)
+    # 2 · el agua gira
+    if k2 > 0:
+        def p2(Lr):
+            d = K.D(Lr)
+            s = pop(k2)
+            d.rounded_rectangle([xs[1] - 140 * s, y - 140 * s, xs[1] + 140 * s, y + 140 * s], radius=36, fill=WHITE, outline=INK, width=6)
+            molecule(Lr, xs[1], y, 0.75 * s, t * 9, signs=False)
+        solid(img, p2)
+        K.D(img).arc([xs[1] - 115, y - 115, xs[1] + 115, y + 115], int(t * 400) % 360, int(t * 400) % 360 + 110, fill=BLUE, width=8)
+        FL.pill(img, xs[1], y + 200, "EL AGUA GIRA", k2, col=BLUE)
+    # 3 · calor
+    if k3 > 0:
+        glow(img, xs[2], y, 200, 200, (255, 120, 60), 0.6 * k3)
 
-    def ov(Lr):
-        box["w"] = oven(Lr, 580, 880, 1.2, glow_k=g, t=t, mesh=False, plate=False)
-        wx0, wy0, wx1, wy1 = box["w"]
-        for i in range(5):
-            x = lerp(wx0 + 70, wx1 - 70, i / 4)
-            y = (wy0 + wy1) / 2 + 55 * math.sin(t * 6 + i)
-            molecule(Lr, x, y, 0.36, t * 7 + i, signs=False)
-    solid(img, ov)
-    ojo(img, 180, 1420, 0.88, "smirk", t=t)
-    hook_text(img, [("¿SIN FUEGO?", False), ("AGUA QUE BAILA", True)], clamp((t - lt(L, len(L) - 1, 0.35)) / 0.4), y=470, size=96)
+        def p3(Lr):
+            d = K.D(Lr)
+            s = pop(k3)
+            d.rounded_rectangle([xs[2] - 140 * s, y - 140 * s, xs[2] + 140 * s, y + 140 * s], radius=36, fill=(255, 238, 226), outline=INK, width=6)
+            d.rounded_rectangle([xs[2] - 22, y - 100 * s, xs[2] + 22, y + 50 * s], radius=22, fill=WHITE, outline=INK, width=5)
+            d.ellipse([xs[2] - 42, y + 30 * s, xs[2] + 42, y + 110 * s], fill=RED, outline=INK, width=5)
+            d.rectangle([xs[2] - 10, y - 80 * s, xs[2] + 10, y + 50 * s], fill=RED)
+        solid(img, p3)
+        steam(img, xs[2], y - 120, t, n=2, h=140, a=200)
+        FL.pill(img, xs[2], y + 200, "CALOR", k3, col=RED)
+    d = K.D(img)
+    for xa, kk in ((365, k2), (715, k3)):
+        if kk > 0:
+            d.polygon([(xa - 26, y - 22), (xa + 20, y), (xa - 26, y + 22)], fill=INK + (int(255 * kk),))
+    ojo(img, 540, 1450, 0.62, "smirk", t=t)
+    hook_text(img, [("¿SIN FUEGO?", False), ("¡AGUA GIRANDO!", True)], clamp((t - lt(L, 0, 0.15)) / 0.4), y=440, size=104)
 
 
 # ------------------------------------------------------------------ fondo de cocina con profundidad de campo

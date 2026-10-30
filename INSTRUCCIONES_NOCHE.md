@@ -1,4 +1,19 @@
-# Envío nocturno de vídeos (actualizado el 27/10/2026)
+# Envío nocturno de vídeos (actualizado el 30/10/2026)
+
+## FORMATO OBLIGATORIO DESDE EL 30/10 — «pro» (Iker: «me gusta mucho este formato, a partir de ahora haremos los vídeos con este formato»)
+MANDA SOBRE TODO LO DEMÁS DE ESTE ARCHIVO SI CHOCA (duración, estilo, voz, títulos, transiciones).
+- **Modelo:** `content/cine/c09b_microondas_pro.py`. Cada vídeo nuevo se hace COPIANDO ese módulo y cambiando guion y escenas; reutiliza `solid()`, `glow()`, `ojo()`, `hook_text()`, `steam()` y `_con_fondo()`.
+- **Gancho en el PRIMER fotograma:** la escena ya en acción (nada de plano quieto) y la pregunta en grande con `hook_text` desde el segundo 0; `cine.VOICE_LEAD = 0.2`.
+- **Duración:** 50–60 s de voz (≈11 frases, 150–170 palabras), sin relleno. qc.py todavía pide 60–90 s: ese aviso no cuenta.
+- **Giro a mitad:** una frase «Pero ojo…» con sello y un mito tachado.
+- **Profundidad:** cada pieza con `solid()` (sombra suave + luz de arriba), luces con `glow()`, fondo del tema desenfocado con viñeta (fondos.py); zona de subtítulos (y > 1470) siempre limpia.
+- **Ojo grande** (escala 0,6–1,0) actuando dentro de cada escena, con sombra en el suelo; `NARR = None`.
+- **Final claro:** la penúltima frase responde la pregunta con palabras sencillas (nada de metáforas que no se entiendan, p. ej. «poner a bailar el agua») y se ve como cadena de 2–3 pasos en pantalla (ver `sh_answer` del 09b), con la pregunta del gancho y su respuesta arriba.
+- **Sin títulos fijos:** solo dibujo, subtítulos y el texto del gancho/respuesta.
+- **Transiciones suaves:** TRANS_PLAN solo con `suave`, `suave_out`, `deriva`, `deriva_r`; TD 0,9; SHAKE 0; CUT_SFX False.
+- **Voz:** `VOZ_SPEED=1.08 python3 tools/voz_natural.py <modulo>` (Kokoro español + entonación española, parte las frases por comas y con fundidos para que no se encalle). Necesita `pip install --break-system-packages pyworld num2words librosa`. ElevenLabs: cuenta gratis bloqueada desde el 30/10.
+- **Vista previa:** `python3 run.py <modulo> sheet <dir>`; render: `python3 fast.py <modulo>` (≈2,5 min en 2 CPU).
+
 
 ## Cómo arranca cada noche (Iker, 27/10: «para gastar el mínimo uso posible»)
 - GUARDAR SIEMPRE (Iker, 28/10, para que todo vaya solo): en cuanto tengas la voz (MP3 + _words.json) y la copia ligera <10 MB de un vídeo, haz commit y push al repo (voz en content/cine/voz/, vídeo en listos/). Nada se queda solo en el chat: el 28/10 se perdieron el 07 y el 3D del rebufo por no subirlos.

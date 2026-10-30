@@ -90,6 +90,8 @@ def entonacion(x, fs, tipo, suav=0.12):
     ramp = np.clip((idx - (b - n_end)) / n_end, 0, 1)
     if tipo == "?":
         new += (6.5 / 12) * ramp ** 1.5
+    elif tipo == ",":
+        new += (1.2 / 12) * ramp ** 1.2                      # coma: el tono se queda arriba, la frase sigue
     elif tipo == "!":
         new += (1.5 / 12) * np.sin(np.pi * ramp) - (2.0 / 12) * ramp ** 2
     else:
@@ -99,10 +101,33 @@ def entonacion(x, fs, tipo, suav=0.12):
     return y.astype(np.float32)
 
 
-def recorta(a, fs, db=40):
+def recorta(a, fs, db=52, pad=0.04):
+    """Quita el silencio de los bordes SIN comerse el arranque suave de las palabras (s, f…), con fundidos de 15 ms
+    para que no haya chasquidos entre trozos (30/10: «hay momentos que el audio se encalla»)."""
     import librosa
     iv = librosa.effects.split(a, top_db=db)
-    return a[iv[0][0]: iv[-1][1]] if len(iv) else a
+    if len(iv):
+        p = int(pad * fs)
+        a = a[max(0, iv[0][0] - p): min(len(a), iv[-1][1] + p)]
+    n = min(int(0.015 * fs), len(a) // 4)
+    if n > 1:
+        a = a.copy()
+        a[:n] *= np.linspace(0, 1, n)
+        a[-n:] *= np.linspace(1, 0, n)
+    return a
+
+
+def trozos(s):
+    """Parte una frase larga por las comas: Kokoro se atasca en frases largas; así cada trozo sale limpio
+    y la pausa de la coma es natural. Los trozos de menos de 4 palabras se pegan al anterior."""
+    raw = [p.strip() for p in re.split(r"(?<=[,…:])\s+", s) if p.strip()]
+    out = []
+    for p in raw:
+        if out and (len(p.split()) < 4 or len(out[-1].split()) < 4):
+            out[-1] += " " + p
+        else:
+            out.append(p)
+    return out
 
 
 def spoken_len(w):
@@ -117,21 +142,25 @@ def genera(texto, out, voz=None, vel=None, lang="es"):
     st = k.get_voice_style(voz)
     partes, words, t = [np.zeros(int(FS * 0.12), np.float32)], [], 0.12
     for s in frases(texto):
-        tipo = s[-1] if s[-1] in "?!." else "."
-        a, fs = k.create(para_leer(s), voice=st, speed=vel, lang=lang)
-        a = entonacion(recorta(a, fs), fs, tipo)
-        dur = len(a) / FS
-        toks = s.replace("*", "").split()
-        L = [spoken_len(w) for w in toks]
-        tot, acc = sum(L), 0.0
-        for w, l in zip(toks, L):
-            ws = t + dur * acc / tot
-            acc += l
-            words.append({"text": w, "type": "word", "start": round(ws, 3), "end": round(t + dur * acc / tot, 3)})
-        partes.append(a)
-        gap = {"?": 0.42, "!": 0.35}.get(tipo, 0.3)
-        partes.append(np.zeros(int(FS * gap), np.float32))
-        t += dur + gap
+        tipo_f = s[-1] if s[-1] in "?!." else "."
+        tr = trozos(s)
+        for j, c in enumerate(tr):
+            last = j == len(tr) - 1
+            tipo = tipo_f if last else ","
+            a, fs = k.create(para_leer(c), voice=st, speed=vel, lang=lang)
+            a = recorta(entonacion(recorta(a, fs), fs, tipo), fs)
+            dur = len(a) / FS
+            toks = c.replace("*", "").split()
+            L = [spoken_len(w) for w in toks]
+            tot, acc = sum(L), 0.0
+            for w, l in zip(toks, L):
+                ws = t + dur * acc / tot
+                acc += l
+                words.append({"text": w, "type": "word", "start": round(ws, 3), "end": round(t + dur * acc / tot, 3)})
+            partes.append(a)
+            gap = {"?": 0.42, "!": 0.35, ",": 0.14}.get(tipo, 0.3)
+            partes.append(np.zeros(int(FS * gap), np.float32))
+            t += dur + gap
     y = np.concatenate(partes)
     wav = out[:-4] + ".wav"
     sf.write(wav, y, FS)
