@@ -54,8 +54,9 @@ def frame(V, shots, chunks, total, i):
     img = None
     for k in range(1, len(shots)):
         cut = shots[k]["start"]
-        if cut - TD / 2 <= t < cut + TD / 2 and t < o0:
-            u = (t - (cut - TD / 2)) / TD
+        td = getattr(V, "TD", TD)                       # duración de la transición por módulo (29/10: suaves, más largas)
+        if cut - td / 2 <= t < cut + td / 2 and t < o0:
+            u = (t - (cut - td / 2)) / td
             A = _render(V, shots, k - 1, min(t, cut - 1e-3))
             B = _render(V, shots, k, max(t, cut))
             img = trans.apply(plan[k - 1], A, B, u, V.FOCUS_PT.get(shots[k - 1]["name"], (540, 960)))

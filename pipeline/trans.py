@@ -232,3 +232,36 @@ def plan(n, pool, seed=3):
         out.append(k)
         last = k
     return out
+
+
+# ------------------------------------------------------------------ transiciones suaves (Iker, 29/10: «más fluido, no tanto pum pum»)
+def suave(A, B, u, focus):
+    """La escena se acerca despacio a su detalle mientras se funde con la siguiente, que llega asentándose."""
+    fx, fy = focus
+    e = ease_io(u)
+    a = _zoom(A, 1 + 0.35 * e, fx, fy)
+    b = _zoom(B, 1.18 - 0.18 * e, 540, 820)
+    return Image.blend(a, b, e)
+
+
+def suave_out(A, B, u, focus):
+    """La siguiente escena llega desde un primer plano y se abre, fundida."""
+    fx, fy = focus
+    e = ease_io(u)
+    a = _zoom(A, 1 + 0.12 * e, fx, fy)
+    b = _zoom(B, 1.45 - 0.45 * ease_out(u), 540, 820)
+    return Image.blend(a, b, e)
+
+
+def deriva(A, B, u, focus, direction=1):
+    """Paneo lento lateral con fundido: la cámara se desliza de una escena a la otra (sin bordes negros)."""
+    e = ease_io(u)
+    z = 1.14
+    fa = 540 + direction * 540 * e
+    fb = 540 - direction * 540 * (1 - e)
+    a = _zoom(A, 1 + (z - 1) * e, fa, 960)
+    b = _zoom(B, z - (z - 1) * e, fb, 960)
+    return Image.blend(a, b, e)
+
+
+KINDS.update({"suave": suave, "suave_out": suave_out, "deriva": deriva, "deriva_r": lambda A, B, u, f: deriva(A, B, u, f, -1)})
