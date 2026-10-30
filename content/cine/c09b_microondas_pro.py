@@ -404,7 +404,7 @@ def sh_dipole(img, t, T, L):
     k = clamp((t - 0.3) / 0.4)
     if k > 0:
         solid(img, magnet)
-        txt(img, (400, 860), "≈", int(110 * pop(k)), INK)
+        txt(img, (400, 860), "≈", max(2, int(110 * pop(k))), INK)
     ojo(img, 180, 1420, 0.82, "smirk", t=t)
     FL.pill(img, 620, 1360, "UN IMÁN DIMINUTO", clamp((t - lt(L, 0, 0.5)) / 0.3), col=RED)
 

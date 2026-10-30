@@ -67,6 +67,10 @@ if __name__ == "__main__":
     with open(out.replace(".mp4", ".srt"), "w") as fh:
         for k, c in enumerate(caps, 1):
             fh.write(f"{k}\n{ts(c['start'])} --> {ts(c['end'])}\n{c['text'].replace('*', '')}\n\n")
+    d_out = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out],
+                                 capture_output=True, text=True).stdout or 0)
+    if d_out < total - 1.0:           # 30/10: un trozo falló y el vídeo salió cortado (41 s en vez de 60) sin avisar
+        raise SystemExit(f"ERROR: el vídeo dura {d_out:.1f} s y debería durar {total:.1f} s; revisa el error de arriba")
     for f_ in (tmp + "_a.mp4", tmp + "_b.mp4", tmp + "_list.txt", wav):
         os.remove(f_)
     print("ok", out, round(time.time() - t0), "s")

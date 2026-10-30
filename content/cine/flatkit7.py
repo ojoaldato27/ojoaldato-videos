@@ -20,6 +20,8 @@ def D(img):
 
 
 def txt(img, xy, s, size, col=INK, anchor="mm", font=None):
+    if size < 2:
+        return
     D(img).text(xy, s, font=F(font or FL.INTER_X, size), fill=col, anchor=anchor)
 
 
