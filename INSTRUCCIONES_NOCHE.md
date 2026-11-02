@@ -11,7 +11,7 @@ MANDA SOBRE TODO LO DEMÁS DE ESTE ARCHIVO SI CHOCA (duración, estilo, voz, tí
 - **Final claro:** la penúltima frase responde la pregunta con palabras sencillas (nada de metáforas que no se entiendan, p. ej. «poner a bailar el agua») y se ve como cadena de 2–3 pasos en pantalla (ver `sh_answer` del 09b), con la pregunta del gancho y su respuesta arriba.
 - **Sin títulos fijos:** solo dibujo, subtítulos y el texto del gancho/respuesta.
 - **Transiciones suaves:** TRANS_PLAN solo con `suave`, `suave_out`, `deriva`, `deriva_r`; TD 0,9; SHAKE 0; CUT_SFX False.
-- **Voz:** `VOZ_SPEED=1.08 python3 tools/voz_natural.py <modulo>` (Kokoro español + entonación española, parte las frases por comas y con fundidos para que no se encalle). Necesita `pip install --break-system-packages pyworld num2words librosa`. ElevenLabs: cuenta gratis bloqueada desde el 30/10.
+- **Voz (02/11, Iker eligió A · Alex):** `VOZ_SPEED=1.0 python3 tools/voz_natural.py <modulo>`: Kokoro em_alex leyendo FRASES ENTERAS, sin cortar por comas y sin el filtro de tono (hacía «chirriar» la voz). ElevenLabs sigue bloqueado (cuenta gratis).
 - **Vista previa:** `python3 run.py <modulo> sheet <dir>`; render: `python3 fast.py <modulo>` (≈2,5 min en 2 CPU).
 
 ## MÁS VISUAL Y MÁS VIRAL (Iker, 02/11: «aplícalo a todos los siguientes vídeos») — OBLIGATORIO en todos los vídeos nuevos

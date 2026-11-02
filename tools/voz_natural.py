@@ -143,12 +143,13 @@ def genera(texto, out, voz=None, vel=None, lang="es"):
     partes, words, t = [np.zeros(int(FS * 0.12), np.float32)], [], 0.12
     for s in frases(texto):
         tipo_f = s[-1] if s[-1] in "?!." else "."
-        tr = trozos(s)
-        for j, c in enumerate(tr):
+        limpia = os.environ.get("VOZ_LIMPIA", "1") == "1"      # 02/11 (Iker): frases enteras y sin filtro de tono
+        tr = [s] if limpia else trozos(s)                      # (el filtro WORLD hacía «chirriar» la voz y los
+        for j, c in enumerate(tr):                             #  cortes por comas partían las frases)
             last = j == len(tr) - 1
             tipo = tipo_f if last else ","
             a, fs = k.create(para_leer(c), voice=st, speed=vel, lang=lang)
-            a = recorta(entonacion(recorta(a, fs), fs, tipo), fs)
+            a = recorta(a, fs) if limpia else recorta(entonacion(recorta(a, fs), fs, tipo), fs)
             dur = len(a) / FS
             toks = c.replace("*", "").split()
             L = [spoken_len(w) for w in toks]
@@ -164,7 +165,7 @@ def genera(texto, out, voz=None, vel=None, lang="es"):
     y = np.concatenate(partes)
     wav = out[:-4] + ".wav"
     sf.write(wav, y, FS)
-    af = ("highpass=f=75,lowpass=f=11000,equalizer=f=160:t=q:w=1:g=2,equalizer=f=3000:t=q:w=1.4:g=-1.5,"
+    af = ("highpass=f=70,"
           "acompressor=threshold=-22dB:ratio=2:attack=10:release=150,loudnorm=I=-16:TP=-1.5")
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", wav, "-af", af, "-b:a", "160k", out], check=True)
     os.remove(wav)
