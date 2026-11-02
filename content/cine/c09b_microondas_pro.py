@@ -25,7 +25,7 @@ cine.VOICE_LEAD = 0.2            # la voz entra casi al momento: el gancho no es
 STYLE = "docu"
 BEATS = True
 XF = 0.28
-TITLE = "09b_Microondas_pro"
+TITLE = "09b_Microondas_viral"
 _VZ = os.path.join(os.path.dirname(os.path.abspath(__file__)), "voz", "c09b_microondas")
 VOICE = _VZ + ".mp3"
 LINES = [
@@ -666,7 +666,12 @@ def _con_fondo(fn):
 
 
 NARR = None
-FNS = {n: _con_fondo(globals()["sh_" + n]) for n in NAMES}
+# 02/11 (Iker): «más visual y más viral» — parallax, partículas, emojis/destellos cada <=1,8 s y Ojo que reacciona
+import pro
+ojo = pro.ojo
+EMOJI = {"magnet": ["📡", "⚡"], "water": ["💧"], "dipole": ["🧲"], "spin": ["🌀", "🤯"], "heat": ["🔥"], "depth": ["📏", "😮"],
+         "plate": ["🔄", "🥶"], "mesh": ["🕳️", "↩️"], "spencer": ["🍫", "😱"]}
+pro.setup(globals(), OJO_TRAJE, fondos.cocina(), NAMES, particles="cocina")
 FOCUS_PT = {n: (540, 860) for n in NAMES}
 FOCUS_PT["q"] = (600, 900)
 FOCUS_PT["plate"] = (540, 810)

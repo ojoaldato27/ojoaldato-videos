@@ -19,7 +19,7 @@ from pro import solid, glow, ojo, hook_text, lt, WHITE
 STYLE = "docu"
 BEATS = True
 XF = 0.28
-TITLE = "10b_Votas_presidente_pro"
+TITLE = "10b_Votas_presidente_viral"
 _VZ = os.path.join(os.path.dirname(os.path.abspath(__file__)), "voz", "c10b_votas")
 VOICE = _VZ + ".mp3"
 LINES = [
@@ -386,7 +386,9 @@ def sh_answer(img, t, T, L):
 
 import fondos
 NARR = None
-pro.setup(globals(), OJO_TRAJE, fondos.congreso(), NAMES)
+EMOJI = {"ballot": ["🗳️", "🔍"], "congress": ["🏛️"], "prov": ["🗺️"], "king": ["👑"], "debate": ["🎤"], "vote1": ["✅", "😮"],
+         "vote2": ["⏰", "⚖️"], "deals": ["🤝", "⏳"], "compare": ["🇫🇷"]}
+pro.setup(globals(), OJO_TRAJE, fondos.congreso(), NAMES, particles="congreso")
 
 OUTRO_MIN = 5.5
 MUSIC_GAIN = 1.7

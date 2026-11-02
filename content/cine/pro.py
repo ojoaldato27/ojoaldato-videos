@@ -187,17 +187,190 @@ def fondo_dof(base, tint=(250, 244, 234)):
     return img
 
 
-def setup(g, traje, fondo_img, names):
-    """Ajustes del formato pro y envoltorio de fondo para cada plano."""
+# ------------------------------------------------------------------ «MÁS VISUAL Y MÁS VIRAL» (Iker, 02/11)
+# Nada quieto (partículas siempre), estímulo cada <=1,8 s (emoji o destello con «pop»), cámara viva con parallax
+# (el fondo se desliza por detrás) y Ojo que reacciona a cada dato clave (salta y se sorprende).
+NOW = [0.0]
+EV = {}
+_EMO = {}
+DEF_EMOJI = ["👀", "🤯", "⚡", "💡", "🔥", "😮"]
+
+
+def _emoji(ch, size=120):
+    if ch not in _EMO:
+        from PIL import ImageFont
+        try:
+            fo = ImageFont.truetype("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf", 109)
+            im = Image.new("RGBA", (160, 160), (0, 0, 0, 0))
+            ImageDraw.Draw(im).text((80, 80), ch, font=fo, embedded_color=True, anchor="mm")
+            im = im.crop(im.getbbox() or (0, 0, 160, 160))
+        except Exception:
+            im = Image.new("RGBA", (10, 10), (0, 0, 0, 0))
+        _EMO[ch] = im
+    im = _EMO[ch]
+    return im.resize((max(1, int(im.width * size / 128)), max(1, int(im.height * size / 128))), Image.BILINEAR)
+
+
+def events(V, shots, total):
+    """Momentos de estímulo: palabras clave («kw») y rellenos («fill») para que no pase más de 1,8 s sin cambio."""
+    if "e" in EV:
+        return EV["e"]
+    end = total - cine.end_hold(V) - 0.4
+    kws = [t for t in cine.docu_beats(V)[1] if 0.6 < t < end]
+    cuts = [s["start"] for s in shots[1:]]
+    ev = [(t, "kw") for t in kws]
+    fixed = sorted(set([0.6] + kws + cuts + [end]))
+    for a, b in zip(fixed, fixed[1:]):
+        n = int((b - a) / 1.8)
+        for j in range(1, n + 1):
+            ev.append((a + (b - a) * j / (n + 1), "fill"))
+    ev.sort()
+    by_shot = {}
+    for t, k in ev:
+        si = next((i for i, s in enumerate(shots) if s["start"] <= t < s["end"]), len(shots) - 1)
+        by_shot.setdefault(shots[si]["name"], []).append((t, k))
+    EV["e"] = (ev, by_shot)
+    return EV["e"]
+
+
+def react(t=None):
+    """0..1 durante 0,5 s después de cada palabra clave (para que Ojo reaccione)."""
+    t = NOW[0] if t is None else t
+    for te, k in EV.get("e", ([], {}))[0]:
+        if k == "kw" and 0 <= t - te < 0.5:
+            return (t - te) / 0.5
+    return None
+
+
+def ojo(img, x, y, sc, pose="point", ang=0.0, t=0.0):
+    bob = 4 * math.sin(t * 3.2)
+    u = react()
+    hop = 0.0
+    if u is not None:
+        hop = -46 * sc * math.sin(math.pi * u)
+        if u < 0.6 and pose not in ("wave",):
+            pose = "surprise"
+    K.D(img).ellipse([x - 90 * sc * (1 + hop / 300), y - 14 * sc, x + 90 * sc * (1 + hop / 300), y + 14 * sc], fill=(40, 30, 20, 60))
+    solid(img, lambda L: ojo_feet(L, x, y + bob + hop, sc, pose, ang), sh=0.0, light=False)
+    if u is not None and u < 0.8:                       # marcas de sorpresa alrededor de la cabeza
+        f = OJ.figure(pose, TRAJE[0], 0.0, (0.05, 0.0), 0.0)
+        hy = y + bob + hop - f.height * sc * 0.82
+        d = K.D(img)
+        a = int(255 * (1 - u / 0.8))
+        for k_, da in enumerate((-0.9, 0.0, 0.9)):
+            r0, r1 = 90 * sc + 20 * u, 140 * sc + 30 * u
+            ca, sa = math.sin(da), -math.cos(da)
+            d.line([(x + ca * r0, hy + sa * r0), (x + ca * r1, hy + sa * r1)], fill=RED + (a,), width=max(4, int(12 * sc)))
+
+
+def _particles(img, kind, t):
+    if kind == "congreso":
+        cols = [(236, 190, 60), (255, 236, 180)]
+    else:
+        cols = [(255, 214, 140), (255, 240, 210)]
+    for i in range(12):                                   # bokeh: motas de luz que flotan (siempre algo moviéndose)
+        sp = 18 + (i * 37) % 30
+        x = (i * 211 + 90 + 40 * math.sin(t * 0.4 + i)) % (W + 200) - 100
+        y = 1440 - ((t * sp + i * 157) % 1100)
+        r = 22 + (i * 13) % 40
+        glow(img, x, y, r, r, cols[i % 2], 0.22 + 0.12 * math.sin(t * 1.3 + i))
+    d = K.D(img)
+    if kind == "congreso":                                # papelitos que caen despacio
+        for i in range(9):
+            y = 380 + ((t * (40 + i * 7) + i * 131) % 1100)
+            x = (i * 127 + 60 + 50 * math.sin(t * 0.9 + i * 2)) % W
+            a = t * 2.2 + i
+            w, h = 22, 12 * abs(math.cos(a)) + 2
+            pts = [(x + dx * math.cos(a * 0.6) - dy * math.sin(a * 0.6), y + dx * math.sin(a * 0.6) + dy * math.cos(a * 0.6))
+                   for dx, dy in ((-w / 2, -h / 2), (w / 2, -h / 2), (w / 2, h / 2), (-w / 2, h / 2))]
+            d.polygon(pts, fill=[(230, 40, 40, 150), (255, 255, 255, 200), (236, 190, 60, 170)][i % 3])
+    else:                                                 # chispitas que titilan
+        for i in range(10):
+            x = (i * 173 + 120) % W
+            y = 420 + (i * 271) % 980
+            a = max(0.0, math.sin(t * 2.4 + i * 1.7))
+            if a > 0.3:
+                r = 10 * a
+                d.line([(x - r, y), (x + r, y)], fill=(255, 255, 255, int(200 * a)), width=3)
+                d.line([(x, y - r), (x, y + r)], fill=(255, 255, 255, int(200 * a)), width=3)
+
+
+def _star(img, x, y, k, col=WARM):
+    s = 46 * pop(clamp(k * 2.5)) * (1 - clamp((k - 0.6) / 0.4))
+    if s < 1:
+        return
+    d = K.D(img)
+    pts = []
+    for j in range(8):
+        r = s if j % 2 == 0 else s * 0.3
+        a = j * math.pi / 4 + k
+        pts.append((x + r * math.cos(a), y + r * math.sin(a)))
+    d.polygon(pts, fill=col + (230,), outline=INK + (200,))
+
+
+def _stimuli(img, name, g):
+    t = NOW[0]
+    ev = EV.get("e", ([], {}))[1].get(name, [])
+    emo = g.get("EMOJI", {}).get(name) or DEF_EMOJI
+    ne = g.get("NO_EMOJI", {"q", "answer"})
+    j = 0
+    for te, k in ev:
+        u = (t - te) / 1.2
+        if k == "kw":
+            j += 1
+        if not 0 <= u < 1:
+            continue
+        side = 1 if (int(te * 10) % 2) else -1
+        if k == "kw" and name not in ne:
+            sc = pop(clamp(u * 4)) * (1 - clamp((u - 0.75) / 0.25) * 0.3)
+            e = _emoji(emo[(j - 1) % len(emo)], int(150 * sc) + 1)
+            e = e.rotate(-12 * side * (1 - u), expand=True, resample=Image.BICUBIC)
+            a = 1 - clamp((u - 0.7) / 0.3)
+            if a < 1:
+                e.putalpha(e.getchannel("A").point(lambda v: int(v * a)))
+            x, y = 540 + side * 330, 560 - 70 * ease(u)
+            img.paste(e, (int(x - e.width / 2), int(y - e.height / 2)), e)
+        else:
+            x = 540 + side * (260 + (int(te * 37) % 120))
+            y = 620 + (int(te * 53) % 300)
+            _star(img, x, y, u * 1.2 / 0.6 if u < 0.5 else 2.0)
+
+
+def setup(g, traje, fondo_img, names, particles=None):
+    """Ajustes del formato pro y envoltorio de fondo (con parallax, partículas y estímulos) para cada plano."""
     TRAJE[0] = traje
     cine.VOICE_LEAD = 0.2
     bg = fondo_dof(fondo_img)
+    big = bg.resize((int(W * 1.1), int(H * 1.1)), Image.BILINEAR)
+    kind = particles or g.get("PARTICLES", "cocina")
 
-    def con_fondo(fn):
+    def con_fondo(fn, name):
         def run(img, t, T, L):
-            img.paste(bg, (0, 0))
+            T_ = NOW[0]
+            ox = (big.width - W) / 2 + 42 * math.sin(T_ * 0.23)          # el fondo se desliza despacio: profundidad
+            oy = (big.height - H) / 2 + 30 * math.sin(T_ * 0.17 + 1.0)
+            img.paste(big.crop((int(ox), int(oy), int(ox) + W, int(oy) + H)), (0, 0))
+            _particles(img, kind, T_)
             fn(img, t, T, L)
+            _stimuli(img, name, g)
             img.paste(bg.crop((0, 1470, W, H)), (0, 1470))
         return run
-    g["FNS"] = {n: con_fondo(g["sh_" + n]) for n in names}
+    g["FNS"] = {n: con_fondo(g["sh_" + n], n) for n in names}
     g.setdefault("FOCUS_PT", {n: (540, 860) for n in names})
+    base_frame = g.get("FRAME") or __import__("vid2").frame
+
+    def frame(V, shots, chunks, total, i):
+        NOW[0] = i / cine.FPS
+        events(V, shots, total)
+        return base_frame(V, shots, chunks, total, i)
+    g["FRAME"] = frame
+    if not getattr(cine, "_viral_audio", False):              # «pop» suave en cada aparición (sin siseos)
+        cine._viral_audio = True
+        orig = cine.build_audio
+
+        def build_audio(V, shots, total, *a, **k):
+            ev, _ = events(V, shots, total)
+            V.AUDIO = dict(V.AUDIO)
+            V.AUDIO["sfx"] = list(V.AUDIO.get("sfx", [])) + [(round(t, 3), "pop", 0.045 if k_ == "kw" else 0.025) for t, k_ in ev]
+            return orig(V, shots, total, *a, **k)
+        cine.build_audio = build_audio
