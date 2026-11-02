@@ -14,6 +14,16 @@ MANDA SOBRE TODO LO DEMÁS DE ESTE ARCHIVO SI CHOCA (duración, estilo, voz, tí
 - **Voz:** `VOZ_SPEED=1.08 python3 tools/voz_natural.py <modulo>` (Kokoro español + entonación española, parte las frases por comas y con fundidos para que no se encalle). Necesita `pip install --break-system-packages pyworld num2words librosa`. ElevenLabs: cuenta gratis bloqueada desde el 30/10.
 - **Vista previa:** `python3 run.py <modulo> sheet <dir>`; render: `python3 fast.py <modulo>` (≈2,5 min en 2 CPU).
 
+## MÁS VISUAL Y MÁS VIRAL (Iker, 02/11: «aplícalo a todos los siguientes vídeos») — OBLIGATORIO en todos los vídeos nuevos
+Se mantiene el formato «pro» de dibujos de arriba; esto lo sube de nivel. Nada de vídeo realista con IA como base (gasta todos los créditos gratis en un solo vídeo y no es la marca del canal).
+- **Nada quieto:** en cada escena siempre hay algo moviéndose (partículas: copos, humo, chispas, burbujas; flechas que se dibujan solas; termómetros que suben o bajan; contadores de cifras que cuentan; piezas que entran y salen).
+- **Estímulo cada 1,5–2 s:** dibujo nuevo, zoom suave, palabra clave, emoji que salta o pieza que aparece. Nunca más de 2 s sin un cambio visual.
+- **Cámara viva:** paneos y acercamientos suaves, con capas a distinta profundidad (efecto parallax/3D) para que no parezca una diapositiva. Sin zooms seguidos ni movimientos bruscos.
+- **Ojo protagonista que reacciona:** reacciona a lo que pasa en cada escena (se asusta, señala, se sorprende, se ríe con el dato curioso), no solo de presentador.
+- **Fondos con más detalle:** ilustración del tema desenfocada detrás de los dibujos principales.
+- **Ritmo de sonido:** sonidos pop suaves en las apariciones; nada de siseos.
+- **IA solo como extra opcional:** como mucho un clip animado de Google Flow en el gancho (≈10 puntos), nunca el vídeo entero.
+
 
 ## Cómo arranca cada noche (Iker, 27/10: «para gastar el mínimo uso posible»)
 - GUARDAR SIEMPRE (Iker, 28/10, para que todo vaya solo): en cuanto tengas la voz (MP3 + _words.json) y la copia ligera <10 MB de un vídeo, haz commit y push al repo (voz en content/cine/voz/, vídeo en listos/). Nada se queda solo en el chat: el 28/10 se perdieron el 07 y el 3D del rebufo por no subirlos.
