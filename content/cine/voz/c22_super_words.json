@@ -1,0 +1,1313 @@
+{
+"words": [
+{
+"text": "El",
+"type": "word",
+"start": 0.12,
+"end": 0.286
+},
+{
+"text": "súper",
+"type": "word",
+"start": 0.286,
+"end": 0.595
+},
+{
+"text": "está",
+"type": "word",
+"start": 0.595,
+"end": 0.856
+},
+{
+"text": "diseñado",
+"type": "word",
+"start": 0.856,
+"end": 1.308
+},
+{
+"text": "para",
+"type": "word",
+"start": 1.308,
+"end": 1.569
+},
+{
+"text": "que",
+"type": "word",
+"start": 1.569,
+"end": 1.783
+},
+{
+"text": "compres",
+"type": "word",
+"start": 1.783,
+"end": 2.187
+},
+{
+"text": "cosas",
+"type": "word",
+"start": 2.187,
+"end": 2.496
+},
+{
+"text": "que",
+"type": "word",
+"start": 2.496,
+"end": 2.71
+},
+{
+"text": "no",
+"type": "word",
+"start": 2.71,
+"end": 2.876
+},
+{
+"text": "necesitas.",
+"type": "word",
+"start": 2.876,
+"end": 3.375
+},
+{
+"text": "¡Y",
+"type": "word",
+"start": 3.375,
+"end": 3.494
+},
+{
+"text": "empieza",
+"type": "word",
+"start": 3.494,
+"end": 3.897
+},
+{
+"text": "en",
+"type": "word",
+"start": 3.897,
+"end": 4.064
+},
+{
+"text": "la",
+"type": "word",
+"start": 4.064,
+"end": 4.23
+},
+{
+"text": "puerta!",
+"type": "word",
+"start": 4.23,
+"end": 4.586
+},
+{
+"text": "Nada",
+"type": "word",
+"start": 4.886,
+"end": 5.194
+},
+{
+"text": "más",
+"type": "word",
+"start": 5.194,
+"end": 5.446
+},
+{
+"text": "entrar",
+"type": "word",
+"start": 5.446,
+"end": 5.865
+},
+{
+"text": "te",
+"type": "word",
+"start": 5.865,
+"end": 6.061
+},
+{
+"text": "encuentras",
+"type": "word",
+"start": 6.061,
+"end": 6.704
+},
+{
+"text": "la",
+"type": "word",
+"start": 6.704,
+"end": 6.9
+},
+{
+"text": "fruta.",
+"type": "word",
+"start": 6.9,
+"end": 7.263
+},
+{
+"text": "Colores",
+"type": "word",
+"start": 7.263,
+"end": 7.739
+},
+{
+"text": "vivos",
+"type": "word",
+"start": 7.739,
+"end": 8.102
+},
+{
+"text": "y",
+"type": "word",
+"start": 8.102,
+"end": 8.242
+},
+{
+"text": "olor",
+"type": "word",
+"start": 8.242,
+"end": 8.55
+},
+{
+"text": "a",
+"type": "word",
+"start": 8.55,
+"end": 8.69
+},
+{
+"text": "fresco.",
+"type": "word",
+"start": 8.69,
+"end": 9.109
+},
+{
+"text": "Y",
+"type": "word",
+"start": 9.109,
+"end": 9.249
+},
+{
+"text": "es",
+"type": "word",
+"start": 9.249,
+"end": 9.445
+},
+{
+"text": "a",
+"type": "word",
+"start": 9.445,
+"end": 9.584
+},
+{
+"text": "propósito.",
+"type": "word",
+"start": 9.584,
+"end": 10.172
+},
+{
+"text": "La",
+"type": "word",
+"start": 10.432,
+"end": 10.573
+},
+{
+"text": "idea",
+"type": "word",
+"start": 10.573,
+"end": 10.796
+},
+{
+"text": "es",
+"type": "word",
+"start": 10.796,
+"end": 10.938
+},
+{
+"text": "que",
+"type": "word",
+"start": 10.938,
+"end": 11.12
+},
+{
+"text": "entres",
+"type": "word",
+"start": 11.12,
+"end": 11.424
+},
+{
+"text": "de",
+"type": "word",
+"start": 11.424,
+"end": 11.566
+},
+{
+"text": "buen",
+"type": "word",
+"start": 11.566,
+"end": 11.788
+},
+{
+"text": "humor",
+"type": "word",
+"start": 11.788,
+"end": 12.052
+},
+{
+"text": "y",
+"type": "word",
+"start": 12.052,
+"end": 12.153
+},
+{
+"text": "con",
+"type": "word",
+"start": 12.153,
+"end": 12.335
+},
+{
+"text": "ganas",
+"type": "word",
+"start": 12.335,
+"end": 12.598
+},
+{
+"text": "de",
+"type": "word",
+"start": 12.598,
+"end": 12.74
+},
+{
+"text": "llenar",
+"type": "word",
+"start": 12.74,
+"end": 13.044
+},
+{
+"text": "el",
+"type": "word",
+"start": 13.044,
+"end": 13.186
+},
+{
+"text": "carro.",
+"type": "word",
+"start": 13.186,
+"end": 13.449
+},
+{
+"text": "Ahora",
+"type": "word",
+"start": 13.709,
+"end": 14.031
+},
+{
+"text": "fíjate",
+"type": "word",
+"start": 14.031,
+"end": 14.403
+},
+{
+"text": "en",
+"type": "word",
+"start": 14.403,
+"end": 14.576
+},
+{
+"text": "la",
+"type": "word",
+"start": 14.576,
+"end": 14.75
+},
+{
+"text": "leche",
+"type": "word",
+"start": 14.75,
+"end": 15.072
+},
+{
+"text": "y",
+"type": "word",
+"start": 15.072,
+"end": 15.196
+},
+{
+"text": "el",
+"type": "word",
+"start": 15.196,
+"end": 15.369
+},
+{
+"text": "pan.",
+"type": "word",
+"start": 15.369,
+"end": 15.593
+},
+{
+"text": "Casi",
+"type": "word",
+"start": 15.593,
+"end": 15.865
+},
+{
+"text": "siempre",
+"type": "word",
+"start": 15.865,
+"end": 16.286
+},
+{
+"text": "están",
+"type": "word",
+"start": 16.286,
+"end": 16.609
+},
+{
+"text": "al",
+"type": "word",
+"start": 16.609,
+"end": 16.782
+},
+{
+"text": "fondo.",
+"type": "word",
+"start": 16.782,
+"end": 17.104
+},
+{
+"text": "Para",
+"type": "word",
+"start": 17.364,
+"end": 17.613
+},
+{
+"text": "llegar",
+"type": "word",
+"start": 17.613,
+"end": 17.952
+},
+{
+"text": "hasta",
+"type": "word",
+"start": 17.952,
+"end": 18.246
+},
+{
+"text": "ellos",
+"type": "word",
+"start": 18.246,
+"end": 18.539
+},
+{
+"text": "tienes",
+"type": "word",
+"start": 18.539,
+"end": 18.878
+},
+{
+"text": "que",
+"type": "word",
+"start": 18.878,
+"end": 19.082
+},
+{
+"text": "cruzar",
+"type": "word",
+"start": 19.082,
+"end": 19.42
+},
+{
+"text": "la",
+"type": "word",
+"start": 19.42,
+"end": 19.579
+},
+{
+"text": "tienda",
+"type": "word",
+"start": 19.579,
+"end": 19.918
+},
+{
+"text": "entera.",
+"type": "word",
+"start": 19.918,
+"end": 20.256
+},
+{
+"text": "Pasillo",
+"type": "word",
+"start": 20.256,
+"end": 20.641
+},
+{
+"text": "a",
+"type": "word",
+"start": 20.641,
+"end": 20.754
+},
+{
+"text": "pasillo.",
+"type": "word",
+"start": 20.754,
+"end": 21.138
+},
+{
+"text": "Y",
+"type": "word",
+"start": 21.398,
+"end": 21.518
+},
+{
+"text": "mira",
+"type": "word",
+"start": 21.518,
+"end": 21.784
+},
+{
+"text": "el",
+"type": "word",
+"start": 21.784,
+"end": 21.953
+},
+{
+"text": "carro.",
+"type": "word",
+"start": 21.953,
+"end": 22.267
+},
+{
+"text": "Cada",
+"type": "word",
+"start": 22.267,
+"end": 22.533
+},
+{
+"text": "vez",
+"type": "word",
+"start": 22.533,
+"end": 22.75
+},
+{
+"text": "son",
+"type": "word",
+"start": 22.75,
+"end": 22.968
+},
+{
+"text": "más",
+"type": "word",
+"start": 22.968,
+"end": 23.185
+},
+{
+"text": "grandes.",
+"type": "word",
+"start": 23.185,
+"end": 23.596
+},
+{
+"text": "Con",
+"type": "word",
+"start": 23.856,
+"end": 24.071
+},
+{
+"text": "un",
+"type": "word",
+"start": 24.071,
+"end": 24.238
+},
+{
+"text": "carro",
+"type": "word",
+"start": 24.238,
+"end": 24.548
+},
+{
+"text": "enorme",
+"type": "word",
+"start": 24.548,
+"end": 24.906
+},
+{
+"text": "y",
+"type": "word",
+"start": 24.906,
+"end": 25.026
+},
+{
+"text": "medio",
+"type": "word",
+"start": 25.026,
+"end": 25.336
+},
+{
+"text": "vacío",
+"type": "word",
+"start": 25.336,
+"end": 25.647
+},
+{
+"text": "parece",
+"type": "word",
+"start": 25.647,
+"end": 26.005
+},
+{
+"text": "que",
+"type": "word",
+"start": 26.005,
+"end": 26.219
+},
+{
+"text": "te",
+"type": "word",
+"start": 26.219,
+"end": 26.387
+},
+{
+"text": "falta",
+"type": "word",
+"start": 26.387,
+"end": 26.697
+},
+{
+"text": "algo.",
+"type": "word",
+"start": 26.697,
+"end": 26.96
+},
+{
+"text": "Así",
+"type": "word",
+"start": 26.96,
+"end": 27.174
+},
+{
+"text": "que",
+"type": "word",
+"start": 27.174,
+"end": 27.389
+},
+{
+"text": "sigues",
+"type": "word",
+"start": 27.389,
+"end": 27.747
+},
+{
+"text": "metiendo",
+"type": "word",
+"start": 27.747,
+"end": 28.201
+},
+{
+"text": "cosas.",
+"type": "word",
+"start": 28.201,
+"end": 28.511
+},
+{
+"text": "Los",
+"type": "word",
+"start": 28.771,
+"end": 28.944
+},
+{
+"text": "productos",
+"type": "word",
+"start": 28.944,
+"end": 29.348
+},
+{
+"text": "más",
+"type": "word",
+"start": 29.348,
+"end": 29.521
+},
+{
+"text": "caros",
+"type": "word",
+"start": 29.521,
+"end": 29.771
+},
+{
+"text": "suelen",
+"type": "word",
+"start": 29.771,
+"end": 30.059
+},
+{
+"text": "estar",
+"type": "word",
+"start": 30.059,
+"end": 30.309
+},
+{
+"text": "a",
+"type": "word",
+"start": 30.309,
+"end": 30.406
+},
+{
+"text": "la",
+"type": "word",
+"start": 30.406,
+"end": 30.54
+},
+{
+"text": "altura",
+"type": "word",
+"start": 30.54,
+"end": 30.829
+},
+{
+"text": "de",
+"type": "word",
+"start": 30.829,
+"end": 30.963
+},
+{
+"text": "tus",
+"type": "word",
+"start": 30.963,
+"end": 31.136
+},
+{
+"text": "ojos.",
+"type": "word",
+"start": 31.136,
+"end": 31.348
+},
+{
+"text": "Las",
+"type": "word",
+"start": 31.608,
+"end": 31.816
+},
+{
+"text": "marcas",
+"type": "word",
+"start": 31.816,
+"end": 32.162
+},
+{
+"text": "baratas",
+"type": "word",
+"start": 32.162,
+"end": 32.555
+},
+{
+"text": "están",
+"type": "word",
+"start": 32.555,
+"end": 32.855
+},
+{
+"text": "más",
+"type": "word",
+"start": 32.855,
+"end": 33.063
+},
+{
+"text": "abajo.",
+"type": "word",
+"start": 33.063,
+"end": 33.363
+},
+{
+"text": "Tienes",
+"type": "word",
+"start": 33.363,
+"end": 33.71
+},
+{
+"text": "que",
+"type": "word",
+"start": 33.71,
+"end": 33.917
+},
+{
+"text": "agacharte",
+"type": "word",
+"start": 33.917,
+"end": 34.402
+},
+{
+"text": "para",
+"type": "word",
+"start": 34.402,
+"end": 34.657
+},
+{
+"text": "verlas.",
+"type": "word",
+"start": 34.657,
+"end": 35.003
+},
+{
+"text": "Pero",
+"type": "word",
+"start": 35.263,
+"end": 35.601
+},
+{
+"text": "aquí",
+"type": "word",
+"start": 35.601,
+"end": 35.939
+},
+{
+"text": "viene",
+"type": "word",
+"start": 35.939,
+"end": 36.338
+},
+{
+"text": "lo",
+"type": "word",
+"start": 36.338,
+"end": 36.553
+},
+{
+"text": "más",
+"type": "word",
+"start": 36.553,
+"end": 36.83
+},
+{
+"text": "curioso.",
+"type": "word",
+"start": 36.83,
+"end": 37.352
+},
+{
+"text": "La",
+"type": "word",
+"start": 37.352,
+"end": 37.567
+},
+{
+"text": "música.",
+"type": "word",
+"start": 37.567,
+"end": 38.028
+},
+{
+"text": "Una",
+"type": "word",
+"start": 38.288,
+"end": 38.523
+},
+{
+"text": "música",
+"type": "word",
+"start": 38.523,
+"end": 38.914
+},
+{
+"text": "lenta",
+"type": "word",
+"start": 38.914,
+"end": 39.253
+},
+{
+"text": "hace",
+"type": "word",
+"start": 39.253,
+"end": 39.54
+},
+{
+"text": "que",
+"type": "word",
+"start": 39.54,
+"end": 39.774
+},
+{
+"text": "camines",
+"type": "word",
+"start": 39.774,
+"end": 40.217
+},
+{
+"text": "más",
+"type": "word",
+"start": 40.217,
+"end": 40.452
+},
+{
+"text": "despacio.",
+"type": "word",
+"start": 40.452,
+"end": 40.947
+},
+{
+"text": "Y",
+"type": "word",
+"start": 40.947,
+"end": 41.078
+},
+{
+"text": "cuanto",
+"type": "word",
+"start": 41.078,
+"end": 41.469
+},
+{
+"text": "más",
+"type": "word",
+"start": 41.469,
+"end": 41.703
+},
+{
+"text": "rato",
+"type": "word",
+"start": 41.703,
+"end": 41.99
+},
+{
+"text": "estás,",
+"type": "word",
+"start": 41.99,
+"end": 42.329
+},
+{
+"text": "más",
+"type": "word",
+"start": 42.329,
+"end": 42.564
+},
+{
+"text": "compras.",
+"type": "word",
+"start": 42.564,
+"end": 43.007
+},
+{
+"text": "Y",
+"type": "word",
+"start": 43.267,
+"end": 43.402
+},
+{
+"text": "al",
+"type": "word",
+"start": 43.402,
+"end": 43.592
+},
+{
+"text": "final,",
+"type": "word",
+"start": 43.592,
+"end": 43.944
+},
+{
+"text": "en",
+"type": "word",
+"start": 43.944,
+"end": 44.134
+},
+{
+"text": "la",
+"type": "word",
+"start": 44.134,
+"end": 44.323
+},
+{
+"text": "caja,",
+"type": "word",
+"start": 44.323,
+"end": 44.621
+},
+{
+"text": "te",
+"type": "word",
+"start": 44.621,
+"end": 44.811
+},
+{
+"text": "esperan",
+"type": "word",
+"start": 44.811,
+"end": 45.271
+},
+{
+"text": "chicles",
+"type": "word",
+"start": 45.271,
+"end": 45.732
+},
+{
+"text": "y",
+"type": "word",
+"start": 45.732,
+"end": 45.868
+},
+{
+"text": "chocolatinas.",
+"type": "word",
+"start": 45.868,
+"end": 46.599
+},
+{
+"text": "Llegas",
+"type": "word",
+"start": 46.859,
+"end": 47.186
+},
+{
+"text": "cansado",
+"type": "word",
+"start": 47.186,
+"end": 47.557
+},
+{
+"text": "y",
+"type": "word",
+"start": 47.557,
+"end": 47.667
+},
+{
+"text": "esperando",
+"type": "word",
+"start": 47.667,
+"end": 48.125
+},
+{
+"text": "en",
+"type": "word",
+"start": 48.125,
+"end": 48.278
+},
+{
+"text": "la",
+"type": "word",
+"start": 48.278,
+"end": 48.43
+},
+{
+"text": "cola.",
+"type": "word",
+"start": 48.43,
+"end": 48.671
+},
+{
+"text": "Es",
+"type": "word",
+"start": 48.671,
+"end": 48.823
+},
+{
+"text": "el",
+"type": "word",
+"start": 48.823,
+"end": 48.976
+},
+{
+"text": "momento",
+"type": "word",
+"start": 48.976,
+"end": 49.347
+},
+{
+"text": "perfecto",
+"type": "word",
+"start": 49.347,
+"end": 49.762
+},
+{
+"text": "para",
+"type": "word",
+"start": 49.762,
+"end": 50.002
+},
+{
+"text": "un",
+"type": "word",
+"start": 50.002,
+"end": 50.155
+},
+{
+"text": "capricho.",
+"type": "word",
+"start": 50.155,
+"end": 50.569
+},
+{
+"text": "Así",
+"type": "word",
+"start": 50.829,
+"end": 51.036
+},
+{
+"text": "que",
+"type": "word",
+"start": 51.036,
+"end": 51.243
+},
+{
+"text": "el",
+"type": "word",
+"start": 51.243,
+"end": 51.403
+},
+{
+"text": "súper",
+"type": "word",
+"start": 51.403,
+"end": 51.702
+},
+{
+"text": "no",
+"type": "word",
+"start": 51.702,
+"end": 51.863
+},
+{
+"text": "está",
+"type": "word",
+"start": 51.863,
+"end": 52.115
+},
+{
+"text": "ordenado",
+"type": "word",
+"start": 52.115,
+"end": 52.552
+},
+{
+"text": "al",
+"type": "word",
+"start": 52.552,
+"end": 52.712
+},
+{
+"text": "azar.",
+"type": "word",
+"start": 52.712,
+"end": 52.965
+},
+{
+"text": "Es",
+"type": "word",
+"start": 52.965,
+"end": 53.126
+},
+{
+"text": "un",
+"type": "word",
+"start": 53.126,
+"end": 53.287
+},
+{
+"text": "recorrido",
+"type": "word",
+"start": 53.287,
+"end": 53.769
+},
+{
+"text": "pensado",
+"type": "word",
+"start": 53.769,
+"end": 54.159
+},
+{
+"text": "para",
+"type": "word",
+"start": 54.159,
+"end": 54.412
+},
+{
+"text": "que",
+"type": "word",
+"start": 54.412,
+"end": 54.619
+},
+{
+"text": "gastes",
+"type": "word",
+"start": 54.619,
+"end": 54.963
+},
+{
+"text": "más.",
+"type": "word",
+"start": 54.963,
+"end": 55.17
+},
+{
+"text": "El",
+"type": "word",
+"start": 55.43,
+"end": 55.6
+},
+{
+"text": "truco",
+"type": "word",
+"start": 55.6,
+"end": 55.917
+},
+{
+"text": "para",
+"type": "word",
+"start": 55.917,
+"end": 56.185
+},
+{
+"text": "ganarles",
+"type": "word",
+"start": 56.185,
+"end": 56.648
+},
+{
+"text": "es",
+"type": "word",
+"start": 56.648,
+"end": 56.819
+},
+{
+"text": "fácil.",
+"type": "word",
+"start": 56.819,
+"end": 57.136
+},
+{
+"text": "Ve",
+"type": "word",
+"start": 57.136,
+"end": 57.306
+},
+{
+"text": "con",
+"type": "word",
+"start": 57.306,
+"end": 57.526
+},
+{
+"text": "una",
+"type": "word",
+"start": 57.526,
+"end": 57.745
+},
+{
+"text": "lista",
+"type": "word",
+"start": 57.745,
+"end": 58.062
+},
+{
+"text": "y",
+"type": "word",
+"start": 58.062,
+"end": 58.184
+},
+{
+"text": "no",
+"type": "word",
+"start": 58.184,
+"end": 58.354
+},
+{
+"text": "te",
+"type": "word",
+"start": 58.354,
+"end": 58.525
+},
+{
+"text": "salgas",
+"type": "word",
+"start": 58.525,
+"end": 58.89
+},
+{
+"text": "de",
+"type": "word",
+"start": 58.89,
+"end": 59.061
+},
+{
+"text": "ella.",
+"type": "word",
+"start": 59.061,
+"end": 59.329
+},
+{
+"text": "Ahora",
+"type": "word",
+"start": 59.589,
+"end": 59.982
+},
+{
+"text": "ya",
+"type": "word",
+"start": 59.982,
+"end": 60.194
+},
+{
+"text": "conoces",
+"type": "word",
+"start": 60.194,
+"end": 60.708
+},
+{
+"text": "su",
+"type": "word",
+"start": 60.708,
+"end": 60.92
+},
+{
+"text": "juego.",
+"type": "word",
+"start": 60.92,
+"end": 61.313
+},
+{
+"text": "Sígueme",
+"type": "word",
+"start": 61.313,
+"end": 61.827
+},
+{
+"text": "para",
+"type": "word",
+"start": 61.827,
+"end": 62.16
+},
+{
+"text": "más",
+"type": "word",
+"start": 62.16,
+"end": 62.432
+},
+{
+"text": "trucos",
+"type": "word",
+"start": 62.432,
+"end": 62.886
+},
+{
+"text": "como",
+"type": "word",
+"start": 62.886,
+"end": 63.218
+},
+{
+"text": "este.",
+"type": "word",
+"start": 63.218,
+"end": 63.551
+},
+{
+"text": "¡Ojo",
+"type": "word",
+"start": 63.551,
+"end": 63.823
+},
+{
+"text": "al",
+"type": "word",
+"start": 63.823,
+"end": 64.035
+},
+{
+"text": "dato!",
+"type": "word",
+"start": 64.035,
+"end": 64.368
+}
+],
+"source": "google-chirp3-Umbriel"
+}

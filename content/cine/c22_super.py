@@ -24,20 +24,31 @@ import c20_dedos as D
 STYLE = "docu"
 BEATS = True
 XF = 0.28
-TITLE = "22_Supermercado_PREVIA"
-VOICE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "voz", "c22_super_prev.mp3")
+TITLE = "22_Supermercado"
+VOICE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "voz", "c22_super.mp3")
 LINES = [
     "El súper está diseñado para que compres cosas que no necesitas. ¡Y empieza en la puerta!",
     "Nada más entrar te encuentras la *fruta*. Colores vivos y olor a fresco. Y es a propósito.",
     "La idea es que entres de *buen humor* y con ganas de llenar el carro.",
     "Ahora fíjate en la *leche* y el *pan*. Casi siempre están al *fondo*.",
     "Para llegar hasta ellos tienes que cruzar la *tienda entera*. Pasillo a pasillo.",
+    "Y mira el *carro*. Cada vez son más *grandes*.",
+    "Con un carro enorme y medio vacío parece que te *falta algo*. Así que sigues metiendo cosas.",
+    "Los productos más *caros* suelen estar a la altura de tus *ojos*.",
+    "Las marcas *baratas* están más *abajo*. Tienes que agacharte para verlas.",
+    "Pero aquí viene lo más curioso. La *música*.",
+    "Una música lenta hace que camines *más despacio*. Y cuanto más rato estás, más compras.",
+    "Y al final, en la *caja*, te esperan chicles y *chocolatinas*.",
+    "Llegas cansado y esperando en la cola. Es el momento perfecto para un *capricho*.",
+    "Así que el súper no está ordenado al azar. Es un *recorrido* pensado para que gastes más.",
+    "El truco para ganarles es fácil. Ve con una *lista* y no te salgas de ella.",
 ]
-OUTRO_LINE = "Y lo de los carros es todavía más descarado."
-NAMES = ["q", "fruta", "humor", "fondo", "recorrido"]
+OUTRO_LINE = "Ahora ya conoces su juego. Sígueme para más trucos como este. ¡Ojo al dato!"
+NAMES = ["q", "fruta", "humor", "fondo", "recorrido", "carros", "vacio", "ojos", "abajo", "musica", "lenta", "caja", "cansado",
+         "answer", "truco"]
 SHOTS = [(n, i, i, 0) for i, n in enumerate(NAMES)]
 FOCUS, HYPE, FOLLOW, NARRATOR, PUSH = {}, None, None, {}, {}
-NOTIF = ("humor", 0.4)
+NOTIF = ("ojos", 0.3)
 HEAD = {i: ("", "") for i in range(len(NAMES))}
 NARRATOR_POS = {"left": (138, 1446), "right": (940, 1446)}
 NARRATOR_SCALE = 0.55
@@ -46,7 +57,7 @@ FRAME = vid2.frame
 FPS = 60
 BG = (40, 46, 80)
 TRANS_POOL = ["suave"]
-TRANS_PLAN = ["suave", "deriva_r", "suave_out", "deriva"]
+TRANS_PLAN = ["suave", "deriva_r", "suave_out", "deriva"] * 4
 TRANS_SEED = 22
 TD = 0.9
 CAM_PUSH = 0.06
@@ -257,9 +268,223 @@ def sh_recorrido(img, t, T, L):
     ojo(img, 950, 1760, 0.5, "surprise" if kp > 0.8 else "point", t=t)
 
 
+# ------------------------------------------------------------------ planos del vídeo entero
+def sh_carros(img, t, T, L):
+    """Tres carros de más pequeño a más grande, apareciendo uno tras otro."""
+    for i, (x, s) in enumerate(((220, 0.45), (500, 0.7), (820, 1.0))):
+        k = clamp((t - 0.2 - i * 0.45) / 0.3)
+        if k > 0:
+            solid(img, lambda Lr, x=x, s=s, k=k: cart(Lr, x, 1250 - 40 * s, s * pop(k), 0, t), sh=0.25)
+    k = clamp((t - lt(L, 0, 0.6)) / 0.3)
+    if k > 0:
+        d = K.D(img)
+        d.line([(160, 820), (900, 620)], fill=RED + (230,), width=14)
+        d.polygon([(900, 590), (950, 610), (905, 650)], fill=RED)
+        FL.pill(img, 540, 560, "CADA VEZ MÁS GRANDES", k, col=RED)
+    ojo(img, 160, 1760, 0.5, "surprise" if k > 0 else "point", t=t)
+
+
+def sh_vacio(img, t, T, L):
+    """Carro enorme con pocas cosas: bocadillo de «¿falta algo?» y se van añadiendo productos."""
+    n = 3 + int(9 * ease(clamp((t - lt(L, 0, 0.55)) / max(0.8, T * 0.4))))
+    solid(img, lambda Lr: cart(Lr, 600, 1150, 1.3, n, t))
+    d = K.D(img)
+    k = clamp((t - lt(L, 0, 0.2)) / 0.3)
+    if k > 0:
+        d.rounded_rectangle([140, 520, 600, 720], radius=60, fill=(255, 255, 255, 240), outline=INK, width=6)
+        d.polygon([(260, 715), (320, 715), (240, 800)], fill=WHITE, outline=INK)
+        FL.big(img, 370, 620, "¿FALTA ALGO?", 58, INK, k)
+    ojo(img, 200, 1760, 0.6, "think", t=t)
+
+
+def shelf(img, y0, rows=4):
+    d = K.D(img)
+    d.rectangle([60, y0, 1020, y0 + rows * 230], fill=(236, 232, 224, 235), outline=INK, width=6)
+    for r in range(rows):
+        y = y0 + (r + 1) * 230
+        d.rectangle([60, y - 16, 1020, y], fill=(150, 150, 160), outline=INK, width=3)
+    return [y0 + (r + 1) * 230 - 16 for r in range(rows)]
+
+
+def box(Lr, x, yb, w, h, col, gold=False):
+    d = K.D(Lr)
+    d.rounded_rectangle([x - w / 2, yb - h, x + w / 2, yb], radius=10, fill=col, outline=INK, width=4)
+    d.rectangle([x - w / 2 + 10, yb - h * 0.6, x + w / 2 - 10, yb - h * 0.35], fill=(255, 255, 255, 200))
+    if gold:
+        d.rectangle([x - w / 2, yb - h, x + w / 2, yb - h + 16], fill=(236, 190, 60))
+
+
+def sh_ojos(img, t, T, L):
+    """Estantería: la balda de la altura de los ojos se ilumina con productos caros (etiqueta €€€)."""
+    ys = shelf(img, 500)
+    for r, y in enumerate(ys):
+        for j in range(6):
+            x = 150 + j * 155
+            gold = r == 1
+            solid(img, lambda Lr, x=x, y=y, j=j, gold=gold, r=r: box(Lr, x, y, 110, 150 + (j % 2) * 30, PROD[(j + r * 2) % 7], gold), sh=0.12)
+    k = clamp((t - lt(L, 0, 0.4)) / 0.3)
+    if k > 0:
+        glow(img, 540, ys[1] - 90, 520, 110, (255, 220, 120), 0.5 * k)
+        d = K.D(img)
+        d.line([(40, ys[1] - 90), (1040, ys[1] - 90)], fill=RED + (int(220 * k),), width=6)
+        FL.pill(img, 540, ys[1] - 250, "ALTURA DE TUS OJOS = €€€", k, col=RED)
+    ojo(img, 540, 1760, 0.6, "surprise" if k > 0 else "point", t=t)
+
+
+def sh_abajo(img, t, T, L):
+    """Las marcas baratas, abajo del todo: flecha hacia abajo y Ojo agachándose."""
+    ys = shelf(img, 500)
+    for r, y in enumerate(ys):
+        for j in range(6):
+            x = 150 + j * 155
+            solid(img, lambda Lr, x=x, y=y, j=j, r=r: box(Lr, x, y, 110, 150, PROD[(j + r * 2) % 7], r == 1), sh=0.12)
+    k = clamp((t - lt(L, 0, 0.3)) / 0.3)
+    if k > 0:
+        glow(img, 540, ys[3] - 80, 520, 110, (120, 240, 140), 0.5 * k)
+        d = K.D(img)
+        y = ys[3] - 330 + 20 * math.sin(t * 5)
+        d.line([(900, y - 160), (900, y)], fill=GREEN, width=16)
+        d.polygon([(870, y), (930, y), (900, y + 50)], fill=GREEN)
+        FL.pill(img, 540, ys[3] + 70, "LO BARATO, ABAJO", k, col=GREEN)
+    ojo(img, 200, 1760 + 30 * clamp((t - 0.6) / 0.4), 0.55, "think", t=t)
+
+
+def speaker(Lr, cx, cy, s, t):
+    d = K.D(Lr)
+    d.rounded_rectangle([cx - 120 * s, cy - 180 * s, cx + 120 * s, cy + 180 * s], radius=int(24 * s), fill=(50, 54, 66), outline=INK, width=6)
+    for y, r in ((-80, 60), (70, 90)):
+        rr = r * s * (1 + 0.05 * math.sin(t * 6))
+        d.ellipse([cx - rr, cy + y * s - rr, cx + rr, cy + y * s + rr], fill=(90, 94, 110), outline=INK, width=5)
+        d.ellipse([cx - rr * 0.35, cy + y * s - rr * 0.35, cx + rr * 0.35, cy + y * s + rr * 0.35], fill=(30, 30, 36))
+
+
+def notes(img, cx, cy, t, n=5, spd=0.4):
+    for j in range(n):
+        u = (t * spd + j / n) % 1
+        x = cx + 260 * u + 40 * math.sin(t * 2 + j)
+        y = cy - 360 * u
+        a = int(240 * (1 - u))
+        d = K.D(img)
+        d.ellipse([x - 26, y - 18, x + 18, y + 18], fill=(250, 200, 60, a), outline=INK + (a,), width=3)
+        d.line([(x + 16, y), (x + 16, y - 90)], fill=INK + (a,), width=6)
+        d.line([(x + 16, y - 90), (x + 50, y - 64)], fill=INK + (a,), width=6)
+
+
+def sh_musica(img, t, T, L):
+    """PERO AQUÍ VIENE LO MÁS CURIOSO: altavoz del techo con notas."""
+    if t < 1.2:
+        FL.stamp(img, 540, 480, "LO MÁS CURIOSO", clamp(t / 0.3) * clamp((1.2 - t) / 0.25), col=RED)
+    solid(img, lambda Lr: speaker(Lr, 400, 1000, 1.1, t))
+    notes(img, 520, 1000, t)
+    ojo(img, 860, 1760, 0.6, "surprise", t=t)
+
+
+def sh_lenta(img, t, T, L):
+    """Música lenta: Ojo camina despacio con el carro; un metrónomo lento y un reloj que avanza."""
+    x = 200 + 120 * t
+    solid(img, lambda Lr: cart(Lr, x + 220, 1250, 0.6, int(min(14, t * 3)), t), sh=0.2)
+    ojo(img, x, 1700, 0.6, "smirk", t=t)
+    notes(img, 600, 700, t, 4, 0.25)
+    d = K.D(img)
+    a = 0.5 * math.sin(t * 1.6)
+    d.polygon([(760, 900), (980, 900), (900, 560), (840, 560)], fill=(180, 130, 80), outline=INK)
+    d.line([(870, 880), (870 + 300 * math.sin(a), 880 - 300 * math.cos(a))], fill=INK, width=8)
+    FL.pill(img, 540, 480, "MÁS DESPACIO = MÁS COMPRAS", clamp((t - lt(L, 0, 0.5)) / 0.3), col=(150, 90, 200))
+
+
+def checkout(Lr, cx, cy, s):
+    d = K.D(Lr)
+    d.rectangle([cx - 400 * s, cy, cx + 300 * s, cy + 220 * s], fill=(90, 100, 120), outline=INK, width=6)
+    d.rectangle([cx - 400 * s, cy - 20 * s, cx + 300 * s, cy + 10 * s], fill=(40, 40, 50))
+    d.rounded_rectangle([cx + 120 * s, cy - 180 * s, cx + 280 * s, cy - 30 * s], radius=10, fill=(30, 34, 44), outline=INK, width=5)
+    d.rectangle([cx + 140 * s, cy - 160 * s, cx + 260 * s, cy - 100 * s], fill=(120, 230, 140))
+
+
+def candy_rack(Lr, cx, cy, s, t):
+    d = K.D(Lr)
+    d.rectangle([cx - 140 * s, cy - 420 * s, cx + 140 * s, cy], fill=(200, 60, 60), outline=INK, width=6)
+    for r in range(4):
+        for j in range(4):
+            x = cx - 105 * s + j * 70 * s
+            y = cy - 380 * s + r * 95 * s
+            col = PROD[(r + j) % 7]
+            d.rounded_rectangle([x - 28 * s, y, x + 28 * s, y + 70 * s], radius=8, fill=col, outline=INK, width=3)
+
+
+def sh_caja(img, t, T, L):
+    """La caja con el expositor de chicles y chocolatinas brillando."""
+    solid(img, lambda Lr: checkout(Lr, 520, 1120, 1.0))
+    solid(img, lambda Lr: candy_rack(Lr, 880, 1130, 1.0, t))
+    k = clamp((t - lt(L, 0, 0.5)) / 0.3)
+    if k > 0:
+        glow(img, 880, 920, 220, 260, (255, 220, 120), 0.45 * k * (0.7 + 0.3 * math.sin(t * 6)))
+        FL.pill(img, 760, 560, "CHUCHES EN LA CAJA", k, col=RED)
+    ojo(img, 200, 1760, 0.55, "point", t=t)
+
+
+def sh_cansado(img, t, T, L):
+    """Cola de gente; Ojo cansado esperando; el chocolate «llama» con destellos."""
+    d = K.D(img)
+    for j in range(4):                                      # cola de siluetas
+        x = 180 + j * 170
+        d.ellipse([x - 50, 880, x + 50, 980], fill=(110, 120, 150))
+        d.rounded_rectangle([x - 70, 980, x + 70, 1300], radius=40, fill=(110, 120, 150))
+    solid(img, lambda Lr: candy_rack(Lr, 900, 1250, 0.9, t))
+    k = clamp((t - lt(L, 0, 0.6)) / 0.3)
+    if k > 0:
+        FL.big(img, 740, 760, "¡CÓMPRAME!", int(64 * pop(k)) + 1, RED, k)
+    FL.pill(img, 420, 720, "CANSADO + ESPERANDO", clamp((t - 0.3) / 0.3), col=(120, 120, 130))
+    ojo(img, 760, 1780, 0.6, "think", t=t)
+
+
+def listpaper(Lr, cx, cy, s, ticks):
+    d = K.D(Lr)
+    d.rectangle([cx - 200 * s, cy - 300 * s, cx + 200 * s, cy + 300 * s], fill=(255, 252, 236), outline=INK, width=6)
+    for j in range(5):
+        y = cy - 220 * s + j * 100 * s
+        d.rectangle([cx - 160 * s, y - 22 * s, cx - 116 * s, y + 22 * s], outline=INK, width=4)
+        d.line([(cx - 90 * s, y), (cx + 150 * s, y)], fill=(120, 120, 140), width=6)
+        if j < ticks:
+            d.line([(cx - 156 * s, y), (cx - 140 * s, y + 18 * s), (cx - 108 * s, y - 26 * s)], fill=GREEN, width=8)
+
+
+def sh_truco(img, t, T, L):
+    """El truco: una lista que se va tachando sola; Ojo guiña el ojo."""
+    n = int(5 * ease(clamp((t - 0.3) / max(1.0, T - 0.6))))
+    solid(img, lambda Lr: listpaper(Lr, 540, 960, 1.1, n))
+    FL.stamp(img, 540, 480, "EL TRUCO", clamp(t / 0.3), col=GREEN)
+    ojo(img, 880, 1760, 0.6, "smirk", t=t)
+
+
+def _r_fruta(Lr, x, y, s):
+    d = K.D(Lr)
+    for j, col in enumerate(((230, 50, 50), (250, 150, 40), (110, 190, 70))):
+        xx = x - 60 * s + j * 60 * s
+        d.ellipse([xx - 34 * s, y - 34 * s, xx + 34 * s, y + 34 * s], fill=col, outline=INK, width=3)
+
+
+def _r_pasillo(Lr, x, y, s):
+    milk(Lr, x - 50 * s, y + 20 * s, 0.55 * s + 0.01)
+    bread(Lr, x + 40 * s, y + 70 * s, 0.4 * s + 0.01)
+
+
+def _r_caja(Lr, x, y, s):
+    candy_rack(Lr, x, y + 100 * s, 0.4 * s + 0.01, 0)
+
+
+def sh_answer(img, t, T, L):
+    ks = [clamp((t - lt(L, 0, 0.15)) / 0.35), clamp((t - lt(L, 0, 0.45)) / 0.35), clamp((t - lt(L, 0, 0.7)) / 0.35)]
+    pro.chain(img, t, [("FRUTA", GREEN), ("FONDO", (60, 130, 220)), ("CAJA", RED)], ks, y=1000, drawers=[_r_fruta, _r_pasillo, _r_caja])
+    hook_text(img, [("¿POR QUÉ GASTAS MÁS?", False), ("ES UN RECORRIDO", True)], clamp((t - 0.1) / 0.4), y=480, size=76)
+    ojo(img, 540, 1760, 0.6, "smirk", t=t)
+
+
 # ------------------------------------------------------------------ subtítulos, emojis y montaje (de c20_dedos)
-D.CAP_POS.update({"q": 1760, "fruta": 330, "humor": 330, "fondo": 1620, "recorrido": 1620})
-D.EMOJI.update({"q": ["🛒"], "fruta": ["🍎", "🍊"], "humor": ["😄"], "fondo": ["🥛", "🍞"], "recorrido": ["🚶", "😩"]})
+D.CAP_POS.update({"q": 1760, "fruta": 330, "humor": 330, "fondo": 1620, "recorrido": 1620, "carros": 330, "vacio": 1620,
+                  "ojos": 330, "abajo": 330, "musica": 1600, "lenta": 330, "caja": 330, "cansado": 330, "answer": 1390, "truco": 1560})
+D.EMOJI.update({"q": ["🛒"], "fruta": ["🍎", "🍊"], "humor": ["😄"], "fondo": ["🥛", "🍞"], "recorrido": ["🚶", "😩"],
+                "carros": ["🛒", "📈"], "vacio": ["🤔"], "ojos": ["💸", "👀"], "abajo": ["⬇️", "💰"], "musica": ["🎵"],
+                "lenta": ["🐢"], "caja": ["🧾", "🍫"], "cansado": ["🍬"], "answer": ["🧠"], "truco": ["📝"]})
 CAPTION = D.CAPTION
 NO_EMOJI = set(NAMES)
 NARR = None
@@ -297,9 +522,11 @@ def FRAME(V, shots, chunks, total, i):
     return _base(V, shots, chunks, total, i)
 
 
-OUTRO_MIN = 4.0
+OUTRO_MIN = 5.0
 MUSIC_GAIN = 1.7
 MUSIC_DUCK = 0.45
 AUDIO = {"music": [("q", "lofi_hh")], "gains": {}, "amb": {},
          "sfx": [(0.05, "pop", 0.05), ("fruta+0.3", "pop", 0.04), ("humor+0.4", "ding", 0.04), ("fondo+0.3", "pop", 0.05),
-                 ("recorrido+0.2", "tick", 0.04)], "bpm": 96}
+                 ("recorrido+0.2", "tick", 0.04), ("carros+0.2", "pop", 0.05),
+                 ("ojos+0.4", "ding", 0.04), ("musica+0.05", "pop", 0.07), ("caja+0.5", "ding", 0.04), ("answer+0.5", "ding", 0.06),
+                 ("truco+0.1", "pop", 0.06)], "bpm": 96}
