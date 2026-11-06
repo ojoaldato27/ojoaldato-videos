@@ -1,3 +1,33 @@
+# REGLAS VIGENTES DESDE EL 06/11/2026 (Iker) — MANDAN SOBRE TODO LO DE ABAJO SI CHOCA
+
+## 1. Manual de dirección v2.0 → `docs/MANUAL_DIRECCION_v2.md` (léelo entero antes de escribir un guion)
+- Vídeos de 1:00–1:30, un solo tema contado como historia, 12–18 escenas, cambio visual cada 2–3 s, re-gancho cada 8–10 s,
+  la respuesta completa en el último tercio, banner «Sígueme» hacia la mitad, final: último dato → reflexión → Ojo se despide.
+- 10 formatos que se rotan (nunca el mismo dos veces seguidas): ¿Qué pasaría si…?, Te han mentido, En 1 segundo, Por dentro,
+  Versus, La cadena, Ojo detective, Política fácil, Lo que nadie te cuenta de…, Escala. Series con número («Te han mentido #1»).
+- Test del tema (los 3 o se descarta): se entiende en 3 s, sorprende de verdad, se lo mandarías a un amigo.
+- Cada vídeo terminado lleva: guion, .srt (fast.py lo crea), título (6–8 palabras), descripción (1 frase + 3–5 hashtags) y comentario fijado.
+- **MODELO DE CÓDIGO: `content/cine/c20_dedos.py`** (primer vídeo v2, aprobado por Iker 06/11: «me ha encantado»). Copia ese módulo:
+  fondos ilustrados a pantalla completa con parallax (bano/hospital/lab/lluvia), partículas siempre, subtítulos en CAJA BLANCA
+  en sitios distintos según la escena (`CAP_POS`), emojis que saltan HACIA EL CENTRO con cada palabra clave (`EMOJI`),
+  Ojo reaccionando en cada escena. Ojo con bata (`OJO_TRAJE` según el tema).
+
+## 2. Voz: Google Cloud Chirp 3 HD «Umbriel» (Iker eligió «Joven C · Umbriel» el 06/11)
+- `python3 tools/voz_google.py <modulo>` (velocidad 1,12; cada línea de LINES se lee ENTERA).
+- La clave NO está en el repo (es público). Va en `/home/claude/.gtts_key` o en la variable `GTTS_KEY`. Si no la tienes, búscala en el
+  doc privado del proyecto de claude.ai que diga dónde está, o pídesela a Iker. Dominio permitido: texttospeech.googleapis.com.
+- **Cómo escribir el guion para esta voz** (Iker: «hace pausas raras y las comas mal»): frases cortas y habladas; NADA de «…»;
+  ninguna coma en medio de una idea; una coma solo donde una persona respiraría; preguntas y exclamaciones sí.
+- Kokoro (voz_natural.py) queda RETIRADO. ElevenLabs solo si Iker paga un plan (el gratis no permite vídeos monetizados).
+- **Créditos:** 1 millón de caracteres gratis al mes. Cada vez que generes voz, suma los caracteres en el doc del proyecto
+  `claude/voz-consumo.md`. Si el mes pasa de 700.000, AVISA a Iker en la entrega. Nunca generes voz de un vídeo entero sin su sí.
+
+## 3. Entregas: LUNES y JUEVES, solo previsualizaciones de 20 s (Iker 06/11, para no gastar créditos)
+- Lunes (para martes, miércoles y jueves) y jueves (para viernes a lunes): manda la PREVISUALIZACIÓN de los primeros ~20 s de cada
+  vídeo de la tanda (gancho + 3–4 escenas, con voz solo de esas líneas) y pregunta con botones: «Hazlo entero / Cambia cosas / Descártalo».
+- El vídeo entero solo se hace después de su sí (en esa misma sesión, cuando conteste).
+- Ritmo de subida: 1 vídeo al día a las 20:00 (calidad antes que cantidad; ver doc del proyecto `claude/plan-subidas.md`).
+
 # Envío nocturno de vídeos (actualizado el 30/10/2026)
 
 ## FORMATO OBLIGATORIO DESDE EL 30/10 — «pro» (Iker: «me gusta mucho este formato, a partir de ahora haremos los vídeos con este formato»)

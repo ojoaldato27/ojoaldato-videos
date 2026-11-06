@@ -1,5 +1,7 @@
 # Ojo al dato · sistema de vídeos
 
+**DESDE EL 06/11/2026 MANDA LA SECCIÓN «REGLAS VIGENTES» DEL PRINCIPIO DE `INSTRUCCIONES_NOCHE.md`** (manual v2, modelo `content/cine/c20_dedos.py`, voz Google Umbriel con `tools/voz_google.py`, entregas lunes y jueves con previas de 20 s).
+
 Shorts de curiosidades del canal «Ojo al dato» (Iker). Todo se renderiza aquí con Python (PIL + numpy + scipy) y ffmpeg.
 
 - **Ruta obligatoria:** clona el repo en `/home/claude/shorts-ingenieria` (el código usa rutas absolutas desde ahí).

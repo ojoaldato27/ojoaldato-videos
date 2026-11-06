@@ -1,0 +1,497 @@
+{
+"words": [
+{
+"text": "Tus",
+"type": "word",
+"start": 0.12,
+"end": 0.318
+},
+{
+"text": "dedos",
+"type": "word",
+"start": 0.318,
+"end": 0.604
+},
+{
+"text": "no",
+"type": "word",
+"start": 0.604,
+"end": 0.757
+},
+{
+"text": "se",
+"type": "word",
+"start": 0.757,
+"end": 0.911
+},
+{
+"text": "arrugan",
+"type": "word",
+"start": 0.911,
+"end": 1.285
+},
+{
+"text": "por",
+"type": "word",
+"start": 1.285,
+"end": 1.483
+},
+{
+"text": "culpa",
+"type": "word",
+"start": 1.483,
+"end": 1.769
+},
+{
+"text": "del",
+"type": "word",
+"start": 1.769,
+"end": 1.966
+},
+{
+"text": "agua.",
+"type": "word",
+"start": 1.966,
+"end": 2.208
+},
+{
+"text": "¡Es",
+"type": "word",
+"start": 2.208,
+"end": 2.362
+},
+{
+"text": "tu",
+"type": "word",
+"start": 2.362,
+"end": 2.516
+},
+{
+"text": "cerebro",
+"type": "word",
+"start": 2.516,
+"end": 2.89
+},
+{
+"text": "el",
+"type": "word",
+"start": 2.89,
+"end": 3.043
+},
+{
+"text": "que",
+"type": "word",
+"start": 3.043,
+"end": 3.241
+},
+{
+"text": "lo",
+"type": "word",
+"start": 3.241,
+"end": 3.395
+},
+{
+"text": "hace",
+"type": "word",
+"start": 3.395,
+"end": 3.637
+},
+{
+"text": "a",
+"type": "word",
+"start": 3.637,
+"end": 3.747
+},
+{
+"text": "propósito!",
+"type": "word",
+"start": 3.747,
+"end": 4.208
+},
+{
+"text": "Pasas",
+"type": "word",
+"start": 4.508,
+"end": 4.803
+},
+{
+"text": "diez",
+"type": "word",
+"start": 4.803,
+"end": 5.052
+},
+{
+"text": "minutos",
+"type": "word",
+"start": 5.052,
+"end": 5.437
+},
+{
+"text": "en",
+"type": "word",
+"start": 5.437,
+"end": 5.596
+},
+{
+"text": "la",
+"type": "word",
+"start": 5.596,
+"end": 5.754
+},
+{
+"text": "bañera",
+"type": "word",
+"start": 5.754,
+"end": 6.094
+},
+{
+"text": "y",
+"type": "word",
+"start": 6.094,
+"end": 6.207
+},
+{
+"text": "tus",
+"type": "word",
+"start": 6.207,
+"end": 6.411
+},
+{
+"text": "dedos",
+"type": "word",
+"start": 6.411,
+"end": 6.705
+},
+{
+"text": "acaban",
+"type": "word",
+"start": 6.705,
+"end": 7.045
+},
+{
+"text": "como",
+"type": "word",
+"start": 7.045,
+"end": 7.294
+},
+{
+"text": "pasas.",
+"type": "word",
+"start": 7.294,
+"end": 7.589
+},
+{
+"text": "Siempre",
+"type": "word",
+"start": 7.849,
+"end": 8.231
+},
+{
+"text": "nos",
+"type": "word",
+"start": 8.231,
+"end": 8.434
+},
+{
+"text": "han",
+"type": "word",
+"start": 8.434,
+"end": 8.637
+},
+{
+"text": "dicho",
+"type": "word",
+"start": 8.637,
+"end": 8.93
+},
+{
+"text": "que",
+"type": "word",
+"start": 8.93,
+"end": 9.132
+},
+{
+"text": "la",
+"type": "word",
+"start": 9.132,
+"end": 9.29
+},
+{
+"text": "piel",
+"type": "word",
+"start": 9.29,
+"end": 9.537
+},
+{
+"text": "se",
+"type": "word",
+"start": 9.537,
+"end": 9.695
+},
+{
+"text": "empapa",
+"type": "word",
+"start": 9.695,
+"end": 10.033
+},
+{
+"text": "como",
+"type": "word",
+"start": 10.033,
+"end": 10.281
+},
+{
+"text": "una",
+"type": "word",
+"start": 10.281,
+"end": 10.483
+},
+{
+"text": "esponja.",
+"type": "word",
+"start": 10.483,
+"end": 10.866
+},
+{
+"text": "Pero",
+"type": "word",
+"start": 11.126,
+"end": 11.393
+},
+{
+"text": "hace",
+"type": "word",
+"start": 11.393,
+"end": 11.66
+},
+{
+"text": "casi",
+"type": "word",
+"start": 11.66,
+"end": 11.926
+},
+{
+"text": "cien",
+"type": "word",
+"start": 11.926,
+"end": 12.193
+},
+{
+"text": "años",
+"type": "word",
+"start": 12.193,
+"end": 12.46
+},
+{
+"text": "unos",
+"type": "word",
+"start": 12.46,
+"end": 12.727
+},
+{
+"text": "médicos",
+"type": "word",
+"start": 12.727,
+"end": 13.139
+},
+{
+"text": "descubrieron",
+"type": "word",
+"start": 13.139,
+"end": 13.794
+},
+{
+"text": "algo",
+"type": "word",
+"start": 13.794,
+"end": 14.061
+},
+{
+"text": "rarísimo.",
+"type": "word",
+"start": 14.061,
+"end": 14.521
+},
+{
+"text": "A",
+"type": "word",
+"start": 14.781,
+"end": 14.905
+},
+{
+"text": "las",
+"type": "word",
+"start": 14.905,
+"end": 15.127
+},
+{
+"text": "personas",
+"type": "word",
+"start": 15.127,
+"end": 15.597
+},
+{
+"text": "con",
+"type": "word",
+"start": 15.597,
+"end": 15.82
+},
+{
+"text": "un",
+"type": "word",
+"start": 15.82,
+"end": 15.993
+},
+{
+"text": "nervio",
+"type": "word",
+"start": 15.993,
+"end": 16.364
+},
+{
+"text": "cortado",
+"type": "word",
+"start": 16.364,
+"end": 16.784
+},
+{
+"text": "en",
+"type": "word",
+"start": 16.784,
+"end": 16.957
+},
+{
+"text": "el",
+"type": "word",
+"start": 16.957,
+"end": 17.13
+},
+{
+"text": "dedo",
+"type": "word",
+"start": 17.13,
+"end": 17.402
+},
+{
+"text": "no",
+"type": "word",
+"start": 17.402,
+"end": 17.575
+},
+{
+"text": "se",
+"type": "word",
+"start": 17.575,
+"end": 17.748
+},
+{
+"text": "les",
+"type": "word",
+"start": 17.748,
+"end": 17.971
+},
+{
+"text": "arrugaba.",
+"type": "word",
+"start": 17.971,
+"end": 18.441
+},
+{
+"text": "Ni",
+"type": "word",
+"start": 18.441,
+"end": 18.614
+},
+{
+"text": "un",
+"type": "word",
+"start": 18.614,
+"end": 18.787
+},
+{
+"text": "poco.",
+"type": "word",
+"start": 18.787,
+"end": 19.059
+},
+{
+"text": "Entonces,",
+"type": "word",
+"start": 19.319,
+"end": 19.67
+},
+{
+"text": "¿quién",
+"type": "word",
+"start": 19.67,
+"end": 19.91
+},
+{
+"text": "arruga",
+"type": "word",
+"start": 19.91,
+"end": 20.188
+},
+{
+"text": "tus",
+"type": "word",
+"start": 20.188,
+"end": 20.354
+},
+{
+"text": "dedos?",
+"type": "word",
+"start": 20.354,
+"end": 20.594
+},
+{
+"text": "Lo",
+"type": "word",
+"start": 20.594,
+"end": 20.724
+},
+{
+"text": "que",
+"type": "word",
+"start": 20.724,
+"end": 20.89
+},
+{
+"text": "viene",
+"type": "word",
+"start": 20.89,
+"end": 21.13
+},
+{
+"text": "ahora",
+"type": "word",
+"start": 21.13,
+"end": 21.371
+},
+{
+"text": "te",
+"type": "word",
+"start": 21.371,
+"end": 21.5
+},
+{
+"text": "va",
+"type": "word",
+"start": 21.5,
+"end": 21.629
+},
+{
+"text": "a",
+"type": "word",
+"start": 21.629,
+"end": 21.722
+},
+{
+"text": "sorprender.",
+"type": "word",
+"start": 21.722,
+"end": 22.147
+}
+],
+"source": "google-chirp3-Umbriel"
+}
