@@ -66,7 +66,8 @@ def genera(texto, out, voz=None, vel=None):
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", wav, "-af", af, "-b:a", "160k", out], check=True)
     os.remove(wav)
     json.dump({"words": words, "source": f"google-chirp3-{voz}"}, open(out[:-4] + "_words.json", "w"), ensure_ascii=False, indent=0)
-    print(out, len(words), "palabras · fin", words[-1]["end"])
+    n = sum(len(x.replace("*", "")) for x in (texto if isinstance(texto, list) else frases(texto)))
+    print(out, len(words), "palabras · fin", words[-1]["end"], f"· CARACTERES GASTADOS: {n} (súmalos en el doc del proyecto claude/voz-consumo.md)")
     return out
 
 
