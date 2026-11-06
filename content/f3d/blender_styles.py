@@ -168,7 +168,7 @@ def skin_nodes(col, wr=0.6):
         sp = nt.nodes.new("ShaderNodeSeparateXYZ"); nt.links.new(tc, sp.inputs[0])
         mr = nt.nodes.new("ShaderNodeMapRange"); mr.inputs[1].default_value = 1.6; mr.inputs[2].default_value = 1.85; nt.links.new(sp.outputs["Z"], mr.inputs[0])
         mu = nt.nodes.new("ShaderNodeMath"); mu.operation = "MULTIPLY"; nt.links.new(wv.outputs["Fac"], mu.inputs[0]); nt.links.new(mr.outputs[0], mu.inputs[1])
-        bu = nt.nodes.new("ShaderNodeBump"); bu.inputs["Strength"].default_value = wr; bu.inputs["Distance"].default_value = 0.03
+        bu = nt.nodes.new("ShaderNodeBump"); bu.label = "wr"; bu.inputs["Strength"].default_value = wr; bu.inputs["Distance"].default_value = 0.03
         nt.links.new(mu.outputs[0], bu.inputs["Height"]); nt.links.new(bu.outputs[0], b.inputs["Normal"])
     return f
 
@@ -367,7 +367,7 @@ STYLES = [("01 Pelicula de animacion", st_cine), ("02 Realista documental", st_r
           ("08 Plano tecnico", st_blueprint), ("09 Rayos X", st_rayosx), ("10 Pastel infantil", st_pastel), ("11 Metal premium", st_metal),
           ("12 Comic", st_comic)]
 only = os.environ.get("ONLY")
-for name, fn in STYLES:
+for name, fn in ([] if os.environ.get("CLIPS") else STYLES):
     if only and not name.startswith(only):
         continue
     reset(); fn()
