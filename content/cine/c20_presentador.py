@@ -105,10 +105,10 @@ def ojo_talk(img, cx, feet, sc, pose, t, look=(0.0, 0.0), brow=0.0, tilt=0.0):
     for sx in (-1, 1):
         x0 = 250 + sx * 40
         d.line([(x0 - 34, by + 6 - sx * 4 * brow), (x0 + 34, by - 2 + sx * 4 * brow)], fill=INK, width=12)
-    bob = -10 * tk + 5 * math.sin(t * 2.6)
-    s = sc * (1 + 0.035 * tk)
+    bob = -2.5 * tk + 1.5 * math.sin(t * 1.6)
+    s = sc
     ff = f.resize((int(f.width * s), int(f.height * s)), Image.BICUBIC)
-    ang = tilt + 3 * math.sin(t * 1.7) + 4 * tk * math.sin(t * 9)
+    ang = tilt * 0.4 + 0.8 * math.sin(t * 0.9)
     ff = ff.rotate(ang, expand=True, resample=Image.BICUBIC)
     x = int(cx - ff.width / 2)
     y = int(feet - ff.height * 0.93 + bob)
@@ -136,7 +136,7 @@ def card(img, k, draw, t, tint=(255, 255, 255)):
     base.alpha_composite(lay)
     ImageDraw.Draw(base).rounded_rectangle([CX0, CY0, CX1, CY1], radius=40, outline=INK + (255,), width=8)
     cx, cy = (CX0 + CX1) / 2, (CY0 + CY1) / 2
-    ang = 2.5 * math.sin(t * 1.3)
+    ang = 0.5 * math.sin(t * 0.8)
     if s != 1 or ang:
         bb = base.crop((CX0 - 40, CY0 - 40, CX1 + 60, CY1 + 60))
         bb = bb.resize((max(1, int(bb.width * s)), max(1, int(bb.height * s))), Image.BICUBIC).rotate(ang, expand=True, resample=Image.BICUBIC)
